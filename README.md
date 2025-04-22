@@ -19,6 +19,12 @@ The pixelated effect is a filter, it can be disabled (just change the css of the
 Game is IN DEVELOPMENT.
 ![App Screenshot](https://github.com/haasva/WarClass-test/blob/4a994f3a3c14b226719a23c06820c8dfedd382e0/screenshot.jpg)
 
-Enjoy.
+## How to play
+
+Select your starting adventurers/location. Move around like any other FPS game. Movement is cell-based.
+Adventurers can attack if they have a weapon equiped. Use the wheel to change the active adventurer.
+Browse the world map to change regions (teleport) or travel by foot through the region (gateways are cells at the borders of the map with a red border).
+Etc.
+
 ## Contact
-you can contact me for anything
+you can contact me for anything. I'm really looking for feedback, both gamedesign and programming wise.
