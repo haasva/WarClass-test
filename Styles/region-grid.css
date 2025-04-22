@@ -2559,7 +2559,7 @@ background: linear-gradient(180deg, rgb(146, 12, 12) 0%, rgb(131, 7, 7) 100%);
   left: 0;
   position: absolute;
   z-index: 1;
-  filter: brightness(0.9) contrast(1);
+  filter: brightness(0.9) contrast(1) url(#pixelate);
   pointer-events: none;
   transform-style: preserve-3d;
   background-size: 100dvw 100dvw;

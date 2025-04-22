@@ -4,8 +4,43 @@ let PLAYER_STATE = {
   isInMenu: false,
   currentAttackType: '',
   overtip: 'off',
-  sneak: false
+  sneak: false,
+  isZoomed: false,
 }
+
+
+
+
+window.addEventListener("click", async (event) => {
+  if (!document.pointerLockElement) return;
+  if (event.button !== 2) return;
+  
+  toggleZoom();
+
+function toggleZoom() {
+  const duration = 200; // Animation duration in milliseconds
+  const targetZoom = PLAYER_STATE.isZoomed ? 35 : 120;
+  const startZoom = SETTINGS.zoomFactor;
+  let startTime = null;
+
+  function animateZoom(timestamp) {
+    if (!startTime) startTime = timestamp;
+    const elapsed = timestamp - startTime;
+    const progress = Math.min(elapsed / duration, 1); // Clamp progress to 1
+    SETTINGS.zoomFactor = startZoom + (targetZoom - startZoom) * progress;
+    applyNeoTransforms(); // Update the view with the new zoom factor
+
+    if (progress < 1) {
+      requestAnimationFrame(animateZoom);
+    } else {
+      PLAYER_STATE.isZoomed = !PLAYER_STATE.isZoomed; // Toggle zoom state
+    }
+  }
+
+  requestAnimationFrame(animateZoom);
+}
+});
+
 
 
 
@@ -705,8 +740,9 @@ store.style.setProperty(
   "--rotationZ",
   `${SETTINGS.zRotation}deg`
 );
-store.style.transform = `rotateX(-90deg) rotateY(var(--rotationZ));`;
+store.style.transform = `rotateX(-90deg) rotateY(var(--rotationZ)) rotateX(var(--rotationX));`;
 cell.appendChild(store);
+updateCardboardRotation();
 store.classList.add('impacted2');
 setTimeout(() => {
   store.classList.remove('impacted2');
