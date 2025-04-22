@@ -1,0 +1,2080 @@
+#move-ready-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 9;
+    background-color: rgba(0, 0, 0, 0.75);
+    padding: 10px;
+    font-size: larger;
+  }
+  
+  #move-ready-message:after {
+    content: '[F]';
+    margin-left: 6px;
+    color: yellow;
+  }
+
+  #debug-layer {
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  
+  #mega-wrapper {
+    width: 100dvw;
+    height: 100dvh;
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    image-rendering: pixelated;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: all;
+    transition: perspective 0.1s;
+    transform-style: flat;
+    transform-style: preserve-3d;
+    perspective: none;
+    scale: 1;
+    resize: both;
+    contain: paint;
+    filter:  url(#posterize);
+  }
+  
+  #mega-wrapper:before {
+    position: absolute;
+    width: 100%;
+    height: 102%;
+    content: '';
+    top: 0;
+    left: 0;
+    background-image: url('../Art/grain.gif');
+    background-size: 200px 200px;
+    background-position: center;
+    z-index: 2;
+    animation: luminosity 5s ease-in-out infinite;
+    opacity: 0.06;
+    pointer-events: none;
+    mix-blend-mode:color-burn;
+    filter: contrast(2) brightness(1.2) sepia(2);
+  }
+  
+  
+  #mega-wrapper:after {
+  
+    position: absolute;
+    width: 100dvw;
+    height: 100dvh;
+    top: 0px;
+    left: 0px;
+    opacity: 0.5;
+    pointer-events: none;
+    content: '';
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 0 200px black inset;
+    outline: 1px solid red;
+    z-index: 3;
+    filter: contrast(1.3) brightness(1.1);
+    overflow: hidden;
+    mix-blend-mode: color-burn;
+    background-color: #a0a0a0b7;
+  } 
+  
+  @keyframes sparkling {
+    0% {
+      filter: contrast(1.3) brightness(1.1);
+    }
+    50% {
+      filter: contrast(1) brightness(1.3);
+    }
+    100% {
+      filter: contrast(1.3) brightness(1.1);
+    }
+  }
+  
+  @keyframes luminosity {
+    0% {
+      transform: scale(1.1);
+    }
+    50% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.1);
+    }
+  }
+  
+  #engine-wrapper {
+  
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition: none;
+    transform-style: preserve-3d;
+    pointer-events: none;
+    perspective: 800px;
+    image-rendering: pixelated;
+    background-color: #000000;
+    scale : 1;
+    background-image: url(../Art/Skyboxes/pixel/3.png);
+    background-size: cover;
+    background-position-y: -130px; 
+    transform-origin: center;
+  }
+  
+  #region-grid-filter {
+    transition: all 3s;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url(../Art/Skyboxes/night_overlay.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      opacity: 0;
+      pointer-events: none;
+      z-index: 2;
+      backdrop-filter:  sepia(0.2) brightness(0.8) contrast(1) saturate(0.8) hue-rotate(10deg) ;
+      display: block;
+      transform: rotateX(5deg) scale3d(1.3, 1.2, 1) translateY(-00px -60px);
+      transform-origin: center;
+      filter: url(#posterize1) hue-rotate(-20deg) saturate(0.7) opacity(0.8);
+      mix-blend-mode: darken;
+    }
+  
+  #table-wrapper {
+    transform-origin: 1704.31px 851.046px;
+    width: 1000px;
+    height: 1000px;
+    position: absolute;
+    overflow: hidden;
+    top: 0px;
+    left: 0px;
+    border: 5px solid red;
+    display: none;
+    transform-style: preserve-3d;
+  }
+  
+  #fakebox {
+    aspect-ratio: 1 / 1;
+    background-color: #eb40404a;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
+    transform-style: flat;
+    transform: none;
+    perspective: none;
+    opacity: 0;
+    display: none;
+  }
+  
+  #region-grid-container {
+    box-sizing: border-box;
+    width: 100dvw;
+    height: 100dvh;
+    background-size: 400% 100%;
+    background-position-y: -300px;
+    background-position-x: 0%;
+    position: absolute;
+    z-index: 1;
+    display: block;
+    perspective: 100px;
+    transform-style: preserve-3d;
+    /* background-position-y: -200px; */
+    resize: both;
+    padding: 10px;
+    transition: none;
+  }
+  
+  
+  
+  #horizon {
+    width: 100dvw;
+    height: 30dvh;
+    background-size: 400% 100%;
+    background-position-y: 0px;
+    background-position-x: 0%;
+    background-image: url(../Art/Skyboxes/pixel/4.png);
+    z-index: 1;
+    position: absolute;
+    top: 26%;
+    display: block;
+    transition: background-image 1s linear;
+    box-shadow: inset 0 -52px 26px #98ebfe85;
+    display: none;
+    pointer-events: none;
+  }
+  
+  #skybox {
+    width: 100dvw;
+    height: 100dvw;
+    background-size: cover;
+    background-position-y: -1500px;
+    background-position-x: 0%;
+    background-image: url(../Art/Skyboxes/day_cloudy.jpg);
+    z-index: 0;
+    position: absolute;
+    display: none;
+    transition: background-image 1s linear;
+    pointer-events: none;
+  }
+  @keyframes sky {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.5);
+      top: -15%;
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+    #region-grid-container.hidden {
+      display: none;
+      }
+  
+  
+  
+      #region-grid-container #table-container {
+        width: auto;
+   
+        height: auto;
+        translate: 0px 0px;
+  
+        display: flex;
+        border: 0px solid rgba(0, 0, 0, 0.5);
+        position: fixed;
+        width: max-content;
+        left: 0px;
+        top: 0px;
+        height: max-content;
+  
+        pointer-events: all;
+        transition: none;
+        background-size: 8% 5%;
+        image-rendering:pixelated;
+        background-repeat: repeat;
+        perspective:630px;
+        animation: tableAppear 0.5s ease-in;
+        will-change: transform-origin, perspective-origin, translate;
+      } 
+  
+      
+      @keyframes tableAppear {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+  
+      #table-container.toggle3d {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        translate: 0px 0px;
+      }
+  
+      @keyframes move-forward {
+        0% {
+          transform: rotateX(93deg) matrix(1, 0, 0, 1, -55, 496) translateZ(193px) translateY(0px);
+        }
+        100% {
+          transform: rotateX(93deg) matrix(1, 0, 0, 1, -55, 496) translateZ(193px) translateY(100px);
+        }
+      }
+      @keyframes turn-right {
+        0% {
+          transform: rotateX(93deg) matrix(1, 0, 0, 1, -55, 496) translateZ(193px);
+        }
+        100% {
+          transform: rotateX(93deg) matrix(1, 0, 0, 1, -55, 496) translateZ(193px) translateY(40px) rotateZ(-90deg);
+        }
+      }
+      @keyframes turn-left {
+        0% {
+          transform: rotateX(93deg) matrix(1, 0, 0, 1, -55, 496) translateZ(193px);
+        }
+        100% {
+          transform: rotateX(93deg) matrix(1, 0, 0, 1, -17, 496) translateZ(193px) translateY(0px) rotateZ(90deg)  translateX(0px);
+        }
+      }
+  
+    #region-grid-container #table-container.nighttime {
+      /* filter: grayscale(0.3) hue-rotate(16deg) sepia(0.2) brightness(0.9); */
+      transition: filter 2s;
+    }
+  
+  
+    
+    #region-grid-table {
+      width: max-content;
+      border-collapse: separate;
+      border-spacing: 0px;
+      height: max-content;
+      display: grid;
+      transform-style: preserve-3d;
+      --translateX: 0px;
+      --translateY: 0px;
+      /* Other styles for your container */
+      position: relative;
+      transition: none;
+      transition-timing-function: ease-in-out;
+      /* Apply translation */
+      left: var(--translateX);
+      top: var(--translateY);
+      will-change: transform-origin, perspective-origin;
+      background-repeat: repeat;
+      grid-template-rows: repeat(52, 50px);
+      grid-template-columns: repeat(52, 50px);
+      background-size: 300px 300px;
+      pointer-events:none;
+      image-rendering:pixelated;
+      transform: rotateX(10deg) scale3d(5.5, 5.5, 5);
+      perspective: 800px;
+      backface-visibility: hidden;
+     /* transition: transform-origin 0.35s; */
+    }
+  
+    #region-grid-table::before {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: '';
+      transform: translateZ(-5px);
+      background-color: #000000;
+      background-repeat: repeat;
+      background-size: 8% 5%;
+
+      opacity: 1;
+  
+      image-rendering:optimizeSpeed;
+      transform-origin: center;
+    }
+  
+    #region-grid-table::after {
+      width: 100%;
+      height: 100%;
+  
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateZ(-2px);
+      image-rendering:optimizeSpeed;
+      background-image: url('/Art/Sprites/mist.gif');
+  
+      background-repeat: repeat;
+      background-size: 10% 10%;
+      opacity: 1;
+      image-rendering:optimizeSpeed;
+      transform-origin: center;
+    }
+  
+  
+    @keyframes water3 {
+      0% {
+        transform: translateZ(-3px) scale(1.05);
+      }
+      50% {
+        transform: translateZ(-5px) scale(1.05);
+      }
+      100% {
+        transform: translateZ(-3px) scale(1.05);
+      }
+    }
+  
+    #table-container.rain {
+      transition: background-image 0.5s, background-color 0.5s;
+    }
+  
+    #region-grid-container.rain .mega-wrapper::before {
+  
+  }
+  
+  
+  
+  
+    #region-grid-container.rain #engine-wrapper::after {
+      transition: all 1s;
+      position: absolute;
+      top: 0;
+      left: 0%;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      content: '';
+      z-index: 1;
+      background-image: url(../Art/Sprites/rain.gif);
+      background-size: cover;
+      opacity: 0.35;
+      filter: saturate(0) brightness(2) contrast(1.7);
+      image-rendering: pixelated;
+      transform: rotateX(-10deg) translateY(50px) scale(1.1);
+      animation: rainAppear 3s ease-in 1;
+      mix-blend-mode: ;
+    }
+  
+    
+    @keyframes rainAppear {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 0.3;
+      }
+    }
+  
+    #region-grid-container.storm::after {
+      position: absolute;
+      top: 0;
+      left: 0%;
+      width: 120dvw;
+      height: 100dvh;
+      pointer-events: none;
+      content: '';
+      z-index: 1;
+      transform-origin: left;
+      background-size: cover;
+      transform-style: preserve-3d;
+      background-image: url(../Art/Sprites/thunder.gif);
+      background-size: 100% 100%;
+      opacity: 0.3;
+  
+    }
+  
+    #region-grid-table tbody {
+      z-index: 99;
+      position: relative;
+  
+      width: max-content;
+      height: max-content;
+      transform-style: preserve-3d;
+    }
+  
+  
+  
+  #region-grid-table .gateway {
+      
+  }
+  
+  
+    #region-grid-table .other-group-cell {
+      pointer-events: none;
+    }
+  
+    #region-grid-table .basic-store {
+      background-size: contain;
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      scale: 1 1;
+      rotate: 0deg;
+      transform-origin: bottom;
+      z-index: 1;
+      transform: rotateX(-90deg);
+      transform-style: preserve-3d;
+      background-position: bottom;
+      image-rendering: pixelated;
+      pointer-events: none;
+    }
+    #region-grid-table .basic-store.clickable.totem  {
+      pointer-events: all;
+      background-size: contain;
+    }
+    #region-grid-table .basic-store.clickable {
+      pointer-events: none;
+      background-size: contain;
+    }
+    #region-grid-table .basic-store.clickable:hover {
+      cursor:pointer;
+    }
+    #region-grid-table .basic-store.animal {
+      background-image: url('../Art/Sprites/entities/deer/1.png');
+      width: 30px;
+      height: 30px;
+      scale: 1 1;
+      transform: rotateX(-90deg);
+      pointer-events: all;
+    }
+    #region-grid-table .basic-store.ruin {
+      width: 50px;
+      height: 50px;
+  
+      background-size: contain;
+      transform: rotateX(-90deg) scale3d(1.5, 1.8, 1);
+      background-image: url('../Art/Sprites/Buildings/ruin1.png');
+    }
+    #region-grid-table .basic-store.group {
+      display: flex;
+      width: 50px;
+      height: 50px;
+      font-size: 0;
+      background-position: bottom;
+      pointer-events: none;
+      transform-origin: bottom;
+      align-items: center;
+      image-rendering: pixelated;
+      justify-content: center;
+      align-content: center;
+    }
+    #region-grid-table .basic-store.building {
+      scale: 1.4 1.4 ;
+      transform: rotateX(-90deg);
+      z-index: 2;
+    }
+    #region-grid-table .basic-store.object {
+      scale: 1.4 1.4;
+      transform: rotateX(-90deg);
+      z-index: 2;
+    }
+    #region-grid-table .basic-store.crossroad {
+      transform: rotateX(-90deg);
+      z-index: 2;
+      width: 50px;
+      height: 50px;
+      top: -20px;
+      left: 4px;
+    }
+    #region-grid-table .basic-store.totem {
+      transform: rotateX(-90deg) scale3d(1.4, 1.4, 2);
+      z-index: 2;
+      width: 17px;
+      height: 38px;
+    }
+    #region-grid-table .basic-store.campfire {
+      transform: rotateX(-90deg) scale3d(1, 1, 1);
+      width: 50px;
+      height: 50px;
+      top: -15px;
+    }
+    #region-grid-table .basic-store.corpse {
+      transform: rotateX(-90deg);
+      width: 40px;
+      height: 40px;
+      top: -10px;
+      background-size: contain;
+    }
+    #region-grid-table .basic-store.palsa {
+      width: 50px;
+      height: 50px;
+      background-size: contain;
+      transform: scale3d(1.2, 1.2, 1) translateZ(1px);
+    }
+  
+    @keyframes building-growth {
+      0% {
+        scale: 0 0;
+      }
+      100% {
+        scale: 1.6 1.6;
+      }
+    }
+  
+  
+  
+  
+  
+    #region-grid-table .doodads {
+      pointer-events: all;
+      transform-style: preserve-3d;
+      z-index: 1;
+      position: relative;
+      overflow: visible;
+      perspective: none;
+    }
+  
+    #region-grid-table .doodads .doodad-store {
+      background-size: contain;
+      width: 25px;
+      height: 25px;
+      position: absolute;
+      top: 0px;
+      left: 15px;
+      transform-origin: center;
+      z-index: 1;
+      transform-style: preserve-3d;
+      image-rendering: pixelated;
+      background-position-y: bottom;
+      background-position-x: center;
+      pointer-events: none;
+    }
+  
+    #region-grid-table .doodads .doodad-store.Big {
+      transform: rotateX(-90deg) scale3d(5, 4, 4)  translateY(-12px);
+    }
+  
+    #region-grid-table .doodads .doodad-store.Small {
+      transform: rotateX(-90deg) scale3d(1, 0.5, 1) translateY(-10px);
+    }
+  
+  
+    #region-grid-table .shadow {
+      visibility: hidden;
+    }
+  
+    #region-grid-table .doodads .shadow {
+      display: block;
+      background-size: contain;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      top: 0px;
+      left: 0px;
+      opacity: 0.5;
+      transform-origin: bottom;
+      z-index: 2;
+      image-rendering:auto;
+      background-position: bottom;
+      filter: brightness(0);
+      scale: 2 1.5;
+      transform: rotate(320deg) translateZ(0.1px) translateX(12px) translateY(-13px) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+      pointer-events: none;
+    }
+  
+    #region-grid-table .totem .shadow {
+      display: block;
+      background-size: contain;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      top: 0px;
+      left: 0px;
+      opacity: 0.5;
+      transform-origin: bottom;
+      z-index: 2;
+      image-rendering:auto;
+      background-position: bottom;
+      filter: brightness(0);
+      scale: 0.95 0.8;
+      transform: rotate(320deg) translateZ(0.1px) translateX(13px) translateY(-4px);
+      pointer-events: none;
+    }
+  
+    #region-grid-table .impassable .shadow {
+      pointer-events: none;
+      background-size: 120% 120%;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      top: 0px;
+      left: 0px;
+      opacity: 0.5;
+      transform-origin: bottom;
+      z-index: 1;
+      image-rendering:auto;
+      background-position: bottom;
+      filter: brightness(0);
+      scale: 1.8 1;
+      display: none;
+      transform: rotate(285deg) translateZ(0.1px) translateX(26px) translateY(8px) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    }
+  
+  
+    @keyframes treeMove {
+      0% {
+        rotate: -45.2deg;
+      }
+      50% {
+        rotate: -44.8deg;
+      }
+      100% {
+        rotate: -45.2deg;
+      }
+  }
+  
+  @keyframes cellAppearOff {
+    0% {
+      filter: none;
+    }
+    100% {
+      filter: brightness(0);
+    }
+  }
+  
+  @keyframes cellAppear {
+    0% {
+      filter: brightness(0);
+    }
+    100% {
+      filter: none;
+    }
+  }
+  
+  #region-grid-table .road-cell {
+  
+  }
+  
+  
+    #region-grid-table .game-cell.impassable {
+      visibility: visible;
+      opacity: 1;
+      position: sticky; /* Ensure the cell has a non-static position */
+      box-sizing: border-box;
+      overflow: visible;
+      image-rendering: pixelated;
+      z-index: 2;
+      transform-style: preserve-3d;
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      justify-content: flex-end;
+      align-items: center;
+  
+    }
+  
+    #region-grid-table .impassable .impa-store {
+      background-size: contain;
+      width: 50px;
+      pointer-events: none;
+      height: 75px;
+      position: absolute;
+      background-repeat: no-repeat;
+      rotate: 0deg;
+      transform-origin: bottom;
+      z-index: 1;
+      pointer-events: none;
+      font-size: 0px;
+      transform: rotateX(-90deg) scale3d(1.2, 0.7, 1) translateY(-35px);
+      transform-origin: center;
+      transform-style: preserve-3d;
+      background-position: bottom ;
+      image-rendering: pixelated;
+  
+    }
+  
+  
+  
+    #region-grid-table .game-cell.current-group-position {
+  
+  /* outline: 1px dashed rgba(255, 255, 255, 0.459); */
+  
+    }
+  
+  
+  
+  #region-grid-table .game-cell {
+  
+    font-size: 10px;
+    image-rendering: pixelated;
+    background-size: cover;
+    pointer-events: all;
+    overflow: visible;
+    transform-style: preserve-3d;
+    outline: 1px solid rgba(255, 255, 255, 0);
+    outline-offset: -1px;
+    display: flex;
+    scale: 1.00;
+      flex-direction: column;
+      align-content: center;
+      justify-content: center;
+      align-items: center;
+  
+  
+  }
+  
+  #region-grid-table .game-cell.highlighted {
+  
+  }
+  
+  #region-grid-table .game-cell.fogged {
+    filter: brightness(0.4);
+  }
+  
+  #region-grid-table .game-cell {
+    
+  }
+  
+  
+  
+  #region-grid-table .game-cell:has(#click-target) {
+  outline: 1px solid greenyellow;
+  outline-offset: 2px;
+  }
+  
+  #region-grid-table .river-shore {
+    background-image: url('../Art/Textures/riverbed.jpg');
+  
+  }
+  
+    #region-grid-table .river-cell {
+  
+      background-size: cover;
+      opacity: 1;
+      position: relative;
+      transform: translateZ(-2px);
+      pointer-events: none;
+    }
+    #region-grid-table .river-cell:after {
+      content: '';
+      background-image: url('../Art/Textures/riverbed.jpg');
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      opacity: 1;
+      position: absolute;
+      transform: translateZ(-2px) scale(1);
+      transform-style: flat;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+    }
+    #region-grid-table .river-cell:before {
+      content: '';
+      background-image: url('../Art/Sprites/river.gif');
+      animation: water 10s linear infinite;
+      background-size: 50% 50%;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      opacity: 0.5;
+      position: absolute;
+      filter: hue-rotate(-40deg);
+      transform: translateZ(2px);
+      transform-style: flat;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+    }
+    
+  @keyframes water {
+      0% {
+        background-position: top;
+      }
+      100% {
+        background-position:bottom;
+      }
+  
+  }
+  
+    #elements-grid {
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 128, 0, 0.363);
+      position: absolute;
+    }
+  
+    #region-grid-table .gateout-cell {
+      overflow: visible;
+      perspective: 500px;
+    }
+    #region-grid-table .gateout-cell span {
+      outline: 5px solid rgb(0, 255, 42);
+      transform: scale(0.8);
+      border-radius: 10px;
+      outline-offset: -10px;
+      box-sizing: border-box;
+      border: 2px solid rgb(0, 217, 255);
+      pointer-events: none;
+      font-size: 50px;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 5;
+      background-color: rgb(255, 1, 1);
+      position: sticky;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+  
+  
+    /* ======== SETTLEMENTS ======== */
+  
+    #region-grid-table .settlement-cell {
+      overflow: visible;
+      display: table-cell;
+      position: sticky;
+      z-index: 3;
+    }
+  
+    #region-grid-table .settlement-cell:after {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      background-size: cover;
+      pointer-events: none;
+      z-index: 99;
+      background-size:contain;
+      background-repeat: no-repeat;
+      background-position: bottom;
+    }
+  
+  
+  
+  
+   /* ========= DOODADS =========== */
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  #region-grid-table td.other-group {
+      overflow: visible;
+      z-index: 3;
+      position: sticky;
+  }
+  #region-grid-table td.other-group::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color: rgb(188, 73, 255);
+    pointer-events: none;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.4);
+    scale: 0.3;
+    filter:blur(20px);
+    border-radius: 50%;
+    transform: translateY(0px) translateX(0px);
+  }
+  
+  
+  .groupclass-tooltip.area-tooltip .header {
+    color: rgb(255, 0, 212);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-size: cover;
+    background-image: url('../Art/Interface/normal-top-bg.png');
+    font-size: 20px;
+  }
+  
+  .groupclass-tooltip.area-tooltip .header .group-main {
+    display: flex;
+    flex-direction:row;
+    gap: 10px;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+  }
+  .groupclass-tooltip.area-tooltip .header .group-main .group-icon {
+    width: 20px;
+    transform: scale(1.5);
+    filter: invert(1);
+    aspect-ratio: 1/1;
+    background-size: cover;
+  }
+  .groupclass-tooltip.area-tooltip .header .group-main .level {
+    color: rgb(43, 205, 226);
+  }
+  .groupclass-tooltip.area-tooltip .header .faction  {
+    color: rgb(245, 129, 158);
+    font-style: italic;
+    font-family: Georgia, serif;
+    font-weight: normal;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+  .groupclass-tooltip.area-tooltip .header .direction  {
+    color: rgb(80, 231, 88);
+  
+    font-style: normal;
+  }
+  .groupclass-tooltip.area-tooltip .header .direction:before  {
+    color: lightgrey;
+    content: '↝';
+  }
+  
+  .groupclass-tooltip.area-tooltip .header .variance  {
+    color: rgb(226, 188, 16);
+    font-size: 15px;
+    font-style: italic;
+  }
+  .groupclass-tooltip.area-tooltip .header .variance:after  {
+    content: 'σ';
+  }
+  
+  .groupclass-tooltip.area-tooltip .header .position  {
+    color: lightgrey;
+  }
+  
+  .groupclass-tooltip.area-tooltip .container {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 5px;
+  }
+  .groupclass-tooltip.area-tooltip .container .adv-name {
+    color: aqua;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row-reverse;
+    align-content: center;
+    justify-content:flex-end;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border-bottom: 0px
+  }
+  .groupclass-tooltip .adv-name .adv-icon {
+    width: 50px;
+    height: 50px;
+    content: '';
+    display: inline;
+    background-size: cover;
+    border: 1px solid rgb(65, 65, 65);
+    border-radius: 3px;
+  }
+  
+  
+  .rotationClockwise {
+    animation: rotateClockwise 0.1s ease-in 1;
+  }
+  @keyframes rotateClockwise {
+    0% {
+      transform: translate3d(0px, -15px, 210px) rotate3d(50, 0, 0, 84deg);
+    }
+    100% {
+      transform: translate3d(0px, -15px, 210px) rotate3d(50, 0, 0, 84deg) rotate(-90deg);
+    }
+  }
+  .rotationAntiClockwise {
+    animation: rotationAntiClockwise 0.1s ease-in 1;
+  }
+  @keyframes rotationAntiClockwise {
+    0% {
+      transform: translate3d(0px, -15px, 210px) rotate3d(50, 0, 0, 84deg);
+    }
+    100% {
+      transform: translate3d(0px, -15px, 210px) rotate3d(50, 0, 0, 84deg) rotate(90deg);
+    }
+  }
+  
+  .table-appear {
+    animation: table-appear 0.5s ease-in 1;
+  }
+  @keyframes table-appear {
+    0% {
+      perspective: 100px;
+    }
+    100% {
+      perspective: 500px;
+    }
+  }
+  
+  .grid-appear {
+    animation: grid-appear 1s ease-in 1;
+  }
+  @keyframes grid-appear {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  
+  
+  #compass {
+    width: 200px;
+    height: 100px;
+    background-color: #1111118e;
+    border: 1px solid;
+    border-radius: 50%;
+    z-index: 2;
+    top: 9%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 28px;
+    line-height: 2em;
+    display: none;
+  }
+  
+  
+  
+  
+  
+  #region-grid-container #table-container.screenshot {
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  @keyframes interactionAppears {
+    0% {
+      scale: 0.2;
+      opacity: 0;
+    }
+    100% {
+      scale: 1;
+      opacity: 1;
+    }
+  }
+  
+  .interaction-window {
+    width: 300px;
+    min-height: 100px;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 8;
+    scale: 1.2;
+    display: flex;
+    left: 50%;
+    top: 50%;
+    flex-direction: column;
+    padding: 10px;
+    border: 1px solid orange;
+    gap: 5px;
+    animation: interactionAppears 0.1s ease-in 1;
+    box-shadow: 0 0 20px black, 0 0 10px black;
+    translate: -50% -50%;
+    position: absolute;
+  }
+  
+  .interaction-window .header {
+    padding-bottom: 5px;
+    border-bottom: 1px solid gray;
+  }
+  
+  .interaction-window .content {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 5px;
+    justify-content: center;
+  }
+  .interaction-window .content button {
+    font-size: 18px;
+    padding: 5px;
+    height: 50px;
+  }
+  
+  .interaction-window .bottom {
+    padding-top: 5px;
+    border-top: 1px solid gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+  #other-group-sheet-container {
+    top: 30%;
+    left: 40%;
+    position: absolute;
+    border-collapse: collapse;
+    width: 410px;
+    z-index: 99;
+  }
+  
+  #other-group-sheet-container .infobox-header {
+    text-align: left;
+    margin-bottom: 2px;
+  }
+  
+  #other-group-sheet-container #group-sheet {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 149px 172px;
+    gap: 3px;
+    align-items: start;
+    padding: 3px;
+  }
+  
+  #other-group-sheet-container #group-sheet > *:nth-child(1) {
+    grid-column: 2; /* Place the first element in the first column */
+    grid-row: 2; /* Place the first element in the first row */
+  }
+  
+  #other-group-sheet-container #group-sheet > *:nth-child(2) {
+    grid-column: 1; /* Place the second element in the second column */
+    grid-row: 1; /* Span the second element across both rows */
+  }
+  
+  #other-group-sheet-container #group-sheet > *:nth-child(3) {
+    grid-column: 2; /* Place the third element in the first column */
+    grid-row: 1; /* Place the third element in the second row */
+  }
+  
+  #other-group-sheet-container .sheet-header {
+    border-radius: 0px;
+  }
+  #other-group-sheet-container .sheet-container {
+    border-radius: 0px;
+  }
+  
+  #other-group-sheet-container .advsBox {
+    display: flex;
+    gap: 3px;
+    padding: 3px;
+  }
+  #other-group-sheet-container .other-group-adventurer {
+    font-size: 0px;
+    width: 77px;
+    aspect-ratio: 1/1;
+  }
+  #other-group-sheet-container .other-group-adventurer .adv-skill-slots-overlay {
+    display: none;
+  }
+  
+  #table-overlay {
+    position: absolute;
+    pointer-events: all;
+    border-collapse: separate;
+    border-spacing: 0px;
+    transform-style: preserve-3d;
+    --translateX: 0px;
+    --translateY: 0px;
+    transition: none;
+    transition-timing-function: ease;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    justify-content: space-around;
+    align-content: space-between;
+    image-rendering: pixelated;
+    display: grid;
+    will-change: transform;
+    background-size: 20% 10%;
+    background-repeat: repeat;
+    z-index: 2;
+    perspective: 200px;
+    background-color: rgba(28, 153, 44, 0.432);
+    width: 2500px;
+    height: 2500px;
+  }
+  
+  
+  
+  
+  
+  
+  #other-box {
+    transform-style: preserve-3d;
+    padding: 0;
+    margin: 0;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    image-rendering: -webkit-optimize-contrast;
+    /*animation: group-stand 2s ease-out infinite;*/
+    z-index: 99999999;
+    pointer-events: all;
+  }
+  
+  .other-face {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 0px;
+    left: 0px;
+    image-rendering: -webkit-optimize-contrast;
+  }
+  
+  
+  
+  #fog {
+    position: absolute;
+    width: 100%;
+    height: 350px;
+    transform-style: preserve-3d;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 80%, rgb(4, 175, 255) 100%);
+    transform: rotateX(90deg);
+    transform-origin: center;
+    visibility: hidden;
+    display: none;
+  }
+  
+  .adventurer-sprite-world {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    transform-style: preserve-3d;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    will-change: top, left, background-image;
+    border-radius: 50%;
+    background-position: bottom;
+    font-size: 0;
+    overflow: visible;
+    z-index: 1;
+    justify-content: center;
+    outline: 1px solid white;
+   
+  }
+  
+  .adventurer-sprite-world:not(.sprite):hover {
+    outline: 1px solid rgb(255, 255, 255);
+  }
+  
+  .adventurer-sprite-world * {
+    pointer-events: none;
+  }
+  
+  .adventurer-sprite-world .sprite {
+    background-image: url(../Art/Adventurers/Sprites/xiangmazei.png);
+    background-position-y: 2px;
+    transition: transform 0.2s;
+    background-size: auto;
+    background-repeat: none;
+    background-position: center;
+    width: 55px;
+    height: 55px;
+    position: absolute;
+    transform-origin: bottom;
+    transform: rotate(315deg) translateY(-16px) rotateX(355deg) scale3d(0.45, 0.85, 1) translateX(46px);
+  }
+  
+  .adventurer-sprite-world .info {
+    color: rgb(255, 255, 255);
+    position: absolute;
+    font-size: 7px;
+    overflow: visible;
+    filter: none;
+    height: fit-content;
+    text-shadow: 0 0 2px black, 0 0 1px black, 0 0 2px black;
+    width: fit-content;
+    text-wrap:nowrap;
+    left: -5px;
+    text-align: center;
+    filter: none;
+    transform-origin: bottom;
+    rotate: 0deg;
+    transform: translateZ(20px) rotateY(-60deg) translateY(-50px);
+  }
+  
+  #player-camera * {
+  pointer-events: none;
+  }
+  
+  #player-camera.inwater {
+    transition: all 0.1s;
+    transform: translateZ(-4px);
+    image-rendering: pixelated;
+  }
+  
+  #player-camera.inwater::after {
+    background-image: url('../Art/Sprites/water_ripples.gif');
+    content: '';
+    width: 30px;
+    height: 30px;
+    top: -15px;
+    left: -10px;
+    animation: inwater 3s ease-in-out infinite, tableAppear 1s ease-in;
+    transform: translateZ(1px) scale(0.8);
+    transition: all 0.1s;
+  
+  }
+  
+  @keyframes shake {
+    0% {
+      scale: 0.8;
+      opacity: 0.9;
+    }
+    50% {
+      scale: 1.2;
+      opacity: 0.5;
+    }
+    100% {
+      scale: 0.8;
+      opacity: 0.9;
+    }
+  }
+  
+  @keyframes inwater {
+    0% {
+      scale: 0.9;
+      opacity: 1;
+    }
+    75% {
+      scale: 1.4;
+      opacity: 0.2;
+    }
+    100% {
+      scale: 0;
+      opacity: 0;
+    }
+  }
+  
+  #player-camera {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    transform-style: preserve-3d;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    will-change: top, left, background-image;
+    background-position: bottom;
+    font-size: 0;
+    overflow: hidden;
+    outline: 1px solid red;
+    z-index: 1;
+    justify-content: center;
+    transform-origin: center; 
+    visibility: hidden;
+
+    /* transition: left 0.2s ease-in-out, top 0.2s ease-in-out, transform 0.5s ease-out; */
+  }
+  
+  #player-camera .sprites-container {
+    pointer-events: all;
+    translate: -20px -16px;
+  }
+  #player-camera .sprites-container:hover {
+    outline: 2px solid orange;
+  }
+  
+  #player-camera:after {
+    position: absolute;
+    content: '';
+    width: 12px;
+    height: 12px;
+    scale: 1;
+    background-size: 100% 100%;
+    background-position: center;
+    border-radius: 50%;
+    z-index: 8;
+    pointer-events: none;
+    display: none;
+  }
+  
+  
+  #player-char {
+    background-image: url(../Art/Adventurers/Sprites/animated/stand.gif);
+    background-size: auto;
+    background-repeat: none;
+    background-position: center;
+    overflow: visible;
+    width: 60px;
+    height: 60px;
+    scale: 0.5;
+    position: absolute;
+    transform-origin: bottom;
+    transform: translateY(-45px) rotateX(350deg);
+    transition: all 0.05s;
+    pointer-events: none;
+    display: none;
+  }
+  
+  #player-char::after {
+  
+    background-color: black;
+    width: 20px;
+    height: 2px;
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    z-index: 1;
+  }
+  
+  @keyframes character-move {
+    0% {
+      scale: 1;
+    }
+    50% {
+      scale: 1.05;
+    }
+    100% {
+      scale: 1;
+    }
+  }
+  
+  
+  
+  
+  #player-target-aoe {
+    width: 10px;
+    height: 20px;
+    z-index: 99;
+    position: relative;
+    border-radius: 50%;
+    transform: translateZ(2px);
+    background-color: red;
+    opacity: 1;
+  }
+  
+  #crosshair { 
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    z-index: 999;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    background-image: url(../Art/crosshair.png); 
+    background-size: cover;
+    pointer-events: none;
+    display: block;
+    opacity: 0.7;
+  }
+  
+  #scale {
+    position: absolute;
+    width: 100dvw;
+    height: 100dvh;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    background-image: url(../Art/scale.png);
+    background-size: cover;
+    filter: invert(1);
+    pointer-events: none;
+    display: none;
+  }
+  
+  
+  
+  
+  #position-info {
+    position: absolute;
+    
+    z-index: 999;
+    left: 30%;
+    top: 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 5px;
+    display: block;
+  }
+  
+  
+  
+  
+  #player-projectile-musket {
+    position: absolute;
+    width: 1px;
+    height: 500px;
+    background-color: white;
+    transform-origin: top;
+    z-index: 999999;
+    transition: none;
+  }
+  
+  #player-projectile-pickaxe {
+    position: absolute;
+    width: 1px;
+    height: 22px;
+    transform-origin: top;
+    z-index: 999999;
+    transition: none;
+  }
+  
+  #gun {
+    pointer-events: none;
+    position: absolute;
+    background-size: cover;
+    display: block;
+    bottom: 0px;
+    animation: weaponIdling 3s ease-in-out infinite;
+  }
+  #gun.musket {
+    background-image: url(../Art/Sprites/gun.png);
+    background-size: cover;
+    width: 892px;
+    height: 476px;
+    left: 31%;
+    z-index: 99;
+    scale: 1;
+    transition: bottom 0.5s;
+  }
+  #gun.pickaxe {
+    background-image: url(../Art/Sprites/pickaxe.png);
+    width: 701px;
+    height: 692px;
+    right: 8%;
+    z-index: 99;
+    scale: 1;
+    transition: bottom 0.2s ease-in, rotate 0.1s ease-in;
+    transform-origin: bottom right;
+  }
+  
+  @keyframes weaponIdling {
+    0% {
+      transform: translateX(5px);
+    }
+    50% {
+      transform: translateX(-5px) translateY(5px) rotateX(2deg);
+    }
+    100% {
+      transform: translateX(5px);
+    }
+  }
+  
+  @keyframes pickaxe {
+    0% {
+      rotate: 70deg;
+      right: 6%;
+      scale: 2;
+    }
+    60% {
+      rotate: -40deg;
+      right: 20%;
+      scale: 0.5;
+    }
+    100% {
+      rotate: 0deg;
+      right: 8%;
+      scale: 1 ;
+    }
+  }
+  
+  @keyframes gunFire {
+    0% {
+      scale: 1;
+      bottom: 0;
+      left: 31%;
+    }
+    10% {
+      scale: 1.3;
+      bottom: -50px;
+      left: 35%;
+      translate: -5% 00%;
+      filter: brightness(1.5) contrast(1.5);
+    }
+    100% {
+      scale: 1;
+      bottom: 0;
+      left: 31%;
+    }
+  }
+  
+  @keyframes gunMoves {
+    0% {
+      left: 31%;
+      bottom: 0;
+    }
+    50% {
+      left: 30.5%;
+      bottom: -10px;
+    }
+    100% {
+      left: 31%;
+      bottom: 0;
+    }
+  }
+  
+  @keyframes screenshake1 {
+    0% {
+      scale: 1;
+    }
+
+    100% {
+      scale: 1;
+    }
+  }
+  
+  .targetable {
+    outline: 0px solid red;
+  }
+  
+  .targetable.impacted:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    background-image: url(../Art/Interface/blood_decal.png);
+    background-size: 25% 25%;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+    background-position: center;
+    position: absolute;
+    image-rendering: pixelated;
+    top: 0px;
+    left: 0px;
+    animation: bloodOut 0.2s 1;
+  }
+  .targetable.impacted2:before {
+    content: '';
+    width: 200%;
+    height: 200%;
+    z-index: 8;
+    background-image: url(../Art/Sprites/gore.png);
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+    background-position: center;
+    position: absolute;
+    image-rendering: pixelated;
+    top: -50%;
+    left: -50%;
+    animation: bloodOut2 0.7s 1;
+  }
+  .impacted {
+    animation: impacted 0.2s ease-out infinite;
+  }
+  
+  @keyframes impacted {
+    0% {
+      translate: none;
+    }
+    50% {
+      translate: 10% 0%;
+      filter: contrast(1.5);
+    }
+    100% {
+      translate: none;
+    }
+  }
+  
+  
+  .moveable-entity {
+    transition: all 0.1s;
+  }
+  
+  
+  canvas {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 500px;
+  height: 500px;
+  z-index: 99;
+  border: 1px solid red;
+  display: none;
+  }
+  
+  .breaking-stage-0 {
+    opacity: 0.7;
+  }
+  .breaking-stage-1 {
+    opacity: 0.5;
+  }
+  .breaking-stage-2 {
+    opacity: 0.3;
+  }
+  .breaking-stage-3 {
+    opacity: 0.2;
+  }
+  .breaking-stage-4 {
+    opacity: 0;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  #screenshot {
+    width: max-content;
+    aspect-ratio: 1 / 1;
+    background-size: cover;
+    position: relative;
+    border-radius: 5px;
+    box-shadow: black 0px 0px 10px;
+    border: 1px solid #b36828;
+    outline: 5px solid rgba(0, 0, 0, 0.3);
+    outline-offset: -3px;
+    z-index: 2;
+    display: block;
+    overflow: hidden;
+  
+  }
+  
+  #screenshot:hover {
+    position: static;
+    top: 5px;
+    left: 5px;
+  }
+  
+  #mini-table {
+    border-collapse: collapse;
+    width: max-content;
+    height: max-content;
+    border: 2px solid black;
+    background-color: #000000;
+    filter: sepia(0.1);
+    border-radius: 5px;
+  }
+  
+  #mini-table td {
+  border: 1px solid transparent;
+  pointer-events: all;
+  font-size: 0px;
+  visibility: hidden;
+  display: inline-grid;
+  }
+  
+  #mini-table td:hover {
+    outline: 2px solid rgb(242, 201, 255);
+    outline-offset: 7px;
+    position: sticky;
+  }
+  
+  #mini-table td.current-position-mini {
+    outline: 2px solid rgba(255, 255, 255, 1);
+    outline-offset: 3px;
+    box-shadow: 0 0 10px #9debff52 inset;
+    z-index: 3;
+    filter: drop-shadow(0 0 5px black) drop-shadow(0 0 5px black);
+    position: static;
+    border-radius: 50%;
+  }
+  
+  #mini-table .animal:not(.group) {
+  border-radius: 50%;
+  outline: 1px solid rgba(54, 0, 0, 0.76);
+  }
+  
+  #mini-table .building {
+  outline: 1px solid rgba(53, 53, 53, 1);
+  z-index: 1;
+  position: sticky;
+  }
+  #mini-table .ruin {
+  outline: 1px solid rgba(204, 204, 204, 1);
+  position: sticky;
+  }
+  #mini-table .road-mini {
+    visibility: hidden;
+    background-color: #b5b5b5;
+  }
+  #mini-table .group:not(.current-position-mini) {
+    outline: 1px solid rgb(63, 233, 255);
+    background: rgb(255,0,0);
+    background: radial-gradient(circle, rgb(83, 83, 83) 50%, rgb(0, 0, 0) 90%);
+    scale: 1.5;
+  
+  z-index: 99;
+  position:static;
+  
+  overflow: visible;
+  filter: drop-shadow(0 0 1px black) drop-shadow(0 0 1px black) drop-shadow(0 0 2px black);
+  border-radius: 50%;
+  }
+  
+  #mini-table .group.animal {
+    border-radius: none;
+  }
+  #mini-table .tree:not(.current-position-mini) {
+  
+  }
+  
+  
+  #click-target {
+    z-index: 2;
+    width: 10px ;
+    aspect-ratio: 1/1;
+    background-color: red;
+    transform: translateZ(0.1 dwpx);
+   position: absolute;
+  }
+  
+  
+  #line-camera {
+    position: absolute;
+    background-color: rgb(255, 121, 121);
+    height: 2px; /* This will be the thickness of the line */
+    transform-origin: 0 50%; /* Rotate from the starting point of the line */
+    pointer-events: none; /* To prevent line from interfering with cursor events */
+    z-index: 999;
+  }
+  
+  
+  
+  
+  
+  
+  #region-grid-table .basic-store.group .group-arrow{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    background-size: cover;
+    transform: translateZ(10px) scale(2);
+    display: none;
+  }
+  
+  #region-grid-table .basic-store.group:hover .group-arrow{
+    display: block;
+  }
+  
+  
+  
+  
+  .sprites-container {
+    display: inline-grid;
+    width: 30px;
+    height: 30px;
+    flex-direction: column;
+    pointer-events: all;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    overflow: visible;
+    gap: 5px;
+    image-rendering: pixelated;
+    grid-template-columns: repeat(3, 5px);
+    grid-template-rows: repeat(2, 5px);
+    transform: rotateX(-10deg) translateZ(1px);
+    transform-origin: bottom;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.2);
+    outline: 2px solid rgba(53, 53, 53, 0.2);
+  }
+  
+  
+  
+  @keyframes removeUnexCell {
+    0% {
+      transform: scale(1);
+    }
+    25% {
+      transform: scale(0.92);
+    }
+    25% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.07);
+    }
+    75% {
+      transform: scale(0.95);
+    }
+    100% {
+      transform: scale(1);
+  
+    }
+  }
+  
+  @keyframes group-stand {
+    0% {
+      top: -1px;
+    }
+    50% {
+      top: 1px;
+    }
+    100% {
+      top: -1px;
+    }
+  }
+  
+  @keyframes moveNorth {
+    0% {
+      translate: 0px 0px;
+    }
+    100% {
+      translate: 0px -30px;
+    }
+  }
+  
+  @keyframes moveSouth {
+    0% {
+      translate: 0px 0px;
+    }
+    100% {
+      translate: 0px 30px;
+    }
+  }
+  
+  @keyframes moveEast {
+    0% {
+      translate: 0px 0px;
+    }
+    100% {
+      translate: 30px 0px;
+    }
+  }
+  
+  @keyframes moveWest {
+    0% {
+      translate: 0px 0px;
+    }
+    100% {
+      translate: -30px 0px;
+    }
+  }
+  
+  .sprite-type {
+    position: relative;
+    pointer-events: none;
+    background-image: url(/Art/Types/icons/Soldier.png);
+    width: 5px;
+    height: 5px;
+    background-size: contain;
+    transform-style: preserve-3d;
+    transform-origin: bottom;
+    image-rendering: pixelated;
+    scale: 3 3.5;
+    animation: group-stand 2s linear infinite;
+  }
+  
+  .sprites-container:hover .sprite-type {
+    animation: group-stand 2s linear infinite;
+  }
+  
+  .sprites-container:hover {
+  outline: 2px solid rgba(129, 9, 9, 0.753);
+  }
+  
+  .game-cell.river-cell .sprites-container:hover {
+    transform: rotateX(-10deg) translateZ(5px);
+  }
+  
+  

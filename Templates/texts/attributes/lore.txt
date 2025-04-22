@@ -1,0 +1,6 @@
+<p>
+Lore represents the general knowledge of the world and its stories that the group has gained.
+</p>
+<p>
+It is passively accumulated over time.
+</p>

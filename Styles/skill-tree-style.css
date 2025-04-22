@@ -1,0 +1,839 @@
+ 
+#skill-tree {
+    position: absolute;
+
+    width: 100dvw;
+    height: 100dvh;
+    border: 2px solid #000;
+    position: absolute;
+    border: 1px solid rgb(252, 193, 18);
+    background-color: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 40px black, 0 0 15px rgb(145 113 18 / 70%) inset;
+    border-radius: 2px;
+    box-sizing: border-box;
+    user-select: none;
+    z-index: 20;
+    transition: width 0.1s, height 0.1s;
+    resize: both;
+    top: 0%;
+    left: 0%;
+    visibility: hidden;
+}
+
+#skill-tree::-webkit-resizer {
+
+}
+
+@keyframes flipinTree {
+  0% {
+   		height: 0%;
+   		opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+   		opacity: 1;
+  }
+}
+
+.generic-large-header {
+  border-radius: 2px;
+  box-sizing: border-box;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1;
+	padding: 10px;
+	font-size: 30px;
+	font-weight: bold;
+	text-align: center;
+	color: orange;
+  background-image: url(../Art/Interface/wood2.jpg);
+  border-bottom: 1px solid rgb(252, 193, 18);
+  text-shadow: 0 0 2px black, 0 0 3px black, 0 0 3px black, 0 0 2px black, 0 1px 3px black, 0 1px 3px black;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 6px 10px 0px;
+}
+
+#skill-tree-header {
+  position: absolute;
+}
+
+#skill-tree-container {
+    z-index: 0;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 15px rgb(145 113 18 / 70%) inset;
+    background-image: url(../Art/Interface/backdrop.jpg);
+    user-select: none;
+    align-items: center;
+}
+
+#skill-tree-points {
+  position: absolute;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.65);
+  border-left : 4px solid rgba(139, 83, 30, 0.6);
+  border-right : 4px solid rgb(139, 83, 30, 0.6);
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 6px 10px 0px;
+  padding: 5px;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 4px;
+  z-index: 1;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 20px;
+  backdrop-filter: blur(8px);
+  pointer-events: none;
+}
+
+#skill-tree-points .points {
+  font-style: italic;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  justify-content: space-between;
+  align-content: center;
+  align-items: baseline;
+  user-select: none;
+}
+
+#skill-tree-points .number {
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+width: 30px;
+text-align: center;
+color:rgb(0, 247, 255);
+text-shadow: 0 0 18px #0064a7, 0 0 5px #0064a7;
+}
+
+#skills-table {
+  margin: 1px;
+  margin-top: 60px;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+#skills-table td {
+  width: 60px;
+  height: 60px;
+  border-radius: 0px;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  color: transparent;
+  font-size: 0.1px;
+}
+#skills-table td:not(.skill) {
+border: 1px solid rgb(0, 0, 0);
+background-image: url('../Art/Interface/skill_empty_bg.png');
+background-size: 105% 105%;
+visibility: hidden;
+}
+
+#skills-table td:hover:not(.skill) {
+  border: 1px solid whitesmoke;
+}
+#skills-table .drop-target {
+  border-style: dotted;
+}
+
+#skill-image {
+    position: relative;
+    box-sizing: border-box;
+    user-select: none;
+    width: 0px;
+    height: 0px;
+}
+  
+  .skill {
+    width: 60px;
+    height: 60px;
+    background-color: rgb(151, 31, 31);
+    border: 3px solid transparent;
+    color: white;
+
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    text-shadow: 0 0 2px black, 0 0 3px black, 0 0 3px black, 0 0 2px black, 0 1px 3px black, 0 1px 3px black;
+    align-content: center;
+    flex-wrap: nowrap;
+    box-sizing: border-box;
+    line-height: 25px;
+    font-size: 0px;
+    line-height: 17px;
+    user-select: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    filter: brightness(0.4) grayscale(1);
+
+  }
+  .skill:hover {
+    z-index: 5;
+    position: absolute;
+    transition: all 0.05s;
+    transform: scale(1.2);
+  }
+
+  .skill:hover {
+    filter: brightness(1) grayscale(0) sepia(0);
+  }
+
+  .skill-highlight {
+    transition: all 0.01s;
+    box-shadow: 0 0 10px white, 0 0 10px white;
+    filter: brightness(1) grayscale(1) sepia(1);
+  }
+
+
+
+.skill.Outlaw { border-color: #f9d42e; }
+.skill.Slave { border-color: #b5b5b5; }
+.skill.Commoner { border-color: #ada935; }
+.skill.Religious { border-color: #f880ec; }
+.skill.Explorer { border-color: #01dd9f; }
+.skill.Soldier { border-color: #926f59; }
+.skill.Noble { border-color: #de1718; }
+.skill.Intellectual { border-color: #0188ff; }
+.skill.General { border-color: white; }
+
+  .selected-skill {
+    filter: brightness(1);
+    overflow: visible;
+
+  }
+  .selected-skill:hover {
+    filter: brightness(1.5);
+  }
+  .selectable-skill {
+    filter: brightness(0.7);
+    position: relative;
+  }
+  .selectable-skill:active {
+    box-shadow: 0 0 5px black inset;
+    transform: scale(0.9);
+  }
+
+  @keyframes selectable{
+    0% {
+      filter: brightness(0.5);
+    }
+    50%{ 
+      filter: brightness(0.5) drop-shadow(0px 0px 10px rgba(253, 253, 253, 1));
+      z-index: 99;
+    }
+    100%{ 
+      filter: brightness(0.5);
+    }
+  }
+
+  .unselectable-skill {
+    background-color: gray;
+    filter: grayscale(1) brightness(0.5);
+  }
+
+  .clone-dragged {
+    opacity: 0.5;
+    background-size: 100% 100%;
+  }
+  
+  .road-skill {
+    display: block;
+    border: 1px solid #ce3000;
+    position: relative;
+    z-index: 1;
+    background-color: gray;
+    height: 5px;
+    width: 0px;
+    pointer-events: none;
+    transition: all 0.1s;
+    background-repeat: repeat;
+    background-position: unset;
+    background-size: unset;
+    animation : roadColor 20s infinite linear;
+    animation-iteration-count: infinite;
+    box-shadow: 0 0 7px #000000b8;
+    box-sizing: border-box;
+  }
+
+  .connected-road {
+    background-color: red;
+  }
+
+  .skill-tooltip {
+    z-index: 9999;
+    position: absolute;
+    pointer-events: none;
+    background-color: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(8px);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4px;
+    width: 270px;
+    transform: all 0.2s;
+    text-shadow: 1px 0px 2px rgba(0, 0, 0, 0.5), 1px 0px 3px rgba(0, 0, 0, 0.5);
+    box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.75);
+    box-sizing: border-box;
+  }
+
+  .skill-tooltip.Outlaw { border-color: #f9d42e; }
+  .skill-tooltip.Slave { border-color: #b5b5b5; }
+  .skill-tooltip.Commoner { border-color: #ada935; }
+  .skill-tooltip.Religious { border-color: #f880ec; }
+  .skill-tooltip.Explorer { border-color: #01dd9f; }
+  .skill-tooltip.Soldier { border-color: #926f59; }
+  .skill-tooltip.Noble { border-color: #de1718; }
+  .skill-tooltip.Intellectual { border-color: #0188ff; }
+  .skill-tooltip.General { border-color: #ffffff; }
+
+  .skill-tooltip .Outlaw { color: #f9d42e; }
+  .skill-tooltip .Slave { color: #b5b5b5; }
+  .skill-tooltip .Commoner { color: #ada935; }
+  .skill-tooltip .Religious { color: #f880ec; }
+  .skill-tooltip .Explorer { color: #01dd9f; }
+  .skill-tooltip .Soldier { color: #926f59; }
+  .skill-tooltip .Noble { color: #de1718; }
+  .skill-tooltip .Intellectual { color: #0188ff; }
+  .skill-tooltip .General { color: #ffffff; }
+
+  .skill-tooltip .type-skill { 
+    font-weight: bold;
+  }
+  
+  .skill-tooltip #index{
+    color:rgb(102, 255, 0);
+    font-weight: bold;
+  }
+  .skill-tooltip #index:before{
+      content: "\e91B";
+      color: #fff;
+      line-height: 18px;
+      box-sizing: border-box;
+      background-size: 18px;
+      display: inline-block;
+      font-size: 20px;
+      height: 20px;
+      margin-right: 4px;
+      margin-top: -2px;
+      vertical-align: middle;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-family: icomoon;
+      font-style: normal;
+      font-variant: normal;
+      font-weight: 400;
+      line-height: 1;
+      text-transform: none;
+  }
+  
+  .skill-tooltip .culture-icon {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .skill-tooltip div:not(.header) {
+    border-image-slice: 1;
+    border-image-source: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgb(197, 197, 197) 50%, rgba(0,0,0,0) 100%);
+    border-bottom: 1px solid;
+    padding-bottom : 7px;
+    padding-top : 3px;
+    width: 100%;
+    text-align: center;
+  }
+  .skill-tooltip div:last-child {
+    border-bottom: 0px solid grey;
+    padding-bottom : 0px;
+  }
+  
+
+  
+  .skill-tooltip .header {
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    border-bottom: 1px solid black;
+    text-align: center;
+    padding-bottom: 4px;
+    background-color: rgba(58, 58, 58, 0.643);
+    text-shadow: 0 0 2px black, 0 0 3px black, 0 0 3px black, 0 0 2px black, 0 1px 3px black, 0 1px 3px black;
+    margin: -10px;
+    padding: 10px;
+    margin-bottom: 2px;
+    background-size: 45px 45px;
+    background-repeat: no-repeat;
+    background-position: 1px 50%;
+
+  }
+
+  .skill-tooltip .header .signature-indicator {
+    font-weight: normal;
+    font-size: 16px;
+    color: #00ccff;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+  }
+  
+  .skill-tooltip .Size {
+    color:rgb(102, 255, 0);
+    font-weight: bolder;
+  }
+  
+  .skill-tooltip .connectedto {
+    color:rgb(0, 247, 255);
+    display: block;
+  }
+  
+  .skill-tooltip .Connections:before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    background-image: url(../Art/Interface/6.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    display: inline-block;
+    vertical-align: -2px;
+    margin-right: 3px;
+  }
+  
+  .skill-tooltip .normal {
+    color:white;
+  }
+
+
+#selection-rectangle {
+  position: absolute;
+  z-index: 99;
+  border: 1px dashed white;
+  box-shadow: 0 0 200px #ffffff3a inset;
+  
+}
+
+
+  
+.skill.selection {
+  border-color: red;
+  color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Toggle Switch Styles */
+.toggle-container {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  z-index: 2;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1;
+  gap: 5px;
+
+  background-color: rgba(0, 0, 0, 0.65);
+  border-left : 4px solid rgba(139, 83, 30, 0.6);
+  border-right : 4px solid rgb(139, 83, 30, 0.6);
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 6px 10px 0px;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 20px;
+  backdrop-filter: blur(8px);
+  transition: all 0.5s;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 56px;
+  height: 25px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #494949;
+  -webkit-transition: .1s;
+  transition: .1s;
+  border: 1px solid rgb(0, 0, 0);
+  box-shadow: 0 0 5px black inset;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 21px;
+  width: 21px;
+  left: 0px;
+  bottom: 1px;
+  background-color: rgb(255, 255, 255);
+  -webkit-transition: .1s;
+  transition: .1s;
+}
+
+input:checked + .slider {
+  border: 1px solid rgb(0, 247, 255);
+}
+
+input:checked + .slider:before {
+  transform: translateX(33px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 5px;
+}
+
+.slider.round:before {
+  border-radius: 5px;
+}
+
+.toggle-label {
+  margin-left: 5px;
+}
+
+@keyframes toggleInOut {
+	0% {
+    box-shadow: 0 0 5px rgb(0, 247, 255);
+  }
+	50% {
+    box-shadow: 0 0 40px rgb(0, 247, 255);
+  }
+  100% {
+    box-shadow: 0 0 0px rgb(0, 247, 255);
+  }
+}
+
+.skill-radius {
+  position: absolute;
+  border-radius: 50%;
+  border: 0px solid aqua;
+  background: rgb(255,255,255);
+  background: radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(90,193,255,0.5) 100%);
+  pointer-events: none;
+  z-index: 1;
+  box-sizing: border-box;
+  z-index: 20;
+  transform: scale(0.75);
+}
+
+
+
+
+
+
+
+#skill-levelup-selector {
+  animation: interactionAppears 0.4s;
+  transition: height 0.2s, width 0.3s;
+      display: flex;
+      padding: 15px;
+      gap: 10px;
+      position: absolute;
+      z-index: 50;
+      background-color: #14151acc;
+      box-shadow: 0 0 20px black, 0 0 15px rgba(218, 165, 32, 0.45) inset;
+      border: 2px solid orange;
+      left: 50%;
+      top: 50%;
+      translate: -50% -50%;
+      flex-direction: column;
+      align-content: center;
+      align-items: center;
+      justify-content: center;
+      text-shadow: 0 0 2px black, 0 0 1px black, 0 0 2px black;
+      border-radius: 10px;
+      background-image: url(../Art/Interface/wood3.jpg);
+      background-size: cover;
+}
+
+#skill-levelup-selector .title, #skill-levelup-selector .adv-content-header {
+  font-size: 30px;
+  color: orange;
+  font-weight: bold;
+  padding: 10px;
+  padding-bottom: 20px;
+  padding-top: 5px;
+}
+
+#skill-levelup-selector .content {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 15px;
+  min-height: 400px;
+  min-width: 800px;
+}
+
+#skill-levelup-selector .skill-container.selected {
+  box-shadow: 0 0 20px rgb(255, 235, 146);
+  transform: scale(1.01);
+  background-image: url('../Art/Interface/skill_bg_hover.jpg');
+  filter: brightness(1.1) saturate(1.1);
+  z-index: 1;
+}
+#skill-levelup-selector .skill-container.unselected {
+  box-shadow: none;
+  transform: scale(1);
+  background-image: url('../Art/Interface/skill_bg.jpg');
+  filter: brightness(0.7) saturate(0.7);
+}
+
+
+#skill-levelup-selector .container {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 16.5px;
+  padding: 10px;
+  background-image: url('../Art/Interface/skill_bg.jpg');
+  background-size: cover;
+  width: 230px;
+  min-height: 280px;
+  border-radius: 3px;
+  box-shadow: 0 4px 10px black, 0 0px 20px black inset;
+  animation: skillAppear 0.4s;
+  border: 2px solid;
+  transform-origin: center;
+}
+@keyframes skillAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+#skill-levelup-selector .container:hover {
+  transform: scale(1.01);
+  background-image: url('../Art/Interface/skill_bg_hover.jpg');
+  filter: brightness(1.1) saturate(1.1);
+}
+#skill-levelup-selector .container:active {
+  background-color: #090a0eec;
+  scale: 0.97;
+}
+
+#skill-levelup-selector .container div:not(:last-child):not(.art, .type-pic) {
+  border-image-slice: 1;
+  border-image-source: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgb(197, 197, 197) 50%, rgba(0,0,0,0) 100%);
+  border-bottom: 1px solid;
+}
+#skill-levelup-selector .container div:not(:last-child):not(.art, .type-pic) {
+width: 100%;
+padding-bottom: 8px;
+padding-top: 2px;
+}
+
+#skill-levelup-selector .container .type-pic {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  display: inline-block;
+  translate: -104px -4px;
+  box-sizing: border-box;
+  border: 1px solid black;
+}
+
+#skill-levelup-selector .container .art {
+  width: 78px;
+  aspect-ratio: 1/1;
+  border: 1px solid darkslategrey;
+  box-shadow: inset 0 5px 15px rgba(255, 255, 255, 0.329), 0 0 8px black;
+  border-radius: 2px;
+  transform: scale(1.4) translateY(-9px);
+}
+
+#skill-levelup-selector .container .title {
+  color: orange;
+  font-size: 25px;
+}
+#skill-levelup-selector .container .category {
+  color: greenyellow;
+}
+
+#skill-levelup-selector .container .adj {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  color:rgb(0, 247, 255);
+}
+#skill-levelup-selector .container .adj:before {
+  content: 'Connected to:';
+  color:bisque;
+  margin-right: 5px;
+}
+#skill-levelup-selector .container .adj .normal{
+  padding-right: 5px;
+  color: white;
+}
+#skill-levelup-selector .container .adj-skill:hover{
+  text-decoration: underline;
+}
+
+#skill-levelup-selector .container .select{
+  display: none;
+}
+
+
+
+.adv-content {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to right, transparent 0%, orange 50%, transparent 100%);
+  border-bottom: 1px solid;
+}
+
+.adv-content .adv-content-header{
+  text-align: center;
+}
+
+.adv-content .adv-list {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.adv-content .adv-list .adv-element {
+  display: flex;
+      gap: 10px;
+      flex-direction: column;
+      align-content: center;
+      align-items: center;
+      width: 160px;
+      text-align: center;
+      height: 155px;
+      justify-content: flex-start;
+      padding-top: 10px;
+}
+
+.adv-content .adv-list .adv-element .item {
+  width: 84px;
+  box-shadow: 0 0 5px black;
+  background-size: cover;
+  border: 1px solid gray;
+  outline-offset: 3px;
+}
+.adv-content .adv-list .adv-element:active {
+  scale: 0.98;
+}
+
+.adv-content .adv-list .adv-element .adv-name {
+  display: flex;
+  gap: 5px;
+  flex-direction: row;
+  align-content: center;
+  align-items: flex-start;
+  font-size: 15px;
+  text-align: right;
+}
+.adv-content .adv-list .adv-element .adv-name .adv-level {
+  color: sandybrown;
+}
+.adv-content .adv-list .adv-element .adv-name .adv-level::before {
+  content: '[';
+}
+.adv-content .adv-list .adv-element .adv-name .adv-level::after {
+  content: ']';
+}
+
+.adv-content .adv-list .adv-element .adv-lvlup {
+  border-radius: 50% 50%;
+  position:relative;
+  margin-top: -40px;
+  top: 25px;
+  left: -25%;
+  width: 40px;
+  height: 40px;
+  z-index: 1;
+  display: flex;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  font-size: 18px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-image: url('../Art/Interface/rond.png');
+  box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.7);
+  text-shadow: 1px 0px 2px rgba(0, 0, 0, 0.5), 1px 0px 3px rgba(0, 0, 0, 0.5), 0 0 10px #00ffff, 0 0 10px #00ffff;
+  opacity: 0;
+}
+
+.adv-content .adv-list .adv-element.selected .item {
+  filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 1)) brightness(1) contrast(115%);
+  outline: 2px solid rgba(58, 255, 147, 0.836);
+}
+.adv-content .adv-list .adv-element.selected .adv-name {
+  color:rgb(0, 247, 255);
+}
+.adv-content .adv-list .adv-element.selected .adv-lvlup {
+  animation: flash-console 0.2s;
+  opacity: 1;
+}
+
+#skill-levelup-selector #confirm-levelup {
+  color: #f9d42e;
+}
+#skill-levelup-selector button {
+  width: 200px;
+  padding: 10px;
+  margin-top: 0px;
+  font-size: 20px;
+}
+

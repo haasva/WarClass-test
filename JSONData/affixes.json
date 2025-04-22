@@ -1,0 +1,168 @@
+[
+  {
+    "Name": "Endurant",
+    "Type": "Any",
+    "Stat": "FatigueGrowth",
+    "BaseValue": 7,
+    "Range": 3
+  },
+  {
+    "Name": "Wise",
+    "Type": "Religious, Commoner, Intellectual, Explorer",
+    "Stat": "ExperienceGrowth",
+    "BaseValue": 7,
+    "Range": 3
+  },
+  {
+    "Name": "Camouflaged",
+    "Type": "Outlaw, Soldier, Explorer, Slave",
+    "Stat": "RangedResist",
+    "BaseValue": 10,
+    "Range": 3
+  },
+  {
+    "Name": "Armored",
+    "Type": "Soldier, Explorer, Outlaw",
+    "Stat": "HandResist",
+    "BaseValue": 12,
+    "Range": 3
+  },
+  {
+    "Name": "Hardy",
+    "Type": "Slave, Explorer, Soldier",
+    "Stat": "Strength",
+    "BaseValue": 3,
+    "Range": 2
+  },
+  {
+    "Name": "Robust",
+    "Type": "Any",
+    "Stat": "Strength",
+    "BaseValue": 2,
+    "Range": 1
+  },
+  {
+    "Name": "Agile",
+    "Type": "Any",
+    "Stat": "Dexterity",
+    "BaseValue": 4,
+    "Range": 2
+  },
+  {
+    "Name": "Crafty",
+    "Type": "Intellectual, Outlaw",
+    "Stat": "Cunning",
+    "BaseValue": 4,
+    "Range": 2
+  },
+  {
+    "Name": "Expert",
+    "Type": "Any",
+    "Stat": "Artisanship",
+    "BaseValue": 4,
+    "Range": 2
+  },
+  {
+    "Name": "Schooled",
+    "Type": "Intellectual, Noble, Slave, Commoner",
+    "Stat": "Education",
+    "BaseValue": 4,
+    "Range": 2
+  },
+  {
+    "Name": "Reckless",
+    "Type": "Soldier, Outlaw, Explorer, Slave, Commoner",
+    "Stat": "Attack",
+    "BaseValue": 2,
+    "Range": 3
+  },
+  {
+    "Name": "Cruel",
+    "Type": "Noble, Religious",
+    "Stat": "Attack",
+    "BaseValue": 5,
+    "Range": 2
+  },
+
+  {
+    "Name": "Factotum",
+    "Type": "Any",
+    "Stat": "Slot",
+    "SlotType": "Slave",
+    "Description": " Slave ",
+    "BaseValue": 1,
+    "Range": 0
+  },
+  {
+    "Name": "Handy",
+    "Type": "Any",
+    "Stat": "Slot",
+    "SlotType": "Commoner",
+    "Description": " Commoner ",
+    "BaseValue": 1,
+    "Range": 0
+  },
+  {
+    "Name": "Initiated",
+    "Type": "Any",
+    "Stat": "Slot",
+    "SlotType": "Religious",
+    "Description": " Religious ",
+    "BaseValue": 1,
+    "Range": 0
+  },
+  {
+    "Name": "Venturesome",
+    "Type": "Any",
+    "Stat": "Slot",
+    "SlotType": "Explorer",
+    "Description": " Explorer ",
+    "BaseValue": 1,
+    "Range": 0
+  },
+  {
+    "Name": "Trained",
+    "Type": "Any",
+    "Stat": "Slot",
+    "SlotType": "Soldier",
+    "Description": " Soldier ",
+    "BaseValue": 1,
+    "Range": 0
+  },
+  {
+    "Name": "Deviant",
+    "Type": "Any",
+    "Stat": "Slot",
+    "SlotType": "Outlaw",
+    "Description": " Outlaw ",
+    "BaseValue": 1,
+    "Range": 0
+  },
+  {
+    "Name": "High-born",
+    "Type": "Any",
+    "Stat": "Slot",
+    "SlotType": "Noble",
+    "Description": " Noble ",
+    "BaseValue": 1,
+    "Range": 0
+  },
+  {
+    "Name": "Lettered",
+    "Type": "Any",
+    "Stat": "Slot",
+    "SlotType": "Intellectual",
+    "Description": " Intellectual ",
+    "BaseValue": 1,
+    "Range": 0
+  },
+  {
+    "Name": "Polyvalent",
+    "Type": "Any",
+    "Stat": "Slot",
+    "SlotType": "General",
+    "Description": " General ",
+    "BaseValue": 1,
+    "Range": 0
+  }
+ ]

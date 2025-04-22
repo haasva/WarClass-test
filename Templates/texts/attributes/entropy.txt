@@ -1,0 +1,6 @@
+<p>
+Entropy is a value that passively increases over time, on which the group normally has no mean of reducing. It represents the growing disorder and chaos the affects all things, people included.
+</p>
+<p>
+A larger group results in faster growing entropy.
+</p>

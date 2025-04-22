@@ -1,0 +1,132 @@
+[
+  {
+    "culture": "German",
+    "category": "Western",
+    "trait": "Wanderlust"
+  },
+  {
+    "culture": "Scandinavian",
+    "category": "Western",
+    "trait": "Lagom"
+  },
+  {
+    "culture": "Dutch",
+    "category": "Western",
+    "trait": "Mercantilism"
+  },
+  {
+    "culture": "English",
+    "category": "Western",
+    "trait": "Via Media"
+  },
+  {
+    "culture": "American",
+    "category": "Western",
+    "trait": "City upon a Hill"
+  },
+  {
+    "culture": "French",
+    "category": "Latin",
+    "trait": "Panache"
+  },
+  {
+    "culture": "Italian",
+    "category": "Latin",
+    "trait": "Sprezzatura"
+  },
+  {
+    "culture": "Iberian",
+    "category": "Latin",
+    "trait": "Devoutness"
+  },
+  {
+    "culture": "Latino",
+    "category": "Latin",
+    "trait": "Caudillismo"
+  },
+  {
+    "culture": "Balkan",
+    "category": "Eastern",
+    "trait": "Pastoralism"
+  },
+  {
+    "culture": "West Slavic",
+    "category": "Eastern",
+    "trait": "Sarmatism"
+  },
+  {
+    "culture": "Russian",
+    "category": "Eastern",
+    "trait": "Moskal"
+  },
+  {
+    "culture": "Caucasian",
+    "category": "Eastern",
+    "trait": "Adyghe Khabze"
+  },
+  {
+    "culture": "Arab",
+    "category": "Muslim",
+    "trait": "Jihad"
+  },
+  {
+    "culture": "Ottoman",
+    "category": "Muslim",
+    "trait": "Wickerwork"
+  },
+  {
+    "culture": "Persian",
+    "category": "Muslim",
+    "trait": "Javānmardi"
+  },
+  {
+    "culture": "North African",
+    "category": "Muslim",
+    "trait": "Qashabiya"
+  },
+  {
+    "culture": "Altaic",
+    "category": "Asian",
+    "trait": "Yurt Dwelling"
+  },
+  {
+    "culture": "Japanese",
+    "category": "Asian",
+    "trait": "Shintoism"
+  },
+  {
+    "culture": "Chinese",
+    "category": "Asian",
+    "trait": "Confucianism"
+  },
+  {
+    "culture": "Indian",
+    "category": "Asian",
+    "trait": "Ayurveda"
+  },
+  {
+    "culture": "Nanyang",
+    "category": "Asian",
+    "trait": "Sadung Fishing"
+  },
+  {
+    "culture": "Amerindian",
+    "category": "Tribal",
+    "trait": "Solar Veneration"
+  },
+  {
+    "culture": "Native",
+    "category": "Tribal",
+    "trait": "Totem"
+  },
+  {
+    "culture": "Arctic",
+    "category": "Tribal",
+    "trait": "Bone Carving"
+  },
+  {
+    "culture": "Bantu",
+    "category": "Tribal",
+    "trait": "Fetishism"
+  }
+ ]

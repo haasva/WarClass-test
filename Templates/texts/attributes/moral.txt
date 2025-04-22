@@ -1,0 +1,3 @@
+<p>
+Morale represents the state of mind of the group. It is affected mostly by actions, and by the capacity of the group to pay the upkeep to each adventurer.
+</p>

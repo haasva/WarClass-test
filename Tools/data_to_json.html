@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventurer by Areas</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+    <div id="selection">
+        <ul id="adventurerList"></ul>
+
+        <div id="map">
+            <div id="areaList">
+            </div>
+        </div>
+
+    </div>
+
+<div id="result-table">
+    <table>
+        <thead>
+            <tr>
+                <th id="area-column">Area</th>
+                <th id="adv-column">Adventurers</th>
+                <th id="clear-column">Clear</th>
+            </tr>
+        </thead>
+        <tbody id="adventurerTable">
+        </tbody>
+    </table>
+</div>
+
+
+    <button id="downloadJsonBtn">Download as JSON</button>
+    <input type="file" id="jsonFileInput" accept=".json">
+
+
+    <script>
+        const adventurerList = document.getElementById('adventurerList');
+        const areaList = document.getElementById('areaList');
+        const adventurerTable = document.getElementById('adventurerTable');
+        const downloadJsonBtn = document.getElementById('downloadJsonBtn');
+        let adventurersByArea = {};  // group adventurers by area
+        let selectedAdventurers = [];  // hold multiple selected adventurers
+        let areasObject = {};
+
+
+
+        const jsonFileInput = document.getElementById('jsonFileInput');
+
+
+
+jsonFileInput.addEventListener('change', function(event) {
+    const file = event.target.files[0];
+
+    if (file) {
+        const reader = new FileReader();
+
+
+        reader.onload = function(e) {
+            const jsonData = e.target.result;
+            try {
+
+                const parsedData = JSON.parse(jsonData);
+
+                adventurersByArea = {};
+
+                for (const area in parsedData) {
+                    if (parsedData.hasOwnProperty(area)) {
+                        const adventurers = parsedData[area];
+                        adventurers.forEach(adventurer => {
+                            assignAdventurerToArea(adventurer, area);
+                        });
+                    }
+                }
+
+                updateAdventurerTable();
+            } catch (error) {
+                console.error('Error parsing JSON data:', error);
+            }
+        };
+
+        reader.readAsText(file);
+    }
+});
+
+
+
+
+fetch('../JSONData/adventurers.json')
+    .then(response => response.json())
+    .then(data => {
+        data.forEach(adventurer => {
+            const li = document.createElement('li');
+            li.textContent = adventurer.Title;
+            li.style.backgroundImage = `url('../Art/Adventurers/${adventurer.Title}.png')`;
+
+            const info = document.createElement('div');
+            info.classList.add('adv-info');
+            info.textContent = adventurer.Culture;
+            li.appendChild(info);
+
+            li.addEventListener('mouseover', function() {
+                highlightAreasForAdventurer(adventurer.Title);
+            });
+
+            li.addEventListener('mouseout', function() {
+                removeHighlightFromAreas();
+            });
+            
+            li.addEventListener('click', function() {
+
+                if (selectedAdventurers.includes(adventurer.Title)) {
+                    selectedAdventurers = selectedAdventurers.filter(a => a !== adventurer.Title);
+                    li.classList.remove('selected');
+                } else {
+                    selectedAdventurers.push(adventurer.Title);
+                    li.classList.add('selected');
+                }
+
+                console.log('Selected Adventurers:', selectedAdventurers);  // For debugging
+            });
+            
+            adventurerList.appendChild(li);
+        });
+    })
+    .catch(error => {
+        console.error('Error loading adventurer data:', error);
+    });
+
+function highlightAreasForAdventurer(adventurerName) {
+    for (const area in adventurersByArea) {
+        if (adventurersByArea[area].includes(adventurerName)) {
+            const areaCheckbox = document.querySelector(`#area-${area}`);
+            if (areaCheckbox) {
+                const areaDiv = areaCheckbox.closest('div');
+                areaDiv.classList.add('highlight');
+            }
+        }
+    }
+}
+
+function removeHighlightFromAreas() {
+    document.querySelectorAll('.highlight').forEach(areaDiv => {
+        areaDiv.classList.remove('highlight');
+    });
+}
+
+
+        fetch('../JSONData/areas.json')
+    .then(response => response.json())
+    .then(data => {
+        data.forEach(area => {
+            
+        const areaName = area.Name;
+        areasObject[areaName] = {
+          name: areaName,
+          row: area.Row,
+          col: area.Col,
+          headerpic: area.Header,
+          climate: area.Climate,
+          posX: area.PosX,
+          posY: area.PosY,
+          connections: area.Connections,
+          size: area.Size,
+          cultures: area.Cultures,
+          terrains: area.Terrains,
+          faction: area.Faction,
+          continent: area.Continent
+        };    
+
+            const div = document.createElement('div');
+            div.id = `#area-${area}`;
+            div.style.left = `${area.PosX}%`;
+            div.style.top = `${area.PosY}%`;
+            div.innerHTML = `
+                <input type="checkbox" id="area-${area.Name}" class="area-checkbox" value="${area.Name}">
+                <label for="area-${area.Name}" style="">${area.Name}</label>
+            `;
+            areaList.appendChild(div);
+
+            div.style.backgroundImage = `url('../Art/Interface/Terrains/location_headers/${area.Header}.png')`;
+
+            div.querySelector('input').addEventListener('change', function() {
+                if (this.checked && selectedAdventurers.length > 0) {
+                    selectedAdventurers.forEach(adventurer => {
+                        assignAdventurerToArea(adventurer, this.value);
+                    });
+                    
+                    clearAreaSelection();
+                    selectedAdventurers = [];
+                }
+            });
+        });
+    })
+    .catch(error => {
+        console.error('Error loading area data:', error);
+    });
+
+
+        function assignAdventurerToArea(adventurer, area) {
+
+            if (!adventurersByArea[area]) {
+                adventurersByArea[area] = [];
+            }
+
+            if (!adventurersByArea[area].includes(adventurer)) {
+                adventurersByArea[area].push(adventurer);
+            }
+
+            updateAdventurerTable();
+            clearAdvSelection();
+            clearAreaSelection();
+
+            selectedAdventurer = null;
+            document.querySelectorAll('#adventurerList li').forEach(li => li.style.backgroundColor = '#f0f0f0');
+        }
+        function updateAdventurerTable() {
+
+            adventurerTable.innerHTML = '';
+
+            for (const area in adventurersByArea) {
+
+                const row = document.createElement('tr');
+
+                const areaCell = document.createElement('td');
+                areaCell.textContent = area;
+                areaCell.classList.add('area-cell');
+                areaCell.style.backgroundImage = `url('../Art/Interface/Terrains/location_headers/${areasObject[area].headerpic}.png')`;
+                row.appendChild(areaCell);
+
+  
+                const adventurersCell = document.createElement('td');
+                adventurersCell.classList.add('adv-cell');
+
+                for (let i = 0 ; i < adventurersByArea[area].length ; i++) {
+                    const adv = document.createElement('div');
+                    adv.textContent = adventurersByArea[area][i];
+                    adv.classList.add('adv-area');
+                    adv.style.backgroundImage = `url('../Art/Adventurers/${adventurersByArea[area][i]}.png')`;
+                    adventurersCell.appendChild(adv);
+
+                }
+                row.appendChild(adventurersCell);
+
+
+                const clearCell = document.createElement('td');
+                clearCell.classList.add('clear-cell');
+                const clearButton = document.createElement('button');
+                clearButton.textContent = 'Clear';
+                clearButton.addEventListener('click', function() {
+
+                    adventurersByArea[area] = [];
+                    updateAdventurerTable();
+                });
+                clearCell.appendChild(clearButton);
+                row.appendChild(clearCell);
+
+                adventurerTable.appendChild(row);
+            }
+        }
+
+
+        function clearAreaSelection() {
+            document.querySelectorAll('.area-checkbox').forEach(checkbox => {
+            checkbox.checked = false;
+            });
+        }
+        function clearAdvSelection() {
+            document.querySelectorAll('.selected').forEach(checkbox => {
+            checkbox.classList.remove('selected');
+            });
+        }
+
+        // Download JSON button to save data
+        downloadJsonBtn.addEventListener('click', function() {
+            const jsonData = JSON.stringify(adventurersByArea, null, 2); 
+            const blob = new Blob([jsonData], { type: 'application/json' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'adventurers_by_area.json';
+            link.click();
+        });
+    </script>
+
+</body>
+</html>

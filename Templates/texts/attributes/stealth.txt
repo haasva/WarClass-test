@@ -1,0 +1,6 @@
+<p>
+Stealth represents the overall conspicuity of the group and its ability to go sneakily.
+</p>
+<p>
+It is positively affected by Dexterity, but negatively affected by the group size, Quality and Strength.
+</p>

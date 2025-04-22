@@ -1,0 +1,561 @@
+<html>
+  <head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+    <!-- Favicon -->
+    <link rel="icon" href="/Art/tied-scroll.png">
+  
+    <!-- Title -->
+    <title>WarClass</title>
+  
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="Styles/style_general.css">
+    <link rel="stylesheet" type="text/css" href="Styles/style_group_class_selection.css">
+    <link rel="stylesheet" type="text/css" href="Styles/style.css">
+    <link rel="stylesheet" type="text/css" href="Styles/adventurer-info-style.css">
+    <link rel="stylesheet" type="text/css" href="Styles/events.css">
+    <link rel="stylesheet" type="text/css" href="Styles/skill-tree-style.css">
+    <link rel="stylesheet" type="text/css" href="Styles/region-grid.css">
+    <link rel="stylesheet" type="text/css" href="Styles/overworld.css">
+    <link rel="stylesheet" type="text/css" href="Styles/combat.css">
+    <link rel="stylesheet" type="text/css" href="Styles/vegetation.css">
+    <link rel="stylesheet" type="text/css" href="Styles/group-sheet.css">
+    <link rel="stylesheet" type="text/css" href="Styles/bagpack.css">
+    <link rel="stylesheet" type="text/css" href="Styles/middle.css">
+  
+    <!-- Preconnect & Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+ 
+
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+SC:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa+Ink:wght@400;700&display=swap" rel="stylesheet">
+
+    
+  </head>
+  
+  
+<body name="bodydocument">
+  <div id="pixel-map-container"></div>
+
+  <div id="map-container"></div>
+  <div id="right-box1"></div>
+
+  <script src="/libraries/simplex-noise.js"></script>
+  <script src="/libraries/seedrandommin.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  
+
+<div id="region-grid-container">
+
+  <div id="painted"></div>
+
+
+<div id="cellData">
+  
+</div>
+
+
+<div id="middle" class="invisible">
+
+<div class="tabs">
+
+  <div class="panel_tab active" id="party_panel" target="party_content">Party</div>
+  <div class="panel_tab" id="cultures_panel" target="culture_content">Stats</div>
+  <div class="panel_tab" id="map_panel" target="map_content">Map</div>
+  <div class="panel_tab" id="factions_panel" target="factions_content">Factions</div>
+  <div class="panel_tab" id="settings_panel" target="settings_content">Settings</div>
+
+</div>
+
+
+<div class="tabcontents">
+
+  <div class="tabcontent active" id="party_content">
+    <div class="left"></div>
+  </div>
+  <div class="tabcontent" id="culture_content">
+  </div>
+  <div class="tabcontent" id="map_content">
+    <div id="overworld-container">
+      <div class="buttons-overworld">
+        <button id="show-overlay" onclick="toggleOverlayOverworldlevels('.superregion-overlay')">Show Super-Regions</button>
+        <button id="show-overlay" onclick="toggleOverlayOverworldlevels('.level-overlay')">Show Levels</button>
+        <button id="center-group-view" onclick="centerOverworldGroup()">Our Position</button>
+      </div>
+      <table id="overworld"></table>
+    </div>
+    <div id="map-content-left">
+    </div>
+  </div>
+  <div class="tabcontent" id="factions_content">
+  </div>
+  <div class="tabcontent" id="settings_content">
+  </div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+<div id="left-side">
+
+  <div id="search-container">
+    <input type="text" id="search-input" placeholder="Search adventurers by title" oninput="filterItems()">
+    <button onclick="addItem()">Add Adventurer</button>
+	<button id="fill-inventory-button">Random Adventurer</button>
+	<button id="add-slot-button">Add Slot</button>
+    <div id="suggestions-container"></div>
+  </div>
+  
+<div id="groupClassPanel" onclick="">
+	<div id="groupClassTypeMajor"></div>
+	<div id="groupClassTypeMinor"></div>
+	<div id="groupClassTitle"></div>
+	<div id="groupClassLevel"></div>
+</div>
+
+<div id="groupsheet">
+
+
+
+<div class="stats">
+<div id="group-stats">
+  <li id="group-life-hud">Group Life: <span class="stat-digit" id="group-life"></span><span class="stat-digit" id="current-life"></span></li>
+  <progress id="grouplife-bar" max="100" value="0">0%</progress>
+  <progress id="endurance-bar" max="100" value="0">0%</progress>
+</div>
+
+</div>
+
+</div>
+
+
+  
+</div>
+  
+  
+
+  <div id="tooltip"></div>
+  
+
+  
+<div id="inventory-info">
+Weight: <span id="occupied-slots-count"></span>/<span id="total-slots-count"></span><br>
+Free slots: <span id="empty-slots-count"></span>
+<ul id="group-adventurers-list"></ul>
+</div>
+
+
+
+
+
+  
+
+
+
+
+<aside id="aside">
+
+<div id="day-box">
+
+  <div id="tools">
+    <button onclick="toggleOverworldDisplay()" id="show-settings-button" class="tools-button">Menu <span class="shortkey">[Tab]</span></button>
+    <button onclick="showMap()" id="show-map-button" class="tools-button">World</button>
+  </div>
+
+<div id="clock">
+
+<div id="day-info">
+    <span id="current-time-of-day"></span> - (Hour: <span id="current-hour"></span>)<br>
+    <span id="current-day">Day <span id="day-number">1</span></span>
+</div>
+
+<div id="time-of-day-bar">
+  <div id="time-indicator"></div>
+</div>
+
+</div>
+
+
+
+
+<div id="ammunition-box">
+  <li id="ammos" class="resource" infos="Ammos"><span id="group-ammos"></span></li>
+  <li id="arrows" class="resource" infos="Arrows"><span id="group-arrows"></span></li>
+  <li id="tools" class="resource" infos="Tools"><span id="group-tools"></span></li>
+  <li id="food" class="resource" infos="Food"><span id="group-food"></span></li>
+  <li id="coins" class="resource" infos="Coins"><span id="group-coins"></span></li>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</aside>
+
+
+
+<div id="right-side">
+
+  <div id="screenshot"></div>
+  
+  <div id="minimap"></div>
+
+  <div id="minimap2">
+
+    <div id="minimap2-bg">
+      <div id="minimap-player-pos"></div>
+    </div>
+  </div>
+
+  
+
+  <div id="region-infos">
+    <div id="area-region-name"><span id="area-name"></span><span id="coordinates"></span><span id="level"></span></div>
+
+    <div id="region-modifiers-container">
+      <div class="modifier" id="weather"></div>
+      <div class="modifier" id="terrain"></div>
+      <div class="modifier" id="climate"></div>
+      <div class="modifier" id="vegetation"></div>
+    </div>
+
+    <div class="info-cont">
+      <div class="info"><div class="text">Groups: </div><div class="value" id="groups">X</div></div>
+      <div class="info"><div class="text">Buildings: </div><div class="value" id="buildings">X</div></div>
+      <div class="info"><div class="text">Rivers: </div><div class="value" id="rivers">X</div></div>
+      <div class="info"><div class="text">Roads: </div><div class="value" id="roads">X</div></div>
+      <div class="info"><div class="text">Ruins: </div><div class="value" id="ruins">X</div></div>
+    </div>
+
+  <div class="exploration-progress">
+    <progress id="exploration-bar" max="100" value="0">0%</progress>
+    <div class="exploration-text"><span id="exploration-value">0/0</span><span id="exploration-percent">0%</span></div>
+  </div>
+
+  </div>
+  
+
+
+
+</div>
+
+
+
+
+<div id="message-container"></div>
+
+
+
+
+<div id="life-circle">
+  <div id="filled-circle"></div>
+  <div id="life-circle-text">
+    <span id="current-life2"></span>/
+    <span id="total-life-circle"></span>
+  </div>
+</div>
+
+
+<div id="endurance-circle">
+
+  <div class="endurance-text">
+    <span class="stat-digit" id="max-endurance-value"></span>
+    <span class="stat-digit" id="endurance-value"></span>
+  </div>
+
+  <div id="filled-endurance-circle"></div>
+
+</div>
+
+
+
+
+
+<div id="compass-container">
+</div>
+
+<div id="bottom">
+
+  <div class="bottom-top">
+
+    <div id="active-skills">
+    </div>
+
+
+      <div id="action-bar">
+        <button class="action-button" id="3d-button" onclick="">3D</button>
+        <button class="action-button" id="travel-button" onclick="waitTime(10)"><span class="shortkey">[</span>Wait<span class="shortkey">]</span></button>
+        <button class="action-button" id="reveal-button" onclick="onExplorationFull()">Reveal</button>
+        <button class="action-button" id="camp-button" onclick="camp()">Camp <span class="shortkey">[C]</span></button>
+        <button onclick="gainLevel()" id="show-skills-button" class="action-button">LvlUp</button>
+        <button onclick="grantRandomItem()" id="random-item-button" class="action-button">+Item</button>
+        <button onclick="grantPlayerRandomSkill()" id="random-skill-button" class="action-button">+Skl</button>
+        <button onclick="" id="build-structure" class="action-button">Build</button>
+        <button onclick="toggleSkillTree()" id="show-skills-button" class="action-button">Skills</button>
+        <button onclick="cheatLevelUp()" id="random-item-button" class="action-button">CheatLvL</button>
+      </div>
+
+  </div>
+
+
+  <div id="exp-bar">
+    <div id="exp-bar-text"></div>
+    <div id="filled-exp"></div>
+  </div>
+
+  <div id="inventory-container" class="inventory-container"></div>
+  
+</div>
+
+
+
+<!-- 
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+
+<script src="webgl-game.js"></script> Then load modular script -->
+
+
+<script src="paint.js"></script>
+<script src="group_panel.js"></script>
+<script src="settings.js"></script>
+  <script src="script.js"></script>
+  <script src="sounds.js"></script>
+  <script src="groupclass.js"></script>
+  <script src="customgroupclass.js"></script>
+  <script src="cultural_variance.js"></script>
+  <script src="affixes.js"></script>
+  <script src="adventurers_stats.js"></script>
+  <script src="interface.js"></script>
+  <script src="region.js"></script>
+  <script src="timeandday.js"></script>
+  <script src="enemies.js"></script>
+  <script src="attack_animations.js"></script>
+  <script src="actions.js"></script>
+  <script src="bagpack.js"></script>
+  <script src="spare.js"></script>
+  <script src="map.js"></script>
+  <script src="other-group-attributes.js"></script>
+  <script src="region-grid.js"></script>
+  <script src="events.js"></script>
+  <script src="factions.js"></script>
+  <script src="tooltip.js"></script>
+  <script src="display_adventurers_tooltip.js"></script>
+  <script src="weapons.js"></script>
+  <script src="sort-adventurers.js"></script>
+  <script src="script_world_map.js"></script>
+  <script src="region-overworld-popup.js"></script>
+  <script src="combat.js"></script>
+  <script src="skill-tree.js"></script>
+  <script src="loading.js"></script>
+  <script src="group-sheet.js"></script>
+  <script src="skills.js"></script>
+
+  <script src="world_generator.js"></script>
+  <script src="FPS_interactions.js"></script>
+  <script src="contracts.js"></script>
+  <script src="cultural_knowledge.js"></script>
+
+  <script src="inside_building.js"></script>
+
+
+
+
+
+<div id="entities-container">
+    <div class="header">
+      <span class="title">Visible entities</span>
+      <span class="number"></span>
+    </div>
+    <div id="current-target">
+    </div>
+    <div id="entities-list">
+    </div>
+</div>
+
+
+<div id="mega-wrapper">
+
+<div id="crosshair"></div>
+  <div id="bloodscreen"></div>
+
+  <div id="engine-wrapper"></div>
+
+  <div id="weapon"></div>
+
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="group-class-selector" style="display: none;"></div>
+
+
+
+<div id="skill-tree">
+<div id="skill-tree-header" class="generic-large-header">Skill Tree</div>
+
+<div class="toggle-container" id="toggle-container">
+  <label class="switch">
+      <input type="checkbox" id="dragToggle">
+      <span class="slider round"></span>
+  </label>
+  <span class="toggle-label">Relocate Skills</span>
+</div>
+
+<div id="skill-tree-points">
+  <div class="points">Available points: <span class="number" id="available-skill-points"></span></div>
+  <div class="points">Spent points: <span class="number" id="spent-skill-points"></span></div>
+</div>
+<div id="skill-tree-container">
+
+
+  
+  <div id="skill-image"></div>
+</div>
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
+
+
+
+
+
+
+<div id="line-camera"></div>
+
+
+
+<svg style="display:none">
+  <filter id="pixelate" x="0" y="0">
+    <feFlood x="0" y="0" height="1" width="1" result="flood"></feFlood>
+    <feComposite width="3" height="3" in="flood" result="composite"></feComposite>
+    <feTile in="composite" result="tiled"></feTile>
+    <feComposite in="SourceGraphic" in2="tiled" operator="in"></feComposite>
+    <feMorphology operator="dilate" radius="1" result="final"></feMorphology>
+  </filter>
+</svg>
+
+
+
+
+<svg image-rendering="optimizeSpeed" style="display:none">
+  <filter id="dither" color-interpolation-filters="sRGB" x="0" y="0" width="100%" height="100%">
+    <feImage width="8" height="8" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAA+UlEQVR42gXBERTCUABA0X/OYDAYDAZBEAyCIBgMgiAIgiAYBINgEAwGgyAIBsFgMAiCIAiCIAgGQTAYDAaDIAiCwWDwulcIIXg8HgwGA36/H4qi8Hq9sCyLtm0Rm82G0WjE5XJhvV4ThiHT6ZT7/U4QBIhut0tVVaiqSpZl9Pt9vt8vnU6HsiwRh8OB5XLJfr9nNptxPp9xXZckSbBtGyHLMs/nE9M0aZoGSZJI05ThcEhd14jdbsdkMuF2u+H7PtvtlvF4zPV6xfM8hGEYfD4fdF2nKAp6vR7v9xtN08jzHHE6nVitVsRxzGKx4Hg84jgOURQxn8/5A7oKnYRU4EpfAAAAAElFTkSuQmCC"/>
+    <feTile/>
+    <feComposite operator="arithmetic" k1="0" k2="1" k3="1" k4="-0.5" in="SourceGraphic"/>
+    <feComponentTransfer>
+      <feFuncR type="discrete" tableValues="0 1"/>
+      <feFuncG type="discrete" tableValues="0 1"/>
+      <feFuncB type="discrete" tableValues="0 1"/>
+    </feComponentTransfer>
+  </filter>
+</svg>
+
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <filter id="kuwahara">
+    <!-- Apply Gaussian blur -->
+    <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blurred" />
+    
+    <!-- Detect edges -->
+    <feConvolveMatrix in="SourceGraphic" kernelMatrix="-1 -1 -1 -1 8 -1 -1 -1 -1" result="edges" />
+    
+    <!-- Merge the blurred and edges for a painterly effect -->
+    <feBlend in="blurred" in2="edges" mode="overlay" result="kuwaharaEffect" />
+    
+    <!-- Final output -->
+    <feComposite in="kuwaharaEffect" in2="SourceGraphic" operator="arithmetic" k1="0.5" k2="0.5" k3="0" k4="0" />
+  </filter>
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+<filter id="bloom" color-interpolation-filters="linearRGB" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse">
+	<feGaussianBlur stdDeviation="2 2" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" edgeMode="none" result="blur"/>
+	<feBlend mode="color-dodge" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" in2="diffuseLighting" result="blend"/>
+</filter>
+</svg>
+
+
+
+
+
+
+
+<svg height="256" width="256" style="display: none;">
+  <filter id="posterize">
+    <feComponentTransfer>
+      <feFuncR type="discrete" 
+               tableValues="0 0.05 0.10 0.15 0.20 0.25 0.30 0.35 0.40 0.45 0.50 0.55 0.60 0.65 0.70 0.75 0.80 0.85 0.90 0.95 1" />
+      <feFuncG type="discrete" 
+               tableValues="0 0.05 0.10 0.15 0.20 0.25 0.30 0.35 0.40 0.45 0.50 0.55 0.60 0.65 0.70 0.75 0.80 0.85 0.90 0.95 1" />
+      <feFuncB type="discrete" 
+               tableValues="0 0.05 0.10 0.15 0.20 0.25 0.30 0.35 0.40 0.45 0.50 0.55 0.60 0.65 0.70 0.75 0.80 0.85 0.90 0.95 1" />
+    </feComponentTransfer>
+  </filter>
+</svg>
+
+<svg width="0" height="0">
+  <defs>
+    <filter id="bulge" x="0" y="0" width="100%" height="100%">
+      <feDisplacementMap 
+        in="SourceGraphic" 
+        in2="displacementMap" 
+        scale="50" 
+        xChannelSelector="R" 
+        yChannelSelector="G" />
+      <feComponentTransfer in="displacementMap">
+        <feFuncR type="table" tableValues="0 1" />
+        <feFuncG type="table" tableValues="0 1" />
+        <feFuncB type="table" tableValues="0 1" />
+      </feComponentTransfer>
+    </filter>
+
+    <filter id="displacementMap" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" result="turbulence" />
+      <feDisplacementMap in="SourceGraphic" scale="100" />
+    </filter>
+  </defs>
+</svg>
+
+
+
+
+
+
+
+
+</body>
+</html>

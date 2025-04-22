@@ -1,0 +1,611 @@
+#main-combat-box {
+    z-index: 20;
+    top: 10%;
+    left: 25%;
+    position: absolute;
+
+    border: 1px solid orange;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    background-image: url('../Art/Interface/wood1.png');
+    background-size: cover;
+    box-shadow: 0 0 40px black, 0 0 15px rgb(145 113 18 / 70%) inset;
+    border-radius: 2px;
+}
+
+#combat-table-box {
+    margin: 10px;
+    border: 2px solid rgba(119, 83, 30, 1);
+    box-shadow: 0 0 5px black, 0 0 10px black;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#combat-container {
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: flex-start;
+    display: flex;
+}
+
+#main-combat-box #combat-sidebox {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 10px;
+    gap: 10px;
+    margin-left: -10px;
+}
+
+#main-combat-box #combat-sidebox button {
+width: 100%;
+aspect-ratio: 2/1;
+font-size: 18px;
+padding: 5px;
+background-size: cover;
+}
+#main-combat-box #combat-sidebox #start-combat:before {
+    content: "[F]";
+    margin-right: 5px;
+    color: yellow;
+}
+#main-combat-box #combat-sidebox #pause-combat:before {
+    content: "[R]";
+    margin-right: 5px;
+    color: yellow;
+}
+#main-combat-box #combat-sidebox #exit-combat:before {
+    content: "[Esc]";
+    margin-right: 5px;
+    color: yellow;
+}
+
+
+#combat-slider-box {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+#combat-slider-box:before {
+content: 'Combat Speed';
+}
+
+#combat-table {
+    border-collapse:collapse;
+}
+
+#combat-table.paused tbody:after {
+    content: 'Paused';
+    color: rgba(255, 255, 255, 0.301);
+    font-style: italic;
+    font-family: 'Georgia';
+    width: 50%;
+    height: 50%;
+    z-index: 99;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    pointer-events: none;
+    animation : enemyAppears ease 1s 1;
+}
+
+.own-row:not(.reserve-row) {
+    filter: brightness(1.3);
+}
+.own-row:not(.reserve-row) .unit {
+    filter: brightness(0.8);
+}
+.reserve-row {
+    filter: brightness(0.8);
+    outline: 2px solid rgb(78, 57, 11);
+    background-image: url('../Art/Interface/reserve_row.png');
+    background-size: cover;
+}
+.reserve-row td {
+    box-shadow: 0 0 2px 0px rgb(50, 60, 75) inset;
+    background-size: cover;
+    border: 1px solid rgb(54, 44, 23);
+}
+
+#combat-table td {
+    
+}
+
+
+.combat-cells .dragged-sprite {
+opacity: 0.5;
+}
+
+.combat-cells {
+    background-size: cover;
+    width: 60px;
+    height: 60px;
+}
+.combat-cells:hover {
+    outline: 2px dotted rgba(255, 255, 255, 0.5);
+    outline-offset: -6px;
+}
+.combat-cells:has(.unit) {
+    z-index: 4;
+    overflow: visible;
+}
+
+
+.combat-cells .unit {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-size: cover;
+    z-index: 2;
+    outline: 2px solid greenyellow;
+    outline-offset: 0px;
+    align-content: end;
+    color: transparent;
+    overflow: visible;
+    border-radius: 50%;
+    box-shadow: 0 0 10px black, 0 0 2px black, 0 0 5px black;
+    font-size: 0;
+}
+.unit div{
+    pointer-events: none;
+}
+.reserve-row .unit {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-size: cover;
+    z-index: 2;
+    outline: 2px solid grey;
+    outline-offset: 0px;
+    align-content: end;
+    color: transparent;
+    overflow: visible;
+}
+
+.unit .adv-combat-info {
+    display: flex;
+    width: 100%;
+    height: max-content;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    justify-content: flex-end;
+    pointer-events: none;
+}
+.unit .adv-combat-info .lifebar {
+    width: 100%;
+    z-index: 1;
+    height: 15px;
+    padding: 0;
+    margin: 0;
+    appearance: none;
+    box-sizing: border-box;
+    border: 2px solid rgb(0, 0, 0);
+    box-shadow: 0 1px 2px black;
+    vertical-align: 0em;
+    border-radius: 3px;
+    display: flex;
+}
+progress {
+    appearance: none;
+}
+ .unit .adv-combat-info .lifebar::-webkit-progress-value, #party .lifebar::-webkit-progress-value {
+    background-color: rgb(153, 25, 25);
+}
+
+.unit .adv-combat-info .lifetext {
+    width: 100%;
+    z-index: 3;
+    position: absolute;
+    bottom: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border-radius: 3px;
+    color: rgba(255, 255, 255, 0.85);
+    text-align: center;
+    font-size: 13px;
+    text-shadow: 0px 1px 2px black, 0px 1px 2px black, 0px 0px 2px black;
+    opacity: 1;
+}
+.combat-cells .unit:hover .lifetext {
+
+}
+
+.unit .adv-combat-info .target-name, .unit .adv-combat-info .atk-spd {
+    pointer-events: none;
+    width: 60px;
+    max-width: 60px;
+    z-index: 1;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: white;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    font-size: 14px;
+    overflow: visible;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 1);
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    display: none;
+}
+
+.unit .adv-combat-info .atk-spd {
+    position: relative;
+    top: 50%;
+    left: 0px;
+    max-width: fit-content;
+    z-index: 99;
+    display: none;
+}
+.unit:hover .atk-spd {
+    display: block;
+}
+
+
+.combat-cells .unit:hover {
+    box-shadow: 0 0 10px black;
+    z-index: 4;
+    overflow: visible;
+}
+.combat-cells .unit:hover .target-name {
+    display: flex;
+}
+
+.target-line.in-combat-line {
+opacity: 0;
+}
+
+.combat-cells .enemy-unit {
+    outline: 2px solid red;
+}
+
+.combat-cells.highlighted-cell:not(.combat-cells .unit) {
+    filter: brightness(1.3);
+}
+
+.target-line {
+    z-index: 99;
+    pointer-events: none;
+    transition: all 0.2s;
+    pointer-events: none;
+    transition: all 0.5s;
+    border-radius: 5px;
+}
+
+.target-line.own-group-line {
+    border: 2px solid rgba(40, 176, 255, 0.65);
+}
+.target-line.enemy-group-line {
+    border: 2px solid rgba(172, 28, 28, 0.65);
+    z-index: 999;
+}
+
+.active-adventurer:after {
+
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #d1515170;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+
+
+#combat-container #combat-summary {
+    padding: 10px;
+    margin-right: -10px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    align-content: center;
+}
+
+#combat-container #combat-summary .group-info-combat {
+width: 100%;
+box-sizing: border-box;
+background-color: rgba(0, 0, 0, 0.6);
+padding: 5px;
+border: 1px solid #d1515170;
+border-radius: 5px;
+}
+
+#combat-container #combat-summary .group-info-combat .title {
+font-size: 18px;
+font-weight: bold;
+border-image-slice: 1;
+border-image-source: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgb(145, 96, 5) 1%, rgba(0,0,0,0) 100%);
+border-bottom: 2px solid;
+margin-bottom: 5px;
+padding-bottom: 3px;
+}
+
+#combat-container #combat-summary progress {
+    width: 100%;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    position: relative;
+    border: 2px solid black;
+    border-radius: 2px;
+}
+
+#combat-container #combat-summary progress::-webkit-progress-bar {
+border-radius: 2px;
+background-color: rgb(109, 109, 109);
+background: rgb(40,89,22);
+background: linear-gradient(180deg, rgb(99, 99, 99) 0%, rgb(53, 53, 53) 100%);
+box-shadow: 0 0 2px black inset;
+}
+
+#combat-container #combat-summary #own-group progress::-webkit-progress-value {
+    background: rgb(40,89,22);
+    background: linear-gradient(90deg, rgba(40,89,22,1) 0%, rgba(36,208,0,1) 100%);
+transition: all 0.2s;
+border-radius: 2px;
+
+
+}
+#combat-container #combat-summary #enemy-group progress::-webkit-progress-value {
+    background: rgb(89,22,22);
+    background: linear-gradient(90deg, rgba(89,22,22,1) 0%, rgba(208,0,0,1) 100%);
+transition: all 0.2s;
+border-radius: 2px;
+
+}
+
+#combat-container #combat-summary progress::before,
+#combat-container #combat-summary progress::after {
+    position: absolute;
+    display: block;
+    color: white; /* Adjust text color */
+    font-size: 0.8em; /* Adjust font size */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -48%);
+    text-shadow: 0px 0px 2px black, 0px 0px 3px black, 0px 0px 3px black, 0px 0px 3px black;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#combat-container #combat-summary progress::before {
+    content: attr(value) '/' attr(max);
+}
+
+#combat-container #dps-stats #dps_counters {
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+#combat-container #dps-stats #dps_counters .unit-dps {
+    display: flex;
+    gap: 5px;
+    flex-direction: row-reverse;
+    align-items: center;
+    align-content: center;
+    background-color: rgba(170, 170, 170, 0.3);
+    justify-content: flex-end;
+    padding: 2px;
+    width: -webkit-fill-available;
+    text-shadow: 0px 0px 1px black, 0px 0px 3px black, 0px 0px 3px black, 0px 0px 2px black;
+    font-weight: bold;
+    text-wrap: nowrap;
+    animation: none;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    border-bottom: 1px solid #343434;
+    border-top: 1px solid #656565;
+}
+@keyframes dpsApp{
+    0% {
+    height: 0px;
+    }
+    100%{ 
+    height: 32px;
+    }
+  }
+
+#combat-container #dps-stats #dps_counters .unit-dps .pic {
+    width: 30px;
+    min-width: 30px;
+    aspect-ratio: 1/1;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#combat-container #dps-stats #dps_counters .unit-dps .pic-dead {
+    width: 30px;
+    min-width: 30px;
+    aspect-ratio: 1/1;
+    background-image: url('../Art/Interface/dead.png');
+    filter: invert(1);
+    display: none;
+    background-size: cover;
+    mix-blend-mode: luminosity;
+    opacity: 0;
+}
+
+@keyframes flickering {
+  0% {
+	opacity: 0;
+  }
+  50% {
+	opacity: 1;
+  }
+  100% {
+	opacity: 0;
+  }
+}
+
+#combat-container #dps-stats #dps_counters .unit-dps.dead-adv {
+    background-color: rgba(56, 56, 56, 0.4);
+    border-bottom: 1px solid #383838;
+    border-top: 1px solid #141414;
+}
+
+#combat-container #dps-stats #dps_counters .unit-dps:hover {
+    border-color: #CCC;
+}
+
+#combat-container #dps-stats #dps_counters .unit-dps.own {
+    color: greenyellow;
+}
+#combat-container #dps-stats #dps_counters .unit-dps.enemy {
+    color: rgb(255, 87, 87);
+}
+
+#combat-container #dps-stats #dps_counters .unit-dps::before {
+    content: attr(dmg);
+    padding-right: 5px;
+    position: relative;
+    width: -webkit-fill-available;
+    text-align: right;
+    display: flex;
+    color: white;
+    justify-content: flex-end;
+    flex-direction: row;
+    text-align: right;
+    text-decoration-line: none;
+}
+#combat-container #dps-stats .unit-dps:hover .attack-meter {
+    display: flex;
+}
+
+#combat-container #dps-stats .unit-dps .attack-meter {
+    color: orange;
+    font-weight: bold;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
+    backdrop-filter: blur(2px);
+    padding: 5px;
+    box-sizing: border-box;
+    width: 0px;
+    overflow: hidden;
+    text-align: center;
+    height: 32px;
+    display: none;
+    width: 190px;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    text-decoration-line: none;
+}
+#combat-container #dps-stats .unit-dps .attack-meter:after {
+    content: 'attack(s)';
+    font-style: italic;
+    font-weight: normal;
+    color: lightgray;
+    margin-left: 5px;
+}
+
+
+
+
+
+
+
+#post-combat-screen {
+    padding: 10px;
+    min-height: 500px;
+    width: -webkit-fill-available;
+    box-shadow: black 0px 0px 10px;
+    background: rgb(255,229,186);
+    background: radial-gradient(circle, rgba(61, 58, 52, 0.5) 0%, rgba(32, 32, 32, 0.3) 100%);
+    backdrop-filter: blur(5px);
+}
+#post-combat-screen .top {
+    padding-bottom: 10px;
+    font-size: 34px;
+    font-weight: bold;
+    text-align: center;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to right, transparent, rgba(238, 163, 37, 0.87), transparent);
+    border-bottom: 2px solid;
+}
+#post-combat-screen .middle {
+    margin-top: 10px;
+}
+
+#post-combat-screen .bottom {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to right, transparent, rgba(238, 163, 37, 0.87), transparent);
+    border-top: 2px solid;
+    display: none;
+}
+
+#post-combat-screen .bottom #capture-box {
+    display: flex;
+    gap: 5px;
+    margin-top: 5px;
+    justify-content: center;
+}
+
+.capturable-adventurer {
+    color:transparent;
+    width: 80px;
+    height: 80px;
+    aspect-ratio: 1/1;
+    font-size: 0;
+}
+.capturable-adventurer:hover {
+    outline: 2px solid rgb(255, 87, 87);
+}
+
+#post-combat-screen .bottom #post-choice {
+    display: flex;
+    gap: 5px;
+    margin-top: 5px;
+}
+#post-choice button {
+    width: -webkit-fill-available;
+    font-size: 24px;
+}
+#post-combat-screen #post-choice-text {
+    margin-top: 10px;
+}
+#post-combat-screen #post-choice-text span {
+    font-weight: bold;
+}
+#post-combat-screen #post-choice-text .normal {
+    font-weight: bold;
+}
+#post-combat-screen #post-choice-text .fame {
+    color: goldenrod;
+}
+#post-combat-screen #post-choice-text .moral {
+    color: rgb(0, 132, 255);
+}
+
+
+.hovered-cell-drag {
+    filter: brightness(0.5);
+}

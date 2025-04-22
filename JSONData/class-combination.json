@@ -1,0 +1,90 @@
+[
+    {
+      "Types": "Religious",
+      "Slave": "Penitents",
+      "Commoner": "Pilgrims",
+      "Explorer": "Wayfarers",
+      "Outlaw": "Cabal",
+      "Soldier": "Mission",
+      "Noble": "Sect",
+      "Intellectual": "Scholars",
+      "Religious": "Coven"
+    },
+    {
+      "Types": "Intellectual",
+      "Slave": "Thinkers",
+      "Commoner": "Guild",
+      "Explorer": "Scientists",
+      "Outlaw": "Syndicate",
+      "Soldier": "Tacticians",
+      "Noble": "Clique",
+      "Intellectual": "Collective",
+      "Religious": "Scholars"
+    },
+    {
+      "Types": "Noble",
+      "Slave": "Dethroned",
+      "Commoner": "Clan",
+      "Explorer": "Odyssey",
+      "Outlaw": "Company",
+      "Soldier": "Lance",
+      "Noble": "Court",
+      "Intellectual": "Clique",
+      "Religious": "Sect"
+    },
+    {
+      "Types": "Soldier",
+      "Slave": "Deserters",
+      "Commoner": "Convoy",
+      "Explorer": "Squad",
+      "Outlaw": "Cartel",
+      "Soldier": "Troupe",
+      "Noble": "Lance",
+      "Intellectual": "Tacticians",
+      "Religious": "Mission"
+    },
+    {
+      "Types": "Outlaw",
+      "Slave": "Fugitives",
+      "Commoner": "Brotherhood",
+      "Explorer": "Roguehood",
+      "Outlaw": "Gang",
+      "Soldier": "Cartel",
+      "Noble": "Company",
+      "Intellectual": "Syndicate",
+      "Religious": "Cabal"
+    },
+    {
+      "Types": "Explorer",
+      "Slave": "Wanderers",
+      "Commoner": "Caravan",
+      "Explorer": "Expedition",
+      "Outlaw": "Roguehood",
+      "Soldier": "Squad",
+      "Noble": "Odyssey",
+      "Intellectual": "Scientists",
+      "Religious": "Wayfarers"
+    },
+    {
+      "Types": "Commoner",
+      "Slave": "Nomads",
+      "Commoner": "Tribe",
+      "Explorer": "Caravan",
+      "Outlaw": "Brotherhood",
+      "Soldier": "Convoy",
+      "Noble": "Clan",
+      "Intellectual": "Guild",
+      "Religious": "Pilgrims"
+    },
+    {
+      "Types": "Slave",
+      "Slave": "Band",
+      "Commoner": "Nomads",
+      "Explorer": "Wanderers",
+      "Outlaw": "Fugitives",
+      "Soldier": "Deserters",
+      "Noble": "Dethroned",
+      "Intellectual": "Thinkers",
+      "Religious": "Penitents"
+    }
+   ]

@@ -1,0 +1,570 @@
+[
+  {
+    "BaseRarity": "Legendary",
+    "Title": "Excalibur",
+    "Type": "Sword",
+    "Unique": true,
+    "Specialty": "Melee",
+    "Culture": "",
+    "BaseDamage": 20,
+    "BaseCritChance": 8
+  },
+  {
+    "BaseRarity": "Common",
+    "Title": "Axe",
+    "Type": "Axe",
+    "Specialty": "Melee",
+    "Culture": "",
+    "BaseDamage": 4,
+    "BaseCritChance": 3
+  },
+  {
+    "BaseRarity": "Rare",
+    "Title": "Lochaber",
+    "Type": "Axe",
+    "Specialty": "Melee",
+    "Culture": "",
+    "BaseDamage": 6,
+    "BaseCritChance": 3
+  },
+  {
+    "BaseRarity": "Common",
+    "Title": "Fokos",
+    "Type": "Axe",
+    "Specialty": "Melee",
+    "Culture": "",
+    "BaseDamage": 1,
+    "BaseCritChance": 1
+  },
+  {
+    "BaseRarity": "Common",
+    "Title": "Pickaxe",
+    "Type": "Axe",
+    "Specialty": "Melee",
+    "Culture": "",
+    "BaseDamage": 2,
+    "BaseCritChance": 2
+  },
+  {
+    "BaseRarity": "Common",
+    "Title": "Bow",
+    "Type": "Bow",
+    "Specialty": "Archery",
+    "Culture": "",
+    "BaseDamage": 3,
+    "BaseCritChance": 5
+  },
+  {
+    "BaseRarity": "Uncommon",
+    "Title": "Longbow",
+    "Type": "Bow",
+    "Specialty": "Archery",
+    "Culture": "",
+    "BaseDamage": 5,
+    "BaseCritChance": 2
+  },
+  {
+    "BaseRarity": "Rare",
+    "Title": "Recurve bow",
+    "Type": "Bow",
+    "Specialty": "Archery",
+    "Culture": "",
+    "BaseDamage": 5,
+    "BaseCritChance": 6
+  },
+  {
+    "BaseRarity": "Rare",
+    "Title": "Hankyu",
+    "Type": "Bow",
+    "Specialty": "Archery",
+    "Culture": "Japanese",
+    "BaseDamage": 6,
+    "BaseCritChance": 4
+  },
+  {
+    "BaseRarity": "Rare",
+    "Title": "Bolas",
+    "Type": "Bow",
+    "Specialty": "Archery",
+    "Culture": "Amerindian",
+    "BaseDamage": 2,
+    "BaseCritChance": 10
+  },
+  {
+    "BaseRarity": "Common",
+    "Title": "Crossbow",
+    "Type": "Crossbow",
+    "Specialty": "Archery",
+    "Culture": "",
+    "BaseDamage": 6,
+    "BaseCritChance": 1
+  },
+  {
+    "BaseRarity": "Common",
+    "Title": "Dagger",
+    "Type": "Dagger",
+    "Specialty": "Melee",
+    "Culture": "",
+    "BaseDamage": 3,
+    "BaseCritChance": 6
+  },
+  {
+    "BaseRarity": "Uncommon",
+    "Title": "Dirk",
+    "Type": "Dagger",
+    "Specialty": "Melee",
+    "Culture": "",
+    "BaseDamage": 2,
+    "BaseCritChance": 8
+  },
+  {
+    "BaseRarity": "Common",
+    "Title": "Stiletto",
+    "Type": "Dagger",
+    "Specialty": "Melee",
+    "Culture": "",
+    "BaseDamage": 1,
+    "BaseCritChance": 10
+  },
+  {
+    "BaseRarity": "Common",
+    "Title": "Knife",
+    "Type": "Dagger",
+    "Specialty": "Melee",
+    "Culture": "",
+    "BaseDamage": 1,
+    "BaseCritChance": 8
+  },
+  {
+    "BaseRarity": "Rare",
+    "Title": "Bajōzutsu",
+    "Type": "Handgun",
+    "Specialty": "Gunpowder",
+    "Culture": "Japanese",
+    "BaseDamage": 3,
+    "BaseCritChance": 6
+  },
+  {
+    "BaseRarity": "Rare",
+    "Title": "Reiterpistole",
+    "Type": "Handgun",
+    "Specialty": "Gunpowder",
+    "Culture": "German",
+    "BaseDamage": 5,
+    "BaseCritChance": 4
+  },
+  {
+    "BaseRarity": "Common",
+    "Title": "Dragoon",
+    "Type": "Handgun",
+    "Specialty": "Gunpowder",
+    "Culture": "",
+    "BaseDamage": 4,
+    "BaseCritChance": 2
+  },
+  {
+    "BaseRarity": "Uncommon",
+    "Title": "Pistol",
+    "Type": "Handgun",
+    "Specialty": "Gunpowder",
+    "Culture": "",
+    "BaseDamage": 3,
+    "BaseCritChance": 3
+  },
+  {
+    "BaseRarity": "Common",
+    "Title": "Blunderbuss",
+    "Type": "Handgun",
+    "Specialty": "Gunpowder",
+    "Culture": "",
+    "BaseDamage": 2,
+    "BaseCritChance": 2
+  },
+  {
+    "BaseRarity": "Common",
+    "Title": "Arquebus",
+    "Type": "Longgun",
+    "Specialty": "Gunpowder",
+    "Culture": "",
+    "BaseDamage": 3,
+    "BaseCritChance": 2
+  },
+  {
+    "BaseRarity": "Uncommon",
+    "Title": "Flintlock",
+    "Type": "Longgun",
+    "Specialty": "Gunpowder",
+    "Culture": "",
+    "BaseDamage": 5,
+    "BaseCritChance": 3
+  },
+  {
+    "BaseRarity": "Common",
+    "Title": "Matchlock",
+    "Type": "Longgun",
+    "Specialty": "Gunpowder",
+    "Culture": "",
+    "BaseDamage": 4,
+    "BaseCritChance": 3
+  },
+  {
+    "BaseRarity": "Rare",
+    "Title": "Tanegashima",
+    "Type": "Longgun",
+    "Specialty": "Gunpowder",
+    "Culture": "Japanese",
+    "BaseDamage": 4,
+    "BaseCritChance": 5
+  },
+  {
+    "BaseRarity": "Uncommon",
+    "Title": "Jezail",
+    "Type": "Longgun",
+    "Specialty": "Gunpowder",
+    "Culture": "Persian",
+    "BaseDamage": 3,
+    "BaseCritChance": 6
+  },
+  {
+    "BaseRarity": "Uncommon",
+    "Title": "Toradar",
+    "Type": "Longgun",
+    "Specialty": "Gunpowder",
+    "Culture": "Indian",
+    "BaseDamage": 3,
+    "BaseCritChance": 2
+  },
+  {
+    "BaseRarity": "Common",
+    "Title": "Fusil de chasse",
+    "Type": "Longgun",
+    "Specialty": "Gunpowder",
+    "Culture": "French",
+    "BaseDamage": 4,
+    "BaseCritChance": 3
+  },
+  {
+    "BaseRarity": "Uncommon",
+    "Title": "Bedil jawa",
+    "Type": "Longgun",
+    "Specialty": "Gunpowder",
+    "Culture": "Nanyang",
+    "BaseDamage": 6,
+    "BaseCritChance": 6
+  },
+  {
+    "BaseRarity": "Uncommon",
+    "Title": "Moukahla",
+    "Type": "Longgun",
+    "Specialty": "Gunpowder",
+    "Culture": "North African",
+    "BaseDamage": 5,
+    "BaseCritChance": 3
+  },
+  {
+    "BaseRarity": "Rare",
+    "Title": "Jiaozhi",
+    "Type": "Longgun",
+    "Specialty": "Gunpowder",
+    "Culture": "Nanyang",
+    "BaseDamage": 8,
+    "BaseCritChance": 6
+  },
+  {
+    "BaseRarity": "Common",
+    "Title": "Musket",
+    "Type": "Longgun",
+    "Specialty": "Gunpowder",
+    "Culture": "",
+    "BaseDamage": 3,
+    "BaseCritChance": 3
+  },
+  {
+    "BaseRarity": "Rare",
+    "Title": "Espingarda",
+    "Type": "Longgun",
+    "Specialty": "Gunpowder",
+    "Culture": "Iberian",
+    "BaseDamage": 6,
+    "BaseCritChance": 5
+  },
+  {
+    "BaseRarity": "Uncommon",
+    "Title": "Long rifle",
+    "Type": "Longgun",
+    "Specialty": "Gunpowder",
+    "Culture": "American",
+    "BaseDamage": 6,
+    "BaseCritChance": 6
+  },
+  {
+    "BaseRarity": "Rare",
+    "Title": "Jäger rifle",
+    "Type": "Longgun",
+    "Specialty": "Gunpowder",
+    "Culture": "German",
+    "BaseDamage": 7,
+    "BaseCritChance": 8
+  },
+  {
+    "BaseRarity": "Rare",
+    "Title": "Blowgun",
+    "Type": "Longgun",
+    "Specialty": "Archery",
+    "Culture": "Nanyang",
+    "BaseDamage": 2,
+    "BaseCritChance": 1
+  },
+  {
+    "BaseRarity": "Common",
+    "Title": "Pitchfork",
+    "Type": "Polearm",
+    "Specialty": "Melee",
+    "Culture": "",
+    "BaseDamage": 1,
+    "BaseCritChance": 2
+  },
+  {
+    "BaseRarity": "Uncommon",
+    "Title": "Naginata",
+    "Type": "Polearm",
+    "Specialty": "Melee",
+    "Culture": "Japanese",
+    "BaseDamage": 8,
+    "BaseCritChance": 5
+  },
+  {
+    "BaseRarity": "Uncommon",
+    "Title": "Kopia",
+    "Type": "Polearm",
+    "Specialty": "Melee",
+    "Culture": "",
+    "BaseDamage": 5,
+    "BaseCritChance": 2
+  },
+  {
+    "BaseRarity": "Common",
+    "Title": "Bardiche",
+    "Type": "Polearm",
+    "Specialty": "Melee",
+    "Culture": "",
+    "BaseDamage": 4,
+    "BaseCritChance": 4
+  },
+  {
+    "BaseRarity": "Common",
+    "Title": "Pike",
+    "Type": "Polearm",
+    "Specialty": "Melee",
+    "Culture": "",
+    "BaseDamage": 3,
+    "BaseCritChance": 2
+  },
+  {
+    "BaseRarity": "Common",
+    "Title": "Halberd",
+    "Type": "Polearm",
+    "Specialty": "Melee",
+    "Culture": "",
+    "BaseDamage": 5,
+    "BaseCritChance": 3
+  },
+  {
+    "BaseRarity": "Common",
+    "Title": "Spear",
+    "Type": "Polearm",
+    "Specialty": "Melee",
+    "Culture": "",
+    "BaseDamage": 4,
+    "BaseCritChance": 6
+  },
+  {
+    "BaseRarity": "Uncommon",
+    "Title": "Koncerz",
+    "Type": "Sword",
+    "Specialty": "Melee",
+    "Culture": "West Slavic",
+    "BaseDamage": 4,
+    "BaseCritChance": 3
+  },
+  {
+    "BaseRarity": "Common",
+    "Title": "Longsword",
+    "Type": "Sword",
+    "Specialty": "Melee",
+    "Culture": "",
+    "BaseDamage": 6,
+    "BaseCritChance": 3
+  },
+  {
+    "BaseRarity": "Uncommon",
+    "Title": "Zweihänder",
+    "Type": "Sword",
+    "Specialty": "Melee",
+    "Culture": "German",
+    "BaseDamage": 8,
+    "BaseCritChance": 2
+  },
+  {
+    "BaseRarity": "Rare",
+    "Title": "Rapier",
+    "Type": "Sword",
+    "Specialty": "Melee",
+    "Culture": "",
+    "BaseDamage": 3,
+    "BaseCritChance": 5
+  },
+  {
+    "BaseRarity": "Uncommon",
+    "Title": "Dusack",
+    "Type": "Sword",
+    "Specialty": "Melee",
+    "Culture": "",
+    "BaseDamage": 5,
+    "BaseCritChance": 5
+  },
+  {
+    "BaseRarity": "Rare",
+    "Title": "Szabla",
+    "Type": "Sword",
+    "Specialty": "Melee",
+    "Culture": "West Slavic",
+    "BaseDamage": 4,
+    "BaseCritChance": 3
+  },
+  {
+    "BaseRarity": "Uncommon",
+    "Title": "Shashka",
+    "Type": "Sword",
+    "Specialty": "Melee",
+    "Culture": "Caucasian",
+    "BaseDamage": 5,
+    "BaseCritChance": 5
+  },
+  {
+    "BaseRarity": "Common",
+    "Title": "Scimitar",
+    "Type": "Sword",
+    "Specialty": "Melee",
+    "Culture": "",
+    "BaseDamage": 4,
+    "BaseCritChance": 6
+  },
+  {
+    "BaseRarity": "Uncommon",
+    "Title": "Claymore",
+    "Type": "Sword",
+    "Specialty": "Melee",
+    "Culture": "",
+    "BaseDamage": 7,
+    "BaseCritChance": 2
+  },
+  {
+    "BaseRarity": "Rare",
+    "Title": "Katana",
+    "Type": "Sword",
+    "Specialty": "Melee",
+    "Culture": "Japanese",
+    "BaseDamage": 5,
+    "BaseCritChance": 10
+  },
+  {
+    "BaseRarity": "Rare",
+    "Title": "Liuyedao",
+    "Type": "Sword",
+    "Specialty": "Melee",
+    "Culture": "Chinese",
+    "BaseDamage": 5,
+    "BaseCritChance": 6
+  },
+  {
+    "BaseRarity": "Uncommon",
+    "Title": "Kilij",
+    "Type": "Sword",
+    "Specialty": "Melee",
+    "Culture": "Altaic, Ottoman",
+    "BaseDamage": 4,
+    "BaseCritChance": 5
+  },
+  {
+    "BaseRarity": "Rare",
+    "Title": "Maquahuitl",
+    "Type": "Sword",
+    "Specialty": "Melee",
+    "Culture": "Amerindian",
+    "BaseDamage": 6,
+    "BaseCritChance": 5
+  },
+  {
+    "BaseRarity": "Common",
+    "Title": "Cudgel",
+    "Type": "Sword",
+    "Specialty": "Melee",
+    "Culture": "",
+    "BaseDamage": 2,
+    "BaseCritChance": 2
+  },
+  {
+    "BaseRarity": "Uncommon",
+    "Title": "Yatagan",
+    "Type": "Sword",
+    "Specialty": "Melee",
+    "Culture": "Ottoman",
+    "BaseDamage": 4,
+    "BaseCritChance": 4
+  },
+  {
+    "BaseRarity": "Common",
+    "Title": "Cutlass",
+    "Type": "Sword",
+    "Specialty": "Melee",
+    "Culture": "",
+    "BaseDamage": 3,
+    "BaseCritChance": 6
+  },
+  {
+    "BaseRarity": "Uncommon",
+    "Title": "Ngulu",
+    "Type": "Sword",
+    "Specialty": "Melee",
+    "Culture": "Bantu",
+    "BaseDamage": 6,
+    "BaseCritChance": 8
+  },
+  {
+    "BaseRarity": "Rare",
+    "Title": "Katzbalger",
+    "Type": "Sword",
+    "Specialty": "Melee",
+    "Culture": "German",
+    "BaseDamage": 8,
+    "BaseCritChance": 5
+  },
+  {
+    "BaseRarity": "Common",
+    "Title": "Espada ropera",
+    "Type": "Sword",
+    "Specialty": "Melee",
+    "Culture": "Iberian",
+    "BaseDamage": 5,
+    "BaseCritChance": 4
+  },
+  {
+    "BaseRarity": "Common",
+    "Title": "Machete",
+    "Type": "Sword",
+    "Specialty": "Melee",
+    "Culture": "Latino",
+    "BaseDamage": 3,
+    "BaseCritChance": 6
+  },
+  {
+    "BaseRarity": "Rare",
+    "Title": "Shotel",
+    "Type": "Sword",
+    "Specialty": "Melee",
+    "Culture": "North African",
+    "BaseDamage": 3,
+    "BaseCritChance": 5
+  }
+ ]

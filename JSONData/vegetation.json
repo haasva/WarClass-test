@@ -1,0 +1,59 @@
+[
+    {
+      "name": "Montane",
+      "description": "A mountainous region with dense forests and diverse flora."
+    },
+    {
+      "name": "Alpine-Tundra",
+      "description": "A cold, treeless region found at high altitudes, with hardy vegetation."
+    },
+    {
+      "name": "Cloud-Forest",
+      "description": "A tropical or subtropical forest with persistent cloud cover and lush vegetation."
+    },
+    {
+      "name": "Prairie",
+      "description": "A temperate grassland with few trees and abundant grasses."
+    },
+    {
+      "name": "Steppe",
+      "description": "A dry, grassy plain with sparse tree cover, typical in arid climates."
+    },
+    {
+      "name": "Tundra",
+      "description": "A cold, treeless region with low-growing vegetation and permafrost."
+    },
+    {
+      "name": "Savanna",
+      "description": "A tropical grassland with scattered trees and a seasonal rainfall pattern."
+    },
+    {
+      "name": "Desertic",
+      "description": "A hot, arid region with minimal vegetation and extreme temperature fluctuations."
+    },
+    {
+      "name": "Meadow",
+      "description": "A temperate region with open, grassy fields and a variety of wildflowers."
+    },
+    {
+      "name": "Taiga",
+      "description": "A cold forested region, also known as boreal forest, with coniferous trees."
+    },
+    {
+      "name": "Woodland",
+      "description": "A temperate zone with mixed trees and shrubs, providing a diverse habitat."
+    },
+    {
+      "name": "Jungle",
+      "description": "A dense, tropical forest with a rich variety of plant and animal life."
+    },
+    {
+      "name": "Mangrove",
+      "description": "A coastal ecosystem with salt-tolerant trees and intricate root systems."
+    },
+    {
+      "name": "Tugay",
+      "description": "A riparian forest found in arid regions, often along rivers and streams."
+    }
+  ]
+  

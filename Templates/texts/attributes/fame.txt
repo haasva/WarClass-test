@@ -1,0 +1,3 @@
+<p>
+Fame represents the total achievement of the group and its renown.
+</p>

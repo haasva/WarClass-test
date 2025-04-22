@@ -1,0 +1,47 @@
+<div id="levelup-container">
+
+    <div class="subtitle">
+        Select Attributes to increase: <span id="remaining-points">-</span> point(s).
+    </div>
+
+    <div class="attributes-up">
+        <div class="attributes">
+
+            <div class="attribute-selector">
+            <div class="add-arrows">
+                <button class="arrow" id="arrow-plus" onclick="lvlup('Str', 'add');">+</button>
+                <button class="arrow" id="arrow-minus" onclick="lvlup('Str', 'rem');">-</button>
+            </div>
+            <div class="attribute" id="str">Strength <span id="addedStr"></span></div>
+            </div>
+
+            <div class="attribute-selector">
+            <div class="add-arrows">
+                <button class="arrow" id="arrow-plus" onclick="lvlup('Cun', 'add');">+</button>
+                <button class="arrow" id="arrow-minus" onclick="lvlup('Cun', 'rem');">-</button>
+            </div>
+            <div class="attribute" id="cun">Cunning <span id="addedCun"></span></div>
+            </div>
+
+            <div class="attribute-selector">
+            <div class="add-arrows">
+                <button class="arrow" id="arrow-plus" onclick="lvlup('Art', 'add');">+</button>
+                <button class="arrow" id="arrow-minus" onclick="lvlup('Art', 'rem');">-</button>
+            </div>
+            <div class="attribute" id="art">Artisanship <span id="addedArt"></span></div>
+            </div>
+
+            <div class="attribute-selector">
+            <div class="add-arrows">
+                <button class="arrow" id="arrow-plus" onclick="lvlup('Edu', 'add');">+</button>
+                <button class="arrow" id="arrow-minus" onclick="lvlup('Edu', 'rem');">-</button>
+            </div>
+            <div class="attribute" id="edu">Education <span id="addedEdu"></span></div>
+            </div>
+
+        </div>
+
+        
+    </div>
+    <div class="confirmation-area"><button id="confirm-lvlup-button">Confirm</button></div>
+</div>

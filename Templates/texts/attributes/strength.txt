@@ -1,0 +1,6 @@
+<p>
+This is the total of the group's adventurers' Strength.
+</p>
+<p>
+Total Strength increases Willpower, but negatively affects Stealth.
+</p>

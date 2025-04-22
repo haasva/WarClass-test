@@ -1,0 +1,10 @@
+{
+  "plainsMastery": {
+    "type": "trigger",
+    "trigger": "regionChange",
+    "condition": "vegetation",
+    "effect": "sightRange",
+    "target": "SETTINGS",
+    "parameters": { "additive": 2 }
+  }
+}

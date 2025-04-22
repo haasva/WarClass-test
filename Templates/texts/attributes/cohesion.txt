@@ -1,0 +1,6 @@
+<p>
+Cohesion represents the condition of unity and symbiose of the group.
+</p>
+<p>
+Cohesion is negatively affected by the Cultural Variance, size of the group, and positively by total Education and Harmony.
+</p>

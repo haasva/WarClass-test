@@ -1,0 +1,6 @@
+<p>
+This is the total of the group's adventurers' Artisanship.
+</p>
+<p>
+Total Artisanship positively affects Tradition.
+</p>

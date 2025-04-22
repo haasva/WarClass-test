@@ -1,0 +1,6 @@
+<p>
+This is the total of the group's adventurers' Cunning.
+</p>
+<p>
+Total Cunning positively affects Influence and Perception.
+</p>

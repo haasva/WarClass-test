@@ -1,0 +1,6 @@
+<p>
+Legacy represents the group's impact on History and on itself.
+</p>
+<p>
+Legacy is affected by Fame, Lore, Tradition. Losing an adventurer would lead to a direct loss of Legacy.
+</p>

@@ -1,0 +1,246 @@
+[
+    {
+        "name": "Altishahr",
+        "color": [153, 121, 55]
+    },
+    {
+        "name": "Anatolia",
+        "color": [117, 132, 82]
+    },
+    {
+        "name": "Arabia",
+        "color": [146, 146, 146]
+    },
+    {
+        "name": "Austria",
+        "color": [83, 83, 83]
+    },
+    {
+        "name": "Rumelia",
+        "color": [68, 68, 68]
+    },
+    {
+        "name": "Carpathia",
+        "color": [152, 121, 56]
+    },
+    {
+        "name": "Bengal",
+        "color": [19, 70, 49]
+    },
+    {
+        "name": "British-Isles",
+        "color": [147, 25, 25]
+    },
+    {
+        "name": "Frisia",
+        "color": [152, 152, 41]
+    },
+    {
+        "name": "Taihang",
+        "color": [41, 99, 153]
+    },
+    {
+        "name": "Himalaya",
+        "color": [21, 21, 21]
+    },
+    {
+        "name": "Huguang",
+        "color": [67, 153, 147]
+    },
+    {
+        "name": "Iberia",
+        "color": [36, 36, 36]
+    },
+    {
+        "name": "India",
+        "color": [153, 112, 67]
+    },
+    {
+        "name": "Italy",
+        "color": [72, 72, 72]
+    },
+    {
+        "name": "Japan",
+        "color": [33, 33, 33]
+    },
+    {
+        "name": "Lapland",
+        "color": [88, 88, 88]
+    },
+    {
+        "name": "Manchuria",
+        "color": [24, 24, 24]
+    },
+    {
+        "name": "Buryatia",
+        "color": [120, 35, 55]
+    },
+    {
+        "name": "Mesopotamia",
+        "color": [21, 65, 153]
+    },
+    {
+        "name": "Moscovia",
+        "color": [34, 34, 34]
+    },
+    {
+        "name": "Orléanais",
+        "color": [41, 41, 41]
+    },
+    {
+        "name": "Persia",
+        "color": [89, 153, 65]
+    },
+    {
+        "name": "Pomerania",
+        "color": [20, 20, 20]
+    },
+    {
+        "name": "Polesia",
+        "color": [41, 97, 152]
+    },
+    {
+        "name": "Scandinavia",
+        "color": [148, 21, 150]
+    },
+    {
+        "name": "Siam",
+        "color": [153, 56, 41]
+    },
+    {
+        "name": "Karelia",
+        "color": [153, 149, 17]
+    },
+    {
+        "name": "Siberia",
+        "color": [102, 102, 102]
+    },
+    {
+        "name": "Sindh",
+        "color": [65, 65, 65]
+    },
+    {
+        "name": "Tibet",
+        "color": [151, 151, 151]
+    },
+    {
+        "name": "Turkestan",
+        "color": [120, 101, 153]
+    },
+    {
+        "name": "Tyumen",
+        "color": [134, 134, 134]
+    },
+    {
+        "name": "Wild-Fields",
+        "color": [48, 48, 57]
+    },
+    {
+        "name": "Caucasus",
+        "color": [150, 150, 150]
+    },
+    {
+        "name": "Barbary-Coast",
+        "color": [132, 88, 119]
+    },
+    {
+        "name": "Murrakush",
+        "color": [153, 17, 153]
+    },
+    {
+        "name": "Egypt",
+        "color": [82, 145, 89]
+    },
+    {
+        "name": "Sahel",
+        "color": [128, 135, 130]
+    },
+    {
+        "name": "Guinea",
+        "color": [88, 148, 133]
+    },
+    {
+        "name": "Sahara",
+        "color": [147, 114, 147]
+    },
+    {
+        "name": "Kongo",
+        "color": [112, 130, 151]
+    },
+    {
+        "name": "Ethiopia",
+        "color": [113, 130, 82]
+    },
+    {
+        "name": "Pampas",
+        "color": [52, 57, 51]
+    },
+    {
+        "name": "Atacama",
+        "color": [128, 136, 136]
+    },
+    {
+        "name": "Amazonia",
+        "color": [51, 51, 51]
+    },
+    {
+        "name": "Andes",
+        "color": [120, 103, 153]
+    },
+    {
+        "name": "Caribbean",
+        "color": [55, 70, 51]
+    },
+    {
+        "name": "Pernambuco",
+        "color": [150, 100, 32]
+    },
+    {
+        "name": "Yucatan",
+        "color": [57, 86, 71]
+    },
+    {
+        "name": "Sonora",
+        "color": [153, 144, 35]
+    },
+    {
+        "name": "California",
+        "color": [21, 54, 150]
+    },
+    {
+        "name": "Great-Plains",
+        "color": [146, 71, 153]
+    },
+    {
+        "name": "Louisiana",
+        "color": [147, 54, 36]
+    },
+    {
+        "name": "Carolina",
+        "color": [153, 98, 33]
+    },
+    {
+        "name": "Great-Lakes",
+        "color": [101, 153, 148]
+    },
+    {
+        "name": "Canada",
+        "color": [20, 99, 148]
+    },
+    {
+        "name": "Rockies",
+        "color": [64, 153, 128]
+    },
+    {
+        "name": "Yukon",
+        "color": [89, 148, 67]
+    },
+    {
+        "name": "Greenland",
+        "color": [153, 85, 132]
+    },
+    {
+        "name": "Nusantura",
+        "color": [148, 21, 147]
+    }
+]

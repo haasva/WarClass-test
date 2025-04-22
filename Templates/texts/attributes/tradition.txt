@@ -1,0 +1,6 @@
+<p>
+Tradition represents the group shared customs, savoir-faire and abilities, that has been able to be perpetuated over time.
+</p>
+<p>
+Tradition is positively affected by Artisanship, high Cultural Variance, and slightly by the size of the group.
+</p>

@@ -1,0 +1,745 @@
+#adventurer-info-container {
+    position: absolute;
+	  width: 398px;
+    border: 1px solid black;
+    background-color: transparent;
+    font-size: 18px;
+	  box-shadow: 2px 4px 20px rgba(0, 0, 0, 1);
+	  z-index: 9999;
+    pointer-events: none;
+    transform : translate(10%, 1%);
+    text-rendering: geometricPrecision;
+    transition: opacity 0.1s allow-discrete ease-in-out;
+    backdrop-filter: blur(8px);
+}
+
+.adventurer-info {
+    display: flex;
+    color: white;
+    flex-wrap: wrap;
+    flex-direction: row;
+    font-size: 16px;
+    text-align: left;
+    font-family: 'Domine', serif;
+    text-shadow: 0px 0px 1px rgba(0, 0, 0, 1), 0px 0px 2px rgba(0, 0, 0, 1), 0px 0px 2px rgba(0, 0, 0, 1);
+    align-content: flex-start;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: rgba(0, 0, 0, 0.65);
+    background-size:     cover;
+    background-repeat:   no-repeat;
+    background-position: top center;
+    font-smooth: never;
+    text-rendering: geometricPrecision;
+}
+
+#close-button {
+	display:block;
+	position: absolute;
+	z-index: 10;
+	right: 2px;
+	top: 2px;
+	width: 29px;
+	height: 29px;
+    padding: 0;
+    line-height: 20px;
+    box-shadow: 0 0 2px black;
+}
+
+#minify-button {
+	display:block;
+	position: absolute;
+	z-index: 10;
+	right: 32px;
+	top: 2px;
+	width: 29px;
+	height: 29px;
+    padding: 0;
+    line-height: 20px;
+    box-shadow: 0 0 2px black;
+}
+
+.adventurer-info #top-header {
+
+    font-weight:400;
+ 
+    width: 100%;
+    display: flex;
+    border: 1px solid grey;
+
+    background: rgb(0,0,0);
+background: linear-gradient(0deg, rgba(0,0,0,1) 0%, #e7e7e741 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5px;
+    gap: 0px;
+    text-align: center;
+	cursor: move;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+.adventurer-info .Title {
+    text-shadow: 0 0 2px black, 0 0 2px black, 0 0 5px black, 0 0 7px black;
+    text-align: center;
+    display: block;
+    width: 100%;
+    font-size: 25px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+}
+
+.adventurer-info .Prefix {
+    text-shadow: 0 0 2px black, 0 0 2px black, 0 0 5px black, 0 0 7px black;
+    font-size: 20px;
+    color: gainsboro;
+}
+
+.adventurer-info .Title .adv-culture-icon {
+    width: 40px;
+    aspect-ratio: 1/1;
+    background-size: cover;
+    font-size: 0;
+    color: transparent;
+    position: absolute;
+    top: 10px;
+}
+.adventurer-info .Title .adv-culture-icon.d0 {
+    right: 3px;
+}
+.adventurer-info .Title .adv-culture-icon.d1 {
+    right: 40px;
+}
+
+.adventurer-info #top-header.normal {
+
+}
+.adventurer-info #top-header.rare {
+
+}
+.adventurer-info #top-header.legendary {
+
+}
+.adventurer-info .normal {
+color: white;
+}
+.adventurer-info .uncommon {
+color: #1eff00;
+}
+.adventurer-info .rare {
+color: #0070dd;
+}
+.adventurer-info .legendary {
+color: #da00ff;
+}
+
+
+.adventurer-info #types-and-level {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    top: -1px;
+    left: -56px;
+    align-items: center;
+    padding: 2px;
+    box-sizing: border-box;
+    gap: 2px;
+}
+
+.adventurer-info #types-and-level #adv-level {
+    border-radius: 50% 50%;
+    width: 40px;
+    height: 40px;
+    z-index: -1;
+    transform: scale(1.3);
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    font-size: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-image: url('../Art/Interface/rond.png');
+    box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.7);
+    text-shadow: 1px 0px 2px rgba(0, 0, 0, 0.5), 1px 0px 3px rgba(0, 0, 0, 0.5), 0 0 10px #00ffff, 0 0 10px #00ffff;
+}
+
+.adventurer-info .Type1, .adventurer-info .Type2 {
+    width: 50px;
+    height: 50px;
+	display: inline-block;
+	    border-radius: 2px;
+        box-shadow: 2px 4px 10px rgba(0, 0, 0, 1);
+}
+.adventurer-info .type-picture:last-child {
+
+}
+.adventurer-info .type-picture {
+    display: block;
+}
+
+
+
+.adventurer-info .SubCategoryArt {
+    display: none;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-right: 5px;
+    margin-left: 5px;
+    padding-top: 6px;
+	border: none;
+}
+
+.adventurer-info .MountedArt {
+}
+
+.adventurer-info .Specialty1, .adventurer-info .Specialty2 {
+    width: 30px;
+	height: 30px;
+	margin-left : 5px;
+  background-size:     cover;
+    background-repeat:   no-repeat;
+    background-position: center center;
+}
+
+.adventurer-info .Specialty {
+	color: #f2c462;
+    margin-left : 5px;
+}
+.adventurer-info .Specialty:before {
+	content: "Specialty: ";
+    color: lightgray;
+}
+
+.adventurer-info .Base-attack {
+    margin-left : 0px;
+    float: left;
+    font-size: 20px;
+}
+.adventurer-info .Base-attack:after {
+    color: lightgray;
+    content: " Attack";
+}
+
+.adventurer-info .signature-container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: -5px;
+}
+.adventurer-info .signature-container .skill {
+width: 30px;
+height: 30px;
+margin: 0;
+border: 2px solid transparent;
+box-sizing: border-box;
+}
+
+.signature-container .skill.Outlaw { border-color: #f9d42e; }
+.signature-container .skill.Slave { border-color: #b5b5b5; }
+.signature-container .skill.Commoner { border-color: #ada935; }
+.signature-container .skill.Religious { border-color: #f880ec; }
+.signature-container .skill.Explorer { border-color: #01dd9f; }
+.signature-container .skill.Soldier { border-color: #926f59; }
+.signature-container .skill.Noble { border-color: #de1718; }
+.signature-container .skill.Intellectual { border-color: #0188ff; }
+.signature-container .skill.General { border-color: #ffffff; }
+
+.adventurer-info .Signature {
+	color: #00ccff;
+}
+
+.adventurer-info .Lore {
+    text-align: center;
+    font-family: Georgia;
+	font-style: italic;
+    color: beige;
+    text-shadow: 1px 0px 2px rgba(0, 0, 0, 0.5), 1px 0px 0px rgba(0, 0, 0, 0.5), 0 0 2px black;
+	width: 100%;
+	margin: 5px;
+    padding: 5px;
+    background-color: #25211bb0;
+    border: 1px solid #2e2c2ca4;
+    box-shadow: 0 0 2px black, 0 0 2px black;
+    text-wrap:stable;
+    border-radius: 2px;
+}
+
+
+
+.adventurer-info .box1 {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 5px;
+    gap: 5px;
+    margin-bottom: 5px;
+    padding-bottom: 0px;
+    box-sizing: border-box;
+}
+
+.adventurer-info .attributes {
+    box-sizing: border-box;
+    border-radius: 5px;
+    height: 100%;
+    max-width: 265px;
+    padding: 5px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    background-color: #111;
+    width: -webkit-fill-available;
+}
+
+.adventurer-info  .attributes .attr:not(.Culture) {
+    color: white;
+    padding: 0;
+    margin: 0;
+
+}
+
+.adventurer-info .attr.Culture {
+    color: burlywood;
+    padding: 0;
+    margin: 0;
+}
+
+.adventurer-info .attributes div{
+    border-image-slice: 1;
+    border-image-source: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgb(145, 96, 5) 1%, rgba(0,0,0,0) 100%);
+    border-bottom: 2px solid;
+    padding: 5px;
+    padding-top: 5.5px;
+    padding-left: 0px;
+}
+
+.adventurer-info .attributes div:last-child{
+    border-bottom: 0px solid;
+}
+
+
+.adventurer-info .Art {
+display: block;
+width: 118px;
+height: 168px;
+border-radius: 2px;
+border: 1px solid rgb(80, 80, 80);
+box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.95), 0px 0px 2px rgba(0, 0, 0, 1) inset, 0px 0px 2px rgba(0, 0, 0, 1) inset,
+0px 0px 3px rgba(0, 0, 0, 0.95), 
+0px 0px 3px rgba(0, 0, 0, 0.95);
+}
+
+
+
+.adventurer-info .Rarity {
+display: none;
+}
+.adventurer-info .Rarity:before {
+content: "[";
+}
+.adventurer-info .Rarity:after {
+content: "]";
+}
+.adventurer-info .colour {
+display: none;
+}
+
+.adventurer-info .culture-icon {
+    border-radius: 50% 50% 50% 50%;
+    background-color: rgba(95, 95, 95, 0.384);
+    border: 2px solid rgba(0, 0, 0, 0.562);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.adventurer-info .age-upkeep {
+display: flex;
+flex-direction: row;
+gap: 5px;
+width: 100%;
+justify-content: space-between;
+}
+.adventurer-info .Upkeep {
+    text-align: right;
+}
+.adventurer-info .Upkeep:before {
+    content : "Upkeep: ";
+    color: gold;
+}
+.adventurer-info .Upkeep::after {
+    content: '';
+    display: inline-block;
+    width: 14px;
+    aspect-ratio: 1/1;
+    background-image: url('../Art/Interface/coin_small.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    top: 2px;
+    margin-left: 3px;
+}
+.adventurer-info .Speed, .adventurer-info .Age {
+color : white;
+}
+.adventurer-info .LifeInfo {
+    display: inline-flexbox;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+.adventurer-info .LifeInfo span:not(.SubCategory) {
+    color : #ff4c4c;
+    padding: 0;
+    margin: 0;
+}
+.adventurer-info .SubCategory {
+	color: #b3d39a;
+    display: inline-block;
+    text-align: right;
+    width: 40%;
+}
+
+.adventurer-info .Life {
+    color : #fc6262;
+}
+.adventurer-info .Life:after {
+content : " /";
+}
+.adventurer-info .MaxLife:after {
+content : " Life";
+}
+.adventurer-info .Speed span {
+margin-left : 4px;
+font-weight: normal;
+}
+.adventurer-info .Age:before {
+content : "Era ";
+color : #DDD;
+}
+
+.adventurer-info div:not(img) {
+
+}
+
+.adventurer-info .Description {
+    color: orange;
+}
+.adventurer-info .Age {
+	color: #f2c462;
+}
+.adventurer-info .Speed {
+	color: #57ffbf;
+}
+.adventurer-info .Resistances {
+    display: flex;
+    gap: 10px;
+    color: white;
+}
+.adventurer-info .HandResist:before, .RangedResist:before {
+    content: "";
+    width: 20px;
+	height: 20px;
+	margin-right: 5px;
+    background-size:     cover;
+    background-repeat:   no-repeat;
+    background-position: center center;
+    display:block;
+    float: left;
+}
+.adventurer-info .HandResist:before {
+    background-image: url("../Art/Interface/handresist.png");
+}
+.adventurer-info .RangedResist:before {
+    background-image: url("../Art/Interface/rangedresist.png");
+}
+.adventurer-info .HandResist:after, .RangedResist:after {
+    content:"%";
+}
+.adventurer-info .Resistances span {
+    display: block;
+    width: 60px;
+
+
+}
+
+
+
+
+
+.Type {
+}
+
+
+
+
+
+
+
+
+.adventurer-info .raritybg {
+display: none;
+}
+
+.adventurer-info .upgradeClick {
+	cursor: pointer;
+}
+
+.adventurer-info .upgrades {
+    display: flex;
+    width: 100%;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(90deg, rgba(51,144,15,0) 0%, #555 50%, rgba(181,119,54,0) 100%);
+    border-top: 1px solid;
+}
+
+#UpgradesText {
+
+}
+
+.adventurer-info #upgrades_pics {
+    margin-top: -5px;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+}
+
+.Upgrade1, .Upgrade2, .Upgrade3 {
+    text-shadow: 0px 0px 3px black, 0px 0px 3px black, 0px 0px 3px black, 0px 0px 3px black;
+	line-height: 13px;
+	text-align:center;
+}
+
+.Upgrade1Art, .Upgrade2Art, .Upgrade3Art {
+    width: 70px;
+    height: 70px;
+    margin: 5px;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    border: 1px solid #2c1c06;
+	background-color: rgb(24 24 24 / 55%);
+	box-shadow : rgb(0 0 0 / 65%) 0px 2px 4px inset, rgb(222 222 222 / 20%) 0px 1px 0px;
+}
+.Upgrade1Art:hover, .Upgrade2Art:hover, .Upgrade3Art:hover {
+}
+.Upgrade1Art {
+}
+.Upgrade2Art {
+}
+.Upgrade2Art {
+}
+
+.CultureImg1, .CultureImg2 {
+    width: 60px;
+    height: 60px;
+}
+.CultureImg1 {
+
+}
+.CultureImg2 {
+
+}
+
+.adventurer-info div, .adventurer-info span {
+  background-size:     cover;
+  background-repeat:   no-repeat;
+  background-position: center center;
+}
+
+
+.adventurer-info .info {
+border-top: 0px solid grey;
+width: 100%;
+text-align:left;
+}
+.adventurer-info .info div:not(.Description, .skill) {
+    border-image-slice: 1;
+    border-image-source: linear-gradient(90deg, rgba(51,144,15,0) 0%, #555 50%, rgba(181,119,54,0) 100%);
+    border-bottom: 1px solid;
+}
+.adventurer-info .info div:not(.attributes-points) {
+padding: 5px;
+}
+.adventurer-info .info div:last-child:not(.skill) {
+border-bottom: 0px solid grey;
+}
+
+
+.adventurer-info .culture-box {
+    position: absolute;
+    right: 0px;
+    top: 20px;
+    display: flex;
+    padding: 5px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    border-left: 1px solid grey;
+    justify-content: center;
+}
+.adventurer-info .attacks {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.adventurer-info .attacks .Weapon {
+    color: #ff7aad;
+    text-transform: capitalize;
+}
+.adventurer-info .attacks .Weapon::before {
+    color: lightgray;
+    content: '[Weapon: ';
+    white-space: pre;
+    margin-left: 5px;
+}
+.adventurer-info .attacks .Weapon::after {
+    color: lightgray;
+    content: ']';
+    white-space: pre;
+}
+.adventurer-info .attacks .weapon-type {
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+}
+.adventurer-info .attacks:hover .Specialty1, .adventurer-info .attacks:hover .Specialty2 {
+transform: scale(2, 2);
+	transition: all 0.1s;
+}
+
+.adventurer-info #Affixes {
+text-align: left;
+border-image-slice: 1;
+border-image-source: linear-gradient(90deg, rgba(51,144,15,0) 0%, #555 50%, rgba(181,119,54,0) 100%);
+border-top: 1px solid;
+}
+
+.adventurer-info #Affixes .affix-li {
+    display: block;
+}
+.adventurer-info #Affixes .affix-li:before {
+    color: inherit;
+    width: 1rem;
+    text-indent: 0;
+    display: inline-block;
+    content: "";
+    width: 0.4em;
+    height: 0.4em;
+    margin-right: 0.3em;
+    vertical-align: top;
+    margin-top: calc(0.45rem - 0.1em);
+    border-radius: 50%;
+    background: -webkit-gradient(linear,left top,left bottom,from(#e7c067),to(#b8862d));
+    background: -webkit-linear-gradient(top,#e7c067,#b8862d);
+    background: -o-linear-gradient(top,#e7c067,#b8862d);
+    background: linear-gradient(180deg,#e7c067,#b8862d);
+}
+
+.adventurer-info #Affixes .affix-name {
+    color: rgb(0, 255, 242);
+}
+.adventurer-info #Affixes .affix-info {
+    color: lightgrey;
+    font-style: italic;
+}
+
+.adventurer-info .attributes-points {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 42px;
+    padding: 5px;
+    padding-bottom: 24px;
+    filter: saturate(1.5);
+}
+
+.attributes-points span {
+    display: flex;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 1);
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    font-size: 18px;
+    z-index: 1;
+}
+
+.attributes-points span:before {
+    text-align: left;
+    padding: 2px;
+    translate: -2px 24px;
+    position: absolute;
+    font-size: 16px;
+    z-index: 0;
+    padding: 5px;
+    padding-left: 10px;
+}
+.attributes-points .main-attribute {
+    box-shadow: 0 0 16px wheat, 0 0 7px rgb(255, 255, 255);
+}
+.attributes-points .main-attribute:before {
+    color: yellow;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.attributes-points .Artisanship {
+    border: 3px solid var(--art-color);
+}
+.attributes-points .Artisanship:before {
+    content: "Art";
+}
+.attributes-points .Dexterity {
+    border: 3px solid var(--dex-color);;
+}
+.attributes-points .Dexterity:before {
+    content: "Dex";
+}
+.attributes-points .Strength {
+    border: 3px solid var(--str-color);;
+}
+.attributes-points .Strength:before {
+    content: "Str";
+}
+.attributes-points .Cunning {
+    border: 3px solid var(--cun-color);;
+}
+.attributes-points .Cunning:before {
+    content: "Cun";
+}
+.attributes-points .Education {
+    border: 3px solid var(--edu-color);
+}
+.attributes-points .Education:before {
+    content: "Edu";
+}

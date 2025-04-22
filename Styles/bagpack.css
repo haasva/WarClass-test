@@ -1,0 +1,453 @@
+/* Backpack container */
+#backpack-container {
+
+  margin-top: 10px;
+  z-index: 1;
+  grid-row: 2;
+  grid-column: 1;
+}
+
+#backpack {
+  border-radius: 4px;
+  overflow: hidden;
+  box-sizing: border-box;
+  filter: drop-shadow(0 0 5px black);
+}
+
+/* Tab header */
+#backpack .tab-header {
+  display: flex;
+  background-color: transparent;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content:flex-start;
+  width: 100%;
+  margin-bottom: -1px;
+  z-index: -1;
+}
+
+#backpack .tab {
+  padding: 10px;
+  text-align: center;
+
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: #0f0d09;
+  border: 1px solid #704114;
+  text-shadow: 0 0 2px black, 0 0 1px black, 0 1px 2px black;
+  color: rgb(177, 177, 177);
+  transition: none;
+  font-style: italic;
+  padding: 8px;
+  height: min-content;
+  width: 100px;
+  z-index: 2;
+
+}
+
+#backpack .tab:hover {
+  color: white;
+  background: rgb(29,26,18);
+  background: linear-gradient(0deg, rgb(22, 20, 14) 0%, rgb(0, 0, 0) 100%);
+}
+#backpack .tab:active {
+ 
+  text-indent: -2px;
+  color: gray;
+}
+
+#backpack .tab.active {
+  box-shadow: none;
+  padding: 10px;
+  margin-bottom: -1px;
+  font-style: normal;
+  background-color: #1d1d1d;
+  font-weight: bold;
+  border: 2px solid #9e5b1c;
+  border-bottom: 0px solid transparent;
+  color: white;
+  background: rgb(29,26,18);
+  background-image: url('../Art/Interface/adv_tooltip_header.png');
+  background-size: cover;
+}
+
+/* Tab content */
+#backpack .tab-content {
+  width: 100%;
+  padding: 10px;
+  max-height: 195px;
+  overflow-y: scroll;
+  box-sizing: border-box;
+  background-image: url('../Art/Interface/eventbg.png');
+  background-size: cover;
+  box-shadow: 0 0 20px black inset;
+  border: 2px solid #9e5b1c;
+  border-top: 2px solid #9e5b1c;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  transition: height 0.1s;
+}
+#backpack .tab-content::-webkit-scrollbar {
+  display: block;
+  width: 10px;
+}
+
+#backpack #backpack-items.inactive  {
+  display: none;
+}
+#backpack #backpack-skills.inactive  {
+  display: none;
+}
+#backpack #backpack-fragments.inactive  {
+  display: none;
+}
+#backpack #backpack-tools.inactive  {
+  display: none;
+}
+
+#backpack #backpack-items.active {
+  display: flex;
+}
+#backpack #backpack-skills.active {
+  display: flex;
+}
+#backpack #backpack-skills .skill {
+  width: 42px;
+  height: 42px;
+  border-style: outset;
+}
+#backpack #backpack-adventurers.active {
+  display: flex;
+}
+#backpack #backpack-tools.active  {
+  display: flex;
+}
+
+
+
+#backpack .inventory-bag {
+      display: flex;
+      max-width: max-content;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 0px;
+      justify-content: left;
+      max-height: 400px;
+}
+
+#backpack .inventory-bag .slot, #adventurer-option-container .slot {
+  width: 54px;
+  aspect-ratio: 1/1;
+  background-color: #1d1d1d;
+  border: 1px solid rgb(0, 0, 0);
+  margin: 1px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background-image: url('../Art/inventory-empty.png');
+  background-size: cover;
+  display: flex;
+  overflow: hidden;
+}
+
+
+.empty-slot:hover {
+  z-index: 1;
+  outline: 1px solid orange;
+  outline-offset: -2px;
+}
+
+.slot .inventory-item {
+  width: 100%;
+  aspect-ratio: 1/1;
+  background-size: 96% 96%;
+  background-position: center;
+  outline: 2px solid gray;
+  outline-offset: -2px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  text-shadow: 0px 0px 5px black, 0px 0px 5px black, 0px 0px 3px black, 0px 0px 5px black, 0px 0px 5px black;
+  paint-order: stroke;
+  -webkit-text-stroke-color: rgb(0, 0, 0);
+  -webkit-text-stroke-width: 3px;
+
+}
+
+.inventory-item .item-quantity {
+  margin: 5px;
+  margin-left: 8px;
+  font-weight: bold;
+  height: min-content;
+  pointer-events: none;
+  font-size: 16px;
+}
+
+
+#backpack .inventory-bag .inventory-item:hover, #group-class-inventory .slot .inventory-item:hover, .inventory-item:hover, .adv-weapon-slot:hover {
+  box-shadow: inset 0 0 10px orange, inset 0 0 10px orange, inset 0 0 2px black, inset 0 0 2px black;
+}
+
+#backpack .inventory-bag .inventory-item:active {
+  box-shadow: inset 0 0 5px black;
+  scale: 0.95;
+}
+
+
+
+
+/* =========== LEFT-SIDE GROUP INVENTORY =========== */
+
+
+#group-class-inventory {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: -37px;
+}
+
+#group-class-inventory #content {
+  display: grid;
+  gap: 15px;
+  aspect-ratio: 1/1;
+  align-items: center;
+  justify-content: center;
+  background-image: url(../Art/Interface/gibg.png);
+  align-content: center;
+  background-size: 105% 104%;
+  background-position: 43% 39%;
+}
+
+#group-class-inventory .top, #group-class-inventory .center, #group-class-inventory .bottom {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 15px;
+}
+
+
+#group-class-inventory .slot {
+  width: 58px;
+  aspect-ratio: 1/1;
+  background-size: cover;
+  border-style: groove;
+  background-blend-mode: overlay;
+  background-color: #33281d;
+  box-shadow: inset 0 0 10px black, 0 0 5px black;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  align-content: center;
+border: 4px solid transparent;
+border-image-source: url('../Art/Interface/inventory/border.png');
+border-image-slice: 4;
+border-image-width: 4px;
+border-image-repeat: stretch;
+overflow: visible;
+border-radius: 3px;
+}
+
+
+
+#group-class-inventory .slot:hover {
+  background-blend-mode: soft-light;
+  background-color: #44382b;
+}
+
+#group-class-inventory .slot .inventory-item {
+
+  outline-width: 2px;
+  outline-offset: -1px;
+  box-shadow: 0 0 5px black, 0 0 2px black;
+}
+
+
+
+#group-class-inventory #adventurers {
+  display: grid;
+  grid-template: "a a a";
+  justify-content: center;
+  align-content: center;
+  gap: 10px;
+}
+#group-class-inventory #adventurers .adventurer-slot {
+  display: flex;
+  width: 64px;
+  aspect-ratio: 1/1;
+  border: 4px solid transparent;
+  border-image-source: url('../Art/Interface/adventurer_border.png');
+  border-image-slice: 4;
+  border-image-width: 4px;
+  border-image-repeat:stretch;
+  background-image: url('../Art/Interface/innerbg.png');
+  background-size: cover;
+}
+#group-class-inventory #adventurers .adventurer-slot.equipped {
+  scale: 1.2;
+  z-index: 2;
+  outline: 2px solid orange;
+  box-shadow: 0 0 10px black;
+  border-radius: 4px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.equipment-tooltip {
+  min-width: 200px;
+  max-width: 300px;
+  box-sizing: border-box;
+  animation: none;
+  border: 1px outset white;
+  padding-bottom: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+  /* block-size: auto;
+ 
+  
+  animation: blockSize 0.1s ease-in-out 1; */
+}
+
+@keyframes blockSize {
+  0% {
+    block-size: 0%;
+    content-visibility: hidden;
+  }
+  100% {
+    block-size: auto;
+    content-visibility: visible;
+  }
+}
+
+.equipment-tooltip .header {
+  text-transform: capitalize;
+  width: 100%;
+  font-size: 20px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-bottom: 5px;
+  background-color: transparent;
+  text-align: left;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgba(0,0,0,0) 100%);
+  border-bottom: 1px solid;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+
+}
+
+.equipment-tooltip .category {
+  color: white;
+}
+.equipment-tooltip .description {
+  color: burlywood;
+}
+.equipment-tooltip .durability {
+  color: rgb(58, 255, 196);
+}
+.equipment-tooltip .durability span:first-child {
+  color: rgb(206, 255, 225);
+}
+.equipment-tooltip .ability {
+  color: white;
+}
+.equipment-tooltip .ability .heal-amount {
+  color: rgb(24, 220, 255);
+}
+.equipment-tooltip .stackable {
+  color: grey;
+}
+.equipment-tooltip .dmg-type {
+  color: #f2c462;
+}
+.equipment-tooltip .word {
+  color: lightgray;
+}
+.equipment-tooltip .stats {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  white-space: pre;
+}
+.equipment-tooltip .stats:before {
+  color: inherit;
+  width: 1rem;
+  text-indent: 0;
+  display: inline-block;
+  content: "";
+  width: 0.4em;
+  height: 0.4em;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #e7c067, #b8862d);
+  margin-right: 0.4em;
+  vertical-align: top;
+  margin-top: calc(0.75rem - 0.4em);
+}
+
+.equipment-tooltip div:not(.header) {
+  border-image-slice: 0;
+  border-image-source: transparent;
+  border-bottom: 0px solid;
+  padding-bottom : 0px;
+  padding-top : 0px;
+  width: 100%;
+  text-align: left;
+}
+
+
+
+#backpack-fragments {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2px;
+}
+
+#backpack-fragments .fragment-cont {
+  display: grid;
+  grid-template-columns: 22px 1fr 1fr;
+  align-items: center;
+  border: 1px solid rgb(121, 82, 48);
+  justify-content: space-between;
+  padding: 2px;
+  padding-top: 3px;
+  margin-bottom: 2px;
+  background-color: #181520a9;
+  box-shadow: 0 0 2px black;
+  outline: 1px solid black;
+  border-radius: 2px;
+}
+
+#backpack-fragments .fragment-cont:hover {
+  border: 1px solid burlywood;
+}
+
+.fragment-cont .fragment-name {
+  text-wrap-mode: nowrap;
+  color: rgb(255, 106, 86);
+}
+
+.fragment-cont .fragment-number {
+  text-align: right;
+  padding-right: 5px;
+}
+
+.fragment-cont .fragment-icon {
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+}

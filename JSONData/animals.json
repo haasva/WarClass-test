@@ -1,0 +1,138 @@
+[
+    {
+      "name": "deer",
+      "aggressive": "not",
+      "vegetation": "any",
+      "life": 50,
+      "attack": 8,
+      "speed": 10
+    },
+    {
+      "name": "monkey",
+      "aggressive": "yes",
+      "vegetation": "desertic, tugay, jungle, savanna",
+      "life": 75,
+      "attack": 20,
+      "speed": 15
+    },
+    {
+      "name": "bat",
+      "aggressive": "yes",
+      "vegetation": "any",
+      "life": 20,
+      "attack": 20,
+      "speed": 16
+    },
+    {
+      "name": "rhinoceros",
+      "aggressive": "yes",
+      "vegetation": "savanna, tugay, jungle",
+      "life": 200,
+      "attack": 50,
+      "speed": 15
+    },
+    {
+      "name": "polar bear",
+      "aggressive": "yes",
+      "vegetation": "alpine-tundra, taiga, tundra",
+      "life": 200,
+      "attack": 50,
+      "speed": 15
+    },
+    {
+      "name": "bear",
+      "aggressive": "yes",
+      "vegetation": "woodland, alpine-tundra, montane, meadow, arid-montane, taiga",
+      "life": 180,
+      "attack": 55,
+      "speed": 17
+    },
+    {
+      "name": "lion",
+      "aggressive": "yes",
+      "vegetation": "savanna, arid-montane, tugay, montane",
+      "life": 150,
+      "attack": 50,
+      "speed": 18
+    },
+    {
+      "name": "cheetah",
+      "aggressive": "yes",
+      "vegetation": "savanna, desertic, arid-montane",
+      "life": 100,
+      "attack": 30,
+      "speed": 18
+    },
+    {
+      "name": "tiger",
+      "aggressive": "yes",
+      "vegetation": "tugay, savanna, jungle, arid-montane, mangrove",
+      "life": 170,
+      "attack": 40,
+      "speed": 18
+    },
+    {
+      "name": "boar",
+      "aggressive": "yes",
+      "vegetation": "woodland, meadow, montane",
+      "life": 120,
+      "attack": 30,
+      "speed": 18
+    },
+    {
+      "name": "camel",
+      "aggressive": "not",
+      "vegetation": "steppe, desertic",
+      "life": 45,
+      "attack": 5,
+      "speed": 19
+    },
+    {
+      "name": "bison",
+      "aggressive": "yes",
+      "vegetation": "prairie, steppe, tundra",
+      "life": 160,
+      "attack": 35,
+      "speed": 20
+    },
+    {
+      "name": "dog",
+      "aggressive": "yes",
+      "vegetation": "any",
+      "life": 60,
+      "attack": 15,
+      "speed": 21
+    },
+    {
+      "name": "hyena",
+      "aggressive": "yes",
+      "vegetation": "steppe, savanna, tugay, desertic",
+      "life": 75,
+      "attack": 25,
+      "speed": 22
+    },
+    {
+      "name": "leopard",
+      "aggressive": "yes",
+      "vegetation": "jungle",
+      "life": 100,
+      "attack": 40,
+      "speed": 23
+    },
+    {
+      "name": "snake",
+      "aggressive": "yes",
+      "vegetation": "any",
+      "life": 40,
+      "attack": 20,
+      "speed": 24
+    },
+    {
+      "name": "wolf",
+      "aggressive": "yes",
+      "vegetation": "woodland, steppe, prairie, taiga, tundra",
+      "life": 90,
+      "attack": 20,
+      "speed": 25
+    }
+   ]

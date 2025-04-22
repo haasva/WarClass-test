@@ -1,0 +1,184 @@
+[
+  {
+    "Color": "Group class",
+    "Title": "Trade Caravan",
+    "Attributes": {
+      "Strength": 5,
+      "Cunning": 7,
+      "Artisanship": 11,
+      "Education": 10
+      },
+    "Type1": "\\Art\\Categories\\Types\\commoner.png",
+    "Type2": "\\Art\\Categories\\Types\\intellectual.png",
+    "GroupSlots": 7,
+    "Gold": 50,
+    "Major": "Commoner",
+    "Minor": "Intellectual",
+    "Effect 1": "Adventurers can carry 1 additional item.",
+    "Effect 2": "Double your Cultural Range.",
+    "Effect 3": "You can buy and sell any resources at any Vendors.",
+    "Art": "\\Art\\Group Class\\Caravan.png",
+    "Start": {
+      "Location1" : "Huguang",
+      "Location2" : "Egypt"
+    },
+    "StartingSkills": "Advanced trade, Ledger keeping",
+    "Desc": "A caravan of traders in search of valuables to exchange for a good price. Well organized and skilled in the means of business and diplomacy."
+  },
+  {
+    "Color": "Group class",
+    "Title": "Sacred Pilgrimage",
+    "Attributes": {
+      "Strength": 6,
+      "Cunning": 5,
+      "Artisanship": 12,
+      "Education": 15
+      },
+    "Type1": "\\Art\\Categories\\Types\\religious.png",
+    "Type2": "\\Art\\Categories\\Types\\commoner.png",
+    "GroupSlots": 4,
+    "Gold": 50,
+    "Major": "Religious",
+    "Minor": "Commoner",
+    "Effect 1": "Adventurers with 1 speed heal two times more while Camping.",
+    "Effect 2": "You can have an additional enabled Religion.",
+    "Effect 3": "Religious skills don’t cost resources.",
+    "Art": "\\Art\\Group Class\\Mission.png",
+    "Start": {
+      "Location1" : "Guinea",
+      "Location2" : "Siam"
+    },
+    "StartingSkills": "Pray, Perception",
+    "Desc": "An assemblage of pious fellows led by their faith to seek a higher good through religion. Wherever their path would lead them to, the destination is to be found in the inner self."
+  },
+  {
+    "Color": "Group class",
+    "Title": "Scientific Expedition",
+    "Attributes": {
+      "Strength": 7,
+      "Cunning": 7,
+      "Artisanship": 7,
+      "Education": 17
+      },
+    "Type1": "\\Art\\Categories\\Types\\intellectual.png",
+    "Type2": "\\Art\\Categories\\Types\\explorer.png",
+    "GroupSlots": 5,
+    "Gold": 50,
+    "Major": "Intellectual",
+    "Minor": "Explorer",
+    "Effect 1": "Adventurers can evolve for free at any time.",
+    "Effect 2": "Adventurers have an additional Skill slot.",
+    "Effect 3": "When Camping, you can reorganize the Discovery board.",
+    "Art": "\\Art\\Group Class\\Expedition.png",
+    "Start": {
+      "Location1" : "Scandinavia",
+      "Location2" : "India"
+    },
+    "StartingSkills": "Perception, Cartography",
+    "Desc": "A group of individuals driven by the quest of knowledge before all, willing to learn about the world and study its nature."
+  },
+  {
+    "Color": "Group class",
+    "Title": "Errant Company",
+    "Attributes": {
+      "Strength": 500,
+      "Cunning": 500,
+      "Artisanship": 500,
+      "Education": 500
+      },
+    "Type1": "\\Art\\Categories\\Types\\outlaw.png",
+    "Type2": "\\Art\\Categories\\Types\\noble.png",
+    "GroupSlots": 6,
+    "Gold": 50,
+    "Major": "Outlaw",
+    "Minor": "Noble",
+    "Effect 1": "Each time you attack, you can place 1 influence to any faction.",
+    "Effect 2": "You can have as many Quests as there are adventurers in your group.",
+    "Effect 3": "You gain the Tier III effect of any chosen other Group Class",
+    "Art": "\\Art\\Group Class\\Company.png",
+    "Start": {
+      "Location1" : "Italy",
+      "Location2" : "Japan"
+    },
+    "StartingSkills": "Quest mastery, Persuasion",
+    "Desc": "A company of wandering adventurers whose main motivations are fame, luxure and the thrill of danger."
+  },
+  {
+    "Color": "Group class",
+    "Title": "Reconnaissance Squad",
+    "Attributes": {
+      "Strength": 8,
+      "Cunning": 10,
+      "Artisanship": 9,
+      "Education": 9
+      },
+    "Type1": "\\Art\\Categories\\Types\\explorer.png",
+    "Type2": "\\Art\\Categories\\Types\\soldier.png",
+    "GroupSlots": 6,
+    "Gold": 50,
+    "Major": "Explorer",
+    "Minor": "Soldier",
+    "Effect 1": "Individual attack bonus applies to speed instead.",
+    "Effect 2": "At the beginning of your turn, you can Observe",
+    "Effect 3": "+1 attack per Region discovered (retroactive)",
+    "Art": "\\Art\\Group Class\\Squad.png",
+    "Start": {
+      "Location1" : "Great Lakes",
+      "Location2" : "British Isles"
+    },
+    "StartingSkills": "Bivouac, Reconnaissance",
+    "Desc": "A team of mapmakers and pathfinders whose primary objective is the complete exploration of the area. Good at scouting and moving through the regions."
+  },
+  {
+    "Color": "Group class",
+    "Title": "Lance Fournie",
+    "Attributes": {
+      "Strength": 18,
+      "Cunning": 8,
+      "Artisanship": 4,
+      "Education": 9
+      },
+    "Type1": "\\Art\\Categories\\Types\\soldier.png",
+    "Type2": "\\Art\\Categories\\Types\\noble.png",
+    "GroupSlots": 3,
+    "Gold": 50,
+    "Major": "Soldier",
+    "Minor": "Noble",
+    "Effect 1": "Age I adventurers are always effective.",
+    "Effect 2": "Single-type adventurers can learn Soldier skill.",
+    "Effect 3": "All adventurers of your group are Mounted.",
+    "Art": "\\Art\\Group Class\\Lance.png",
+    "Start": {
+      "Location1" : "Pomerania",
+      "Location2" : "Orléanais"
+    },
+    "StartingSkills": "Military tactics, Strength",
+    "Desc": "A small military unit centered around a knight, supported by various soldiers and followers, based on an old-fashioned structure which proves strength but poor flexibility."
+  },
+  {
+    "Color": "Group class",
+    "Title": "Exiled Fugitives",
+    "Attributes": {
+      "Strength": 8,
+      "Cunning": 12,
+      "Artisanship": 9,
+      "Education": 7
+      },
+    "Type1": "\\Art\\Categories\\Types\\slave.png",
+    "Type2": "\\Art\\Categories\\Types\\outlaw.png",
+    "GroupSlots": 4,
+    "Gold": 30,
+    "Major": "Slave",
+    "Minor": "Outlaw",
+    "Effect 1": "Slaves can be hired for free.",
+    "Effect 2": "HP can be spent as resource.",
+    "Effect 3": "You can draw an additional random Mission card.",
+    "Art": "\\Art\\Group Class\\Exiled.png",
+    "Start": {
+      "Location1" : "Altishahr",
+      "Location2" : "Pernambuco"
+    },
+    "StartingSkills": "Evasion, Fluidity",
+    "Desc": "A band of forsaken mates who are bonded to one another by the same fear of gallows and chains, hoping to find a new life in the unknown."
+  }
+]

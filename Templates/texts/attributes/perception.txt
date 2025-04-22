@@ -1,0 +1,6 @@
+<p>
+Represents the capacity of the group to assess its environment and estimate things.
+</p>
+<p>
+It is increased by Cunning.
+</p>

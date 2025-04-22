@@ -1,0 +1,592 @@
+[
+  {
+    "name": "Green banner",
+    "rarity": "Poor",
+    "category": "Banner",
+    "stackable": "not",
+    "description": "",
+    "ability": ""
+  },
+  {
+    "name": "Dreadful banner",
+    "rarity": "Uncommon",
+    "category": "Banner",
+    "stackable": "not",
+    "description": "",
+    "ability": ""
+  },
+  {
+    "name": "Antlers",
+    "rarity": "Common",
+    "category": "Banner",
+    "stackable": "not",
+    "description": "Taken from some deer, it can be used to scare enemies or to craft stuff.",
+    "ability": ""
+  },
+  {
+    "name": "Simple tent",
+    "rarity": "Common",
+    "category": "Canopy",
+    "stackable": "not",
+    "description": "Convenient and lightweight, but not very study. Almost useless in cold environments.",
+    "ability": ""
+  },
+  {
+    "name": "Draft horse",
+    "rarity": "Common",
+    "category": "Carriage",
+    "stackable": "not",
+    "description": "",
+    "ability": ""
+  },
+  {
+    "name": "Ox",
+    "rarity": "Common",
+    "category": "Carriage",
+    "stackable": "not",
+    "description": "",
+    "ability": ""
+  },
+  {
+    "name": "Pack camel",
+    "rarity": "Common",
+    "category": "Carriage",
+    "stackable": "not",
+    "description": "",
+    "ability": ""
+  },
+  {
+    "name": "Coach",
+    "rarity": "Epic",
+    "category": "Carriage",
+    "stackable": "not",
+    "description": "Fully equiped stagecoach with its coachman and two horses.",
+    "ability": ""
+  },
+  {
+    "name": "Hussite wagon",
+    "rarity": "Epic",
+    "category": "Carriage",
+    "stackable": "not",
+    "description": "",
+    "ability": ""
+  },
+  {
+    "name": "Donkey",
+    "rarity": "Poor",
+    "category": "Carriage",
+    "stackable": "not",
+    "description": "",
+    "ability": ""
+  },
+  {
+    "name": "Travois",
+    "rarity": "Poor",
+    "category": "Carriage",
+    "stackable": "not",
+    "description": "An primitive wooden structure, pulled either by a men or a beast.",
+    "ability": ""
+  },
+  {
+    "name": "House on wheels",
+    "rarity": "Rare",
+    "category": "Carriage",
+    "stackable": "not",
+    "description": "",
+    "ability": ""
+  },
+  {
+    "name": "Llama",
+    "rarity": "Uncommon",
+    "category": "Carriage",
+    "stackable": "not",
+    "description": "",
+    "ability": ""
+  },
+  {
+    "name": "Elephant",
+    "rarity": "Epic",
+    "category": "Carriage",
+    "stackable": "not",
+    "description": "",
+    "ability": ""
+  },
+  {
+    "name": "Pet lion",
+    "rarity": "Epic",
+    "category": "Effigy",
+    "stackable": "not",
+    "description": "",
+    "ability": ""
+  },
+  {
+    "name": "Ancient figurehead",
+    "rarity": "Epic",
+    "category": "Effigy",
+    "stackable": "not",
+    "description": "",
+    "ability": ""
+  },
+  {
+    "name": "Meibutsu Katanas",
+    "rarity": "Legendary",
+    "category": "Effigy",
+    "stackable": "not",
+    "description": "A set of two renowned swords used as a mark of prestige.",
+    "ability": ""
+  },
+  {
+    "name": "Garlic",
+    "rarity": "Poor",
+    "category": "Effigy",
+    "stackable": "not",
+    "description": "Repels vampires.",
+    "ability": ""
+  },
+  {
+    "name": "Tame bear",
+    "rarity": "Rare",
+    "category": "Effigy",
+    "stackable": "not",
+    "description": "",
+    "ability": ""
+  },
+  {
+    "name": "Hunting hawk",
+    "rarity": "Rare",
+    "category": "Effigy",
+    "stackable": "not",
+    "description": "",
+    "ability": ""
+  },
+  {
+    "name": "Tribal mask",
+    "rarity": "Rare",
+    "category": "Effigy",
+    "stackable": "not",
+    "description": "",
+    "ability": ""
+  },
+  {
+    "name": "Root figurine",
+    "rarity": "Rare",
+    "category": "Effigy",
+    "stackable": "not",
+    "description": "",
+    "ability": ""
+  },
+  {
+    "name": "Marching drums",
+    "rarity": "Uncommon",
+    "category": "Effigy",
+    "stackable": "not",
+    "description": "It has many a function, from setting the cadence of the group to playing festive rythms.",
+    "ability": ""
+  },
+  {
+    "name": "Bear pelt",
+    "rarity": "Uncommon",
+    "category": "Canopy",
+    "stackable": "not",
+    "description": "This pelt is a mark of stature as well as a useful piece of furniture.",
+    "ability": ""
+  },
+  {
+    "name": "Playing cards",
+    "rarity": "Common",
+    "category": "Equipment",
+    "stackable": "not",
+    "description": "Adds a bit of fun when camping.",
+    "ability": ""
+  },
+  {
+    "name": "Forager bag",
+    "rarity": "Common",
+    "category": "Equipment",
+    "stackable": "not",
+    "description": "This bag allows carrying natural resources efficiently.",
+    "ability": ""
+  },
+  {
+    "name": "Ale ask",
+    "rarity": "Common",
+    "category": "Equipment",
+    "stackable": "not",
+    "description": "A baril of good aged ale. Won't last long though.",
+    "ability": ""
+  },
+  {
+    "name": "Basic tools",
+    "rarity": "Common",
+    "category": "Equipment",
+    "stackable": "not",
+    "description": "A set of useful tools.",
+    "ability": ""
+  },
+  {
+    "name": "Axe",
+    "rarity": "Poor",
+    "category": "Equipment",
+    "stackable": "not",
+    "description": "",
+    "ability": "Excavate"
+  },
+  {
+    "name": "Noose",
+    "rarity": "Poor",
+    "category": "Equipment",
+    "stackable": "not",
+    "description": "To tie something. Such as a neck.",
+    "ability": ""
+  },
+  {
+    "name": "Pickaxe",
+    "rarity": "Poor",
+    "category": "Equipment",
+    "stackable": "not",
+    "description": "",
+    "ability": ""
+  },
+  {
+    "name": "Asian medicine",
+    "rarity": "Rare",
+    "category": "Equipment",
+    "stackable": "not",
+    "description": "May or may not be useful in treating all sorts of illnesses.",
+    "ability": ""
+  },
+  {
+    "name": "Set of spices",
+    "rarity": "Uncommon",
+    "category": "Equipment",
+    "stackable": "not",
+    "description": "Improves the taste of cooked food. Very important for the group's morale.",
+    "ability": ""
+  },
+  {
+    "name": "Carpenter tools",
+    "rarity": "Uncommon",
+    "category": "Equipment",
+    "stackable": "not",
+    "description": "",
+    "ability": ""
+  },
+  {
+    "name": "Fine gunpowder",
+    "rarity": "Uncommon",
+    "category": "Equipment",
+    "stackable": "yes",
+    "description": "Gunpowder of higher quality.",
+    "ability": ""
+  },
+  {
+    "name": "Alchemist stone",
+    "rarity": "Legendary",
+    "category": "Equipment",
+    "stackable": "not",
+    "description": "????",
+    "ability": ""
+  },
+  {
+    "name": "Stew",
+    "rarity": "Common",
+    "category": "Food",
+    "stackable": "not",
+    "description": "A good meal.",
+    "ability": "heal",
+    "healAmount": 25
+  },
+  {
+    "name": "Ale",
+    "rarity": "Common",
+    "category": "Food",
+    "stackable": "not",
+    "description": "A bottle of good ale.",
+    "ability": ""
+  },
+  {
+    "name": "Berries",
+    "rarity": "Poor",
+    "category": "Food",
+    "stackable": "yes",
+    "description": "Delicious wild berries.",
+    "ability": "heal",
+    "healAmount": 4
+  },
+  {
+    "name": "Fish",
+    "rarity": "Poor",
+    "category": "Food",
+    "stackable": "yes",
+    "description": "It's raw and wriggling! So juicy sweet!",
+    "ability": "heal",
+    "healAmount": 16
+  },
+  {
+    "name": "Carrot",
+    "rarity": "Poor",
+    "category": "Food",
+    "stackable": "yes",
+    "description": "",
+    "ability": "heal",
+    "healAmount": 10
+  },
+  {
+    "name": "Bread",
+    "rarity": "Poor",
+    "category": "Food",
+    "stackable": "yes",
+    "description": "",
+    "ability": "heal",
+    "healAmount": 14
+  },
+  {
+    "name": "Raw meat",
+    "rarity": "Poor",
+    "category": "Food",
+    "stackable": "yes",
+    "description": "",
+    "ability": "heal",
+    "healAmount": 22
+  },
+  {
+    "name": "Lantern",
+    "rarity": "Common",
+    "category": "Lighting",
+    "stackable": "not",
+    "description": "",
+    "ability": ""
+  },
+  {
+    "name": "Torch",
+    "rarity": "Common",
+    "category": "Lighting",
+    "stackable": "not",
+    "description": "",
+    "ability": ""
+  },
+  {
+    "name": "Candle",
+    "rarity": "Poor",
+    "category": "Lighting",
+    "stackable": "not",
+    "description": "",
+    "ability": ""
+  },
+  {
+    "name": "Resin",
+    "rarity": "Common",
+    "category": "Material",
+    "stackable": "yes",
+    "description": "It’s viscous.",
+    "ability": ""
+  },
+  {
+    "name": "Thread bobbin",
+    "rarity": "Common",
+    "category": "Material",
+    "stackable": "not",
+    "description": "Thread and needle used to repair clothes or other things.",
+    "ability": ""
+  },
+  {
+    "name": "Fur",
+    "rarity": "Common",
+    "category": "Material",
+    "stackable": "yes",
+    "description": "The skin of an animal.",
+    "ability": ""
+  },
+  {
+    "name": "Scraps",
+    "rarity": "Poor",
+    "category": "Material",
+    "stackable": "yes",
+    "description": "Random parts of reusable stuff.",
+    "ability": ""
+  },
+  {
+    "name": "Bones",
+    "rarity": "Poor",
+    "category": "Material",
+    "stackable": "yes",
+    "description": "Skulls, ribs, humerus, femurs... Surely they can be find a new life, somehow.",
+    "ability": ""
+  },
+  {
+    "name": "Sheaf of reeds",
+    "rarity": "Poor",
+    "category": "Material",
+    "stackable": "yes",
+    "description": "Some reeds used for crafting.",
+    "ability": ""
+  },
+  {
+    "name": "Rope",
+    "rarity": "Poor",
+    "category": "Material",
+    "stackable": "not",
+    "description": "A rope.",
+    "ability": ""
+  },
+  {
+    "name": "Logs",
+    "rarity": "Poor",
+    "category": "Material",
+    "stackable": "not",
+    "description": "Wood logs crudely cut from a tree.",
+    "ability": ""
+  },
+  {
+    "name": "Parchment",
+    "rarity": "Rare",
+    "category": "Material",
+    "stackable": "yes",
+    "description": "Crafted from certain animal skins, it is much more durable and valuable than paper.",
+    "ability": ""
+  },
+  {
+    "name": "Ember",
+    "rarity": "Uncommon",
+    "category": "Material",
+    "stackable": "not",
+    "description": "A valuable piece of ember.",
+    "ability": ""
+  },
+  {
+    "name": "Compass",
+    "rarity": "Common",
+    "category": "Navigation",
+    "stackable": "not",
+    "description": "",
+    "ability": ""
+  },
+  {
+    "name": "Astrolabe",
+    "rarity": "Epic",
+    "category": "Navigation",
+    "stackable": "not",
+    "description": "",
+    "ability": ""
+  },
+  {
+    "name": "Roamer kit",
+    "rarity": "Poor",
+    "category": "Navigation",
+    "stackable": "not",
+    "description": "",
+    "ability": ""
+  },
+  {
+    "name": "Carrier pigeon",
+    "rarity": "Rare",
+    "category": "Navigation",
+    "stackable": "not",
+    "description": "",
+    "ability": ""
+  },
+  {
+    "name": "Sandglass",
+    "rarity": "Rare",
+    "category": "Navigation",
+    "stackable": "not",
+    "description": "",
+    "ability": ""
+  },
+  {
+    "name": "Sextant",
+    "rarity": "Rare",
+    "category": "Navigation",
+    "stackable": "not",
+    "description": "",
+    "ability": ""
+  },
+  {
+    "name": "Spyglass",
+    "rarity": "Uncommon",
+    "category": "Navigation",
+    "stackable": "not",
+    "description": "",
+    "ability": ""
+  },
+  {
+    "name": "Cartographic tools",
+    "rarity": "Uncommon",
+    "category": "Navigation",
+    "stackable": "not",
+    "description": "",
+    "ability": ""
+  },
+  {
+    "name": "Cauldron",
+    "rarity": "Poor",
+    "category": "Thurible",
+    "stackable": "not",
+    "description": "",
+    "ability": ""
+  },
+  {
+    "name": "Dragons blood coal",
+    "rarity": "Rare",
+    "category": "Thurible",
+    "stackable": "not",
+    "description": "Expensive, quite a good pest repellent.",
+    "ability": ""
+  },
+  {
+    "name": "Clay thuribulum",
+    "rarity": "Rare",
+    "category": "Thurible",
+    "stackable": "not",
+    "description": "",
+    "ability": ""
+  },
+  {
+    "name": "Glowing bowl",
+    "rarity": "Rare",
+    "category": "Thurible",
+    "stackable": "not",
+    "description": "",
+    "ability": ""
+  },
+  {
+    "name": "Tribal amulet",
+    "rarity": "Common",
+    "category": "Trinket",
+    "stackable": "not",
+    "description": "Morbid and savage.",
+    "ability": ""
+  },
+  {
+    "name": "Bell",
+    "rarity": "Common",
+    "category": "Trinket",
+    "stackable": "not",
+    "description": "A bell used to chime or toll.",
+    "ability": ""
+  },
+  {
+    "name": "Carved horn",
+    "rarity": "Rare",
+    "category": "Trinket",
+    "stackable": "not",
+    "description": "A valuable trinket.",
+    "ability": ""
+  },
+  {
+    "name": "Dreamcatcher",
+    "rarity": "Rare",
+    "category": "Trinket",
+    "stackable": "not",
+    "description": "A tribal charm used for protection against ill-fortune.",
+    "ability": ""
+  },
+  {
+    "name": "Cithren",
+    "rarity": "Rare",
+    "category": "Trinket",
+    "stackable": "not",
+    "description": "",
+    "ability": ""
+  }
+ ]

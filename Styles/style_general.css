@@ -1,0 +1,1173 @@
+
+#loading-screen {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  background-color: #000000;
+  text-align: center;
+  align-content: center;
+}
+#loading-screen #progress-bar {
+  background-color: rgba(255, 255, 255, 0.192);
+  width: 30dvw;
+  animation: loadingProg 1s infinite linear;
+  margin-bottom: 1px;
+}
+#loading-screen #progress-bar::-webkit-progress-value {
+  background-color: rgb(0, 140, 255);
+  transition: all 0.2s;
+}
+#loading-screen #browser-info {
+    color: bisque;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    position: absolute;
+    bottom: 20px;
+    align-items: center;
+    width: 100dvw;
+}
+#loading-screen #browser-info b {
+  color: orange;
+  font-weight: normal;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+@keyframes loadingProg {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(45deg);
+  }
+  100% {
+    filter: hue-rotate(0deg);
+  }
+}
+#loading-screen #jaime_warclass {
+  background-image: url('../Art/jaime_warclass.jpg');
+  width: 265px;
+  height: 66px;
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+}
+
+
+.animated-element {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+@font-face {
+  font-display: block;
+  font-family: RSQuill;
+  font-style: normal;
+  font-weight: normal;
+  src: url(/Art/Fonts/RSQuill.ttf) format("truetype"),
+}
+@font-face {
+  font-display: block;
+  font-family: Dimensity;
+  font-style: normal;
+  font-weight: normal;
+  src: url(/Art/Fonts/dimensity.ttf) format("truetype"),
+}
+@font-face {
+  font-display: block;
+  font-family: DOS;
+  font-style: normal;
+  font-weight: normal;
+  src: url(/Art/Fonts/PerfectDOSVGA437.ttf) format("truetype"),
+}
+@font-face {
+  font-display: block;
+  font-family: Imfel;
+  font-style: normal;
+  font-weight: normal;
+  src: url(/Art/Fonts/imfel.ttf) format("truetype"),
+}
+@font-face {
+  font-display: block;
+  font-family: WhiteChapel;
+  font-style: normal;
+  font-weight: normal;
+  src: url(/Art/Fonts/whitechapel.ttf) format("truetype"),
+}
+@font-face {
+  font-display: block;
+  font-family: Gare;
+  font-style: normal;
+  font-weight: normal;
+  src: url(/Art/Fonts/Gare.ttf) format("truetype"),
+}
+@font-face {
+  font-display: block;
+  font-family: PoltawskiNowy;
+  font-style: normal;
+  font-weight: 400;
+  src: url(/Art/Fonts/PoltawskiNowy.ttf) format("truetype"),
+}
+@font-face {
+  font-display: block;
+  font-family: PoltawskiNowyItalic;
+  font-style: normal;
+  font-weight: 400;
+  src: url(/Art/Fonts/PoltawskiNowy-Italic.ttf) format("truetype"),
+}
+@font-face {
+  font-display: block;
+  font-family: icomoon;
+  font-style: normal;
+  font-weight: 400;
+  src: url(/Art/Fonts/icomoon.ttf) format("truetype"),
+}
+@font-face {
+  font-display: block;
+  font-family: mtcorsva;
+  font-style: normal;
+  font-weight: 400;
+  src: url(/Art/Fonts/mtcorsva.ttf) format("truetype"),
+}
+@font-face {
+  font-display: block;
+  font-family: Domine;
+  font-style: normal;
+  font-weight: 400;
+  src: url(/Art/Fonts/Domine.ttf) format("truetype"),
+}
+@font-face {
+  font-display: block;
+  font-family: Gnomish;
+  font-style: normal;
+  font-weight: 400;
+  src: url(/Art/Fonts/gnomish.ttf) format("truetype"),
+}
+
+html {
+  cursor: url('/Art/cursor.cur'), auto;
+  background-color: #000000;
+  width: 100dvw;
+  height: 100dvh;
+  padding: 0;
+  margin: 0;
+  transform: translateZ(0);
+}
+
+body {
+	background-color: #000000;
+	color:white;
+	font-family: "Domine", arial;
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+	overflow: hidden;
+  font-smooth: never;
+  text-rendering: geometricPrecision;
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-position: top center;
+  cursor: url('/Art/cursor.cur'), auto;
+
+  opacity: 0;
+  filter: none;
+  transform: none;
+  text-shadow: 0 0 2px black, 0 0 1px black, 0 0 2px black;
+}
+
+fieldset {
+  display: block;
+  margin: 0px;
+  padding: 5px;
+  padding-left: 5px;
+  padding-bottom: 5px;
+  min-inline-size: min-content;
+  border-width: 0px;
+  border-style: groove;
+  border-color: rgb(192, 192, 192);
+  border-image: initial;
+}
+
+legend {
+margin: 0 auto;
+padding-inline-start: 5px;
+padding-inline-end: 5px;
+}
+iframe {
+  border: 1px solid black;
+  resize: both;
+  overflow-x: scroll;
+  zoom: 0.75;
+  scale: 1;
+}
+p {
+  margin: 0px;
+  padding: 0px;
+}
+
+div {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+tbody {
+  border-spacing: 0;
+}
+
+button {
+	font-family:"Domine";
+	background-color: #111;
+  background-image: url('../Art/Interface/button_bg.png');
+	border: 1px solid #962916;
+	color: white;
+	border-radius: 5px;
+	padding: 3px;
+  text-shadow: 0 0 3px black, 0 0 3px black, 0 1px 2px black, 1px 0px 3px black, 0 -1px 3px black, -1px 0px 3px black;
+	box-shadow: 0px 2px 7px black, 0px 1px 3px black;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+button:focus-visible {
+outline: none;
+appearance: none;
+}
+button:hover {
+	border: 1px solid #aa9d82;
+  cursor: url('/Art/cursor.cur'), auto;
+  filter: brightness(1.2);
+}
+button:enabled:active {
+	border-color: #222;
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 1) inset;
+	color: #999;
+  transform: translateY(2px);
+
+}
+button:disabled, button:disabled:active {
+	color: #666;
+	border-color: #666;
+	background-color: #222;
+  filter:grayscale(0.5) brightness(0.5);
+}
+input {
+  border-radius: 5px;
+}
+input:hover {
+  cursor: url('/Art/cursor.cur'), auto;
+}
+input:focus {
+  outline : none;
+}
+progress {
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+progress::-webkit-progress-bar {
+  background-color: #353535;
+  overflow: hidden;
+}
+progress::-webkit-progress-value {
+  box-sizing: border-box;
+}
+progress::-webkit-progress-inner-element {
+  overflow: hidden;
+}
+progress::before,
+progress::after {
+  display: flex;
+  width:auto;
+  text-align: center;
+  overflow: visible;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  color: white;
+  text-shadow: 0px 0px 2px black, 0px 0px 2px black, 0px 0px 2px black;
+  font-weight: bold;
+  font-size: 1em;
+  z-index: 1;
+}
+
+
+.shortkey {
+  color: yellow;
+}
+
+::-webkit-scrollbar {
+	width: 7px;
+    height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #555; 
+}
+::-webkit-scrollbar-thumb {
+  background: #ddd; 
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #fff; 
+}
+
+
+#welcome-splash {
+  background-color: black;
+	width: 100dvw;
+	height: 100dvh;
+	font-size: 10em;
+	display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+	cursor: crosshair;
+	user-select: none;
+}
+
+#title-text {
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  justify-content: center;
+  z-index: 0;
+  transform: translateY(84px);
+  letter-spacing: -2px;
+  text-shadow: 0 0 5px black, 0 0 1px black, 0 5px 20px black, 0 1px 10px black;
+  font-family: "WhiteChapel", arial;
+  z-index: 99;
+  font-size: 209px;
+  animation : titleTranslate 20s infinite ease-in-out;
+}
+
+@keyframes titleTranslate {
+  0% {
+    transform: translateY(34px);
+  }
+  50% {
+    transform: translateY(84px);
+  }
+  100% {
+    transform: translateY(34px);
+  }
+}
+
+#title-splash {
+  color: #c93002;
+  background-image: url('../warclass2333.jpg');
+  background-size: contain;
+  background-position: bottom;
+  display: flex;
+  align-items: center;
+  width: 60%;
+  height: 38dvh;
+  text-align: center;
+  justify-content: center;
+}
+
+#lore-text-intro {
+  background-image: url('../Art/bggen.png');
+  background-size: 100% 100%;
+  width: 60%;
+  letter-spacing: 0.01em;
+  padding: 1em;
+  box-sizing: border-box;
+  font-size: 24px;
+  text-align: left;
+  font-family: "Gnomish", 'Times New Roman', Times, serif, arial;
+  font-weight: normal;
+
+  color: rgb(149, 185, 231);
+  text-shadow: 0 0 5px black, 0 0 1px black, 0 5px 20px black, 0 1px 10px black;
+  text-wrap: pretty;
+  max-height: 29.5dvh;
+  overflow-y: scroll;
+  border: 2px solid #0279c9;
+  border-radius: 10px;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.74);
+}
+
+#lore-text-intro:hover {
+  font-family: "Georgia", 'Times New Roman', Times, serif, arial;
+  font-weight: normal;
+  font-style: italic;
+}
+
+#lore-text-intro::-webkit-scrollbar {
+  display: none;
+}
+
+#lore-text-intro p {
+  margin-bottom: 10px;
+  text-indent: 30px;
+}
+#lore-text-intro p:last-child {
+  margin-bottom: 0px;
+}
+
+
+#welcome-splash:hover {
+}
+
+@keyframes splashEffect {
+    0% {
+      letter-spacing: 0.05em;
+    }
+    50% {
+      letter-spacing: 0.0em;
+    }
+    100% {
+      letter-spacing: 0.05em;
+    }
+  }
+
+
+/* ======================== MAP TEMPLATE CSS ================================== */
+
+.centered {
+  z-index : 100;
+  transition: transform 1s ease;
+  transform: scale(2.5, 2.5) perspective(100px) rotateX(calc(var(--mouseY7) * 2deg)) rotateY(calc(var(--mouseX7) * -1deg)) rotateZ(5deg);
+  transform-style: preserve-3d;
+  transform-origin: center;
+  transition: left 1s, top 1s;
+  animation: centering 2s forwards;
+  position: relative;
+  box-shadow: 0px 5px 20px rgba(0,0,0,0.85);
+  image-rendering:optimizeQuality;
+  z-index: 99;
+  background-color: transparent;
+  outline: 1px solid transparent;
+  border: 0px solid transparent;
+  box-shadow: 0 0 0 transparent;
+  }
+
+#container-map {
+  z-index: 0;
+  position: relative;
+}
+
+#map-header {
+  position: sticky;
+  margin: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.map-header-hidden {
+  height: 0px;
+  width: 0px;
+  font-size: 0px;
+  border: 0;
+  padding: 0;
+  opacity: 0;
+}
+
+#map-container {
+  display: block;
+  width: 900px;
+  height: 500px;
+  background: rgb(0, 0, 0);
+  box-sizing: border-box;
+  overflow: hidden;
+  z-index: 0;
+  position: relative;
+  transition: height 0.1s;
+  user-select: none;
+}
+
+#map-container::after {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  content: '';
+
+
+  box-shadow: inset 0 0 100px black, inset 0 50px 40px black;
+  pointer-events: none;
+}
+
+.map-shown {
+  border: 1px solid orange;
+  box-shadow: 0 0 15px 3px black, 0 0 10px 5px #000000d6 inset;
+  opacity: 1;
+  border-radius: 2px;
+  resize: both;
+}
+
+@keyframes flipin {
+  0% {
+   		opacity: 0;
+  }
+  100% {
+   		opacity: 1;
+  }
+}
+
+
+#map-image {
+  background-image: url('../Art/Interface/map.jpg');
+  width: 3302px;
+  height: 1776px;
+  transform-origin: center center;
+  transform: scale(1);
+  transition: all 0.3s ease;
+
+}
+
+.unselectable-location {
+  color: gray;
+  filter: grayscale(1) brightness(0.5);
+}
+
+.location {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: rgb(151, 31, 31);
+  border: 2px solid black;
+  box-shadow: 0 0 10px black, 0 0 5px black;
+  color: white;
+  font-family:"Georgia";
+  font-weight: normal;
+  font-style: italic;
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  transform: scale(0.90);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  font-size: 22px;
+  text-shadow: 0 0 2px black, 0 0 3px black, 0 0 3px black, 0 0 2px black, 0 1px 3px black, 0 1px 3px black, 0 0 10px black, 0 0 10px black;
+  align-content: center;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+  line-height: 25px;
+  font-size: 30px;
+  background-image: url('../Art/Interface/location-border.png');
+  outline: 1px solid transparent;
+  background-size: 120% 120%;
+  background-position: center;
+  transform: scale(0.8);
+}
+.location:hover {
+  cursor: pointer;
+  z-index: 5;
+  position: absolute;
+  transition: all 0.2s ease;
+  border: 2px solid orange;
+}
+
+@keyframes locationhov {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.location:hover .road {
+  z-index: -1;
+}
+.location.Small {
+  background-color: rgb(31, 79, 151);
+
+}
+.location.Medium {
+  background-color: rgb(27, 199, 42);
+
+}
+
+/* =========== LOCATION CLIMATE CLASSES =========== */
+
+.location.Arctic {
+  background-color: white;
+}
+.location.Alpine {
+  background-color: rgb(5, 133, 90);
+}
+.location.Temperate {
+  background-color: rgb(121, 63, 175);
+}
+.location.Tropical {
+  background-color: rgb(82, 179, 2);
+}
+.location.Arid {
+  background-color: rgb(226, 187, 14);
+}
+
+/* ================================= */
+
+#map-image .road {
+  display: block;
+  border: 1px solid #2e2e2e;
+  position: relative;
+  z-index: 1;
+  background-color: rgb(223, 215, 215);
+  height: 2px;
+  width: 0px;
+  pointer-events: none;
+  transition: all 0.1s;
+  background-image: url('../Art/Interface/road-map-texture.png');
+  background-repeat: repeat;
+  background-position: unset;
+  background-size: unset;
+  animation : roadColor 20s infinite linear;
+  animation-iteration-count: infinite;
+  box-shadow: 0 0 7px #000000b8;
+}
+
+.road-distance-number {
+  z-index: 2;
+  width: 15px;
+  height: 15px;
+  font-size: 12px;
+  display: inline-flex;
+  background-color: rgb(53, 53, 53);
+  text-align: center;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  padding-top: 2px;
+  border-radius: 50% 50%;
+}
+
+@keyframes roadColor {
+  100% {
+    background-position: right;
+  }
+}
+
+
+.area-tooltip {
+  z-index: 99999;
+  border : 1px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to right, rgba(255, 166, 1, 0) -25%, rgb(36, 255, 16) 50%, rgba(255, 175, 1, 0) 125%);
+  animation: areatoolTip 2s infinite;
+  outline: 1px solid rgba(0, 0, 0, 0.7);
+  position: absolute;
+  pointer-events: none;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 4px;
+  width: 270px;
+  text-shadow: 1px 0px 2px rgba(0, 0, 0, 0.5), 1px 0px 3px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.75), 2px 3px 18px rgba(0, 0, 0, 0.75);
+  box-sizing: border-box;
+  text-wrap:wrap;
+} 
+
+@keyframes areatoolTip {
+  0% {
+    border-image-source: linear-gradient(to right, rgb(183, 1, 255) -25%, rgb(27, 145, 255) 50%, rgb(183, 1, 255) 125%);
+  }
+  50% {
+    border-image-source: linear-gradient(to right, rgb(27, 145, 255) -25%, rgb(183, 1, 255) 50%, rgb(27, 145, 255) 125%);
+  }
+  100% {
+    border-image-source: linear-gradient(to right, rgb(183, 1, 255) -25%, rgb(27, 145, 255) 50%, rgb(183, 1, 255) 125%);
+  }
+}
+
+.area-tooltip #index{
+  color:rgb(102, 255, 0);
+  font-weight: bold;
+}
+.area-tooltip #index:before{
+    content: "\e91B";
+    color: #fff;
+    line-height: 18px;
+    box-sizing: border-box;
+    background-size: 18px;
+    display: inline-block;
+    font-size: 20px;
+    height: 20px;
+    margin-right: 4px;
+    margin-top: -2px;
+    vertical-align: middle;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: icomoon;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    line-height: 1;
+    text-transform: none;
+}
+
+.area-tooltip .culture-icon {
+  width: 10px;
+  height: 10px;
+}
+
+.area-tooltip div:not(.header) {
+  border-image-slice: 1;
+  border-image-source: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgb(197, 197, 197) 50%, rgba(0,0,0,0) 100%);
+  border-bottom: 1px solid;
+  padding-bottom : 7px;
+  padding-top : 3px;
+  width: 100%;
+  text-align: center;
+}
+.area-tooltip div:last-child {
+  border-bottom: 0px solid grey;
+  padding-bottom : 0px;
+}
+
+.area-tooltip #type{
+  color: #ffe600;
+}
+
+.area-tooltip .header {
+  font-weight: bold;
+  font-size: 25px;
+  color: orange;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  border-bottom: 1px solid black;
+  text-align: center;
+  padding-bottom: 4px;
+  background-color: rgba(58, 58, 58, 0.643);
+  text-shadow: 0 0 2px black, 0 0 3px black, 0 0 3px black, 0 0 2px black, 0 1px 3px black, 0 1px 3px black;
+  margin: -10px;
+  padding: 10px;
+  margin-bottom: 3px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.area-tooltip .Size {
+  color:rgb(102, 255, 0);
+  font-weight: bolder;
+}
+
+.area-tooltip .connectedto {
+  color:rgb(0, 247, 255);
+  display: block;
+}
+
+.area-tooltip .Connections:before {
+  content: '';
+  width: 16px;
+  height: 16px;
+  background-image: url(/Art/Interface/6.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  display: inline-block;
+  vertical-align: -2px;
+  margin-right: 3px;
+}
+
+.area-tooltip .normal {
+  color:white;
+}
+
+.area-tooltip .terrains-words {
+  display: block;
+}
+
+.area-tooltip .Cultures {
+  color:#f2c462;
+}
+
+.area-tooltip .Faction {
+  color: #ff81ae;
+}
+
+.area-tooltip .Terrains {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.terrain-icon {
+  width: 60px;
+  height: 60px;
+  display: inline-block;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 0 0 2px black, 0 0 3px black, 0 0 3px black, 0 0 2px black, 0 1px 3px black, 0 1px 3px black;
+}
+.marsh-icon { background-image: url('../Art/Interface/Terrains/marsh.png'); }
+.forest-icon { background-image: url('../Art/Interface/Terrains/forest.png'); }
+.desert-icon { background-image: url('../Art/Interface/Terrains/desert.png'); }
+.mountain-icon { background-image: url('../Art/Interface/Terrains/mountain.png'); }
+.plain-icon { background-image: url('../Art/Interface/Terrains/plain.png'); }
+
+#right-side button {
+  margin: 0 auto;
+  margin-top : 10px;
+  font-size: 22px;
+}
+
+
+
+
+
+
+/* ===================================== CHOICE CONTAINER ========================================== */
+
+
+#direction-choice-container {
+  display: flex;
+  z-index: 99;
+  position: relative;
+  translate: 0 50%;
+  border: 1px solid rgb(252, 193, 18);
+  background-color: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 40px black, 0 0 15px rgb(145 113 18 / 70%) inset;
+  border-radius: 8px;
+  padding: 10px;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  width: 560px;
+  margin: 0 auto;
+}
+
+.direction-title  {
+  display: block;
+  width: 100%;
+}
+
+.direction-choice {
+  display: flex;
+  border: 1px solid rgb(184, 130, 60);
+  box-sizing: border-box;
+  font-size: 28px;
+  width: 275px;
+  height: 100px;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  font-weight: bolder;
+  border-radius: 5px;
+  box-shadow: 0px 8px 12px rgba(255, 255, 255, 0.562) inset, 0px 2px 5px rgba(0, 0, 0, 0.75), 0px 0px 20px rgba(0, 0, 0, 0.342) inset;
+  text-shadow: 0 0 2px black, 0 0 3px black, 0 0 3px black, 0 0 2px black, 0 1px 3px black, 0 1px 3px black;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  transition: all 0.05s;
+}
+
+.direction-choice:hover {
+  color: orange;
+  cursor: default;
+  filter: brightness(1.3);
+}
+
+.direction-choice:active {
+  transform: scale(0.95);
+}
+
+
+
+
+
+
+/* ========================= REGION LAYOUT MAP =======================*/
+
+
+
+
+#regions-layout {
+  z-index: 99;
+  background-image: url(/Art/Interface/layoutbg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  box-sizing: border-box;
+  position: absolute;
+  left: 554px;
+  top: 123px;
+  width: 800px;
+  height: 100px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.65), 0 0 15px #000000 inset;
+  transition: all 0.1s;
+}
+
+#regions-layout #origin {
+  position: absolute;
+  bottom: 36px;
+  left: -10px;
+  transform: rotate(270deg);
+}
+#regions-layout #destination {
+  position: absolute;
+  bottom: 36px;
+  right: -6px;
+  transform: rotate(270deg);
+}
+
+#regions-layout-paths-container {
+  display: flex;
+  height: 90px;
+  box-sizing: border-box;
+  width: 100%;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+
+}
+
+#regions-layout-paths-container .region-point {
+  z-index: 2;
+  width: 32px;
+  height: 32px;
+  border-radius: 50% 50%;
+  background-color: #9e5b1c;
+  position: absolute;
+  transition: all 0.05s;
+  background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    box-shadow: 0 0 5px black;
+  box-sizing: border-box;
+}
+#regions-layout-paths-container .region-point.active-region:after {
+  content: "";
+  border-radius: 50% 50%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 14px;
+  top: -14px;
+  left: -14px;
+  pointer-events: none;
+  background-image: url('../Art/Interface/14.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  filter: brightness(0.9) opacity(0.4);
+  animation: scaleInOut 3s infinite;
+  z-index: -1;
+}
+
+@keyframes scaleInOut {
+	0% {transform: scale(0.7)  }
+	50% { transform: scale(1.1) rotate(60deg) }
+  100% { transform: scale(0.7) }
+}
+
+#regions-layout-paths-container .region-line {
+  z-index: 1;
+  border: 2px solid rgba(0, 0, 0, 0.664);
+  background-color: orange;
+  height: 2px;
+  position: absolute;
+}
+
+#regions-layout-paths-container .region-point.selectable-point {
+  box-shadow: 0px 0px 10px rgb(145, 27, 255), 0px 0px 20px rgb(255, 0, 221), 0px 0px 5px rgb(255, 0, 221), 0px 0px 5px rgb(255, 0, 221);
+}
+
+#regions-layout-paths-container .region-point.selectable-point:active {
+  transform: scale(1.4);
+}
+
+#regions-layout-paths-container .region-point:hover {
+  transform: scale(1.5);
+  z-index: 8;
+  border: none;
+}
+
+
+
+
+
+#destination-reached {
+  width: 556px;
+  position: absolute;
+  font-size: 30px;
+  display: flex;
+  text-align: center;
+  z-index: 9;
+  padding: 20px;
+  top: 250px;
+  left: 791px;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  background-image: url(../Art/Interface/eventbg.png);
+  border: 1px solid orange;
+  box-shadow: 0 0 20px black, 0 0 20px #ffa5007a inset;
+  border-radius: 3px;
+}
+
+#destination-reached #destination-header {
+  display: block;
+    border: 1px solid rgb(184, 130, 60);
+    box-sizing: border-box;
+    width: 100%;
+    height: 100px;
+    border-radius: 5px;
+    box-shadow: 0px 8px 12px rgba(255, 255, 255, 0.562) inset, 0px 2px 5px rgba(0, 0, 0, 0.75), 0px 0px 20px rgba(0, 0, 0, 0.342) inset;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+#destination-reached #continue-button {
+  font-size: 28px;
+  padding: 10px;
+  font-weight: bold;
+}
+
+
+
+
+
+
+.generic-popup {
+  width: 400px;
+  border: 1px solid rgb(252, 193, 18);
+  background-color: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 40px black, 0 0 15px rgb(145 113 18 / 70%) inset;
+  border-radius: 8px;
+  padding: 10px;
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  user-select: none;
+  animation: 0.35s ease 0s 1 normal none running flipinPopup;
+}
+
+@keyframes flipinPopup {
+  0% {
+   	opacity: 0;
+    filter: grayscale(1);
+    box-shadow: 0 0 10px rgb(255, 255, 255);
+  }
+  50% {
+    filter: brightness(2);
+    box-shadow: 0 0 40px rgb(255, 255, 255);
+  }
+  100% {
+   	opacity: 1;
+    filter: brightness(1);
+    box-shadow: 0 0 0px rgb(255, 208, 0);
+  }
+}
+
+.popup-header {
+  padding-bottom: 10px;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to right, transparent, rgba(238, 163, 37, 0.87), transparent);
+  border-bottom: 2px solid;
+  color: #cd8c20;
+  background: linear-gradient(180deg,#ffedbf,#ffc112);
+  background-clip: border-box;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+  -webkit-filter: drop-shadow(1px 1px 0 rgba(0,0,0,.6));
+  filter: drop-shadow(1px 1px 0 rgba(0,0,0,.6));
+  margin-bottom : 10px;
+}
+
+.popup-header .number {
+  color: bisque;
+  margin-right: 5px;
+}
+
+#levelup-container {
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.subtitle {
+  font-size: 18px;
+}
+
+.attributes-up {
+  margin-top: 0px;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  justify-content: space-evenly; 
+}
+
+
+
+.add-arrows .arrow {
+  font-size: 22px;
+  font-weight: bold;
+  width: 20px;
+  height: 20px;
+  line-height: 7px;
+}
+
+.confirmation-area {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+}
+
+.confirmation-area button {
+  font-size: 26px;
+}
+
+#remaining-points {
+  color: bisque;
+  font-weight: bold;
+}

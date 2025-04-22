@@ -1,0 +1,224 @@
+[
+  {
+    "Title": "Guild",
+    "Gold": 50,
+    "Slots": 3,
+    "Rebate": 0
+  },
+  {
+    "Title": "Caravan",
+    "Gold": 40,
+    "Slots": 4,
+    "Rebate": 0
+  },
+  {
+    "Title": "Pilgrims",
+    "Gold": 30,
+    "Slots": 3,
+    "Rebate": 2
+  },
+  {
+    "Title": "Tribe",
+    "Gold": 25,
+    "Slots": 4,
+    "Rebate": 0
+  },
+  {
+    "Title": "Nomads",
+    "Gold": 20,
+    "Slots": 3,
+    "Rebate": 0
+  },
+  {
+    "Title": "Odyssey",
+    "Gold": 80,
+    "Slots": 3,
+    "Rebate": 0
+  },
+  {
+    "Title": "Expedition",
+    "Gold": 60,
+    "Slots": 3,
+    "Rebate": 0
+  },
+  {
+    "Title": "Scientists",
+    "Gold": 60,
+    "Slots": 3,
+    "Rebate": 0
+  },
+  {
+    "Title": "Roguehood",
+    "Gold": 50,
+    "Slots": 3,
+    "Rebate": 3
+  },
+  {
+    "Title": "Squad",
+    "Gold": 40,
+    "Slots": 3,
+    "Rebate": 0
+  },
+  {
+    "Title": "Wayfarers",
+    "Gold": 35,
+    "Slots": 3,
+    "Rebate": 0
+  },
+  {
+    "Title": "Collective",
+    "Gold": 70,
+    "Slots": 3,
+    "Rebate": 0
+  },
+  {
+    "Title": "Scholars",
+    "Gold": 70,
+    "Slots": 3,
+    "Rebate": 0
+  },
+  {
+    "Title": "Court",
+    "Gold": 150,
+    "Slots": 3,
+    "Rebate": 0
+  },
+  {
+    "Title": "Company",
+    "Gold": 100,
+    "Slots": 3,
+    "Rebate": 0
+  },
+  {
+    "Title": "Clique",
+    "Gold": 90,
+    "Slots": 3,
+    "Rebate": 0
+  },
+  {
+    "Title": "Lance",
+    "Gold": 70,
+    "Slots": 3,
+    "Rebate": 0
+  },
+  {
+    "Title": "Clan",
+    "Gold": 60,
+    "Slots": 4,
+    "Rebate": 0
+  },
+  {
+    "Title": "Gang",
+    "Gold": 80,
+    "Slots": 3,
+    "Rebate": 5
+  },
+  {
+    "Title": "Syndicate",
+    "Gold": 65,
+    "Slots": 3,
+    "Rebate": 0
+  },
+  {
+    "Title": "Cartel",
+    "Gold": 50,
+    "Slots": 3,
+    "Rebate": 0
+  },
+  {
+    "Title": "Cabal",
+    "Gold": 30,
+    "Slots": 3,
+    "Rebate": 0
+  },
+  {
+    "Title": "Brotherhood",
+    "Gold": 25,
+    "Slots": 3,
+    "Rebate": 5
+  },
+  {
+    "Title": "Coven",
+    "Gold": 35,
+    "Slots": 3,
+    "Rebate": 0
+  },
+  {
+    "Title": "Sect",
+    "Gold": 50,
+    "Slots": 3,
+    "Rebate": 0
+  },
+  {
+    "Title": "Dethroned",
+    "Gold": 75,
+    "Slots": 3,
+    "Rebate": 0
+  },
+  {
+    "Title": "Thinkers",
+    "Gold": 30,
+    "Slots": 3,
+    "Rebate": 0
+  },
+  {
+    "Title": "Fugitives",
+    "Gold": 20,
+    "Slots": 3,
+    "Rebate": 0
+  },
+  {
+    "Title": "Wanderers",
+    "Gold": 20,
+    "Slots": 3,
+    "Rebate": 0
+  },
+  {
+    "Title": "Band",
+    "Gold": 0,
+    "Slots": 3,
+    "Rebate": 0
+  },
+  {
+    "Title": "Penitents",
+    "Gold": 0,
+    "Slots": 3,
+    "Rebate": 4
+  },
+  {
+    "Title": "Convoy",
+    "Gold": 50,
+    "Slots": 3,
+    "Rebate": 0
+  },
+  {
+    "Title": "Mission",
+    "Gold": 40,
+    "Slots": 3,
+    "Rebate": 0
+  },
+  {
+    "Title": "Tacticians",
+    "Gold": 40,
+    "Slots": 3,
+    "Rebate": 0
+  },
+  {
+    "Title": "Troupe",
+    "Gold": 40,
+    "Slots": 3,
+    "Rebate": 0
+  },
+  {
+    "Title": "Deserters",
+    "Gold": 20,
+    "Slots": 3,
+    "Rebate": 6
+  },
+  {
+    "Title": "Lone Adventurer",
+    "Gold": 10,
+    "Slots": 2,
+    "Rebate": 5
+  }
+ ]

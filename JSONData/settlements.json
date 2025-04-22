@@ -1,0 +1,353 @@
+[
+  {
+    "Name": "Steppes Encampment",
+    "Types": "Commoner, Soldier",
+    "Terrain": "Plain",
+    "Type": "Camp",
+    "Size": "Large",
+    "Areas": "Turkestan, Tyumen, Siberia, Moscovia, Wild Fields, Altishahr, Buryatia",
+    "Description": ""
+  },
+  {
+    "Name": "Discontinued Expedition",
+    "Types": "Explorer, Soldier",
+    "Terrain": "",
+    "Type": "Camp",
+    "Size": "Medium",
+    "Areas": "Moscovia, Himalaya, Balkans, Karelia, Buryatia",
+    "Description": ""
+  },
+  {
+    "Name": "Explorers Encampment",
+    "Types": "Explorer, Intellectual",
+    "Terrain": "",
+    "Type": "Camp",
+    "Size": "Small",
+    "Areas": "Ethiopia, Kongo, Himalaya, Siam, Rockies, Andes",
+    "Description": ""
+  },
+  {
+    "Name": "Gypsy Camp",
+    "Types": "Commoner, Outlaw",
+    "Terrain": "",
+    "Type": "Camp",
+    "Size": "Medium",
+    "Areas": "Balkans, Orléanais, Carpathia, Wild-Fields, Italy, Iberia, Pomerania, Austria, Italy, Moscovia, India",
+    "Description": ""
+  },
+  {
+    "Name": "Bedouin Khaimah",
+    "Types": "Noble, Slave",
+    "Terrain": "",
+    "Type": "Camp",
+    "Size": "Small",
+    "Areas": "Mesopotamia, Egypt, Sahara, Arabia, Persia",
+    "Description": ""
+  },
+  {
+    "Name": "Slapdash Camp",
+    "Types": "Commoner, Soldier",
+    "Terrain": "Plain, Desert",
+    "Type": "Camp",
+    "Size": "Large",
+    "Areas": "Siberia, Manchuria, Wild-Fields, Buryatia, Great-Plains, Pampas",
+    "Description": ""
+  },
+  {
+    "Name": "Logging Camp",
+    "Types": "Commoner",
+    "Terrain": "Forest",
+    "Type": "Camp",
+    "Size": "Small",
+    "Areas": "Yukon, Rockies, Great-Lakes, Canada, Carolina, California, Scandinavia, Lapland, Karelia, Siberia, Buryatia, Tyumen",
+    "Description": ""
+  },
+  {
+    "Name": "Conquistador Encampment",
+    "Types": "Soldier, Explorer",
+    "Terrain": "Forest",
+    "Type": "Camp",
+    "Size": "Small",
+    "Areas": "Amazonia, Pernambuco, Andes, Caribbean, Yucatan",
+    "Description": ""
+  },
+  {
+    "Name": "Rendezvous",
+    "Types": "Commoner, Intellectual",
+    "Terrain": "",
+    "Type": "Camp",
+    "Size": "Small",
+    "Areas": "Canada, Great-Lakes, Louisiana, Great-Plains, Rockies",
+    "Description": ""
+  },
+  {
+    "Name": "Desert Outpost",
+    "Types": "Soldier, Noble",
+    "Terrain": "Desert",
+    "Type": "Outpost",
+    "Size": "Large",
+    "Areas": "Persia, Sindh, Egypt, Arabia, Sahara, Sahel",
+    "Description": ""
+  },
+  {
+    "Name": "Caravan Frontierpost",
+    "Types": "Commoner, Intellectial",
+    "Terrain": "Desert, Plain",
+    "Type": "Outpost",
+    "Size": "Medium",
+    "Areas": "Tyumen, Persia, Turkestan, Altishahr, Caucasus, Sindh, Buryatia",
+    "Description": ""
+  },
+  {
+    "Name": "Highland Outpost",
+    "Types": "Soldier, Outlaw",
+    "Terrain": "Mountain",
+    "Type": "Outpost",
+    "Size": "Small",
+    "Areas": "British-Isles, Scandinavia, Karelia, Siberia, Tibet, Persia",
+    "Description": ""
+  },
+  {
+    "Name": "Feitoria",
+    "Types": "Commoner, Intellectual",
+    "Terrain": "",
+    "Type": "Outpost",
+    "Size": "Large",
+    "Areas": "Pernambuco, Guinea, India, Nusantura, Huguang",
+    "Description": ""
+  },
+  {
+    "Name": "Caravanserai",
+    "Types": "Commoner, Outlaw",
+    "Terrain": "",
+    "Type": "Outpost",
+    "Size": "Medium",
+    "Areas": "Sahara, Barbary-Coast, Egypt, Arabia, Mesopotamia, Persian, Sindh, Turkestan, Altishahr, Anatolia",
+    "Description": ""
+  },
+  {
+    "Name": "Shamanic Camp",
+    "Types": "Religious, Commoner",
+    "Terrain": "",
+    "Type": "Religious",
+    "Size": "Small",
+    "Areas": "Karelia, Siberia, Caucasus, Buryatia, Yukon",
+    "Description": ""
+  },
+  {
+    "Name": "Monastery",
+    "Types": "Religious, Outlaw",
+    "Terrain": "Mountain",
+    "Type": "Religious",
+    "Size": "Small",
+    "Areas": "Himalaya, Tibet, Huguang, Taihang, Japan, Siam",
+    "Description": ""
+  },
+  {
+    "Name": "Abbey",
+    "Types": "Religious, Intellectual",
+    "Terrain": "",
+    "Type": "Religious",
+    "Size": "Large",
+    "Areas": "Iberia, Orléanais, Frisia, Italy, British Isles, Pomerania, Polesia, Caribbean",
+    "Description": ""
+  },
+  {
+    "Name": "Necromancer Station",
+    "Types": "Religious, Outlaw",
+    "Terrain": "",
+    "Type": "Religious",
+    "Size": "Small",
+    "Areas": "Mesopotamia, Carpathia, Yukon",
+    "Description": ""
+  },
+  {
+    "Name": "Jesuit Colony",
+    "Types": "Religious, Soldier",
+    "Terrain": "",
+    "Type": "Religious",
+    "Size": "Medium",
+    "Areas": "Japan, Manchuria, Huguang, Guinea, India, Kongo, Amazonia, Pampas",
+    "Description": ""
+  },
+  {
+    "Name": "Reducción",
+    "Types": "Religious, Slave",
+    "Terrain": "",
+    "Type": "Religious",
+    "Size": "Medium",
+    "Areas": "Sonora, Yucatan, Andes, Atacama, Amazonia, Pernambuco, Pampas, Filipinas",
+    "Description": ""
+  },
+  {
+    "Name": "Oasis Enclave",
+    "Types": "Intellectual, Explorer",
+    "Terrain": "Desert",
+    "Type": "Village",
+    "Size": "Large",
+    "Areas": "Altishahr, Sindh, Mesopotamia, Egypt, Barbary Coast",
+    "Description": ""
+  },
+  {
+    "Name": "Desolate Village",
+    "Types": "Commoner",
+    "Terrain": "Forest",
+    "Type": "Village",
+    "Size": "Small",
+    "Areas": "Bengal, India, Siam, Java, Filipina, Guinea",
+    "Description": ""
+  },
+  {
+    "Name": "Barbaric Shacks",
+    "Types": "Commoner, Outlaw",
+    "Terrain": "",
+    "Type": "Village",
+    "Size": "Small",
+    "Areas": "Caucasus, Carpathia, Scandinavia, Canada",
+    "Description": ""
+  },
+  {
+    "Name": "Indigenous Village",
+    "Types": "Commoner",
+    "Terrain": "Mountain, Forest, Marsh",
+    "Type": "Village",
+    "Size": "Small",
+    "Areas": "Kongo, Java, Bengal, Ethiopia, Siam",
+    "Description": ""
+  },
+  {
+    "Name": "Pagan Settlement",
+    "Types": "Commoner, Religious",
+    "Terrain": "Mountain, Forest",
+    "Type": "Village",
+    "Size": "Small",
+    "Areas": "Pomerania, Carpathia, Lapland, Karelia",
+    "Description": ""
+  },
+  {
+    "Name": "African Village",
+    "Types": "Commoner",
+    "Terrain": "",
+    "Type": "Village",
+    "Size": "Medium",
+    "Areas": "Sahel, Ethiopia, Kongo, Guinea",
+    "Description": ""
+  },
+  {
+    "Name": "Insulated Village",
+    "Types": "Commoner",
+    "Terrain": "",
+    "Type": "Village",
+    "Size": "Medium",
+    "Areas": "Taihuang, Japan, Tibet, Siam, Guinea",
+    "Description": ""
+  },
+  {
+    "Name": "Japanese Village",
+    "Types": "Commoner",
+    "Terrain": "",
+    "Type": "Village",
+    "Size": "Small",
+    "Areas": "Japan",
+    "Description": ""
+  },
+  {
+    "Name": "Slums",
+    "Types": "Commoner, Outlaw",
+    "Terrain": "",
+    "Type": "Village",
+    "Size": "Large",
+    "Areas": "Barbary-Coast, Egypt, Iberia, Anatolia, Italy, Pernambuco, Caribbean",
+    "Description": ""
+  },
+  {
+    "Name": "Vedic Village",
+    "Types": "Commoner, Religious",
+    "Terrain": "",
+    "Type": "Village",
+    "Size": "Large",
+    "Areas": "India, Bengal",
+    "Description": ""
+  },
+  {
+    "Name": "Welcoming Retreat",
+    "Types": "Commoner",
+    "Terrain": "",
+    "Type": "Village",
+    "Size": "Small",
+    "Areas": "Italy, Balkans, Orléanais, British-Isles, Iberia, Anatolia, Caucasus, Austria, Frisia, Huguang, Polesia, Moscovia, Carpathia, Rumelia",
+    "Description": ""
+  },
+  {
+    "Name": "Forlorn Colony",
+    "Types": "Commoner, Explorer",
+    "Terrain": "Plain, Forest",
+    "Type": "Village",
+    "Size": "Medium",
+    "Areas": "Carolina, Great-Lakes, Louisiana, Carribean",
+    "Description": ""
+  },
+  {
+    "Name": "Adobe Hamlet",
+    "Types": "Commoner",
+    "Terrain": "Desert, Plain, Mountain",
+    "Type": "Village",
+    "Size": "Medium",
+    "Areas": "Sonora, California",
+    "Description": ""
+  },
+  {
+    "Name": "Longhouses Settlement",
+    "Types": "Commoner, Soldier",
+    "Terrain": "Plain, Forest",
+    "Type": "Village",
+    "Size": "Large",
+    "Areas": "Canada, Great-Lakes, Carolina",
+    "Description": ""
+  },
+  {
+    "Name": "Coastal Community",
+    "Types": "Commoner",
+    "Terrain": "Plain, Forest",
+    "Type": "Village",
+    "Size": "Small",
+    "Areas": "Yukon, Rockies, California, Siberia",
+    "Description": ""
+  },
+  {
+    "Name": "Derelict Village",
+    "Types": "Commoner",
+    "Terrain": "Forest, Plain",
+    "Type": "Village",
+    "Size": "Small",
+    "Areas": "Carpathia, Caucasus, Rumelia, Moscovia, Taihang, Japan, Wild-Fields",
+    "Description": ""
+  },
+  {
+    "Name": "Mayan Outskirts",
+    "Types": "Commoner, Noble",
+    "Terrain": "",
+    "Type": "Village",
+    "Size": "Medium",
+    "Areas": "Yucatan",
+    "Description": ""
+  },
+  {
+    "Name": "Aul",
+    "Types": "Commoner, Soldier",
+    "Terrain": "",
+    "Type": "Village",
+    "Size": "Medium",
+    "Areas": "Caucasus",
+    "Description": ""
+  },
+  {
+    "Name": "Plantation",
+    "Types": "Noble, Slave",
+    "Terrain": "",
+    "Type": "Village",
+    "Size": "Medium",
+    "Areas": "Pernambuco, Amazonia, Nusantura, Guinea, Carribean, Louisiana, Carolina, Sonora",
+    "Description": ""
+  }
+ ]

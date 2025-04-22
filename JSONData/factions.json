@@ -1,0 +1,192 @@
+[
+    {
+      "Name": "Marathas",
+      "Type": "Dynasty",
+      "Power": 0
+    },
+    {
+      "Name": "Durrani",
+      "Type": "Dynasty",
+      "Power": 0
+    },
+    {
+      "Name": "Jurchens",
+      "Type": "Tribe",
+      "Power": 0
+    },
+    {
+      "Name": "Qing",
+      "Type": "Dynasty",
+      "Power": 0
+    },
+    {
+      "Name": "Bourbons",
+      "Type": "Dynasty",
+      "Power": 0
+    },
+    {
+      "Name": "Keyra",
+      "Type": "Dynasty",
+      "Power": 0
+    },
+    {
+      "Name": "Habsburg",
+      "Type": "Dynasty",
+      "Power": 0
+    },
+    {
+      "Name": "Orangists",
+      "Type": "Group",
+      "Power": 0
+    },
+    {
+      "Name": "Corso",
+      "Type": "Group",
+      "Power": 0
+    },
+    {
+      "Name": "Khojas",
+      "Type": "Group",
+      "Power": 0
+    },
+    {
+      "Name": "Grenzers",
+      "Type": "Group",
+      "Power": 0
+    },
+    {
+      "Name": "Cossacks",
+      "Type": "Group",
+      "Power": 0
+    },
+    {
+      "Name": "East India Company",
+      "Type": "Company",
+      "Power": 0
+    },
+    {
+      "Name": "Gorkhalis",
+      "Type": "Polity",
+      "Power": 0
+    },
+    {
+      "Name": "Janissaries",
+      "Type": "Polity",
+      "Power": 0
+    },
+    {
+      "Name": "Mamluks",
+      "Type": "Polity",
+      "Power": 0
+    },
+    {
+      "Name": "Kartvelebi",
+      "Type": "Polity",
+      "Power": 0
+    },
+    {
+      "Name": "Watergeuzen",
+      "Type": "Group",
+      "Power": 0
+    },
+    {
+      "Name": "Russians",
+      "Type": "Polity",
+      "Power": 0
+    },
+    {
+      "Name": "Thais",
+      "Type": "Polity",
+      "Power": 0
+    },
+    {
+      "Name": "Tokugawa",
+      "Type": "Polity",
+      "Power": 0
+    },
+    {
+      "Name": "Abyssinians",
+      "Type": "Dynasty",
+      "Power": 0
+    },
+    {
+      "Name": "Holy See",
+      "Type": "Polity",
+      "Power": 0
+    },
+    {
+      "Name": "Kazakhs",
+      "Type": "Tribe",
+      "Power": 0
+    },
+    {
+      "Name": "Iranians",
+      "Type": "Tribe",
+      "Power": 0
+    },
+    {
+      "Name": "Kamchadals",
+      "Type": "Tribe",
+      "Power": 0
+    },
+    {
+      "Name": "Saami",
+      "Type": "Tribe",
+      "Power": 0
+    },
+    {
+      "Name": "Sundanese",
+      "Type": "Tribe",
+      "Power": 0
+    },
+    {
+      "Name": "Tuaregs",
+      "Type": "Tribe",
+      "Power": 0
+    },
+    {
+      "Name": "Ashanti",
+      "Type": "Tribe",
+      "Power": 0
+    },
+    {
+      "Name": "Bakongo",
+      "Type": "Tribe",
+      "Power": 0
+    },
+    {
+      "Name": "Nova Palmares",
+      "Type": "Tribe",
+      "Power": 0
+    },
+    {
+      "Name": "Jodensavanne",
+      "Type": "Polity",
+      "Power": 0
+    },
+    {
+      "Name": "Hudson's Bay",
+      "Type": "Company",
+      "Power": 0
+    },
+    {
+      "Name": "Jesuits",
+      "Type": "Religious Order",
+      "Power": 0
+    },
+    {
+      "Name": "Bonpos",
+      "Type": "Religious Order",
+      "Power": 0
+    },
+    {
+      "Name": "Yamaks",
+      "Type": "Group",
+      "Power": 0
+    },
+    {
+      "Name": "Black Guard",
+      "Type": "Group",
+      "Power": 0
+    }
+]

@@ -1,0 +1,162 @@
+[
+    {
+      "Name": "Reducción",
+      "Type": "Dwelling",
+      "Regions": "Yucatan, Sonora, Amazonia, Pernambuco, Andes, Pampas"
+    },
+    {
+      "Name": "Khaimah",
+      "Type": "Dwelling",
+      "Regions": "Murrakush, Sahara, Egypt, Arabia, Mesopotamia, Persia, Sindh"
+    },
+    {
+      "Name": "Cabin",
+      "Type": "Dwelling",
+      "Regions": "Pomerania, Scandinavia, Lapland, Karelia, Moscovia, Polesia, Tyumen, Siberia, Buryatia, Andes, Rockies, California, Louisiana, Carolina, Canada, Yukon, Great-Plains, Great-Lakes"
+    },
+    {
+      "Name": "Ranch",
+      "Type": "Dwelling",
+      "Regions": "Sonora, Great-Plains, California, Louisiana, Pampas"
+    },
+    {
+      "Name": "Manor",
+      "Type": "Dwelling",
+      "Regions": "British-Isles, Frisia, Austria, Carpathia, Orléanais"
+    },
+    {
+      "Name": "Hut",
+      "Type": "Dwelling",
+      "Regions": "Any"
+    },
+    {
+      "Name": "Torp",
+      "Type": "Dwelling",
+      "Regions": "Scandinavia, Lapland, Karelia"
+    },
+    {
+      "Name": "Fishing Shack",
+      "Type": "Dwelling",
+      "Regions": "Any"
+    },
+    {
+      "Name": "Teepee",
+      "Type": "Dwelling",
+      "Regions": "Great-Plains, Louisiana, Great-Lakes, Rockies, Sonora, Yukon, Siberia"
+    },
+    {
+      "Name": "Yurt",
+      "Type": "Dwelling",
+      "Regions": "Tyumen, Siberia, Turkestan, Altishahr, Buryatia, Machuria"
+    },
+    {
+      "Name": "Rendezvous",
+      "Type": "Market",
+      "Regions": "Canada, Louisiana, Great-Plains, Yukon, Rockies"
+    },
+    {
+      "Name": "Caravanserai",
+      "Type": "Market",
+      "Regions": "Murrakush, Sahara, Egypt, Arabia, Mesopotamia, Persia, Sindh, Barbary-Coast, India, Turkestan, Anatolia, Altishahr"
+    },
+    {
+      "Name": "Tavern",
+      "Type": "Market",
+      "Regions": "Iberia, Orléanais, British-Isles, Frisia, Austria, Carpathia, Italy, Pomerania, Polesia, Wild-Fields, Moscovia, Caucasus, Rumelia, Canada"
+    },
+    {
+      "Name": "Corral",
+      "Type": "Market",
+      "Regions": "Buryatia, Great-Plains, Great-Lakes, Carolina, California, Sonora, Louisiana, Rockies, Andes, Pampas"
+    },
+    {
+      "Name": "Trading Post",
+      "Type": "Market",
+      "Regions": "Any"
+    },
+    {
+      "Name": "Watchtower",
+      "Type": "Military",
+      "Regions": "Any"
+    },
+    {
+      "Name": "Barracks",
+      "Type": "Military",
+      "Regions": "Any"
+    },
+    {
+      "Name": "Hospital",
+      "Type": "Military",
+      "Regions": "Any"
+    },
+    {
+      "Name": "Buddhist Temple",
+      "Type": "Religious",
+      "Regions": "India, Himalaya, Bengal, Siam, Nusantura, Huguang, Tibet, Altishahr, Taihang, Japan, Bengal"
+    },
+    {
+      "Name": "Monastery",
+      "Type": "Religious",
+      "Regions": "Taihang, Tibet, Himalaya, Huguang, Siam, Japan, Ethiopia"
+    },
+    {
+      "Name": "Abbey",
+      "Type": "Religious",
+      "Regions": "Iberia, Orléanais, British-Isles, Frisia, Austria, Italy, Pomerania, Polesia"
+    },
+    {
+      "Name": "Mosque",
+      "Type": "Religious",
+      "Regions": "Murrakush, Sahara, Egypt, Arabia, Mesopotamia, Persia, Sindh, Barbary-Coast, India, Turkestan, Anatolia, Altishahr, Rumelia, Caucasus, Bengal, Sahel, Nusantura"
+    },
+    {
+      "Name": "Shrine",
+      "Type": "Religious",
+      "Regions": "Japan, Himalaya, Taihang, Huguang, Tibet"
+    },
+    {
+      "Name": "Cabane a sucre",
+      "Type": "Workshop",
+      "Regions": "Canada"
+    },
+    {
+      "Name": "Tannerie",
+      "Type": "Workshop",
+      "Regions": "Canada, Louisiana, Great-Plains, Yukon, Rockies"
+    },
+    {
+      "Name": "Mine",
+      "Type": "Workshop",
+      "Regions": "Any"
+    },
+    {
+      "Name": "Water Mill",
+      "Type": "Workshop",
+      "Regions": "Any"
+    },
+    {
+      "Name": "Logging Camp",
+      "Type": "Workshop",
+      "Regions": "Any"
+    },
+    {
+      "Name": "Mill",
+      "Type": "Workshop",
+      "Regions": "Any"
+    },
+    {
+      "Name": "Granary",
+      "Type": "Workshop",
+      "Regions": "Any"
+    },
+    {
+      "Name": "Plantation",
+      "Type": "Workshop",
+      "Regions": "Any"
+    },
+    {
+      "Name": "Foundry",
+      "Type": "Workshop",
+      "Regions": "Any"
+    }
+   ]

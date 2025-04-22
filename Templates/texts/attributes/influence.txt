@@ -1,0 +1,6 @@
+<p>
+Influence represents the ability of the group to affect others, its diplomatic power, and its leadership.
+</p>
+<p>
+Influence is positively affected by the size of the group, its fame, Education, Cunning, and Quality.
+</p>

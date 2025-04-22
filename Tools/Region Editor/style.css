@@ -1,0 +1,366 @@
+html { margin: 0px; padding: 0px; width: 100dvw;
+    height: 100dvh;}
+body { 
+    background-image: url('bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    user-select: none; padding: 0px; margin: 0px;     background-color: #000000;     width: 100%;
+    height: 100%; 
+    font-family: "Georgia";
+    text-shadow: 0 0 2px black, 0 1px 1px black, 0 1px 2px black, 0 0px 3px black, 0 1px 0px black;
+    overflow-x: hidden;
+}
+ul { list-style-type: none; padding: 0; margin: 0;}
+li { margin: 0px 0; cursor: pointer; background-color: #f0f0f0; padding: 5px; border-radius: 5px; }
+table { width: 100%; margin: 0; border-collapse: collapse; background-color: #d4d4d4;}
+th, td { border: 1px solid #ffffff; padding: 5px; text-align: left; }
+th { background-color: #818181; }
+tr { border: 1px solid #ffffff; }
+* { box-sizing: border-box;}
+* {line-height: normal;}
+input[type="text" i] {
+    width: 150px;
+}
+:root {
+    interpolate-size: allow-keywords;
+}
+
+button {
+    background: linear-gradient(0deg, rgba(28, 17, 5, 1) 0%, rgb(44, 28, 8) 100%);
+    border: 1px solid #9e5b1c;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    text-shadow: 0 0 3px black, 0 0 3px black, 0 1px 2px black, 1px 0px 3px black, 0 -1px 3px black, -1px 0px 3px black;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.75);
+    font-family: "Georgia";
+}
+button:hover {
+    border: 1px solid #e97911;
+    color: orange;
+}
+button:active {
+    border: 1px solid #2c2c2c;
+    color: rgb(112, 73, 0);
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.75) inset;
+}
+
+
+header {
+    height: 5dvh;
+    color: orange;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    border-bottom: 1px solid orange;
+    background-color: #2b2b2b;
+    box-shadow: 0 0 20px black, 0 0 10px black;
+    background-image: url('wood.jpg');
+    background-size: cover;
+}
+
+#json-loader { 
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color: white;
+    height: 5dvh;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+#main {
+    width: 90dvw;
+    height: 95dvh;
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    justify-content: left;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
+#table-container {
+    padding: 5px;
+    border:1px solid orange;
+    background-color: #1d2f449a;
+    gap: 0px;
+    width: max-content;
+    height: max-content;
+    box-shadow: 0 0 20px black, 0 0 10px black;
+    border-radius: 5px;
+    backdrop-filter: blur(4px);
+    zoom: 0.8;
+}
+
+#option-container {
+    min-width: 400px;
+    width: 30%;
+    border: 1px solid orange;
+    background-color: #1d2f449a;
+    display: flex;
+    flex-direction: column;
+    min-height: 40dvh;
+    box-shadow: 0 0 20px black, 0 0 10px black;
+    border-radius: 5px;
+    backdrop-filter: blur(4px);
+    overflow: hidden;
+}
+
+details {
+    border-top: 1px solid orange;
+    margin-top : -1px;
+    overflow: hidden;
+}
+
+details > summary {
+    background-color: #555;
+    color: bisque;
+    padding: 5px;
+    font-size: 20px;
+    border-bottom: 1px solid orange;
+    background-image: url('techbanner_units.png');
+    background-size: cover;
+    border-bottom: 1px solid orange;
+    box-shadow: 0 -3px 15px black inset;
+    padding-bottom: 7px;
+    padding-left: 7px;
+}
+
+details::details-content {
+    block-size: 0%;
+    transition: block-size 0.1s, content-visibility 0.1s;
+    transition-behavior: allow-discrete;
+}
+
+details[open]::details-content {
+    block-size: auto;
+}
+details[open] summary {
+    background-image: url('other-groups.png');
+    box-shadow: none;
+}
+details[open] summary .title {
+    color: white;
+    font-size: 23px;
+}
+
+summary::marker {
+    color: orange;
+}
+
+#option-container .title {
+    transition: font-size 0.1s;
+    display: inline-block;
+}
+summary:hover {
+    color: white;
+    cursor: pointer;
+    text-indent: 0px;
+    filter: brightness(1.2);
+}
+
+#regionForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.options {
+color: white;
+}
+
+.option {
+    border: 1px solid #555;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 5px;
+    margin: 5px;
+    background-color: #0f1114cb;
+    border-radius: 5px;
+}
+.option:last-child {
+    margin-bottom: 8px;
+}
+.option:hover {
+    background-color: #21252bd2;
+}
+
+.option#main-data {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+}
+
+.option label {
+    width: 30%;
+    color: rgb(255, 216, 119);
+}
+
+.option #cultureChecklist label {
+    width: auto;
+    color: white;
+}
+
+.options form label {
+
+}
+
+
+#name-text {
+    font-size: 25px;
+    width: 100%;
+    text-align: center;
+    color: orange;
+    font-style: italic;
+}
+#index-text {
+    text-align: center;
+    width: 100%;
+    content: 'Index: ';
+    color: white;
+}
+#index-text:before {
+    content: 'Index: ';
+    color: rgb(255, 216, 119);
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+fieldset legend {
+    color: rgb(255, 216, 119);
+    margin-bottom: 5px;
+}
+#cultureChecklist {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-column-gap: 10px;
+}
+
+
+#save-button {
+    border-top: 1px solid orange;
+    margin-top: -1px;
+    width: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+#save-button button {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+
+
+#tiles-grid {
+    display: grid;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 10px;
+    grid-template: "1fr 1fr 1fr 1fr 1fr";
+    justify-items: center;
+    justify-content: space-evenly;
+}
+#tiles-grid .tile {
+    width: 50px;
+    aspect-ratio: 1/1;
+    border: 1px solid brown;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
+#tiles-grid .tile.selected {
+outline: 2px solid yellow;
+box-shadow: 0 0 10px black;
+}
+#tiles-grid .tile:hover {
+outline: 2px solid rgb(253, 253, 253);
+box-shadow: 0 0 10px black;
+}
+#tiles-grid .tile span {
+ position: relative;
+ text-align: left;
+ text-shadow: 0 1px 2px wheat, 0 0px 2px white, -1px 0px 0px white, 1px 0px 0px white, 0 1px 0px white, 0 -1px 0px white, 0 0px 5px black, 0 0px 4px black, 0 0px 5px black ;
+ font-weight: bold;
+ font-style: italic;
+ font-size: 18px;
+ line-height: 90%;
+}
+
+#generators {
+    display: flex;
+    gap: 5px;
+    padding: 10px;
+}
+#generators button {
+    font-size: 15px;
+    padding-bottom: 7px;
+}
+
+
+
+
+
+
+
+
+
+
+
+#table-container div {
+    box-sizing: border-box;
+    width: 12px;
+    height: 12px;
+    overflow: hidden;
+}
+
+#table-container div:hover {
+    outline: 2px solid red;
+    z-index: 2;
+    position: sticky;
+}
+#table-container div:active {
+    animation: flashIn 0.5s ease-in-out 1;
+}
+@keyframes flashIn {
+    0% {
+    scale: 1.2;
+    }
+    100% {
+    scale: 1;
+    }
+}
+
+.empty { background-color: rgb(253, 200, 131); }
+.river { background-color: rgb(17, 170, 216); }
+.pond { background-color: rgb(84, 153, 144); }
+.rivershore { background-color: rgb(84, 153, 144); }
+.crossroad { 
+    background-color: rgb(119, 119, 119);
+    outline: 1px solid black; 
+    position: sticky;
+    outline-offset: -5px;
+}
+.road { background-color: rgb(160, 160, 160); }
+.rocks { background-color: rgb(97, 48, 25); }
+.vegetation-big { background-color: rgb(61, 172, 18); }
+.vegetation-small { background-color: rgb(121, 201, 89); }
+.ruin { background-color: rgb(37, 37, 37) }
+.building { background-color: rgb(255, 255, 255); }

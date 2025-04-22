@@ -1,0 +1,6 @@
+<p>
+Willpower represents the willingness of the group in front of challenges and resilience. It determines the maximum Endurance value for the group.
+</p>
+<p>
+Willpower is mainly affected by total Strength.
+</p>

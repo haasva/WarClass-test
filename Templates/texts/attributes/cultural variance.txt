@@ -1,0 +1,6 @@
+<p>
+Culture Variance represents the average distance in terms of culture amongst the adventurers of the group. Having adventurers of very different cultures results in a high Culture Variance, while having adventurers who are culturally more close to one another lowers the Culture Variance.
+</p>
+<p>
+Culture Variance affects the Cohesion of the group.
+</p>

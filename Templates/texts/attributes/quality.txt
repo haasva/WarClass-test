@@ -1,0 +1,1 @@
+<p>Quality is an indice based at 50 that represents the overall quality of the group based on the quality of its members.</p>

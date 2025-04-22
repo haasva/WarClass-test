@@ -1,0 +1,87 @@
+[
+    {
+        "name": "Orléans",
+        "type": "Town",
+        "index": 51956
+    },
+    {
+        "name": "Cherdyn",
+        "type": "Town",
+        "index": 41905
+    },
+    {
+        "name": "São Miguel das Missões",
+        "type": "Town",
+        "index": 114233
+    },
+    {
+        "name": "Avaste Fen",
+        "type": "Marsh",
+        "index": 40263
+    },
+    {
+        "name": "Nile Delta",
+        "type": "Marsh",
+        "index": 66922
+    },
+    {
+        "name": "Pinsk Marshes",
+        "type": "Marsh",
+        "index": 48794
+    },
+    {
+        "name": "Makhtesh Ramon",
+        "type": "Desert",
+        "index": 67993
+    },
+    {
+        "name": "Carbajal Valley",
+        "type": "Marsh",
+        "index": 137135
+    },
+    {
+        "name": "Jodensavanne",
+        "type": "Town",
+        "index": 87584
+    },
+    {
+        "name": "Beaucaire",
+        "type": "Town",
+        "index": 55692
+    },
+    {
+        "name": "Saint-Malo",
+        "type": "Harbor",
+        "index": 50885
+    },
+    {
+        "name": "Gorée",
+        "type": "Harbor",
+        "index": 81778
+    },
+    {
+        "name": "Angoche",
+        "type": "Harbor",
+        "index": 103712
+    },
+    {
+        "name": "Bandar-e Abbas",
+        "type": "Harbor",
+        "index": 70156
+    },
+    {
+        "name": "Mariupol",
+        "type": "Harbor",
+        "index": 52540
+    },
+    {
+        "name": "Riga",
+        "type": "Harbor",
+        "index": 42394
+    },
+    {
+        "name": "Pondichéry",
+        "type": "Harbor",
+        "index": 81916
+    }
+]

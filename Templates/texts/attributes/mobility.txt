@@ -1,0 +1,6 @@
+<p>
+It represents the group's ability to move.
+</p>
+<p>
+It is based on the average Speed of all group's adventurers. It is negatively affected by the group size, but positively affected by Cohesion.
+</p>

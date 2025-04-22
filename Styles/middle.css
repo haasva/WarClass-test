@@ -1,0 +1,145 @@
+#middle {
+        display: flex;
+        width: 66dvw;
+        position: absolute;
+        top: 9%;
+        left: 17%;
+        box-sizing: border-box;
+        flex-direction: column;
+        z-index: 2;
+        visibility: visible;
+}
+
+#middle.invisible {
+    display: none;
+    visibility: hidden;
+}
+#mega-wrapper.invisible {
+    display: none;
+    visibility: hidden;
+}
+
+#middle .tabs {
+    padding-left: 20px;
+    box-sizing: border-box;
+    align-items: flex-end;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 5px;
+    justify-content: left;
+    height: 60px;
+    transform-style: preserve-3d;
+}
+
+#middle .tabs #party_panel {
+    background-image: url('../Art/Borders/tabs/party.png');
+}
+#middle .tabs #cultures_panel {
+    background-image: url('../Art/Borders/tabs/culture.png');
+}
+#middle .tabs #map_panel {
+    background-image: url('../Art/Borders/tabs/map.png');
+}
+#middle .tabs #factions_panel {
+    background-image: url('../Art/Borders/tabs/factions.png');
+}
+#middle .tabs #settings_panel {
+    background-image: url('../Art/Borders/tabs/settings.png');
+}
+
+#middle .tabs .panel_tab {
+    width: 200px;
+    height: 30px;
+    text-shadow: 0 0 2px black, 0 0 3px black, 0 0 3px black, 0 0 2px black, 0 1px 3px black, 0 1px 3px black, 0 0 10px black, 0 0 10px black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid gray;
+    color: #dadada;
+    font-size: 18px;
+    padding: 5px;
+    background-size: cover;
+    filter: grayscale(0.6);
+    border-radius: 5px 5px 0px 0px;
+    font-weight: bold;
+}
+
+#middle .tabs .panel_tab.active{
+    background-image: url('../Art/Borders/techbanner_units.png');
+    border: 1px solid orange;
+    color: white;
+    filter: none;
+    height: 35px;
+    font-size: 20px;
+    z-index: 1;
+    box-shadow: 0 0 10px black;
+}
+#middle .tabs .panel_tab:hover{
+filter: brightness(1.2);
+border-color: orange;
+}
+#middle .tabs .panel_tab:active:not(#middle .tabs .panel_tab.active){
+filter: brightness(0.8);
+box-shadow: 0 0 10px black inset;
+transform: rotateX(-20deg);
+perspective: 800px;
+transform-origin: bottom;
+}
+
+#middle .tabcontents {
+    min-height: 60dvh;
+    max-height: 900px;
+    background-image: url('../Art/Interface/backdrop2.png');
+    margin-top: -1px;
+    border: 1px solid orange;
+    z-index: 2;
+    box-shadow: 0 0 20px black, 0 0 15px rgba(218, 165, 32, 0.45) inset;
+    border-radius: 10px;
+}
+
+#middle .tabcontent {
+    flex-direction: row;
+    display: none;
+    visibility: hidden;
+    gap: 10px;
+    padding: 10px;
+    content-visibility: hidden;
+}
+
+#middle .tabcontent.active {
+    display: flex;
+    flex-direction: row;
+    visibility: visible;
+    content-visibility: visible;
+}
+
+
+
+#middle #map-content-left {
+    display: flex;
+    flex-direction: column;
+}
+
+#middle .tabcontent.active#party_content {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+#middle #party_content .left {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 50%;
+}
+
+#middle .tabcontent#culture_content {
+    margin-inline: auto;
+
+}
+#middle .tabcontent#culture_content .title {
+    color: whitesmoke;
+    font-size: 20px;
+    padding-bottom: 5px;
+    text-align: center;
+}

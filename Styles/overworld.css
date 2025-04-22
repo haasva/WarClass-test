@@ -1,0 +1,645 @@
+
+
+#minimap2{
+    width:100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    box-shadow: black 0px 0px 10px;
+    border: 1px solid #a32600;
+    outline: 2px solid rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    transition: all 0.5s;
+    display: none;
+}
+
+#minimap2:hover #minimap2-bg #minimap-player-pos{
+    transform: scale(2);
+    opacity: 0.5;
+}
+
+
+#minimap2-bg {
+    width: 533px;
+    height: 266px;
+    transform: scale(7);
+    transform-origin: 0px 0px;
+    background-size: cover;
+    background-image: url(../grosse_map.png);
+    image-rendering: pixelated;
+}
+
+#minimap2-bg #minimap-player-pos {
+    width: 1px;
+    height: 1px;
+    background-color: red;
+    position: absolute;
+    transition: all 0.2s;
+    animation: 1s ease-in-out infinite playerMinimapPosAnim;
+}
+
+
+
+@keyframes playerMinimapPosAnim {
+    0% {
+        background-color: red;
+    }
+    50% {
+        background-color: rgb(255, 255, 255);
+    }
+    100% {
+        background-color: red;
+    }
+    }
+
+#overworld-container {
+    scale: 1;
+    width: 630px;
+    height: 450px;
+    display: none;
+    visibility: hidden;
+    content-visibility: hidden;
+}
+#overworld-container.overworld-large {
+    z-index: 1;
+    overflow: hidden;
+    visibility: visible;
+    content-visibility: visible;
+    zoom: 1.35;
+    border: 1px solid rgb(252, 193, 18);
+    box-shadow: 0 0 10px black;
+    display: block;
+}
+
+#overworld-container.overworld-large:after {
+content: '';
+width: 100%;
+height: 100%;
+position: absolute;
+top: 0;
+z-index: 8;
+pointer-events: none;
+left: 0;
+box-shadow: 0 0px 30px rgba(255, 255, 255, 0.5) inset;
+
+}
+
+#overworld {
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    perspective-origin: top;
+    image-rendering: pixelated;
+    background-color: rgb(21, 77, 109);
+    grid-template-columns: repeat(533, 1fr);
+    grid-template-rows: repeat(266, 1fr);
+  
+}
+
+
+
+
+#overworld-minimap {
+    width: 266px;
+    height: 133px;
+    background-image: url('../minimap.png');
+    background-size: cover;
+    image-rendering: pixelated;
+    left: 7px;
+    bottom: 7px;
+    z-index: 1;
+    border: 1px solid rgb(252, 193, 18);
+    border-top: 1px solid rgb(252, 193, 18);
+    box-sizing: border-box;
+    transition: all 0.1s;
+    display: none;
+    position: absolute;
+    transform-origin: bottom left;
+    opacity: 1;
+    border-radius: 5px;
+    box-shadow: 0 0 5px black, 0 0 5px black;
+}
+
+#overworld-minimap #viewpoint {
+    border: 1px solid white;
+    box-shadow: 0 0 5px black, 0 0 5px black;
+    outline: 1px solid black;
+    outline-offset: 1px;
+    background-color: rgba(255, 255, 255, 0.3);
+    user-select: none;
+    position: absolute;
+}
+
+#overworld td {
+contain-intrinsic-size: 1px 5000px;
+content-visibility: visible;
+transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+
+}
+
+#overworld .region {
+width: 30px;
+height: 30px;
+position: absolute;
+box-sizing: border-box;
+user-select: none;
+background-size: cover;
+}
+
+#overworld .region .level-overlay {
+    width: 102%;
+    aspect-ratio: 1/1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: visible;
+    opacity: 0.7;
+}
+#overworld .region .superregion-overlay {
+    width: 102%;
+    aspect-ratio: 1/1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: visible;
+    opacity: 0.7;
+}
+
+#overworld .region:hover {
+outline: 1px solid rgba(255, 255, 255, 0.5);
+outline-offset: -2px;
+z-index: 6;
+position:fixed;
+}
+#overworld .region:active {
+    transform: scale(1.05);
+}
+#overworld .region.selected {
+    outline: 1px dotted rgb(255, 196, 68);
+    box-sizing: border-box;
+    filter: brightness(1.2);
+    z-index: 3;
+    position:fixed;
+}
+#overworld .land {
+background-image: url('../Art/Textures/land.gif');
+}
+#overworld .land.desert {
+background-image: url('../Art/Textures/desert.gif');
+}
+#overworld .coast {
+filter:sepia(0.3);
+}
+#overworld .mountain:not(.arctic) {
+background-color: rgb(78, 48, 34);
+background-image: url('../Art/Textures/mountains.gif');
+}
+#overworld .montane:not(.arctic) {
+background-color: rgb(78, 48, 34);
+background-image: url('../Art/Textures/montane.gif');
+}
+
+#overworld .land.climate.arid:not(.mountain, .desert, .forest) {
+background-color: rgb(244, 165, 96);
+background-image: url('../Art/Textures/arid.gif');
+}
+#overworld .land.climate.arid.mountain {
+background-color: rgb(255, 255, 255);
+}
+#overworld .land.climate.tropical:not(.mountain, .forest) {
+background-color: rgb(97, 216, 33);
+background-image: url('../Art/Textures/tropical.gif');
+}
+#overworld .land.climate.temperate:not(.mountain) {
+background-color: rgb(66, 135, 87);
+}
+#overworld .land.climate.arctic:not(.forest) {
+background-color: rgb(127, 167, 153);
+background-image: url('../Art/Textures/arctic.gif');
+}
+#overworld .land.climate.arctic.mountain {
+
+background-image: url('../Art/Textures/mountain-arctic.gif');
+}
+#overworld .water {
+    background-color: rgb(21, 77, 109);
+    visibility: hidden;
+}
+#overworld .desert {
+    background-image: url('..Art/Textures/desert.gif');
+}
+#overworld .forest:not(.mountain, .desert) {
+    background-image: url('../Art/Textures/forest.gif');
+}
+#overworld .forest.tropical:not(.mountain, .desert) {
+    background-image: url('../Art/Textures/jungle.gif');
+}
+#overworld .desert.forest {
+    background-image: url('../Art/Textures/forest_desert.gif');
+}
+#overworld .land.climate.arctic.forest {
+    background-image: url('../Art/Textures/forest.gif');
+}
+
+#overworld .player-position {
+
+    box-sizing: border-box;
+    filter: brightness(1.2);
+}
+#overworld .player-position:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background-size: cover;
+    background-image: url('../Art/Sprites/doppixel.gif');
+    z-index: 5;
+}
+#overworld .player-position::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    bottom: -2px;
+    left: -2px;
+    border: rgba(255, 255, 255, 0.01) 4px solid;
+    border-image: url(https://www.openra.net/images/selection-box.svg) 6 6 6 6;
+    border-image-width: 4px;
+    animation: selectionBox 0.75s infinite;
+    z-index: 4;
+    pointer-events: none;
+}
+
+#overworld .has-groups {
+    overflow: visible;
+    display: flex;
+    place-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 1;
+    justify-content: center;
+    image-rendering: auto;
+}
+#overworld .has-groups:hover {
+
+}
+
+#overworld .has-groups .region-group-container {
+    display: flex;
+    gap: 5px;
+    position: absolute;
+    z-index: 9;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+    display: none;
+}
+
+#overworld .has-groups .region-group-container .group-icon {
+    width: 10px;
+    height: 10px;
+    background-color: aliceblue;
+    z-index: 1;
+    border-radius: 50%;
+    border: 1px solid black;
+    opacity: 1;
+}
+
+#overworld .location-overworld {
+    z-index: 9;
+    position: fixed;
+}
+
+#overworld .location-overworld:not(.has-groups) {
+    overflow: visible;
+    display: flex;
+    place-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 1;
+    justify-content: center;
+    image-rendering: auto;
+}
+#overworld .location-overworld:hover .settlement {
+
+}
+
+
+
+#overworld .location-overworld span {
+    background-size: 100% 100%;
+    position:fixed;
+    z-index: 5;
+    width: 30px;
+    height: 30px;
+    text-wrap: nowrap;
+    display: flex;
+    place-content: center;
+    text-align: center;
+    color: white;
+    text-shadow: 0 0 2px black, 0 0 5px black, 0 0 2px black, 0 0 2px black;
+    font-size: 11px;
+    position: relative;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-style: italic;
+    pointer-events: none;
+    box-sizing: border-box;
+    overflow: visible;
+    background-position: center center;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.1s, font-size 0.1s, text-shadow 0.1s;
+}
+#overworld .location-overworld.Town span {
+    background-image: url('../Art/Overworld/city.png');
+}
+#overworld .location-overworld.Harbor span {
+    background-image: url('../Art/Overworld/city.png');
+}
+#overworld .location-overworld.Desert span {
+
+}
+#overworld .location-overworld.Marsh span {
+    background-image: url('../Art/Overworld/swamp.png');
+}
+#overworld .location-overworld .Outpost:not(#Caravanserai) {
+    background-image: url('../Art/Settlements/icons/outpost.png');
+}
+#overworld .location-overworld .Outpost#Caravanserai {
+    background-image: url('../Art/Settlements/icons/caravanserail.png');
+}
+#overworld .location-overworld .Village {
+    background-image: url('../Art/Settlements/icons/village.png');
+}
+#overworld .location-overworld .Village.Middle-East {
+    background-image: url('../Art/Settlements/icons/granary.png');
+}
+#overworld .location-overworld .Village.Africa {
+    background-image: url('../Art/Settlements/icons/huts.png');
+}
+#overworld .location-overworld .Camp {
+    background-image: url('../Art/Settlements/icons/camp.png');
+}
+#overworld .location-overworld .Religious.Europe, 
+#overworld .location-overworld .Religious.Africa, 
+#overworld .location-overworld .Religious.North-America, 
+#overworld .location-overworld .Religious.South-America {
+    background-image: url('../Art/Settlements/icons/church.png');
+}
+#overworld .location-overworld .Religious.Asia:not([id="Jesuit Colony"]) {
+    background-image: url('../Art/Settlements/icons/pagoda.png');
+}
+#overworld .location-overworld .Religious[id="Jesuit Colony"] {
+    background-image: url('../Art/Settlements/icons/church.png');
+}
+#overworld .location-overworld .Religious[id="Necromancer Station"], #overworld .location-overworld .Religious[id="Shamanic Camp"] {
+    background-image: url('../Art/Settlements/icons/necromancer.png');
+}
+#overworld .location-overworld .Religious {
+    background-image: url('../Art/Settlements/icons/temple.png');
+}
+    
+
+#superRegionText {
+    font-family: inherit;
+    color: orangered;
+    text-shadow: 0 0 30px black, 0 0 20px black, 0 0 5px black, 0 0 5px black;
+    font-weight: bold;
+    font-style: italic;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    opacity: 0.4;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: opacity 0.2s;
+}
+#overworld-container:hover #superRegionText {
+    opacity: 0.2;
+}
+
+#overworld .super-region-highlight {
+
+}
+
+@keyframes animateWater {
+0% {
+    background-size: 50% 50%;
+}
+50% {
+    background-size: 100% 100%;
+}
+100% {
+    background-size: 50% 50%;
+}
+}
+
+#overworld-cell-tooltip *:not(#header) {
+    text-transform: capitalize;
+}
+#overworld-cell-tooltip #header {
+    font-size: 24px;
+    min-height: 40px;
+}
+
+
+
+
+
+#overworld .explored {
+    filter: brightness(1.3);
+}
+#overworld .explored:after {
+
+}
+
+
+
+
+
+
+
+
+
+
+#region-popup-container {
+    width: 382px;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.726);
+    backdrop-filter: blur(5px);
+    display: flex;
+    background-image: url(../Art/Interface/wood1.png);
+    background-size: cover;
+    border: 1px solid rgb(252, 193, 18);
+    box-shadow: 0 0 40px black, 0 0 15px rgb(145 113 18 / 70%) inset;
+    opacity: 0;
+    transition: opacity 1s;
+    flex-direction: column;
+    animation : flipin ease 0.1s 1;
+    transform-origin: center;
+
+}
+
+#region-popup-container #region-popup {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    padding: 10px;
+}
+
+#region-popup-container fieldset {
+    border: 1px solid gray;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background-color: rgba(27, 26, 24, 0.4);
+    box-shadow: 0 1px 3px black;
+    padding: 5px;
+    padding-left: 7px;
+    padding-right: 7px;
+    border-radius: 5px;
+}
+#region-popup-container fieldset legend {
+font-size: 22px;
+font-family: Georgia, 'Times New Roman', Times, serif;
+font-style: italic;
+}
+
+#region-popup-container .title { 
+    font-size: 25px;
+    padding: 10px;
+    background-size: cover;
+
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-weight: bolder;
+    text-shadow: 0 0 2px black, 0 0 5px black, 0 0 2px black, 0 0 2px black, 0 0 5px black, 0 0 10px black;
+    color: orange;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(238, 163, 37, 1), rgba(0, 0, 0, 0.5));
+    border-bottom: 2px solid;
+    border-bottom-left-radius: 10px;
+    margin-top: -15px;
+    margin-left: -10px;
+    margin-right: -10px;
+    box-shadow: 0 0 15px black inset;
+
+}
+
+#region-popup-container fieldset .info-cont {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+#region-popup-container fieldset .info-cont:not(.info-cont:last-child) {
+border-image-slice: 1;
+border-image-source: linear-gradient(to right, gray 0%, transparent 66%);
+border-bottom: 1px solid;
+padding-bottom: 5px;
+}
+#region-popup-container fieldset .info-label {
+    color: rgb(255, 232, 131);
+    width: 28%;
+}
+#region-popup-container fieldset .info-data {
+text-transform: capitalize;
+}
+
+#region-popup-container fieldset .info-data.terrain {
+color:rgb(255, 240, 199);
+}
+#region-popup-container fieldset .info-data.climate {
+color:rgb(33, 210, 216);
+}
+#region-popup-container fieldset .info-data.vegetation {
+color:rgb(33, 216, 33);
+}
+#region-popup-container fieldset .info-data.cultures {
+    color: burlywood;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+#region-popup-container fieldset .info-data.cultures:not(.info-data.cultures:last-child) {
+margin-right: 7px;
+}
+#region-popup-container fieldset .info-data.faction {
+color:rgb(245, 129, 158);
+}
+
+#region-popup-container fieldset .info-data:hover:not(.groups) {
+background-color: #24365eb6;
+color: white;
+outline: 7px solid #24365eb6;
+text-decoration: underline;
+text-underline-offset: 2px;
+}
+
+#region-popup-container fieldset .groups {
+    width: fit-content;
+    display: flex;
+    align-items: left;
+    text-align: left;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+#region-popup-container fieldset .groups .box-group {
+    width: 30px;
+    height: 20px;
+    background-color: gray;
+    border: 1px solid wheat;
+    text-align: center;
+}
+
+
+#region-popup-container button:not(.close-button, .minify-button) {
+    margin: 10px;
+    padding: 5px;
+    font-size: 20px;
+}
+
+#region-popup-container .snapshot {
+    width: 300px;
+    aspect-ratio: 1/1;
+    background-size: 100% 100%;
+    image-rendering: pixelated;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to right, transparent, rgba(238, 163, 37, 1), transparent);
+    border-bottom: 2px solid;
+    border-top: 2px solid;
+    transition: all 0.2s;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+#region-popup-container .snapshot:not([style*="background-image"]) {
+    display: none;
+}
+
+
+
+
+
+
+
+#overworld-container .buttons-overworld {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 9;
+    padding: 5px;
+}
+#overworld-container .buttons-overworld button {
+    font-size: 10px;
+}

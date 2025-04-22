@@ -1,0 +1,5 @@
+<p>
+Harmony represents the difference in terms of Adventurer Types present within the group. Having many different Types results in a lower Harmony, while having more of the same Type shall increases the Harmony.</p>
+<p>
+Harmony mainly affects the Cohesion of the group.
+</p>

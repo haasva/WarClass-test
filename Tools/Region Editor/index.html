@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WC RegEditor</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+
+
+    <header>
+        <div id="title">WarClass Region Editor</div>
+    </header>
+
+    <div id="json-loader">
+      <input type="file" id="fileLoader" accept=".json" />
+    </div>
+
+    
+<div id="main">
+
+
+
+    <div id="table-container">
+
+
+    </div>
+
+
+
+    <div id="option-container">
+
+        <form id="regionForm">
+        
+            
+
+          
+        <details open name="toclose"><summary><div class="title">Main Data</div></summary>
+
+
+            <div class="option" id="main-data">   
+                <div id="name-text">Unnamed Region</div>
+                <div id="index-text">#</div>
+                <input type="text" id="region-name" name="name" placeholder="Region Name">
+                <input type="text" id="region-index" name="index" placeholder="#index">
+                <input type="text" id="region-row" name="row" placeholder="[row]">
+                <input type="text" id="region-col" name="col" placeholder="[col]">
+                
+                <button type="button" onclick="setName()">Set</button>
+            </div>
+                        
+                <!-- Super Region Selection -->
+            <div class="option">
+                <label for="superRegion">Super Region:</label>
+                <select id="superRegion" name="superRegion">
+                    <option value="Pomerania">Pomerania</option>
+                    <option value="Canada">Canada</option>
+                    <!-- Add other options as needed -->
+                </select>
+            </div>
+
+            <div class="option">
+                <label for="exploration-reduction">Exploration Reduction:</label>
+                <input type="text" id="exploration-reduction" name="exploration-reduction" placeholder="Between 0 and 2000">
+            </div>
+            
+        </details>
+
+
+
+
+
+        <details name="toclose"><summary><div class="title">Population</div></summary>
+                
+            <div class="option">
+                <fieldset>
+                    <legend>Culture(s):</legend>
+                    <div id="cultureChecklist">
+                        <label><input type="checkbox" name="culture" value="French"> French</label>
+                        <label><input type="checkbox" name="culture" value="English"> English</label>
+                        <label><input type="checkbox" name="culture" value="Dutch"> Dutch</label>
+                        <label><input type="checkbox" name="culture" value="Scandinavian"> Scandinavian</label>
+                        <label><input type="checkbox" name="culture" value="German"> German</label>
+                        <label><input type="checkbox" name="culture" value="Balkan"> Balkan</label>
+                        <label><input type="checkbox" name="culture" value="West Slavic"> West Slavic</label>
+                        <label><input type="checkbox" name="culture" value="Russian"> Russian</label>
+                        <label><input type="checkbox" name="culture" value="Iberian"> Iberian</label>
+                        <label><input type="checkbox" name="culture" value="Italian"> Italian</label>
+                        <label><input type="checkbox" name="culture" value="Ottoman"> Ottoman</label>
+                        <label><input type="checkbox" name="culture" value="Arab"> Arab</label>
+                        <label><input type="checkbox" name="culture" value="N. African"> N. African</label>
+                        <label><input type="checkbox" name="culture" value="Bantu"> Bantu</label>
+                        <label><input type="checkbox" name="culture" value="Persian"> Persian</label>
+                        <label><input type="checkbox" name="culture" value="Indian"> Indian</label>
+                        <label><input type="checkbox" name="culture" value="Chinese"> Chinese</label>
+                        <label><input type="checkbox" name="culture" value="Japanese"> Japanese</label>
+                        <label><input type="checkbox" name="culture" value="Nanyang"> Nanyang</label>
+                        <label><input type="checkbox" name="culture" value="Altaic"> Altaic</label>
+                        <label><input type="checkbox" name="culture" value="Arctic"> Arctic</label>
+                        <label><input type="checkbox" name="culture" value="American"> American</label>
+                        <label><input type="checkbox" name="culture" value="Latino"> Latino</label>
+                        <label><input type="checkbox" name="culture" value="Amerindian"> Amerindian</label>
+                        <label><input type="checkbox" name="culture" value="Native"> Native</label>
+                    </div>
+                </fieldset>
+            </div>
+
+            <!-- Population Selection -->
+            <div class="option">
+                <label for="population">Population:</label>
+                <select id="population" name="population">
+                    <option value="Low">Low</option>
+                    <option value="Average">Average</option>
+                    <option value="High">High</option>
+                </select>
+            </div>
+                <!-- Factions Input -->
+            <div class="option">
+                <label for="faction">Faction(s):</label>
+                <input type="text" id="faction" name="faction">
+                <button type="button" onclick="addFaction()">Add</button>
+                <div id="factionList"></div>
+            </div>
+
+            <div class="option">
+                <label for="level">Level:</label>
+                <input type="text" id="level" name="level">
+                <button type="button" onclick="setLevel()">Set</button>
+                <div id="levelRegion"></div>
+            </div>
+
+        </details>
+
+
+
+
+
+        
+        <details name="toclose"><summary><div class="title">Environment</div></summary>
+            <!-- Climate Selection -->
+            <div class="option">
+                <label for="climate">Climate:</label>
+                <select id="climate" name="climate">
+                    <option value="arid">Arid</option>
+                    <option value="temperate">Temperate</option>
+                    <option value="arctic">Arctic</option>
+                    <option value="tropical">Tropical</option>
+                </select>
+            </div>
+                <!-- Desert Selection -->
+            <div class="option">
+                <label for="desert">Desert:</label>
+                <select id="desert" name="desert">
+                    <option value="Desert">Desert</option>
+                    <option value="Not">Not</option>
+                </select>
+            </div>
+        
+
+        
+                <!-- Forest Toggle -->
+            <div class="option">
+                <label for="forest">Forest:</label>
+                <select id="forest" name="forest">
+                    <option value="Forest">Forest</option>
+                    <option value="">Null</option>
+                </select>
+            </div>
+        
+                <!-- Terrain Selection -->
+            <div class="option">
+                <label for="terrain">Terrain:</label>
+                <select id="terrain" name="terrain">
+                    <option value="Plain">Plain</option>
+                    <option value="Mountain">Mountain</option>
+                </select>
+            </div>
+        
+                <!-- Vegetation Selection -->
+            <div class="option">
+                <label for="vegetation">Biome:</label>
+                <select id="vegetation" name="vegetation">
+                    <option value="Prairie">Prairie</option>
+                    <option value="Meadow">Meadow</option>
+                    <option value="Montane">Montane</option>
+                    <option value="Woodland">Woodland</option>
+                    <option value="Tugay">Tugay</option>
+                    <option value="Steppe">Steppe</option>
+                    <option value="Savanna">Savanna</option>
+                    <option value="Desertic">Desertic</option>
+                    <option value="Jungle">Jungle</option>
+                    <option value="Mangrove">Mangrove</option>
+                    <option value="Tundra">Tundra</option>
+                    <option value="Taiga">Taiga</option>
+                </select>
+            </div>
+        </details>
+
+        <details name="toclose"><summary><div class="title">Tiles</div></summary>
+            <div class="options">
+                <div id="tiles-selector">
+    
+                    <div id="tiles-grid">
+                        <div class="tile empty" id="empty"><span>Empty</span></div>
+                        <div class="tile river" id="river"><span>River</span></div>
+                        <div class="tile road" id="road"><span>Road</span></div>
+                        <div class="tile rocks" id="rocks"><span>Rocks</span></div>
+                        <div class="tile vegetation-big" id="vegetation-big"><span>Big Vegetation</span></div>
+                        <div class="tile vegetation-small" id="vegetation-small"><span>Small Vegetation</span></div>
+                        <div class="tile ruin" id="ruin"><span>Ruin</span></div>
+                        <div class="tile building" id="building"><span>Building</span></div>
+                        <div class="tile pond" id="pond"><span>Pond</span></div>
+    
+    
+                    </div>
+    
+                </div>
+            </details>
+
+
+
+        <details name="toclose"><summary><div class="title">Generators</div></summary>
+            <div class="options">
+                <div id="generators">
+                    
+                    <button id="ponds" onclick="generatePonds()">Gnrte Ponds</button>
+                    <button id="vegetation" onclick="generateRivers(river)">Gnrte Rivers</button>
+                    <button id="vegetation" onclick="generateRivers()">Gnrte Roads</button>
+    
+                </div>
+            </details>   
+
+
+
+        
+                <div id="save-button"><button type="submit">Save</button></div>
+            </form>
+        </div>
+        
+
+
+
+
+
+
+
+        </div>
+        
+
+
+
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+<script src="simplex-noise.js"></script>
+</body>
+</html>
