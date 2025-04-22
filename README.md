@@ -1,4 +1,9 @@
+
+# WarClass
+
+
 99% of this game's assets are taken from other games/internet/mods.
+
 
 This is a 100% HTML-CSS-JavaScript 3D first person party-based RPG set in a semi-historical 18th century.
 Manage a group of adventurers from various cultures, and explore the WHOLE world.
@@ -9,6 +14,6 @@ START THE GAME:
 Launch the run.bat file, which is going to create a local server on which you can play the game through the browser (WebKit only supported!).
 
 Game is IN DEVELOPMENT.
-
+![App Screenshot](https://github.com/haasva/WarClass-test/blob/4a994f3a3c14b226719a23c06820c8dfedd382e0/screenshot.jpg)
 
 Enjoy.
