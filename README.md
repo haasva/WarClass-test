@@ -34,6 +34,8 @@ you can contact me for anything. I'm really looking for feedback, both gamedesig
 ## Future
 Continue to build the game.
 
+Create a real skills-items-talents system (skills, adventurer's talents and most item currently don't do anything).
+
 Implement working group vs group combat.
 
 Find a way to abandon cell-based movement (Daggerfall-like movement instead).
