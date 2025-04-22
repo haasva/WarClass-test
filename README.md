@@ -14,6 +14,8 @@ Everything you see is an html <div>. I'm not a code expert so I relied quite a l
 START THE GAME:
 Launch the run.bat file, which is going to create a local server on which you can play the game through the browser (WebKit only supported!).
 
+The pixelated effect is a filter, it can be disabled (just change the css of the #neo-region element).
+
 Game is IN DEVELOPMENT.
 ![App Screenshot](https://github.com/haasva/WarClass-test/blob/4a994f3a3c14b226719a23c06820c8dfedd382e0/screenshot.jpg)
 
