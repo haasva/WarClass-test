@@ -1,7 +1,6 @@
 
 # WarClass
 
-
 99% of this game's assets are taken from other games/internet/mods used as placeholders.
 contact me if you don't want your asset be found in this project or if you want to know the source of an asset.
 
@@ -14,10 +13,18 @@ Everything you see is an html div. I'm not a code expert so I relied quite a lot
 START THE GAME:
 Launch the run.bat file, which is going to create a local server on which you can play the game through the browser (WebKit only supported!).
 
-The pixelated effect is a filter, it can be disabled (just change the css of the #neo-region element).
+
+
+## Engine
+
+The game is rendered entirely in DOM with CSS 3D transform engine. It doesn't rely on WebGL or other similar libraries. Canvas is not used to render the game too.
+
+Canvas is used only in the computing of bitmap pictures into arrays for building the world map data (bitmap to array).
 
 Game is IN DEVELOPMENT.
 ![App Screenshot](https://github.com/haasva/WarClass-test/blob/4a994f3a3c14b226719a23c06820c8dfedd382e0/screenshot.jpg)
+
+The pixelated effect is a filter, it can be disabled (just change the css of the #neo-region element).
 
 ## How to play
 
