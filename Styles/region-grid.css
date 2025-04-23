@@ -195,7 +195,7 @@
   image-rendering: pixelated;
   background-color: transparent;
   scale : 1;
-  filter: saturate(1.3) brightness(1.15)  url(#pixelate);
+  filter: saturate(1.3) brightness(1.15) url(#pixelate);
 }
 
 #region-grid-filter {
