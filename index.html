@@ -450,13 +450,13 @@ Free slots: <span id="empty-slots-count"></span>
 
 
 
-<svg style="position:absolute;visibility:hidden">
-  <filter id="pixelate" x="0" y="0">
-    <feFlood x="0" y="0" height="1" width="1" result="flood"></feFlood>
-    <feComposite width="3" height="3" in="flood" result="composite"></feComposite>
-    <feTile in="composite" result="tiled"></feTile>
-    <feComposite in="SourceGraphic" in2="tiled" operator="in"></feComposite>
-    <feMorphology operator="dilate" radius="1" result="final"></feMorphology>
+<svg width="0" height="0" aria-hidden="true">
+  <filter id="pixelate">
+    <feFlood x="1" y="1" width="1" height="1"/>
+    <feBlend width="3" height="3"/>
+    <feTile/>
+    <feComposite in="SourceGraphic" operator="in"/>
+    <feMorphology operator="dilate" radius="1"/>
   </filter>
 </svg>
 

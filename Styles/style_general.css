@@ -1,3 +1,4 @@
+svg[height='0'][aria-hidden='true'] { position: fixed }
 
 #loading-screen {
   position: fixed;
