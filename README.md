@@ -24,7 +24,7 @@ Canvas is used only in the computing of bitmap pictures into arrays for building
 Game is IN DEVELOPMENT.
 ![App Screenshot](https://github.com/haasva/WarClass-test/blob/4a994f3a3c14b226719a23c06820c8dfedd382e0/screenshot.jpg)
 
-The pixelated effect is a filter, it can be disabled (just change the css of the #neo-region element).
+The pixelated effect is a filter, it can be disabled by pressing P.
 
 ## How to play
 
