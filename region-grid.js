@@ -1432,7 +1432,7 @@ if (startingCell) {
     document.addEventListener('keydown', function(event) {
       if (event.code === 'KeyP') {
         event.preventDefault();
-        togglePosterization();
+        toggleRetroFilters();
       }
     });
 

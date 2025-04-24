@@ -177,10 +177,10 @@ function createListenersSettings(settings) {
         pixelateBox.addEventListener('change', function () {
             if (this.checked) {
                 textpixelate.innerHTML = 'Posterization On';
-                togglePosterization();
+                toggleRetroFilters();
             } else {
                 textpixelate.innerHTML = 'Posterization Off';
-                togglePosterization();
+                toggleRetroFilters();
             }
         });
     }
@@ -234,16 +234,22 @@ function createListenersSettings(settings) {
 }
 
 
-function togglePosterization() {
+function toggleRetroFilters() {
     const mega = document.getElementById('mega-wrapper');
+    const engine = document.getElementById('engine-wrapper');
 
     SETTINGS.posterization = !SETTINGS.posterization;
 
     if (!SETTINGS.posterization) {
+
+        engine.style.filter = 'saturate(1.3) brightness(1.15)';
         mega.classList.add('non-filter');
-      } else {
+
+    } else {
+
+        engine.style.filter = 'saturate(1.3) brightness(1.15) url(#pixelate)';
         mega.classList.remove('non-filter');
-      }
+    }
 
 }
 

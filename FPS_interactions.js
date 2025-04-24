@@ -217,10 +217,10 @@ async function weaponImageAnimation(specialty) {
     const wp = document.getElementById('weapon');
     const images = [];
   
+    
+
+
     // Preload images
-
-
-
     for (let n = 1; n <= m; n++) {
         images[n] = new Image();
         images[n].src = `/Art/Speciality/${specialty.toLowerCase()}/${n}.png`;

@@ -94,6 +94,10 @@
   content: none;
   display: none;
 }
+#mega-wrapper.non-filter:before {
+  content: none;
+  display: none;
+}
 
 #mega-wrapper {
   width: 100dvw;
@@ -114,7 +118,7 @@
   scale: 1;
   perspective: 720px;
   background-color: #324f69;
-  filter: brightness(0.86) contrast(1.1) url(#posterize);
+  filter: brightness(0.9) contrast(1.1) url(#posterize);
 }
 
 #mega-wrapper:before {
