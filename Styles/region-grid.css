@@ -199,7 +199,7 @@
   image-rendering: pixelated;
   background-color: transparent;
   scale : 1;
-  filter: saturate(1.3) brightness(1.15) url(#pixelate);
+  filter: saturate(1.3) brightness(1.28) url(#pixelate);
 }
 
 #region-grid-filter {
@@ -592,10 +592,10 @@ contain-intrinsic-size: 1px 5000px;
     pointer-events: all;
     box-sizing: border-box;
   }
-  .basic-store.animal.east {
+  .basic-store.animal.east:not(.bird) {
     animation: standAnimaleast 1.1s linear infinite;
   }
-  .basic-store.animal.west {
+  .basic-store.animal.west:not(.bird) {
     animation: standAnimalwest 1.1s linear infinite;
   }
   @keyframes standAnimaleast {
@@ -622,10 +622,10 @@ contain-intrinsic-size: 1px 5000px;
   }
   
   .basic-store.bird.west {
-    transform: rotateX(-40deg) translateY(-25px) ;
+    transform: rotateX(-90deg) translateY(-25px) rotateY(var(--rotationZ));
   }
   .basic-store.bird.east {
-    transform: rotateX(-40deg) translateY(-25px) rotateY(180deg);
+    transform: rotateX(-90deg) translateY(-25px) rotateY(var(--rotationZ));
   }
    .game-cell:not(.river-cell):has(.bird)::before {
     content: '';
@@ -648,19 +648,17 @@ contain-intrinsic-size: 1px 5000px;
     transform-origin: center;
     animation: bird 4s infinite ease-in-out;
     background-size: contain;
+    scale: 0.8;
   }
   @keyframes bird {
     0% {
-      scale: 1.2 1.2;
-      translate: 0px -20px;
+      transform: rotateX(-90deg) translateY(-35px) rotateY(var(--rotationZ));
     }
     50% {
-      scale: 1 1;
-      translate: 0px -10px;
+      transform: rotateX(-90deg) translateY(-45px) rotateY(var(--rotationZ));
     }
     100% {
-      scale: 1.2 1.2;
-      translate: 0px -20px;
+      transform: rotateX(-90deg) translateY(-35px) rotateY(var(--rotationZ));
     }
   }
 

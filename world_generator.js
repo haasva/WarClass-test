@@ -314,8 +314,10 @@ async function generateContentForRegion(region, x, y) {
           const randomChance = Math.floor(Math.random() * 100) + 1;
           if (randomChance === 25) {
           generateAnimals(region, regionContent[row][col], col, row);
+          
           }
             //generateAnimals(region, regionContent[row][col], row, col);
+            generateBirds(region, regionContent[row][col], row, col);
             generateObjects(region, regionContent[row][col]);
             
             regionContent[row][col].index = row * 75 + col;
@@ -1091,47 +1093,34 @@ function generateRiverOrRoads(regionContent, river, roadIDCounter, roadIDsArray)
 }
 
 
-// function generateAnimals(region, regionContent, row, col) {
-//     if (regionContent.occupied != true) {
-//         const randomChance = Math.floor(Math.random() * 300) + 1;
-//         if (randomChance <= 10) {
-//           const randomDir = Math.floor(Math.random() * 2) + 1;
-//           let dir = '';
-//           if (randomDir === 1) { dir = 'east' } else if (randomDir === 2) { dir = 'west' }
-//           const life = Math.floor(Math.random() * 200) + 100;
-//           const aID = row + 75 * col;
+function generateBirds(region, regionContent, row, col) {
+    if (regionContent.occupied != true) {
+        const randomChance = Math.floor(Math.random() * 500) + 1;
+        if (randomChance <= 5) {
+          const randomDir = Math.floor(Math.random() * 2) + 1;
+          let dir = '';
+          if (randomDir === 1) { dir = 'east' } else if (randomDir === 2) { dir = 'west' }
+          const life = Math.floor(Math.random() * 10) + 10;
+          const aID = row + 75 * col;
 
-//             if (randomChance <= 7) {
-//               const animal = {
-//                 type: "animal",
-//                 id: aID,
-//                 totalLife: life,
-//                 currentLife: life,
-//                 direction: dir,
-//                 X: col,
-//                 Y: row,
-//               };
-//               regionContent.animal = animal;
-//               region.animals.push(animal);
-//             } else {
-//               const randomBird = Math.floor(Math.random() * 6) + 1;
-//               const bird = {
-//                 type: "bird",
-//                 birdType: randomBird,
-//                 direction: dir,
-//                 id: aID,
-//                 X: col,
-//                 Y: row,
-//                 totalLife: life,
-//                 currentLife: life
-//               };
-//               regionContent.bird = bird;
-//               region.animals.push(bird);
-//             }
-//             regionContent.occupied = true;
-//         }
-//     }
-// }
+              const randomBird = Math.floor(Math.random() * 6) + 1;
+              const bird = {
+                type: "bird",
+                birdType: randomBird,
+                direction: dir,
+                id: aID,
+                X: col,
+                Y: row,
+                totalLife: life,
+                currentLife: life
+              };
+              regionContent.bird = bird;
+              //region.animals.push(bird);
+            
+            regionContent.occupied = true;
+        }
+    }
+}
 
 function generateObjects(region, regionContent) {
   if (regionContent.occupied != true) {
@@ -1894,11 +1883,11 @@ function populateContentCell(cell, data, veg, i, j) {
         cell.appendChild(store);
     }
 
-  //   if (data.bird) {
-  //     cell.classList.add('bird');
-  //     const store = addStore('bird', data.bird.birdType);
-  //     cell.appendChild(store);
-  // }
+    if (data.bird) {
+      cell.classList.add('bird');
+      const store = addStore('bird', data.bird.birdType);
+      cell.appendChild(store);
+  }
 
     if (data.lootContainer) {
         cell.classList.add('loot-container');
@@ -1951,20 +1940,14 @@ function populateContentCell(cell, data, veg, i, j) {
       // addOvertip(data.animal, data.animal.id, store);
     }
 
-    // if (info === 'bird') {
-    //   store.style.backgroundImage = `url('/Art/Sprites/entities/birds/${data.bird.birdType}.gif')`;
-    //   store.classList.add('bird');
-    //   store.classList.add('animal');
-    //   store.setAttribute('birdID', data.bird.id);
-    //   store.classList.add(`${data.bird.direction}`);
-
-    //   const birdData = generateBirdData(data.bird);
-    //   store.addEventListener('click', function(event) {
-    //     createObjectWindow(event, birdData);
-    //   });
-
-    //   addOvertip(data.bird, data.bird.id, store);
-    // }
+    if (info === 'bird') {
+      store.style.backgroundImage = `url('/Art/Sprites/entities/birds/${data.bird.birdType}.gif')`;
+      store.classList.add('bird');
+      store.classList.add('cardboard');
+      store.setAttribute('birdID', data.bird.id);
+      store.classList.add(`${data.bird.direction}`);
+      store.setAttribute('aID', data.bird.id);
+    }
 
     if (info === 'loot-container') {
       store.classList.add('cardboard');

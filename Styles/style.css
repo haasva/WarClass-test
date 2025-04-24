@@ -2898,7 +2898,7 @@ background-position: center;
   display: flex;
   flex-direction: row;
   gap: 8px;
-  width: 250px;
+  width: 20rem;
   justify-content:flex-start;
   align-items: center;
 }

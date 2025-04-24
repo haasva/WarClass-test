@@ -3225,7 +3225,7 @@ async function moveAnimalsInMap() {
         store.classList.add(direction.toLowerCase());
       }
 
-      if (SETTINGS.animations === true) {
+      if (SETTINGS.animations === true && !store.classList.contains('bird')) {
         store.style.animation = `move${direction} 0.${SETTINGS.animationTime}s linear 1, standAnimal${animal.direction} 1.1s linear infinite`;
         await new Promise(resolve => setTimeout(resolve, SETTINGS.animationTime));
         store.style.animation = `standAnimal${animal.direction} 1.1s linear infinite`;

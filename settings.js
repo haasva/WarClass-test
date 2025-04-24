@@ -247,7 +247,7 @@ function toggleRetroFilters() {
 
     } else {
 
-        engine.style.filter = 'saturate(1.3) brightness(1.15) url(#pixelate)';
+        engine.style.filter = 'saturate(1.3) brightness(1.28) url(#pixelate)';
         mega.classList.remove('non-filter');
     }
 
