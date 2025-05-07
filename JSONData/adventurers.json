@@ -1,4 +1,31 @@
 [
+   {
+    "Title": "Cagot",
+    "Rarity": "Uncommon",
+    "Culture": "French",
+    "N": 517,
+    "Age": "I",
+    "Life": 15,
+    "Speed": 4,
+    "Attack": 6,
+    "RangedResist": 5,
+    "HandResist": 10,
+    "Type": "Commoner",
+    "SubCategory": "Wanderer",
+    "Mounted": "",
+    "Specialty": "Melee",
+    "Signature": "Advanced building",
+    "Description": "",
+    "Lore": "« Aussi les tenait-on prudemment à l'écart: ceux des villes étaient relégués dans un faubourg spécial où les personnes saines se lussent bien gardées de mettre les pieds. »",
+    "Upgrade1": "",
+    "Upgrade2": "",
+    "Upgrade3": "",
+    "CultureImg1": "\\Art\\Cultures\\french.png",
+    "CultureImg2": "",
+    "Equipment": {
+       "Weapon": "Fokos"
+    }
+ },
   {
     "Title": "Shakan",
     "Rarity": "Normal",

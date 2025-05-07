@@ -448,6 +448,17 @@ Free slots: <span id="empty-slots-count"></span>
 
 <div id="line-camera"></div>
 
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <filter id="ps1-wobble">
+    <!-- Animate a turbulence pattern for displacement -->
+    <feTurbulence type="turbulence" baseFrequency="0.03" numOctaves="1" result="warp" seed="2">
+      <animate attributeName="seed" values="1;5;9;3;7" dur="0.5s" repeatCount="indefinite"/>
+    </feTurbulence>
+
+    <!-- Displace pixels based on the turbulence -->
+    <feDisplacementMap in="SourceGraphic" in2="warp" scale="3" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</svg>
 
 
 <svg width="0" height="0" aria-hidden="true">

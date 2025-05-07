@@ -11,12 +11,10 @@ let lootChance = {
 
 function createLootContent(data) {
 
+
     const lootContainer = data.lootContainer;
     console.log('building info', data);
-    const exW = document.getElementById('interior_building');
-    if (exW) {
-        exW.remove();
-    }
+    document.getElementById('interior_building')?.remove();
 
     const window = document.createElement('div');
     window.classList.add('infobox');
@@ -54,10 +52,6 @@ function createLootContent(data) {
         cell.className = 'interior-space';
         table.appendChild(cell);
         cell.classList.add(`${currentInterior[r].state}`);
-        
-        if (cell.classList.contains('available')) {
-            cell.textContent = currentInterior[r].dc;
-        }
 
         if (currentInterior[r].item != null) {
             const itemEl = createItemElement(currentInterior[r].item);
@@ -84,9 +78,56 @@ function createLootContent(data) {
 
     content.appendChild(table);
 
+    const lootAll = document.createElement('button');
+    lootAll.className = 'loot-button';
+    lootAll.innerHTML = '[E] Loot All';
+
+    lootAll.addEventListener('click', function (event) {
+        for (let r = 0; r < currentInterior.length; r++) {
+            const space = currentInterior[r];
+            if (space.item != null) {
+                const success = grantGivenItem(space.item);
+                if (success) {
+                    space.item = null;
+                    space.state = 'looted';
+    
+                    // Find the corresponding cell and update it
+                    const cell = table.querySelector(`[space-id="${r}"]`);
+                    if (cell) {
+                        const itemEl = cell.querySelector('.inventory-item'); // Assuming class 'item' is used in createItemElement
+                        if (itemEl) {
+                            itemEl.remove();
+                        }
+                        cell.classList.add('looted');
+                    }
+                } else {
+                    displayMessage('Our inventory is full.', 'white');
+                    break; // Stop looting if inventory is full
+                }
+            }
+        }
+    
+        removeAllKindsOfTooltips(); // Clean up any leftover tooltips
+        window.remove();
+        togglePointerLock();
+        data.lootContainer = null;
+        CURRENT_GROUP_CELL.querySelector('.loot-container')?.remove();
+        CURRENT_GROUP_CELL.classList.remove('loot-container');
+        data.occupied = false;
+        CURRENT_GROUP_CELL.classList.remove('occupied');
+    });
+
+    content.appendChild(lootAll);
+
     window.appendChild(content);
 
     document.body.appendChild(window);
+
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'e') {
+            lootAll.click();
+        }
+    });
 }
 
 
@@ -94,21 +135,10 @@ function generateLootInterior(size) {
     let interior = [];
     let area = {};
     for (r = 0; r < size; r++) {
-        const ran = Math.floor(Math.random() * 6) + 1;
 
-        if (ran === 1) {
-            area.state = 'disabled';
-         } else if (ran === 2) {
-            area.state = 'visible';
-            area.item = addItemToArea(area);
-        } else if (ran >= 5) {
-            area.state = 'available';
-            const dc = Math.floor(Math.random() * 100) + 1;
-            area.dc = dc;
-        } else {
-            area.state = 'invisible';
-        }
-
+        area.state = 'visible';
+        area.item = addItemToArea(area);
+        
         interior[r] = {...area} ;
     }
 

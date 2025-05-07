@@ -709,9 +709,9 @@ contain-intrinsic-size: 1px 5000px;
     left: 2%;
   }
    .basic-store.berries {
-    transform: rotateX(-90deg) scale3d(0.6, 0.6, 0.6) translateY(5px) rotateY(var(--rotationZ)) rotateX(var(--rotationX));
+    transform: rotateX(-90deg) scale3d(0.6, 0.6, 0.6)rotateY(var(--rotationZ)) rotateX(var(--rotationX));
     top: -50%;
-    background-position: center;
+    background-position: bottom;
   }
    .basic-store.reed {
 
@@ -1830,7 +1830,7 @@ pointer-events: none;
   transform-origin: center; 
   background-color: red;
   transform: translateZ(0.5px) translateY(0px);
-  opacity: 0;
+
 }
 
 

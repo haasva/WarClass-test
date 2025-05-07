@@ -75,9 +75,9 @@ function generateWorldLevels() {
 
           // Determine the level based on thresholds
 
-          // const level = levelThresholds.findIndex(threshold => normalizedValue < threshold);
+          const level = levelThresholds.findIndex(threshold => normalizedValue < threshold);
 
-          const level = 1;
+          //const level = 1;
 
           // Push the level to the row array
           rowLevels.push(level >= 0 ? level : levels - 1); // Default to the max level if no threshold matches
@@ -258,10 +258,10 @@ async function generateContentForRegion(region, x, y) {
     let regionContent = Array(75).fill().map(() => Array(75).fill().map(() => ({})));
 
 
-
-    generateStructures(regionContent, region);
-    generateStructures(regionContent, region);
-    generateStructures(regionContent, region);
+    
+    //generateStructures(regionContent, region);
+    //generateStructures(regionContent, region);
+    //generateStructures(regionContent, region);
     //generatePest(regionContent, seed);
 
     generateImpassables(regionContent, region, seed);
@@ -1213,8 +1213,8 @@ function generateLootContainers(region, regionContent) {
       currentContainer.type = 'Broken Cart';
     }
 
-
-    currentContainer.interior = [ ... generateLootInterior(16) ];
+    const ran = Math.floor(Math.random() * 4) + 1;
+    currentContainer.interior = [ ... generateLootInterior(ran) ];
 
     regionContent[x][y].lootContainer = { ... currentContainer };
     regionContent[x][y].impassable = false;
@@ -1927,6 +1927,7 @@ function populateContentCell(cell, data, veg, i, j) {
 
     if (info === 'npc') {
       store.classList.add('cardboard');
+      store.setAttribute('name', data.npc.name);
       store.addEventListener('click', function(event) {
         createWindow(data.npc);
       });
@@ -1936,6 +1937,7 @@ function populateContentCell(cell, data, veg, i, j) {
       store.classList.add('cardboard');
       store.classList.add(`${data.animal.direction}`);
       store.setAttribute('aID', data.animal.id);
+      store.setAttribute('name', data.animal.name);
       store.style.backgroundImage = `url('/Art/Animals/${data.animal.name}.png')`;
       // addOvertip(data.animal, data.animal.id, store);
     }
@@ -1944,6 +1946,7 @@ function populateContentCell(cell, data, veg, i, j) {
       store.style.backgroundImage = `url('/Art/Sprites/entities/birds/${data.bird.birdType}.gif')`;
       store.classList.add('bird');
       store.classList.add('cardboard');
+      store.setAttribute('name', 'Bird');
       store.setAttribute('birdID', data.bird.id);
       store.classList.add(`${data.bird.direction}`);
       store.setAttribute('aID', data.bird.id);
@@ -1958,6 +1961,7 @@ function populateContentCell(cell, data, veg, i, j) {
       const ran = Math.floor(Math.random() * 9) + 1;
       if (ran === 8 || ran === 9) {
         store.classList.add('cardboard');
+        store.setAttribute('name', 'Head pike');
         const ranHead = Math.floor(Math.random() * 4) + 1;
         store.style.backgroundImage = `url('/Art/Sprites/Objects/heads/Head00${ranHead}.png')`;
         store.classList.add('head-pike'); 
@@ -1968,15 +1972,18 @@ function populateContentCell(cell, data, veg, i, j) {
     }
 
     if (info === 'skeleton') {
+      store.setAttribute('name', 'Skeleton');
       store.style.backgroundImage = `url('/Art/Sprites/Objects/props/skeletons/Sceleton${values}.png')`;
     }
 
     if (info === 'fish') {
+      store.setAttribute('name', 'Fish');
       store.classList.add('cardboard');
       store.style.backgroundImage = `url('/Art/Sprites/entities/fish/1.gif')`;
     }
 
     if (info === 'shipwreck') {
+      store.setAttribute('name', 'Shipwreck');
       const ran = Math.floor(Math.random() * 2) + 1;
       store.classList.add('cardboard');
       store.style.backgroundImage = `url('/Art/Sprites/Objects/props/Shipwreck${ran}.png')`;
@@ -1992,6 +1999,7 @@ function populateContentCell(cell, data, veg, i, j) {
 
     if (info === 'reed') {
       store.classList.add('cardboard');
+      store.setAttribute('name', 'Reeds');
       const ran = Math.floor(Math.random() * 8) + 1;
       store.style.backgroundImage = `url('/Art/Vegetation/Sprites/river/${ran}.png')`;
     }
@@ -2009,16 +2017,19 @@ function populateContentCell(cell, data, veg, i, j) {
     }
 
     if (info === 'corpse') {
+      store.setAttribute('name', 'Corpse');
       store.classList.add('cardboard');
       store.style.backgroundImage = `url('/Art/Doodads/corpse2.png')`;
     }
 
     if (info === 'campfire') {
+      store.setAttribute('name', 'Campfire');
       store.classList.add('cardboard');
       store.style.backgroundImage = `url('/Art/Sprites/Objects/campfire.gif')`;
     }
 
     if (info === 'berries') {
+      store.setAttribute('name', 'Berry bush');
       store.classList.add('cardboard');
       const ran = Math.floor(Math.random() * 4) + 1;
       store.style.backgroundImage = `url('/Art/Sprites/Objects/berries/${ran}.png')`;

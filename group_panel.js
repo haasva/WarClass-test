@@ -377,13 +377,24 @@ function displayAdventurerOption(adventurer, box) {
   const exadvOptionCont = document.querySelector('#adventurer-option-container');
   if (exadvOptionCont) { exadvOptionCont.remove(); }
 
+  
   const advOptionCont = document.createElement('div');
   advOptionCont.setAttribute('id', 'adventurer-option-container');
   advOptionCont.setAttribute('uid', `${adventurer.uID}`);
+  advOptionCont.classList.add('infobox');
 
-  const activeWeaponry = document.getElementById('active-weaponry');
-  activeWeaponry.innerHTML = '';
-  activeWeaponry.appendChild(advOptionCont);
+  let header = document.createElement('div');
+  header.classList.add('infobox-header');
+  header.textContent = `Current active adventurer`;
+
+  advOptionCont.prepend(header);
+  enableDragAndDropWindow(header);
+  addCloseButton(header);
+
+  document.body.appendChild(advOptionCont);
+
+
+
 
   Inventory.prototype.initDragAndDropAdvOption();
 
@@ -403,6 +414,8 @@ function displayAdventurerOption(adventurer, box) {
       const promoteBtn = advOptionCont.querySelector('#promote');
       const evolveBtn = advOptionCont.querySelector('#evolve');
       const devolveButton = advOptionCont.querySelector('#devolve');
+
+
 
       advOptionCont.querySelector('.title').textContent = `${adventurer.Title}`;
 
@@ -492,9 +505,6 @@ function updateAdventurerOptionStatus(adv) {
   }
 
 }
-
-
-
 
 function createEvolutionBox(adventurer, upgrade, evolutionType) {
   const upBox = document.createElement('div');

@@ -754,16 +754,16 @@ filter: hue-rotate(-85deg);
 }
 .interior-space.invisible {
 visibility: hidden;
-display: none;
+
 }
 .interior-space.disabled {
     background-color: #000000;
-    display: none;
+
 }
 .interior-space.available {
     background-color: #332410;
     color: white;
-    display: none;
+
 }
 .interior-space.visible {
     background-color: #66451a;
@@ -780,3 +780,4 @@ display: none;
     border-radius: 5px;
     box-shadow: 0 2px 6px black, 0 0px 7px black;
 }
+

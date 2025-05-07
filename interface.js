@@ -758,36 +758,37 @@ function toggleScreenshotDisplay() {
 
 async function interactWithObject() {
 
-  if (CURRENT_TARGET_CELL.classList.contains('gatherable')) {
-    if (CURRENT_TARGET_CELL.classList.contains('berries')) {
+  if (CURRENT_GROUP_CELL.classList.contains('gatherable')) {
+    if (CURRENT_GROUP_CELL.classList.contains('berries')) {
       await createGatherWindow('berries');
     }
-    if (CURRENT_TARGET_CELL.classList.contains('reed')) {
+    if (CURRENT_GROUP_CELL.classList.contains('reed')) {
       await createGatherWindow('reeds');
     }
-    if (CURRENT_TARGET_CELL.classList.contains('tree')) {
+    if (CURRENT_GROUP_CELL.classList.contains('tree')) {
       await createGatherWindow('tree');
     }
-    if (CURRENT_TARGET_CELL.classList.contains('object-cell')) {
+    if (CURRENT_GROUP_CELL.classList.contains('object-cell')) {
       await createGatherWindow('object');
     }
-    if (CURRENT_TARGET_CELL.classList.contains('skeleton-cell')) {
+    if (CURRENT_GROUP_CELL.classList.contains('skeleton-cell')) {
       await createGatherWindow('skeleton');
     }
-    if (CURRENT_TARGET_CELL.classList.contains('corpse')) {
+    if (CURRENT_GROUP_CELL.classList.contains('corpse')) {
       await createGatherWindow('corpse');
     }
-    if (CURRENT_TARGET_CELL.classList.contains('fish-cell')) {
+    if (CURRENT_GROUP_CELL.classList.contains('fish-cell')) {
       await createGatherWindow('fish');
     }
   }
 
 
-  if (CURRENT_TARGET_CELL.classList.contains('loot-container')) {
-    const col = CURRENT_TARGET_CELL.getAttribute('col');
-    const row = CURRENT_TARGET_CELL.getAttribute('row');
+  if (CURRENT_GROUP_CELL.classList.contains('loot-container')) {
+    const col = CURRENT_GROUP_CELL.getAttribute('col');
+    const row = CURRENT_GROUP_CELL.getAttribute('row');
     const data = CURRENT_PLAYER_REGION_DATA.content[row][col];
     console.log('data:', data);
+    togglePointerLock();
     createLootContent(data);
   }
 }
@@ -802,7 +803,7 @@ async function createGatherWindow(gathered) {
   let progression = 1;
   const maxProgress = 20;
   const updateInterval = 10;
-  const index = parseInt(CURRENT_TARGET_CELL.getAttribute('index'));
+  const index = parseInt(CURRENT_GROUP_CELL.getAttribute('index'));
 
   const ex = document.getElementById('gather-window');
   if (ex) { ex.remove() }
@@ -846,7 +847,7 @@ const progressInterval = setInterval(async () => {
     grantGatheredLoot(gathered);
     updateRegionContentObject(gathered, index);
 
-    const basicStore = CURRENT_TARGET_CELL.querySelector('.basic-store.clickable');
+    const basicStore = CURRENT_GROUP_CELL.querySelector('.basic-store.clickable');
     if ( basicStore ) { 
 
       basicStore.parentElement.classList.remove('gatherable');
@@ -863,7 +864,7 @@ const progressInterval = setInterval(async () => {
       await realTime(1);
     }
     
-    CURRENT_TARGET_CELL.classList.remove('gatherable');
+    CURRENT_GROUP_CELL.classList.remove('gatherable');
     
 
  

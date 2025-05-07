@@ -1367,6 +1367,7 @@ if (startingCell) {
         SETTINGS.zoomFactor -= 0.5;
       }
       inner.style.scale = `${SETTINGS.zoomFactor}`;
+      applyNeoTransforms();
     });
 
     document.addEventListener('keydown', async (event) => {
@@ -2065,6 +2066,19 @@ function updateCameraRotation(event) {
       crosshairInteractor.updateInteraction();
 
       updateTargetElementAndEntity();
+
+      //createObjectTooltip();
+
+}
+
+function createObjectTooltip() { 
+  const tooltipElement = crosshairInteractor.getHoveredElement();
+  const name = tooltipElement.getAttribute('name');
+  if (tooltipElement.classList.contains('basic-store')) {
+    displayMessage(name);
+  }
+
+
 }
 
 function updateTargetElementAndEntity() {
@@ -2242,6 +2256,10 @@ const target = document.elementFromPoint(rect.left, rect.top);
     }
 
     if (element.classList.contains('sprite-type')) {
+      return targetManager.getHoveredTargetInfo(element);
+    }
+
+    if (element.classList.contains('basic-store')) {
       return targetManager.getHoveredTargetInfo(element);
     }
 
@@ -3573,7 +3591,10 @@ const directionMapping = {
 async function movePlayerCameraByKey(event) {
   if (PLAYER_STATE.canMove === false) return;
   const key = event.keyCode;
-  if (![87, 65, 68, 83].includes(key) || SETTINGS.firstPerson !== true) return;
+  if (![87, 65, 68, 83].includes(key) ) return;
+
+  document.getElementById('interior_building')?.remove();
+
 
   removeAllKindsOfTooltips();
   pressedKeys.add(key);

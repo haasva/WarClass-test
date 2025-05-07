@@ -169,17 +169,17 @@ function createListenersSettings(settings) {
 
     if (pixelateBox && textpixelate) {
         if (pixelateBox.checked) {
-            textpixelate.innerHTML = 'Posterization On';
+            textpixelate.innerHTML = 'Retro Filters On';
         } else {
-            textpixelate.innerHTML = 'Posterization Off';
+            textpixelate.innerHTML = 'Retro Filters Off';
         }
 
         pixelateBox.addEventListener('change', function () {
             if (this.checked) {
-                textpixelate.innerHTML = 'Posterization On';
+                textpixelate.innerHTML = 'Retro Filters On';
                 toggleRetroFilters();
             } else {
-                textpixelate.innerHTML = 'Posterization Off';
+                textpixelate.innerHTML = 'Retro Filters Off';
                 toggleRetroFilters();
             }
         });
