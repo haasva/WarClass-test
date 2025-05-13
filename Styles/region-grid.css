@@ -1832,6 +1832,7 @@ pointer-events: none;
   transform-origin: center; 
   background-color: red;
   transform: translateZ(0.1px) translateY(0px);
+  visibility: hidden;
 
 }
 
