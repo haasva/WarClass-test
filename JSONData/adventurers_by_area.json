@@ -35,7 +35,7 @@
     "Myltyq",
     "Uriankhai",
     "Kazakh Herders",
-    "Scout",
+    "Keshik",
     "Kalmyk",
     "Steppes Rider",
     "Qañğy",
@@ -57,7 +57,7 @@
     "Qusbegi",
     "Uriankhai",
     "Kazakh Herders",
-    "Scout",
+    "Keshik",
     "Kalmyk",
     "Steppes Rider",
     "Qañğy",
@@ -88,12 +88,13 @@
     "Uriankhai",
     "Mongol Villagers",
     "Kazakh Herders",
-    "Scout",
+    "Keshik",
     "Kalmyk",
     "Steppes Rider",
     "Xiangmazei",
     "Cossack",
-    "Tocharian"
+    "Tocharian",
+    "Guanning"
   ],
   "Buryatia": [
     "Shakan",
@@ -104,7 +105,7 @@
     "Uriankhai",
     "Mongol Villagers",
     "Kazakh Herders",
-    "Scout",
+    "Keshik",
     "Kalmyk",
     "Steppes Rider",
     "Qañğy",
@@ -138,7 +139,7 @@
   ],
   "Tibet": [
     "Camel Explorer",
-    "Scout",
+    "Keshik",
     "Cho-ko-nu",
     "Xiangu",
     "Arquebusier",
@@ -153,7 +154,7 @@
   "Taihang": [
     "Camel Explorer",
     "Mongol Villagers",
-    "Scout",
+    "Keshik",
     "Adviser",
     "Cho-ko-nu",
     "Xiangu",
@@ -171,7 +172,8 @@
     "Blind monk",
     "Eshi",
     "Wokou",
-    "Hwarang"
+    "Hwarang",
+    "Guanning"
   ],
   "Manchuria": [
     "Camel Explorer",
@@ -179,7 +181,7 @@
     "Myltyq",
     "Uriankhai",
     "Mongol Villagers",
-    "Scout",
+    "Keshik",
     "Steppes Rider",
     "Qañğy",
     "Urangai Sakha",
@@ -197,14 +199,15 @@
     "Ataman Marauder",
     "Promyshlennik",
     "Hwarang",
-    "Komusō"
+    "Komusō",
+    "Guanning"
   ],
   "Siberia": [
     "Baqsı",
     "Qusbegi",
     "Uriankhai",
     "Mongol Villagers",
-    "Scout",
+    "Keshik",
     "Kalmyk",
     "Steppes Rider",
     "Qañğy",
@@ -1285,7 +1288,8 @@
     "Karhade Queen",
     "Pindari",
     "Thuggee",
-    "Girl of Joy"
+    "Girl of Joy",
+    "Labbay Da'i"
   ],
   "Guinea": [
     "Imbangala",
@@ -1340,7 +1344,8 @@
     "Smith",
     "Batak wisata",
     "Pirate Lord",
-    "Aboriginal"
+    "Aboriginal",
+    "Marakkar"
   ],
   "Huguang": [
     "Quilombola",
@@ -1376,7 +1381,8 @@
     "Pardoned Convict",
     "Girl of Joy",
     "Smith",
-    "Congaï"
+    "Congaï",
+    "Labbay Da'i"
   ],
   "Filipinas": [
     "Haidao",
@@ -1437,7 +1443,8 @@
     "Papar",
     "Pirate Lord"
   ],
-  "India": [
+  "Deccan": [
+    "Labbay Da'i",
     "Prince",
     "Devadâsî",
     "Brahmin",
@@ -1451,7 +1458,8 @@
     "Pindari",
     "Thuggee",
     "Astronomer",
-    "Thalamako"
+    "Thalamako",
+    "Marakkar"
   ],
   "Sindh": [
     "Prince",

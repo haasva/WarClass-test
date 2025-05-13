@@ -294,7 +294,7 @@
    "Continent": "Middle-East",
    "Climate": "Arid",
    "Header": "desert3",
-   "PosX": 66.5,
+   "PosX": 66.2,
    "PosY": 45.5,
    "Connections": 1,
    "Size": "Small",
@@ -800,7 +800,7 @@
    "Faction": "Jesuits"
  },
  {
-   "Name": "India",
+   "Name": "Deccan",
    "Row": 149,
    "Col": 359,
    "Continent": "Asia",

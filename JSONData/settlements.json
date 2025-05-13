@@ -32,7 +32,7 @@
     "Terrain": "",
     "Type": "Camp",
     "Size": "Medium",
-    "Areas": "Balkans, Orléanais, Carpathia, Wild-Fields, Italy, Iberia, Pomerania, Austria, Italy, Moscovia, India",
+    "Areas": "Balkans, Orléanais, Carpathia, Wild-Fields, Italy, Iberia, Pomerania, Austria, Italy, Moscovia, Deccan",
     "Description": ""
   },
   {
@@ -113,7 +113,7 @@
     "Terrain": "",
     "Type": "Outpost",
     "Size": "Large",
-    "Areas": "Pernambuco, Guinea, India, Nusantura, Huguang",
+    "Areas": "Pernambuco, Guinea, Deccan, Nusantura, Huguang",
     "Description": ""
   },
   {
@@ -167,7 +167,7 @@
     "Terrain": "",
     "Type": "Religious",
     "Size": "Medium",
-    "Areas": "Japan, Manchuria, Huguang, Guinea, India, Kongo, Amazonia, Pampas",
+    "Areas": "Japan, Manchuria, Huguang, Guinea, Deccan, Kongo, Amazonia, Pampas",
     "Description": ""
   },
   {
@@ -194,7 +194,7 @@
     "Terrain": "Forest",
     "Type": "Village",
     "Size": "Small",
-    "Areas": "Bengal, India, Siam, Java, Filipina, Guinea",
+    "Areas": "Bengal, Deccan, Siam, Java, Filipina, Guinea",
     "Description": ""
   },
   {
@@ -266,7 +266,7 @@
     "Terrain": "",
     "Type": "Village",
     "Size": "Large",
-    "Areas": "India, Bengal",
+    "Areas": "Deccan, Bengal",
     "Description": ""
   },
   {

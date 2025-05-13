@@ -937,6 +937,7 @@ contain-intrinsic-size: 1px 5000px;
     align-content: center;
     justify-content: flex-end;
     align-items: center;
+    outline: 2px solid #1111119f;
   }
   .impassable * {
     transform-style: preserve-3d;
@@ -1812,11 +1813,12 @@ pointer-events: none;
 
 #player-camera {
   position: absolute;
-  width: 1px;
-  height: 1px;
-  top: 250px;
-  left: 250px;
-
+  width: 10px;
+  height: 10px;
+  top: 245px;
+  left: 245px;
+  border-radius: 50%;
+  outline: 2px solid black;
   transform-style: preserve-3d;
   display: flex;
   flex-direction: column;
@@ -1829,7 +1831,7 @@ pointer-events: none;
   justify-content: center;
   transform-origin: center; 
   background-color: red;
-  transform: translateZ(0.5px) translateY(0px);
+  transform: translateZ(0.1px) translateY(0px);
 
 }
 

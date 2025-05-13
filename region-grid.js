@@ -1543,8 +1543,8 @@ if (startingCell) {
   const playerCamera = document.createElement('div');
   playerCamera.id = 'player-camera';
 
-  playerCamera.dataset.translateX = 250;
-  playerCamera.dataset.translateY = 250;
+  playerCamera.dataset.translateX = 245;
+  playerCamera.dataset.translateY = 245;
 
   inner.appendChild(playerCamera);
 
@@ -1668,8 +1668,8 @@ function toggleFirstPerson(event) {
 
   } else {
     SETTINGS.angle = 35;
-    SETTINGS.perspectiveGrid = 276;
-    SETTINGS.zoomFactor = 2;
+    SETTINGS.perspectiveGrid = 220;
+    SETTINGS.zoomFactor = 3;
     group.style.opacity = 1;
     SETTINGS.translateX = 0;
     SETTINGS.translateY = 0;
@@ -2715,131 +2715,9 @@ function observeVisibleCells() {
 
 
 
-function observeVisibleCellsFOV() {
-  observedCells = [];
-  const visibilityRadius = SETTINGS.visibilityRadius;
-  const gridParent = document.getElementById('region-grid-table');
-  const playerCamera = document.getElementById('player-camera');
-  
-  // Get the current group position cell
-  const groupPositionCell = cachedGridCells.find(cell => 
-    cell.classList.contains('current-group-position')
-  );
 
-  const currentRow = parseInt(groupPositionCell.getAttribute('row'), 10);
-  const currentCol = parseInt(groupPositionCell.getAttribute('col'), 10);
 
-  // Get the player camera's position and direction
-  const cameraPosition = {
-    x: currentCol,
-    y: currentRow,
-  };
 
-  // Get the rotateZ value from the player's transform (using computed styles)
-  const cameraRotation = -SETTINGS.zRotation;  // Default to 0 if no rotateZ is found
-
-  // Convert camera rotation to radians and adjust by -90 degrees (Math.PI / 2)
-  const cameraDirection = ((cameraRotation - 90) * Math.PI) / 180;
-
-  // Define how many cells behind the camera to start the FOV (e.g., 1 or 2 cells)
-  const fovShift = 2;  // 1 or 2 cells behind the camera
-  const shiftX = Math.cos(cameraDirection) * fovShift;
-  const shiftY = Math.sin(cameraDirection) * fovShift;
-
-  // Adjust the camera's position to be behind it by the specified amount
-  const shiftedCameraPosition = {
-    x: cameraPosition.x - shiftX,
-    y: cameraPosition.y - shiftY,
-  };
-
-  // Field of View (FOV) settings: you can adjust these values based on your game settings
-  const fov = SETTINGS.fov;  // 45 degrees FOV
-  const fovRange = SETTINGS.visibilityRadius;  // How far the FOV reaches in grid cells
-
-  cachedGridCells.forEach(cell => {
-    const cellRow = parseInt(cell.getAttribute('row'), 10);
-    const cellCol = parseInt(cell.getAttribute('col'), 10);
-
-    // Calculate the relative position of the cell
-    const dx = cellCol - shiftedCameraPosition.x;
-    const dy = cellRow - shiftedCameraPosition.y;
-
-    // Calculate the distance between the camera and the cell
-    const distance = Math.sqrt(dx * dx + dy * dy);
-
-    // Calculate angle between the camera's direction and the cell's position
-    const angle = Math.atan2(dy, dx) - cameraDirection;
-
-    // Ensure the angle is between -PI and PI
-    const angleNormalized = Math.atan2(Math.sin(angle), Math.cos(angle));
-
-    // Check if the cell is within the camera's FOV
-    const isWithinFov = Math.abs(angleNormalized) <= fov / 2;
-
-    // Check if the cell is within the range of the camera's FOV
-    const isWithinRange = distance <= fovRange;
-
-    // Combine the FOV and distance checks to determine visibility
-    const isVisible = isWithinFov && isWithinRange;
-
-    // Apply visibility to the cell
-    if (isVisible) {
-      cell.style.visibility = 'visible';
-      cell.classList.remove('unexplored');
-      cell.classList.add('explored', 'highlighted');
-
-      if (!observedCells.includes(cell)) {
-        observedCells.push(cell);
-      }
-    } else {
-      cell.style.visibility = 'hidden';
-      cell.classList.remove('highlighted');
-
-      const index = observedCells.indexOf(cell);
-      if (index !== -1) {
-        observedCells.splice(index, 1);
-      }
-    }
-  });
-}
-
-function observeVisibleCells2() {
-  // Get the player camera's position
-  const playerCamera = document.getElementById('player-camera');
-  const playerCameraRect = playerCamera.getBoundingClientRect();
-  const playerCameraX = playerCameraRect.left + playerCameraRect.width / 2;
-  const playerCameraY = playerCameraRect.top + playerCameraRect.height / 2;
-
-  cachedGridCells.forEach(cell => {
-      const cellRect = cell.getBoundingClientRect();
-      const cellX = cellRect.left + cellRect.width / 2;
-      const cellY = cellRect.top + cellRect.height / 2;
-
-      // Calculate the distance between the cell and the player camera
-      const distance = Math.sqrt((cellX - playerCameraX) ** 2 + (cellY - playerCameraY - 150) ** 2);
-
-      // Check visibility
-      const isVisible = distance <= 700;
-      cell.style.visibility = isVisible ? 'visible' : 'hidden';
-
-      if (isVisible) {
-        cell.classList.remove('unexplored');
-        cell.classList.add('explored');
-        cell.classList.add('highlighted');
-      
-        if (!observedCells.includes(cell)) {
-          observedCells.push(cell);
-        }
-      } else {
-        cell.classList.remove('highlighted');
-        
-        const index = observedCells.indexOf(cell);
-        if (index !== -1) {
-          observedCells.splice(index, 1);  // Removes the specific cell from the array
-        }
-      }
-  });
-}
 
 
 
@@ -3728,8 +3606,8 @@ async function finalizeLocationNewcell(newGroupCell) {
   PLAYER_STATE.x = newGroupCell.getAttribute('col');
   PLAYER_STATE.y = newGroupCell.getAttribute('row'); 
   const cam = document.querySelector('#player-camera');
-  cam.style.left = '250px';
-  cam.style.top = '250px';
+  cam.style.left = '245px';
+  cam.style.top = '245px';
   SETTINGS.translateX = 0;
   SETTINGS.translateY = 0;
 

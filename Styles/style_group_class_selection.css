@@ -539,7 +539,7 @@ color: orange;
     background-color: rgba(0, 0, 0, 0.75);
     padding: 5px;
     position: absolute;
-    bottom: 1px;
+    bottom: 2px;
     right: 2px;
     font-size: 18px;
     text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black;

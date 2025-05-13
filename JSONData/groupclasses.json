@@ -72,7 +72,7 @@
     "Art": "\\Art\\Group Class\\Expedition.png",
     "Start": {
       "Location1" : "Scandinavia",
-      "Location2" : "India"
+      "Location2" : "Deccan"
     },
     "StartingSkills": "Perception, Cartography",
     "Desc": "A group of individuals driven by the quest of knowledge before all, willing to learn about the world and study its nature."
