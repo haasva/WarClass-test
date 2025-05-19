@@ -67,87 +67,94 @@ svg[height='0'][aria-hidden='true'] { position: fixed }
 }
 @font-face {
   font-display: block;
+  font-family: indus;
+  font-style: normal;
+  font-weight: normal;
+  src: url(/Art/Fonts/indus.ttf) format("truetype")
+}
+@font-face {
+  font-display: block;
   font-family: RSQuill;
   font-style: normal;
   font-weight: normal;
-  src: url(/Art/Fonts/RSQuill.ttf) format("truetype"),
+  src: url(/Art/Fonts/RSQuill.ttf) format("truetype")
 }
 @font-face {
   font-display: block;
   font-family: Dimensity;
   font-style: normal;
   font-weight: normal;
-  src: url(/Art/Fonts/dimensity.ttf) format("truetype"),
+  src: url(/Art/Fonts/dimensity.ttf) format("truetype")
 }
 @font-face {
   font-display: block;
   font-family: DOS;
   font-style: normal;
   font-weight: normal;
-  src: url(/Art/Fonts/PerfectDOSVGA437.ttf) format("truetype"),
+  src: url(/Art/Fonts/PerfectDOSVGA437.ttf) format("truetype")
 }
 @font-face {
   font-display: block;
   font-family: Imfel;
   font-style: normal;
   font-weight: normal;
-  src: url(/Art/Fonts/imfel.ttf) format("truetype"),
+  src: url(/Art/Fonts/imfel.ttf) format("truetype")
 }
 @font-face {
   font-display: block;
   font-family: WhiteChapel;
   font-style: normal;
   font-weight: normal;
-  src: url(/Art/Fonts/whitechapel.ttf) format("truetype"),
+  src: url(/Art/Fonts/whitechapel.ttf) format("truetype")
 }
 @font-face {
   font-display: block;
   font-family: Gare;
   font-style: normal;
   font-weight: normal;
-  src: url(/Art/Fonts/Gare.ttf) format("truetype"),
+  src: url(/Art/Fonts/Gare.ttf) format("truetype")
 }
 @font-face {
   font-display: block;
   font-family: PoltawskiNowy;
   font-style: normal;
   font-weight: 400;
-  src: url(/Art/Fonts/PoltawskiNowy.ttf) format("truetype"),
+  src: url(/Art/Fonts/PoltawskiNowy.ttf) format("truetype")
 }
 @font-face {
   font-display: block;
   font-family: PoltawskiNowyItalic;
   font-style: normal;
   font-weight: 400;
-  src: url(/Art/Fonts/PoltawskiNowy-Italic.ttf) format("truetype"),
+  src: url(/Art/Fonts/PoltawskiNowy-Italic.ttf) format("truetype")
 }
 @font-face {
   font-display: block;
   font-family: icomoon;
   font-style: normal;
   font-weight: 400;
-  src: url(/Art/Fonts/icomoon.ttf) format("truetype"),
+  src: url(/Art/Fonts/icomoon.ttf) format("truetype")
 }
 @font-face {
   font-display: block;
   font-family: mtcorsva;
   font-style: normal;
   font-weight: 400;
-  src: url(/Art/Fonts/mtcorsva.ttf) format("truetype"),
+  src: url(/Art/Fonts/mtcorsva.ttf) format("truetype")
 }
 @font-face {
   font-display: block;
   font-family: Domine;
   font-style: normal;
   font-weight: 400;
-  src: url(/Art/Fonts/Domine.ttf) format("truetype"),
+  src: url(/Art/Fonts/Domine.ttf) format("truetype")
 }
 @font-face {
   font-display: block;
   font-family: Gnomish;
   font-style: normal;
   font-weight: 400;
-  src: url(/Art/Fonts/gnomish.ttf) format("truetype"),
+  src: url(/Art/Fonts/gnomish.ttf) format("truetype")
 }
 
 html {
@@ -543,7 +550,7 @@ progress::after {
   height: 40px;
   background-color: rgb(151, 31, 31);
   border: 2px solid black;
-  box-shadow: 0 0 10px black, 0 0 5px black;
+  box-shadow: 0 0 10px black, 0 0 5px black, 0 0 10px rgba(0, 0, 0, 0.5) inset;
   color: white;
   font-family:"Georgia";
   font-weight: normal;
@@ -681,7 +688,7 @@ progress::after {
   box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.75), 2px 3px 18px rgba(0, 0, 0, 0.75);
   box-sizing: border-box;
   text-wrap:wrap;
-} 
+}
 
 @keyframes areatoolTip {
   0% {

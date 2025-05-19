@@ -22,6 +22,8 @@
   --art-color: rgb(74, 255, 38);
   --edu-color: rgb(91, 209, 255);
 
+  --generic-skill-color: rgb(0, 247, 255);
+
   transition-behavior: allow-discrete;
 }
 
@@ -160,8 +162,10 @@ right: 27px;
   position: absolute;
   z-index: 2;
   width: 250px;
-  background-color: #000000a3;
-  border: 1px solid white;
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: black 0px 0px 10px;
+    border: 1px solid #b36828;
+    border-radius: 5px;
   top: 10%;
   left: 17%;
   color: white;
@@ -173,17 +177,17 @@ right: 27px;
   margin-bottom: 10px;
   font-size: 20px;
 }
-#current-target {
-padding-bottom: 5px;
-border-bottom: 1px solid lightgray;
-margin-bottom: 5px;
+#entities-container .header .number::before { content: "("; color: lightgrey; }
+#entities-container .header .number::after { content: ")"; color: lightgrey; }
+#entities-container #current-target {
+display: none;
 }
-#entities-list {
+#entities-container #entities-list {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
-.entity-element {
+#entities-container .entity-element {
   display: flex;
   flex-direction: row;
   padding: 5px;
@@ -195,14 +199,14 @@ margin-bottom: 5px;
   border-radius: 3px;
 }
 
-.entity-element.active {
+#entities-container .entity-element.active {
   border-color: orange;
 }
 
-.entity-element .entity-name {
+#entities-container .entity-element .entity-name {
 text-transform: capitalize;
 }
-.entity-element .entity-image {
+#entities-container .entity-element .entity-image {
 width: 40px;
 aspect-ratio: 1/1;
 filter: brightness(1.5) drop-shadow(0 0 2px black);
@@ -241,15 +245,38 @@ filter: brightness(1.5) drop-shadow(0 0 2px black);
 }
 
 #active-weaponry {
-  gap: 10px;
+  gap: 5px;
   margin-top: 20px;
-
+  display: flex;
   border: 1px solid orange;
   box-shadow: inset 0 0 6px black;
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
 }
-
-
-
+#active-weaponry .img {
+width: 50px;
+aspect-ratio: 1/1;
+background-size: 90% 90%;
+background-position: center center;
+background-color: black;
+}
+#active-weaponry .right {
+  display: flex;
+  flex-direction: column;
+  text-transform: capitalize;
+}
+#active-weaponry .right *:before{
+  color: lightgray;
+}
+#active-weaponry .right .text:before{
+  content: "Weapon: ";
+}
+#active-weaponry .right .dmg:before{
+  content: "Damage: ";
+}
+#active-weaponry .right .cd:before{
+  content: "Cooldown: ";
+}
 
 #left-side #groupsheet {
   display: flex;

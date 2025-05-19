@@ -111,9 +111,6 @@ padding-bottom: 5px;
     flex-direction: row;
     letter-spacing: 0.5px;
 }
-.sheet-container#primary-attributes .attribute-name {
-    
-}
 
 .sheet-container#primary-attributes .group-attribute#strength .attribute-name { color: var(--str-color); }
 .sheet-container#primary-attributes .group-attribute#education .attribute-name { color: var(--edu-color); }
@@ -121,6 +118,27 @@ padding-bottom: 5px;
 .sheet-container#primary-attributes .group-attribute#artisanship .attribute-name { color: var(--art-color); }
 .sheet-container#primary-attributes .group-attribute#dexterity .attribute-name { color: var(--dex-color); }
 
+.sheet-container#primary-attributes .group-attribute .attribute-name::before {
+    color: white;
+    font-family: "indus";
+    width: 20px;
+    text-align: center;
+}
+.sheet-container#primary-attributes .group-attribute#strength .attribute-name::before {
+    content: "\E096";
+}
+.sheet-container#primary-attributes .group-attribute#dexterity .attribute-name::before {
+    content: "\E076";
+}
+.sheet-container#primary-attributes .group-attribute#cunning .attribute-name::before {
+    content: "\E0A0";
+}
+.sheet-container#primary-attributes .group-attribute#education .attribute-name::before {
+    content: "\E098";
+}
+.sheet-container#primary-attributes .group-attribute#artisanship .attribute-name::before {
+    content: "\E083";
+}
 
 .sheet-container#minor-attributes .group-attribute#harmony .attribute-value:after { content: '%'; }
 

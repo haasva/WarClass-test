@@ -77,6 +77,9 @@ function toggleSneakMode() {
   requestAnimationFrame(animateSneakZ);
 }
 
+let scrollThreshold = 100; // Minimum scroll value before switching
+let accumulatedScroll = 0;
+let currentEquippedAdvIndex = 0;
 
 function selectAdventurer(index, adventurerKeys) {
   const adventurer = groupAdventurers.get(adventurerKeys[index]);
@@ -116,12 +119,13 @@ function selectAdventurer(index, adventurerKeys) {
   }
 
   updateOvertip(crosshairInteractor.getHoveredEntity());
+
+  currentEquippedAdvIndex = index;
+
   return adventurer;
 }
 
-let scrollThreshold = 100; // Minimum scroll value before switching
-let accumulatedScroll = 0;
-let currentEquippedAdvIndex = 0;
+
 
 
 
@@ -154,7 +158,6 @@ function wheelScrollActiveAdventurers(event) {
 
 function updateActiveWeaponryBox(adventurer) {
   
-
   const wepBox = document.getElementById('active-weaponry');
 
   if (!wepBox) return;
@@ -165,6 +168,24 @@ function updateActiveWeaponryBox(adventurer) {
   } else {
     specialty = weapon.specialty;
   }
+
+  const img = wepBox.querySelector('.img');
+  const dmg = wepBox.querySelector('.dmg');
+  const cd = wepBox.querySelector('.cd');
+  const text = wepBox.querySelector('.text');
+
+  if (!weapon || adventurer.Equipment.Weapon === null) {
+    img.style.backgroundImage = 'none';
+    text.textContent = `None`;
+  } else {
+    img.style.backgroundImage = `url('/Art/Interface/weapon categories/${weapon.category}.png')`;
+    text.textContent = `${weapon.name}`;
+  }
+  
+  dmg.textContent = `${adventurer.Attack}`;
+  cd.textContent = `${adventurer.Speed}`;
+
+
   updateWeaponFPS(specialty);
 
   CURRENT_TARGET_ENTITY = null;
@@ -531,7 +552,7 @@ function checkMissChance(attacker, defender) {
 function resultEntityKilled(entity, cell) {
   displayMessage(`${entity.name} is DEAD!`, 'red');
   
-  const expGain = 12 * (entity.level) + entity.attack + entity.life;
+  const expGain = 4 * (entity.level) + entity.attack + entity.life;
   gainExperience(expGain);
 
   createLoot(entity, cell);

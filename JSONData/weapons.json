@@ -1,5 +1,14 @@
 [
   {
+    "BaseRarity": "Common",
+    "Title": "Staff",
+    "Type": "Polearm",
+    "Specialty": "Unarmed",
+    "Culture": "",
+    "BaseDamage": 1,
+    "BaseCritChance": 1
+  },
+  {
     "BaseRarity": "Legendary",
     "Title": "Excalibur",
     "Type": "Sword",

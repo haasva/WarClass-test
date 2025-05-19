@@ -109,7 +109,7 @@ font-weight: bold;
 font-size: 24px;
 width: 30px;
 text-align: center;
-color:rgb(0, 247, 255);
+color: var(--generic-skill-color);
 text-shadow: 0 0 18px #0064a7, 0 0 5px #0064a7;
 }
 
@@ -397,7 +397,7 @@ visibility: hidden;
   }
   
   .skill-tooltip .connectedto {
-    color:rgb(0, 247, 255);
+    color: var(--generic-skill-color);
     display: block;
   }
   
@@ -510,7 +510,7 @@ visibility: hidden;
 }
 
 input:checked + .slider {
-  border: 1px solid rgb(0, 247, 255);
+  border: 1px solid var(--generic-skill-color);
 }
 
 input:checked + .slider:before {
@@ -532,13 +532,13 @@ input:checked + .slider:before {
 
 @keyframes toggleInOut {
 	0% {
-    box-shadow: 0 0 5px rgb(0, 247, 255);
+    box-shadow: 0 0 5px var(--generic-skill-color);
   }
 	50% {
-    box-shadow: 0 0 40px rgb(0, 247, 255);
+    box-shadow: 0 0 40px var(--generic-skill-color);
   }
   100% {
-    box-shadow: 0 0 0px rgb(0, 247, 255);
+    box-shadow: 0 0 0px var(--generic-skill-color);
   }
 }
 
@@ -705,7 +705,7 @@ padding-top: 2px;
   align-content: center;
   justify-content: center;
   flex-wrap: wrap;
-  color:rgb(0, 247, 255);
+  color:var(--generic-skill-color);
 }
 #skill-levelup-selector .container .adj:before {
   content: 'Connected to:';
@@ -820,7 +820,7 @@ padding-top: 2px;
   outline: 2px solid rgba(58, 255, 147, 0.836);
 }
 .adv-content .adv-list .adv-element.selected .adv-name {
-  color:rgb(0, 247, 255);
+  color:var(--generic-skill-color);
 }
 .adv-content .adv-list .adv-element.selected .adv-lvlup {
   animation: flash-console 0.2s;

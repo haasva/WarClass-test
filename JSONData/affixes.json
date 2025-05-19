@@ -74,7 +74,7 @@
     "Type": "Soldier, Outlaw, Explorer, Slave, Commoner",
     "Stat": "Attack",
     "BaseValue": 2,
-    "Range": 3
+    "Range": 1
   },
   {
     "Name": "Cruel",

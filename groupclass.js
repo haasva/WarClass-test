@@ -146,7 +146,7 @@ async function initiateGroupStartingSkills(groupclass) {
         }
       });
 
-      displayMessage(`Starting skills: [${startingSkills}].`, '#fcc112');
+      displayMessage(`Starting skills: [${groupclass.StartingSkills}].`, 'rgb(0, 247, 255)');
 
       // Simulate delay (replace with actual code)
       setTimeout(() => {
@@ -430,9 +430,11 @@ grantGivenItem('carrot');
 grantGivenItem('carrot');
 grantGivenItem('raw meat');
 
+selectAdventurer(0, [...groupAdventurers.keys()]);
+
   }, 500);
   teleportPlayer(playerOverworldRow, playerOverworldCol);
-  selectAdventurer(0, [...groupAdventurers.keys()]);
+  
 }
 
 

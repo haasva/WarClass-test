@@ -1350,10 +1350,11 @@ if (startingCell) {
   playerCameraTop = targetY;
   inner.appendChild(CURRENT_GROUP_CELL);
   throttledObserveVisibleCells();
+  
   updateCurrentGroupPosition(CURRENT_GROUP_CELL);
   }
 
-
+  observeVisibleObjectsFOV();
   CURRENT_GROUP_CELL.appendChild(createOtherGroupBox());
 
    // Add event listeners only if they haven't been added already
@@ -2049,7 +2050,7 @@ function updateCameraRotation(event) {
       "--rotationZ",
       `${-SETTINGS.zRotation}deg`
     );
-
+observeVisibleObjectsFOV();
     updateCompass();
     updateTargetedDirectionCell();
     applyNeoTransforms();
@@ -2657,18 +2658,16 @@ function updateMinimapExplorationProgress() {
 
 
 
-let sightRange = 5;
 
 let observedCells = [];
 
-const cellBoundsMap = new Map();
-
-
 function observeVisibleCells() {
-  const visibilityRadius = SETTINGS.visibilityRadius; // View distance in terms of cells
+  observedObjects = [];
+  observeVisibleObjectsFOV();
+
+  const visibilityRadius = SETTINGS.visibilityRadius;
     let groupPositionCell = CURRENT_GROUP_CELL;
   
-  // Get the row and col of the current-group-position cell
   const currentRow = parseInt(groupPositionCell.getAttribute('row'), 10);
   const currentCol = parseInt(groupPositionCell.getAttribute('col'), 10);
 
@@ -2676,18 +2675,18 @@ function observeVisibleCells() {
     const cellRow = parseInt(cell.getAttribute('row'), 10);
     const cellCol = parseInt(cell.getAttribute('col'), 10);
 
-    // Calculate Euclidean distance between the center and the current cell
     const distance = Math.sqrt(
       Math.pow(cellRow - currentRow, 2) + Math.pow(cellCol - currentCol, 2)
     );
 
-    // Check if the cell is within the rounded radius
     const isVisible = distance <= visibilityRadius;
 
-    // Update cell visibility and styles
     cell.style.display = isVisible ? 'visible' : 'hidden';
 
     if (isVisible) {
+                if (cell.firstChild != null) {
+            observedObjects.push(cell.firstChild);
+          }
       cell.classList.remove('unexplored');
       cell.classList.add('explored', 'highlighted');
 
@@ -2705,7 +2704,67 @@ function observeVisibleCells() {
 
       const index = observedCells.indexOf(cell);
       if (index !== -1) {
-        observedCells.splice(index, 1); // Remove the cell from the observed array
+        observedCells.splice(index, 1);
+      }
+    }
+  });
+}
+
+let observedObjects = [];
+
+function observeVisibleObjectsFOV() {
+   
+  const groupPositionCell = CURRENT_GROUP_CELL;
+
+  const currentRow = parseInt(groupPositionCell.getAttribute('row'), 10);
+  const currentCol = parseInt(groupPositionCell.getAttribute('col'), 10);
+
+  const cameraPosition = {
+    x: currentCol,
+    y: currentRow,
+  };
+
+  const cameraRotation = -SETTINGS.zRotation;
+
+  const cameraDirection = ((cameraRotation - 90) * Math.PI) / 180;
+
+  const fovShift = 2;
+  const shiftX = Math.cos(cameraDirection) * fovShift;
+  const shiftY = Math.sin(cameraDirection) * fovShift;
+
+  const shiftedCameraPosition = {
+    x: cameraPosition.x - shiftX,
+    y: cameraPosition.y - shiftY,
+  };
+
+  const fov = SETTINGS.fov;
+  const fovRange = SETTINGS.visibilityRadius * 2;
+
+  observedObjects.forEach(obj => {
+    if (obj.parentElement === null) {
+      return;
+    }
+    const objRow = parseInt(obj.parentElement.getAttribute('row'), 10);
+    const objCol = parseInt(obj.parentElement.getAttribute('col'), 10);
+
+    const dx = objCol - shiftedCameraPosition.x;
+    const dy = objRow - shiftedCameraPosition.y;
+
+    const distance = Math.sqrt(dx * dx + dy * dy);
+    const angle = Math.atan2(dy, dx) - cameraDirection;
+    const angleNormalized = Math.atan2(Math.sin(angle), Math.cos(angle));
+    const isWithinFov = Math.abs(angleNormalized) <= fov / 2;
+    const isWithinRange = distance <= fovRange;
+    const isVisible = isWithinFov && isWithinRange;
+    if (isVisible) {
+      if (obj.style.visibility !== 'visible') {
+        obj.style.visibility = 'visible';
+        obj.parentElement.style.opacity = 1;
+      }
+    } else {
+      if (SETTINGS.firstPerson === true) {
+      obj.style.visibility = 'hidden';
+      obj.parentElement.style.opacity = 0;
       }
     }
   });
@@ -2723,21 +2782,137 @@ function observeVisibleCells() {
 
 
 
+// old functions //
+
+function observeVisibleCells2() {
+  // Get the player camera's position
+  const playerCamera = document.getElementById('player-camera');
+  const playerCameraRect = playerCamera.getBoundingClientRect();
+  const playerCameraX = playerCameraRect.left + playerCameraRect.width / 2;
+  const playerCameraY = playerCameraRect.top + playerCameraRect.height / 2;
+
+  cachedGridCells.forEach(cell => {
+      const cellRect = cell.getBoundingClientRect();
+      const cellX = cellRect.left + cellRect.width / 2;
+      const cellY = cellRect.top + cellRect.height / 2;
+
+      // Calculate the distance between the cell and the player camera
+      const distance = Math.sqrt((cellX - playerCameraX) ** 2 + (cellY - playerCameraY - 150) ** 2);
+
+      // Check visibility
+      const isVisible = distance <= 700;
+      cell.style.visibility = isVisible ? 'visible' : 'hidden';
+
+      if (isVisible) {
+        cell.classList.remove('unexplored');
+        cell.classList.add('explored');
+        cell.classList.add('highlighted');
+      
+        if (!observedCells.includes(cell)) {
+          observedCells.push(cell);
+        }
+      } else {
+        cell.classList.remove('highlighted');
+        
+        const index = observedCells.indexOf(cell);
+        if (index !== -1) {
+          observedCells.splice(index, 1);  // Removes the specific cell from the array
+        }
+      }
+  });
+}
 
 
+function observeVisibleCellsFOV() {
+  observedCells = [];
+  const visibilityRadius = SETTINGS.visibilityRadius;
+  const gridParent = document.getElementById('region-grid-table');
+  const playerCamera = document.getElementById('player-camera');
+  
+  // Get the current group position cell
+  const groupPositionCell = cachedGridCells.find(cell => 
+    cell.classList.contains('current-group-position')
+  );
+
+  const currentRow = parseInt(groupPositionCell.getAttribute('row'), 10);
+  const currentCol = parseInt(groupPositionCell.getAttribute('col'), 10);
+
+  // Get the player camera's position and direction
+  const cameraPosition = {
+    x: currentCol,
+    y: currentRow,
+  };
+
+  // Get the rotateZ value from the player's transform (using computed styles)
+  const cameraRotation = -SETTINGS.zRotation;  // Default to 0 if no rotateZ is found
+
+  // Convert camera rotation to radians and adjust by -90 degrees (Math.PI / 2)
+  const cameraDirection = ((cameraRotation - 90) * Math.PI) / 180;
+
+  // Define how many cells behind the camera to start the FOV (e.g., 1 or 2 cells)
+  const fovShift = 2;  // 1 or 2 cells behind the camera
+  const shiftX = Math.cos(cameraDirection) * fovShift;
+  const shiftY = Math.sin(cameraDirection) * fovShift;
+
+  // Adjust the camera's position to be behind it by the specified amount
+  const shiftedCameraPosition = {
+    x: cameraPosition.x - shiftX,
+    y: cameraPosition.y - shiftY,
+  };
+
+  // Field of View (FOV) settings: you can adjust these values based on your game settings
+  const fov = SETTINGS.fov;  // 45 degrees FOV
+  const fovRange = SETTINGS.visibilityRadius;  // How far the FOV reaches in grid cells
+
+  cachedGridCells.forEach(cell => {
+    const cellRow = parseInt(cell.getAttribute('row'), 10);
+    const cellCol = parseInt(cell.getAttribute('col'), 10);
+
+    // Calculate the relative position of the cell
+    const dx = cellCol - shiftedCameraPosition.x;
+    const dy = cellRow - shiftedCameraPosition.y;
+
+    // Calculate the distance between the camera and the cell
+    const distance = Math.sqrt(dx * dx + dy * dy);
+
+    // Calculate angle between the camera's direction and the cell's position
+    const angle = Math.atan2(dy, dx) - cameraDirection;
+
+    // Ensure the angle is between -PI and PI
+    const angleNormalized = Math.atan2(Math.sin(angle), Math.cos(angle));
+
+    // Check if the cell is within the camera's FOV
+    const isWithinFov = Math.abs(angleNormalized) <= fov / 2;
+
+    // Check if the cell is within the range of the camera's FOV
+    const isWithinRange = distance <= fovRange;
+
+    // Combine the FOV and distance checks to determine visibility
+    const isVisible = isWithinFov && isWithinRange;
+
+    // Apply visibility to the cell
+    if (isVisible) {
+      cell.style.visibility = 'visible';
+      cell.classList.remove('unexplored');
+      cell.classList.add('explored', 'highlighted');
+
+      if (!observedCells.includes(cell)) {
+        observedCells.push(cell);
+      }
+    } else {
+      cell.style.visibility = 'hidden';
+      cell.classList.remove('highlighted');
+
+      const index = observedCells.indexOf(cell);
+      if (index !== -1) {
+        observedCells.splice(index, 1);
+      }
+    }
+  });
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
+// ===== //
 
 
 
@@ -3552,7 +3727,7 @@ async function animateToCell(inner, newGroupCell, offset, key) {
   if (SETTINGS.animations === true) {
     duration = SETTINGS.animationTime;
   }
-  const initialOrigin = { x: SETTINGS.transformOriginX, y: SETTINGS.transformOriginY };
+  const initialOrigin = { x: SETTINGS.translateX, y: SETTINGS.translateY };
 
   let targetOrigin = { ...initialOrigin };
 
@@ -3578,15 +3753,24 @@ async function animateToCell(inner, newGroupCell, offset, key) {
     if (!startTime) startTime = timestamp;
     let progress = Math.min((timestamp - startTime) / duration, 1);
 
-    SETTINGS.transformOriginX = initialOrigin.x + (targetOrigin.x - initialOrigin.x) * progress;
-    SETTINGS.transformOriginY = initialOrigin.y + (targetOrigin.y - initialOrigin.y) * progress;
+    // translate3d(${SETTINGS.translateX}px, ${SETTINGS.translateY}px, ${0 + SETTINGS.addedTranslateZ + SETTINGS.sneakZ}px)
 
-    inner.style.transformOrigin = `${SETTINGS.transformOriginX}px ${SETTINGS.transformOriginY}px ${SETTINGS.translateZ}px`;
+    SETTINGS.translateX = initialOrigin.x - (targetOrigin.x - initialOrigin.x) * progress;
+    SETTINGS.translateY = initialOrigin.y - (targetOrigin.y - initialOrigin.y) * progress;
+
+    inner.style.transform = `
+    rotateX(${SETTINGS.angle}deg)  /* Pitch - applied first */
+    rotateZ(${SETTINGS.zRotation}deg) /* Yaw - applied second */
+    translate3d(${SETTINGS.translateX}px, ${SETTINGS.translateY}px, ${0 + SETTINGS.addedTranslateZ + SETTINGS.sneakZ}px)
+    `;
 
     if (progress < 1) {
       requestAnimationFrame((t) => animateFrame(t, startTime));
     } else {
+        SETTINGS.translateX = 0;
+        SETTINGS.translateY = 0;
       applyNeoTransforms();
+      observeVisibleObjectsFOV();
       await finalizeLocationNewcell(newGroupCell);
     }
   }
@@ -3641,25 +3825,7 @@ function applyNeoTransforms() {
 }
 
 
-function applyNeoTransforms2() {
-  const inner = document.getElementById('inner-neo');
 
-  inner.parentElement.style.perspective = `${SETTINGS.perspectiveGrid}px`;
-  inner.style.scale = `${SETTINGS.zoomFactor}`;
-
-  inner.style.transformOrigin = `${SETTINGS.transformOriginX}px ${SETTINGS.transformOriginY}px`;
-
-  inner.style.transform = ` 
-    translate3d(${SETTINGS.t3dx}px, ${SETTINGS.t3dy}px, 9px) 
-    translateZ(${SETTINGS.translateZ}px) 
-    rotateX(${SETTINGS.angle}deg)
-    rotateZ(${SETTINGS.zRotation}deg);
-`;
-
-
-
-  updateCardboardRotation();
-}
 
 
 
@@ -3729,3 +3895,22 @@ async function updateNeoRegion(newGroupCell) {
 
 
 
+function applyNeoTransforms2() {
+  const inner = document.getElementById('inner-neo');
+
+  inner.parentElement.style.perspective = `${SETTINGS.perspectiveGrid}px`;
+  inner.style.scale = `${SETTINGS.zoomFactor}`;
+
+  inner.style.transformOrigin = `${SETTINGS.transformOriginX}px ${SETTINGS.transformOriginY}px`;
+
+  inner.style.transform = ` 
+    translate3d(${SETTINGS.t3dx}px, ${SETTINGS.t3dy}px, 9px) 
+    translateZ(${SETTINGS.translateZ}px) 
+    rotateX(${SETTINGS.angle}deg)
+    rotateZ(${SETTINGS.zRotation}deg);
+`;
+
+
+
+  updateCardboardRotation();
+}
