@@ -46,3 +46,6 @@ Create a real skills-items-talents system (skills, adventurer's talents and most
 Implement working group vs group combat.
 
 Find a way to abandon cell-based movement (Daggerfall-like movement instead).
+
+
+![App Screenshot](https://github.com/haasva/WarClass-test/blob/8d67f1b862f476202a4d5f94b318dabb2fb5c9cf/100cssscreenshot.jpg)
