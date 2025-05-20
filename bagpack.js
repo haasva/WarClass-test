@@ -346,11 +346,16 @@ class Inventory {
         }
     }
       
-    initDragAndDropAdvOption() {
+    initDragAndDropAdvOption(element) {
             const advOption = document.getElementById('adventurer-option-container');
             if (advOption) {
                 advOption.addEventListener('dragover', this.allowDrop);
                 advOption.addEventListener('drop', (event) => this.dropItem(event, 'adventurer'));
+            }
+
+            if (element) {
+                element.addEventListener('dragover', this.allowDrop);
+                element.addEventListener('drop', (event) => this.dropItem(event, 'adventurer'));
             }
     }
   
@@ -391,7 +396,7 @@ class Inventory {
 
         if (dropTarget === 'adventurer') { 
             isFromAdv = false;
-            const advOption = targetSlot.closest('#adventurer-option-container');
+            const advOption = targetSlot.closest('.adv-box');
             const uID = parseInt(advOption.getAttribute('uid'));
             if (uID) {
                 console.log('oj');
@@ -455,6 +460,8 @@ class Inventory {
         targetSlot.appendChild(draggedItemEl);
         targetSlot.classList.replace('empty-slot', 'occupied-slot');
         targetSlot.setAttribute('occupied-by', draggedItemEl.getAttribute('item-id'));
+
+        
     }
   }
   

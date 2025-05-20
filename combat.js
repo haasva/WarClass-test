@@ -595,10 +595,7 @@ function handleAdvSpriteMouseEnter(event) {
     const adventurer = findAdventurerByUID(uid);
     const range = adventurer.Range;
 
-    // Clear previous highlights
     clearCellHighlights();
-
-    // Highlight cells within range
     highlightCellsInRange(event.target.parentElement, range);
 }
 

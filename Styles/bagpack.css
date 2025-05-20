@@ -136,7 +136,7 @@
       max-height: 400px;
 }
 
-#backpack .inventory-bag .slot, #adventurer-option-container .slot {
+#backpack .inventory-bag .slot, #adventurer-option-container .slot, .adv-box .slot {
   width: 54px;
   aspect-ratio: 1/1;
   background-color: #1d1d1d;

@@ -419,8 +419,7 @@ function displayAdventurerOption(adventurer, box) {
 
       advOptionCont.querySelector('.title').textContent = `${adventurer.Title}`;
 
-      const status = advOptionCont.querySelector('#status');
-      updateAdventurerOptionStatus(adventurer, status);
+
 
 
       const weaponSlot = advOptionCont.querySelector('#equipment');
@@ -497,12 +496,18 @@ function displayAdventurerOption(adventurer, box) {
 
 
 function updateAdventurerOptionStatus(adv) {
-  const status = document.querySelector("#adventurer-option-container #status");
-
-  if (status) {
-    const attack = status.querySelector('#attack-value');
-    attack.textContent = `${adv.Attack}`;
+  const box = document.querySelectorAll(`[uid='${adv.uID}']`);
+  if (box.length === 0) {
+    console.warn(`Adventurer with uID ${adv.uID} not found in the DOM.`);
+    return;
   }
+  box.forEach(box => {
+    const status = box.querySelector("#status");
+    if (status) {
+      const attack = status.querySelector('#attack-value');
+      attack.textContent = `${adv.Attack}`;
+    }
+  });
 
 }
 

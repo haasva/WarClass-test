@@ -2426,7 +2426,7 @@ background-color: orange;
 
 #party .adv-box {
   width: 200px;
-  height: 250px;
+  height: 325px;
 
   display: flex;
   flex-direction: column;
@@ -2442,13 +2442,13 @@ background-color: orange;
   overflow: hidden;
   background-position-x: center;
   background-position-y: top;
-  background-size: 100% 80%;
+  background-size: 200px 200px;
   overflow: hidden;
   transition: background-size 0.1s;
   transition-behavior: allow-keyword;
 }
 #party .adv-box:hover {
-  background-size: 105% 83%;
+
   outline: 1px solid gray;
   border: 1px solid whitesmoke;
 }
@@ -2755,6 +2755,24 @@ filter: brightness(1.2) grayscale(0);
   filter: none;
 }
 
+
+
+.adv-box .equipment-infos {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+.adv-box .equipment-infos #equipment {
+    
+}
+
+.adv-box .equipment-infos .subcontent {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
 
 
 

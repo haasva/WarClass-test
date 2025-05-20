@@ -1236,11 +1236,17 @@ function createAdvPartyBox(adventurer) {
   const content = document.createElement('div');
   content.classList.add('content');
 
+
+
   content.append(advPic, infos, right, appendSkillSlots(adventurer));
+    appendEquipmentInfo(adventurer).then(equipmentInfo => {
+      content.appendChild(equipmentInfo);
+      Inventory.prototype.initDragAndDropAdvOption(equipmentInfo);
+    });
   advBox.appendChild(header);
   advBox.appendChild(content);
 
-
+  updateAdventurerOptionStatus(adventurer);
 
   header.addEventListener('mouseover', showTooltip);
 
@@ -1251,6 +1257,26 @@ function createAdvPartyBox(adventurer) {
 
   return advBox;
 }
+
+
+
+async function appendEquipmentInfo(adventurer) {
+  const equipmentInfo = document.createElement('div');
+
+  const response = await fetch('/Templates/adv-equipment-slot.html');
+  const template = await response.text();
+  const tempContainer = document.createElement('div');
+  tempContainer.innerHTML = template;
+  while (tempContainer.firstChild) {
+    equipmentInfo.appendChild(tempContainer.firstChild);
+  }
+  const weaponSlot = equipmentInfo.querySelector('#equipment');
+  weaponSlot.appendChild(createAdventurerWeaponSlot(adventurer));
+
+  return equipmentInfo;
+}
+
+
 
 
 function appendSkillSlots(adventurer) {

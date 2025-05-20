@@ -231,27 +231,6 @@ padding-bottom: 5px;
     position: fixed;
 }
 
-#adventurer-option-container .content {
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-    padding: 5px;
-}
-
-#adventurer-option-container #equipment {
-    align-items: center;
-}
-
-#adventurer-option-container .subcontent {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    background-color:rgb(27, 33, 41);
-    border: 1px solid burlywood;
-    padding: 5px;
-    width: 50%;
-}
-
 
 #adventurer-option-container .container {
     display: grid;
