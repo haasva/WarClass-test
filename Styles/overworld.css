@@ -514,7 +514,7 @@ font-style: italic;
     font-size: 25px;
     padding: 10px;
     background-size: cover;
-
+    background-position-y: center;
     height: 100px;
     display: flex;
     justify-content: center;

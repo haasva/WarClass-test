@@ -1,4 +1,20 @@
 [
+  {
+   "Name": "Magellanica",
+   "Row": 128,
+   "Col": 385,
+   "Continent": "South-America",
+   "Climate": "Tropical",
+   "Header": "himalaya",
+   "PosX": 10.5,
+   "PosY": 71.5,
+   "Connections": 0,
+   "Size": "Large",
+   "ConnectedLocations": "",
+   "Cultures": "Amerindian, Nanyang, Arctic",
+   "Terrains": "Mountain",
+   "Faction": "Holy See"
+ },
  {
    "Name": "Himalaya",
    "Row": 128,

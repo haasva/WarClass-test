@@ -55,7 +55,7 @@ function displayRegionClickPopup(event, cell, region, y, x) {
 function populateRegionPopup(region, container, y, x) {
     const areaData = areasObject[region.superRegion];
     container.querySelector('.title').textContent = 'Region of ' + region.superRegion;
-    container.querySelector('.terrain').textContent = region.terrain + ` (${region.coast})`;
+    container.querySelector('.terrain').textContent = region.terrain + ` (${region.coast? 'Coastal' : 'Inland'})`;
     container.querySelector('.climate').textContent = region.climate;
     container.querySelector('.vegetation').textContent = region.vegetation;
     container.querySelector('.faction').textContent = areaData.faction;

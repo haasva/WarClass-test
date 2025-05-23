@@ -3259,3 +3259,12 @@ scale: 1.7;
 
 
 
+#svg-viewer {
+  display: none;
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  z-index: 99;
+}

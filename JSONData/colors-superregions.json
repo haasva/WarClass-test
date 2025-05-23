@@ -1,5 +1,9 @@
 [
     {
+        "name": "Magellanica",
+        "color": [153, 98, 149]
+    },
+    {
         "name": "Altishahr",
         "color": [153, 121, 55]
     },
