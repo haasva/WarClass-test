@@ -214,9 +214,9 @@ padding-bottom: 5px;
     font-size: 20px;
     height: max-content;
     transform-origin: top;
-    width: 350px;
     left: 81%;
     top: 78%;  
+    min-width: 300px;
 }
 
 #adventurer-option-container .wrapper {
@@ -240,6 +240,7 @@ padding-bottom: 5px;
     justify-content: flex-start;
     flex-direction: column;
     padding: 10px;
+     
 }
 
 #adventurer-option-container .container .option {
@@ -372,7 +373,7 @@ padding-bottom: 5px;
 #adventurer-option-container #container-evolution .upgrade-adventurer.clickable .bottom .conclusion {
     margin-top: 10px;
     text-align: center;
-    color: yellowgreen;
+    color: rgb(134, 252, 55);
 }
 
 

@@ -26,6 +26,9 @@
 
   transition-behavior: allow-discrete;
 }
+@view-transition {
+  navigation: auto;
+}
 
 
 :root {
@@ -2447,8 +2450,8 @@ background-color: orange;
   transition: background-size 0.1s;
   transition-behavior: allow-keyword;
 }
-#party .adv-box:hover {
 
+#party .adv-box:hover {
   outline: 1px solid gray;
   border: 1px solid whitesmoke;
 }

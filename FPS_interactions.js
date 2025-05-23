@@ -81,8 +81,22 @@ let scrollThreshold = 100; // Minimum scroll value before switching
 let accumulatedScroll = 0;
 let currentEquippedAdvIndex = 0;
 
-function selectAdventurer(index, adventurerKeys) {
-  const adventurer = groupAdventurers.get(adventurerKeys[index]);
+function selectAdventurer(index, adventurerKeys, adv) {
+  let adventurer;
+  if (adventurerKeys === undefined || adventurerKeys === null) {
+    adventurer = adv;
+  } else {
+    adventurer = groupAdventurers.get(adventurerKeys[index]);
+  }
+
+  CURRENT_MANAGED_ADVENTURER = adventurer;
+  const partyAdventurers = document.querySelectorAll('.adv-box');
+  partyAdventurers.forEach(adv => {
+    adv.classList.remove('selected');
+  });
+  const box = document.querySelector(`[uid='${adventurer.uID}']`);
+  box.classList.add('selected');
+
   console.log("Selected Adventurer:", adventurer);
 
   const group = Array.from(groupAdventurers.values());
@@ -107,7 +121,6 @@ function selectAdventurer(index, adventurerKeys) {
   });
 
   updateActiveWeaponryBox(adventurer);
-  displayAdventurerOption(adventurer) // Display the adventurer's options;
 
 
 

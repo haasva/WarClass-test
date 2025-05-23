@@ -56,7 +56,11 @@ let group = Array.from(groupAdventurers.values());
 
   checkDisableLevelUpButtonsAdv();
 
+    Inventory.prototype.initDragAndDropAdvOption(partyContainer);
+
   return partyContainer;
+
+
 
   
 }
@@ -358,7 +362,7 @@ function switchTabPanel(event, tab, middle) {
 
 
 
-function displayAdventurerOption(adventurer, box) {
+function displayAdventurerOption(adventurer, box, event) {
   CURRENT_MANAGED_ADVENTURER = adventurer;
   const partyAdventurers = document.querySelectorAll('.adv-box');
   partyAdventurers.forEach(adv => {
@@ -373,9 +377,9 @@ function displayAdventurerOption(adventurer, box) {
 
   clickSound();
   const middle = document.getElementById('middle');
+  
+  document.querySelector('#adventurer-option-container')?.remove();
 
-  const exadvOptionCont = document.querySelector('#adventurer-option-container');
-  if (exadvOptionCont) { exadvOptionCont.remove(); }
 
   
   const advOptionCont = document.createElement('div');
@@ -385,11 +389,16 @@ function displayAdventurerOption(adventurer, box) {
 
   let header = document.createElement('div');
   header.classList.add('infobox-header');
-  header.textContent = `Current active adventurer`;
+  header.textContent = `@ ${adventurer.Title}`;
 
   advOptionCont.prepend(header);
   enableDragAndDropWindow(header);
   addCloseButton(header);
+
+  const X = event.clientX + 20;
+  const Y = event.clientY - 50;
+  advOptionCont.style.left = `${X}px`;
+  advOptionCont.style.top = `${Y}px`;
 
   document.body.appendChild(advOptionCont);
 
@@ -409,21 +418,10 @@ function displayAdventurerOption(adventurer, box) {
         advOptionCont.appendChild(tempContainer.firstChild);
       }
 
-      // Now safely query the buttons inside advOptionCont
       const removeBtn = advOptionCont.querySelector('#remove');
       const promoteBtn = advOptionCont.querySelector('#promote');
       const evolveBtn = advOptionCont.querySelector('#evolve');
       const devolveButton = advOptionCont.querySelector('#devolve');
-
-
-
-      advOptionCont.querySelector('.title').textContent = `${adventurer.Title}`;
-
-
-
-
-      const weaponSlot = advOptionCont.querySelector('#equipment');
-      weaponSlot.appendChild(createAdventurerWeaponSlot(adventurer));
 
       removeBtn.addEventListener('click', function (e) {
         advOptionCont.remove();

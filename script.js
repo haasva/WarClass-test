@@ -253,6 +253,7 @@ function displayNewGroupAdventurer(adventurer, emptySlot) {
     party.appendChild(element);
     updatePartyHeader();
     checkDisableLevelUpButtonsAdv();
+    Inventory.prototype.initDragAndDropAdvOption(party);
   } else {
     displayLeftSideParty();
   }
@@ -1228,6 +1229,8 @@ function createAdvPartyBox(adventurer) {
         attribute.classList.add('main-attribute'); 
       }
       attribute.style.setProperty('color', `var(--${attr.substring(0, 3).toLowerCase()}-color)`);
+      attribute.setAttribute('infos', `${attr}`);
+      addGenericTooltip(attribute, `${attr}`);
       bottom.appendChild(attribute);
     });
 
@@ -1241,7 +1244,7 @@ function createAdvPartyBox(adventurer) {
   content.append(advPic, infos, right, appendSkillSlots(adventurer));
     appendEquipmentInfo(adventurer).then(equipmentInfo => {
       content.appendChild(equipmentInfo);
-      Inventory.prototype.initDragAndDropAdvOption(equipmentInfo);
+
     });
   advBox.appendChild(header);
   advBox.appendChild(content);
@@ -1250,11 +1253,23 @@ function createAdvPartyBox(adventurer) {
 
   header.addEventListener('mouseover', showTooltip);
 
-  advBox.addEventListener('mousedown', function (event) {
+  advBox.addEventListener('contextmenu', function (event) {
+  event.preventDefault();
     if (!event.target.classList.contains('adv-box')) { return; }
-    displayAdventurerOption(adventurer, advBox);
+      if (event.button === 2) {
+        displayAdventurerOption(adventurer, advBox, event);
+      }
   });
 
+  advBox.addEventListener('click', function (event) {
+      if (event.button === 0) {
+        document.querySelector('#adventurer-option-container')?.remove();
+        const index = parseInt(event.currentTarget.getAttribute('index')) - 1;
+        selectAdventurer(index, null, adventurer);
+      }
+  });
+
+  Inventory.prototype.initDragAndDropAdvOption(advBox);
   return advBox;
 }
 
