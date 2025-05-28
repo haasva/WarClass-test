@@ -1,3 +1,7 @@
+# Looking for mate / project partner
+I would really like to partner with someone who might be interested in any way in this project. Either on the programming side, historical side, gamedesign, whatever.
+Hit me up on 
+
 
 # WarClass
 
