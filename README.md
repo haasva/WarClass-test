@@ -1,3 +1,7 @@
+# Looking for mate / project partner
+I would really like to partner with someone who might be interested in any way in this project. Either on the programming side, historical side, gamedesign, whatever.
+Hit me up on 
+
 
 # WarClass
 
@@ -10,10 +14,9 @@ Manage a group of adventurers from various cultures, and explore the WHOLE world
 
 Everything you see is an html div. I'm not a code expert so I relied quite a lot on chatGPT. Code might look extremely ugly and obviously unefficient. But things work!
 
-START THE GAME:
+## Start the game
 Launch the run.bat file, which is going to create a local server on which you can play the game through the browser (WebKit only supported!).
-
-
+Or just run the project in VS code live server for example.
 
 ## Engine
 
