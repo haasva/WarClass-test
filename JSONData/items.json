@@ -1,5 +1,13 @@
 [
   {
+    "name": "Furvin",
+    "rarity": "Legendary",
+    "category": "Carriage",
+    "stackable": "not",
+    "description": "An Russian-made experimental hot hair balloon, with a capacity of 2 people.",
+    "ability": "Ascend"
+  },
+  {
     "name": "Green banner",
     "rarity": "Poor",
     "category": "Banner",

@@ -14,6 +14,7 @@
     "Roma Slaves",
     "Scholar",
     "Astronomer",
+    "Katib",
     "Sarthavaha",
     "Saboteur",
     "Dragoman",
@@ -244,6 +245,7 @@
     "Strelet",
     "Cossack",
     "Starets",
+    "Dukhobor",
     "Wayfarer",
     "Polyanitsa",
     "Haidamaka",
@@ -280,7 +282,8 @@
     "Kinto",
     "Abrek",
     "Maelkh-Aeznii",
-    "Maarulal"
+    "Maarulal",
+    "Dukhobor"
   ],
   "Yukon": [
     "Wataugan",
@@ -842,6 +845,7 @@
     "Mameluke",
     "Hajduk",
     "Gypsy",
+    "Katib",
     "Greek Refugee",
     "Armatole",
     "African Slaves",
@@ -1295,7 +1299,8 @@
     "Pindari",
     "Thuggee",
     "Girl of Joy",
-    "Labbay Da'i"
+    "Labbay Da'i",
+    "Bhikkhu"
   ],
   "Guinea": [
     "Imbangala",
@@ -1354,7 +1359,6 @@
     "Marakkar"
   ],
   "Huguang": [
-    "Quilombola",
     "Adviser",
     "Cho-ko-nu",
     "Xiangu",
@@ -1373,11 +1377,14 @@
     "Smuggler",
     "Wokou",
     "Girl of Joy",
-    "Congaï"
+    "Congaï",
+    "Shibazhi",
+    "Quilombola"
   ],
   "Siam": [
     "Adviser",
     "Haidao",
+    "Bhikkhu",
     "Nóngmín",
     "Blind monk",
     "Dacoit",
@@ -1397,7 +1404,8 @@
     "Trepanger",
     "Girl of Joy",
     "Smith",
-    "Pirate Lord"
+    "Pirate Lord",
+    "Shibazhi"
   ],
   "Frisia": [
     "Stadhouder",

@@ -261,7 +261,7 @@ width: 50px;
 aspect-ratio: 1/1;
 background-size: 90% 90%;
 background-position: center center;
-background-color: black;
+
 }
 #active-weaponry .right {
   display: flex;
@@ -1285,11 +1285,12 @@ align-items: stretch;
 #bottom #active-skills {
   display: flex;
   gap: 5px;
-  pointer-events: all;
+  pointer-events: none;
   align-items: flex-end;
 }
 #bottom #active-skills * {
 filter: none;
+pointer-events: all;
 }
 #bottom #active-skills .skill {
 box-shadow: 0 0 10px black, 0 0 5px black;
@@ -2902,19 +2903,17 @@ background-position: center;
 
 }
 #settings-content {
-  padding: 10px;
     display: flex;
     flex-direction: row;
     gap: 10px;
 }
 #settings-inner {
-    display: grid;
-    gap: 10px;
-    grid-template-columns: repeat(3, 2fr);
+    column-count: 2;
+    column-gap: 0;
+    margin: -5px;
 }
 
-.setting .title {
-  padding: 5px;
+#settings-inner .setting .title {
   padding-bottom: 10px;
   text-align: center;
   color: bisque;
@@ -2923,15 +2922,20 @@ background-position: center;
   border-bottom: 1px solid;
 }
 
-.setting {
-  padding: 10px;
-  border: 1px solid rgba(119, 83, 30, 1);
-  background-color: rgba(0, 0, 0, 0.3);
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
+#settings-inner .setting {
+    padding: 10px;
+    border: 1px solid rgba(119, 83, 30, 1);
+    background-color: rgba(0, 0, 0, 0.3);
+    display: inline-flex;
+    gap: 5px;
+    object-fit: cover;
+    width: 175px;
+    margin: 5px;
+    flex-direction: column;
 }
-
+#settings-inner .setting:hover {
+    background-color: rgba(0, 0, 0, 0.75);
+}
 
 #settings-content #controls {
   padding: 10px;
@@ -2946,9 +2950,12 @@ background-position: center;
   display: flex;
   flex-direction: row;
   gap: 8px;
-  width: 20rem;
+  width: 30rem;
   justify-content:flex-start;
   align-items: center;
+}
+#settings-content .control:hover .function {
+  color: orange;
 }
 #settings-content .key {
   color: orange;

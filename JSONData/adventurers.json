@@ -1,5 +1,80 @@
 [
    {
+    "Title": "Dukhobor",
+    "Rarity": "Legendary",
+    "Culture": "Russian",
+    "N": 517,
+    "Age": "II",
+    "Life": 10,
+    "Speed": 2,
+    "Attack": 1,
+    "RangedResist": 4,
+    "HandResist": 5,
+    "Type": "Commoner, Religious",
+    "SubCategory": "Regular",
+    "Mounted": "",
+    "Specialty": "Non-fighting",
+    "Signature": "Oral Tradition",
+    "Description": "",
+    "Lore": "« Товарищъ любезный, а что намъ тамъ будетъ въ небесномъ селеніи? »",
+    "Upgrade1": "Serfs",
+    "Upgrade2": "",
+    "Upgrade3": "",
+    "Equipment": {
+      "Weapon": ""
+    }
+  },
+   {
+    "Title": "Bhikkhu",
+    "Rarity": "Rare",
+    "Culture": "Nanyang",
+    "N": 517,
+    "Age": "I",
+    "Life": 10,
+    "Speed": 2,
+    "Attack": 1,
+    "RangedResist": 4,
+    "HandResist": 5,
+    "Type": "Religious",
+    "SubCategory": "Regular",
+    "Mounted": "",
+    "Specialty": "Non-fighting",
+    "Signature": "Pacifism",
+    "Description": "",
+    "Lore": "« ເມື່ອເດີນທາງເຂົ້າໃນປ່າທີ່ເຫັນວ່າສງົບດີແລ້ວພຣາະອົງກໍນຳເອົາວິທີທີ່ໄດ້ຮ່ຳຮຽນມາປະຕິບັດຢູ່ຄົນດຽວ. »",
+    "Upgrade1": "",
+    "Upgrade2": "",
+    "Upgrade3": "",
+    "Equipment": {
+      "Weapon": ""
+    }
+  },
+  {
+    "Title": "Katib",
+    "Rarity": "Rare",
+    "Culture": "Ottoman, Persian",
+    "N": 517,
+    "Age": "I",
+    "Life": 10,
+    "Speed": 2,
+    "Attack": 1,
+    "RangedResist": 4,
+    "HandResist": 5,
+    "Type": "Intellectual",
+    "SubCategory": "Regular",
+    "Mounted": "",
+    "Specialty": "Non-fighting",
+    "Signature": "Advanced literacy",
+    "Description": "",
+    "Lore": "« Kâtibimin setresi uzun, eteği çamur.*Kâtip uykudan uyanmış, gözleri mahmur. »",
+    "Upgrade1": "Qalandari",
+    "Upgrade2": "",
+    "Upgrade3": "",
+    "Equipment": {
+      "Weapon": ""
+    }
+  },
+  {
     "Title": "Ikkō-to",
     "Rarity": "Rare",
     "Culture": "Japanese",
@@ -20,13 +95,11 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\japanese.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Naginata"
+      "Weapon": "Naginata"
     }
- },
-   {
+  },
+  {
     "Title": "Yanakuna",
     "Rarity": "Rare",
     "Culture": "Amerindian",
@@ -47,13 +120,11 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\amerindian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
-   {
+  },
+  {
     "Title": "Guanning",
     "Rarity": "Rare",
     "Culture": "Chinese",
@@ -74,13 +145,11 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\chinese.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Liuyedao"
+      "Weapon": "Liuyedao"
     }
- },
-   {
+  },
+  {
     "Title": "Marakkar",
     "Rarity": "Legendary",
     "Culture": "Indian",
@@ -98,16 +167,14 @@
     "Signature": "Advanced trade",
     "Description": "Comes with Islam.",
     "Lore": "« If you are still adamant about it, we shall go to the old Fort, wash Kunjali's feet and drink that water, honour him, and then bring him. »",
-    "Upgrade1": "",
+    "Upgrade1": "Treasurer",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\indian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Bedil jawa"
+      "Weapon": "Bedil jawa"
     }
- },
-   {
+  },
+  {
     "Title": "Labbay Da'i",
     "Rarity": "Rare",
     "Culture": "Indian",
@@ -128,13 +195,11 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\indian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
-   {
+  },
+  {
     "Title": "Cagot",
     "Rarity": "Uncommon",
     "Culture": "French",
@@ -155,12 +220,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\french.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Fokos"
+      "Weapon": "Fokos"
     }
- },
+  },
   {
     "Title": "Shakan",
     "Rarity": "Normal",
@@ -182,12 +245,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\mongol.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Axe"
+      "Weapon": "Axe"
     }
- },
+  },
   {
     "Title": "Camel Explorer",
     "Rarity": "Rare",
@@ -209,12 +270,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\mongol.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Baqsı",
     "Rarity": "Rare",
@@ -236,12 +295,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\mongol.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Qusbegi",
     "Rarity": "Rare",
@@ -263,12 +320,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\mongol.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Recurve bow"
+      "Weapon": "Recurve bow"
     }
- },
+  },
   {
     "Title": "Myltyq",
     "Rarity": "Rare",
@@ -290,12 +345,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\mongol.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Matchlock"
+      "Weapon": "Matchlock"
     }
- },
+  },
   {
     "Title": "Uriankhai",
     "Rarity": "Normal",
@@ -314,15 +367,13 @@
     "Signature": "Marksmanship",
     "Description": "Always efficient against Commoners.",
     "Lore": "",
-    "Upgrade1": "Wokou",
+    "Upgrade1": "Xiangmazei",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\mongol.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Recurve bow"
+      "Weapon": "Recurve bow"
     }
- },
+  },
   {
     "Title": "Mongol Villagers",
     "Rarity": "Normal",
@@ -344,12 +395,10 @@
     "Upgrade1": "Keshik",
     "Upgrade2": "Kazakh Herders",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\mongol.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Recurve bow"
+      "Weapon": "Recurve bow"
     }
- },
+  },
   {
     "Title": "Kazakh Herders",
     "Rarity": "Normal",
@@ -369,14 +418,12 @@
     "Description": "While in a plain, halves all incoming damage.",
     "Lore": "« jilki – jelden, siyir – sudan, tuye – shölden, eshki – tastan, koy – peyishten jaralgan »",
     "Upgrade1": "Mongol Villagers",
-    "Upgrade2": "",
+    "Upgrade2": "Qusbegi",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\altaic.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Recurve bow"
+      "Weapon": "Recurve bow"
     }
- },
+  },
   {
     "Title": "Keshik",
     "Rarity": "Normal",
@@ -398,12 +445,10 @@
     "Upgrade1": "Camel Explorer",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\mongol.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Recurve bow"
+      "Weapon": "Recurve bow"
     }
- },
+  },
   {
     "Title": "Kalmyk",
     "Rarity": "Rare",
@@ -425,12 +470,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\mongol.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Steppes Rider",
     "Rarity": "Normal",
@@ -452,12 +495,10 @@
     "Upgrade1": "Tengrikut",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\mongol.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Kilij"
+      "Weapon": "Kilij"
     }
- },
+  },
   {
     "Title": "Qañğy",
     "Rarity": "Legendary",
@@ -479,12 +520,10 @@
     "Upgrade1": "Karhade Queen",
     "Upgrade2": "Vesna",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\mongol.png",
-    "CultureImg2": "\\Art\\Cultures\\arctic.png",
     "Equipment": {
-       "Weapon": "Recurve bow"
+      "Weapon": "Recurve bow"
     }
- },
+  },
   {
     "Title": "Tengrikut",
     "Rarity": "Legendary",
@@ -506,12 +545,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\mongol.png",
-    "CultureImg2": "\\Art\\Cultures\\arctic.png",
     "Equipment": {
-       "Weapon": "Recurve bow"
+      "Weapon": "Recurve bow"
     }
- },
+  },
   {
     "Title": "Wataugan",
     "Rarity": "Rare",
@@ -533,12 +570,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\american.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Flintlock"
+      "Weapon": "Flintlock"
     }
- },
+  },
   {
     "Title": "Draftee",
     "Rarity": "Normal",
@@ -560,12 +595,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\american.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Knife"
+      "Weapon": "Knife"
     }
- },
+  },
   {
     "Title": "Owlhoot",
     "Rarity": "Rare",
@@ -587,12 +620,10 @@
     "Upgrade1": "Bounty Hunter",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\american.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Long rifle"
+      "Weapon": "Long rifle"
     }
- },
+  },
   {
     "Title": "Cowboy",
     "Rarity": "Rare",
@@ -614,12 +645,10 @@
     "Upgrade1": "Frontiersman",
     "Upgrade2": "Renegado",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\american.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Pistol"
+      "Weapon": "Pistol"
     }
- },
+  },
   {
     "Title": "Renegado",
     "Rarity": "Normal",
@@ -641,12 +670,10 @@
     "Upgrade1": "Buccaneer",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\american.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Pistol"
+      "Weapon": "Pistol"
     }
- },
+  },
   {
     "Title": "Frontiersman",
     "Rarity": "Legendary",
@@ -668,12 +695,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\american.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Knife"
+      "Weapon": "Knife"
     }
- },
+  },
   {
     "Title": "Highwayman",
     "Rarity": "Normal",
@@ -695,12 +720,10 @@
     "Upgrade1": "Chinaco",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\american.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Long rifle"
+      "Weapon": "Long rifle"
     }
- },
+  },
   {
     "Title": "Pistolero",
     "Rarity": "Normal",
@@ -722,12 +745,10 @@
     "Upgrade1": "Redemptioners",
     "Upgrade2": "Renegado",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\american.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Pistol"
+      "Weapon": "Pistol"
     }
- },
+  },
   {
     "Title": "Bounty Hunter",
     "Rarity": "Normal",
@@ -749,12 +770,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\american.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Long rifle"
+      "Weapon": "Long rifle"
     }
- },
+  },
   {
     "Title": "Minuteman",
     "Rarity": "Normal",
@@ -776,39 +795,35 @@
     "Upgrade1": "Owlhoot",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\american.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Musket"
+      "Weapon": "Musket"
     }
- },
- {
-   "Title": "Tamoio",
-   "Rarity": "Normal",
-   "Culture": "Amerindian",
-   "N": 597,
-   "Age": "I",
-   "Life": 12,
-   "Speed": 17,
-   "Attack": 5,
-   "RangedResist": 10,
-   "HandResist": 5,
-   "Type": "Soldier, Outlaw",
-   "SubCategory": "Regular",
-   "Mounted": "",
-   "Specialty": "Archery",
-   "Signature": "Stealth",
-   "Description": "",
-   "Lore": "Allo o mora.",
-   "Upgrade1": "",
-   "Upgrade2": "",
-   "Upgrade3": "",
-   "CultureImg1": "\\Art\\Cultures\\amerindian.png",
-   "CultureImg2": "",
-   "Equipment": {
+  },
+  {
+    "Title": "Tamoio",
+    "Rarity": "Normal",
+    "Culture": "Amerindian",
+    "N": 597,
+    "Age": "I",
+    "Life": 12,
+    "Speed": 17,
+    "Attack": 5,
+    "RangedResist": 10,
+    "HandResist": 5,
+    "Type": "Soldier, Outlaw",
+    "SubCategory": "Regular",
+    "Mounted": "",
+    "Specialty": "Archery",
+    "Signature": "Stealth",
+    "Description": "",
+    "Lore": "Allo o mora.",
+    "Upgrade1": "",
+    "Upgrade2": "",
+    "Upgrade3": "",
+    "Equipment": {
       "Weapon": "Longbow"
-   }
-},
+    }
+  },
   {
     "Title": "Jaguar Warrior",
     "Rarity": "Normal",
@@ -830,12 +845,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\amerindian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Maquahuitl"
+      "Weapon": "Maquahuitl"
     }
- },
+  },
   {
     "Title": "Huaminca",
     "Rarity": "Normal",
@@ -857,12 +870,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\amerindian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Spear"
+      "Weapon": "Spear"
     }
- },
+  },
   {
     "Title": "Clubman",
     "Rarity": "Normal",
@@ -884,12 +895,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\amerindian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Cudgel"
+      "Weapon": "Cudgel"
     }
- },
+  },
   {
     "Title": "Toltecatl",
     "Rarity": "Rare",
@@ -911,12 +920,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\amerindian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Merchant",
     "Rarity": "Normal",
@@ -938,12 +945,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\amerindian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Kuraka",
     "Rarity": "Rare",
@@ -965,12 +970,10 @@
     "Upgrade1": "Toltecatl",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\amerindian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Axe"
+      "Weapon": "Axe"
     }
- },
+  },
   {
     "Title": "Boleadora",
     "Rarity": "Rare",
@@ -992,12 +995,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\amerindian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Bolas"
+      "Weapon": "Bolas"
     }
- },
+  },
   {
     "Title": "Sacrificer",
     "Rarity": "Rare",
@@ -1019,12 +1020,10 @@
     "Upgrade1": "Wretch",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\amerindian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Knife"
+      "Weapon": "Knife"
     }
- },
+  },
   {
     "Title": "Tracker",
     "Rarity": "Normal",
@@ -1046,12 +1045,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\amerindian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Bow"
+      "Weapon": "Bow"
     }
- },
+  },
   {
     "Title": "Chaski",
     "Rarity": "Rare",
@@ -1073,12 +1070,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\amerindian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Yucateco",
     "Rarity": "Rare",
@@ -1100,12 +1095,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\amerindian.png",
-    "CultureImg2": "\\Art\\Cultures\\latino.png",
     "Equipment": {
-       "Weapon": "Lasso"
+      "Weapon": "Lasso"
     }
- },
+  },
   {
     "Title": "Native Villagers",
     "Rarity": "Rare",
@@ -1127,39 +1120,35 @@
     "Upgrade1": "Tracker",
     "Upgrade2": "Loremaster",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\amerindian.png",
-    "CultureImg2": "\\Art\\Cultures\\native.png",
     "Equipment": {
-       "Weapon": "Bow"
+      "Weapon": "Bow"
     }
- },
- {
-   "Title": "Sheikh",
-   "Rarity": "Normal",
-   "Culture": "Arab",
-   "N": 18,
-   "Age": "I",
-   "Life": 16,
-   "Speed": 7,
-   "Attack": 2,
-   "RangedResist": 10,
-   "HandResist": 5,
-   "Type": "Religious, Intellectual",
-   "SubCategory": "Regular",
-   "Mounted": "",
-   "Specialty": "Non-fighting",
-   "Signature": "Preach",
-   "Description": "Islam islam islam.",
-   "Lore": "",
-   "Upgrade1": "Emir",
-   "Upgrade2": "",
-   "Upgrade3": "",
-   "CultureImg1": "\\Art\\Cultures\\arab.png",
-   "CultureImg2": "",
-   "Equipment": {
+  },
+  {
+    "Title": "Sheikh",
+    "Rarity": "Normal",
+    "Culture": "Arab",
+    "N": 18,
+    "Age": "I",
+    "Life": 16,
+    "Speed": 7,
+    "Attack": 2,
+    "RangedResist": 10,
+    "HandResist": 5,
+    "Type": "Religious, Intellectual",
+    "SubCategory": "Regular",
+    "Mounted": "",
+    "Specialty": "Non-fighting",
+    "Signature": "Preach",
+    "Description": "Islam islam islam.",
+    "Lore": "",
+    "Upgrade1": "Emir",
+    "Upgrade2": "",
+    "Upgrade3": "",
+    "Equipment": {
       "Weapon": ""
-   }
-},
+    }
+  },
   {
     "Title": "Arabian Villagers",
     "Rarity": "Normal",
@@ -1181,12 +1170,10 @@
     "Upgrade1": "Mujahid",
     "Upgrade2": "Fellah",
     "Upgrade3": "Janissary",
-    "CultureImg1": "\\Art\\Cultures\\arab.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Fellah",
     "Rarity": "Normal",
@@ -1208,12 +1195,10 @@
     "Upgrade1": "Sariq",
     "Upgrade2": "Saboteur",
     "Upgrade3": "Kemet Zealot",
-    "CultureImg1": "\\Art\\Cultures\\arab.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Dagger"
+      "Weapon": "Dagger"
     }
- },
+  },
   {
     "Title": "Mujahid",
     "Rarity": "Legendary",
@@ -1235,12 +1220,10 @@
     "Upgrade1": "Basmachi",
     "Upgrade2": "Sheikh",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\arab.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Scimitar"
+      "Weapon": "Scimitar"
     }
- },
+  },
   {
     "Title": "Gaziya",
     "Rarity": "Rare",
@@ -1259,15 +1242,13 @@
     "Signature": "Festival",
     "Description": "You can refresh an exhausted Skill instead of paying Gold.",
     "Lore": "« Their dancing has little of elegance ; its chief peculiarity being a very rapid vibrating motion of the hips, from side to side. »",
-    "Upgrade1": "Odalisque",
+    "Upgrade1": "Concubine",
     "Upgrade2": "Gypsy",
     "Upgrade3": "Piratebane",
-    "CultureImg1": "\\Art\\Cultures\\arab.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Badawi",
     "Rarity": "Normal",
@@ -1289,12 +1270,10 @@
     "Upgrade1": "Mujahid",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\arab.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Bow"
+      "Weapon": "Bow"
     }
- },
+  },
   {
     "Title": "Imam",
     "Rarity": "Normal",
@@ -1316,12 +1295,10 @@
     "Upgrade1": "Sheikh",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\arab.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Sariq",
     "Rarity": "Normal",
@@ -1343,12 +1320,10 @@
     "Upgrade1": "Azap",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\arab.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Dagger"
+      "Weapon": "Dagger"
     }
- },
+  },
   {
     "Title": "Kemet Zealot",
     "Rarity": "Legendary",
@@ -1370,12 +1345,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\arab.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Dagger"
+      "Weapon": "Dagger"
     }
- },
+  },
   {
     "Title": "Mameluke",
     "Rarity": "Rare",
@@ -1397,12 +1370,10 @@
     "Upgrade1": "Pasha",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\arab.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Kilij"
+      "Weapon": "Kilij"
     }
- },
+  },
   {
     "Title": "Mugharrarin",
     "Rarity": "Rare",
@@ -1424,12 +1395,10 @@
     "Upgrade1": "Agha",
     "Upgrade2": "Thalamako",
     "Upgrade3": "Morisco",
-    "CultureImg1": "\\Art\\Cultures\\arab.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Cutlass"
+      "Weapon": "Cutlass"
     }
- },
+  },
   {
     "Title": "Aakuaksrak",
     "Rarity": "Legendary",
@@ -1451,12 +1420,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\arctic.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Urangai Sakha",
     "Rarity": "Rare",
@@ -1478,12 +1445,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\arctic.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Bow"
+      "Weapon": "Bow"
     }
- },
+  },
   {
     "Title": "Mongrel",
     "Rarity": "Normal",
@@ -1505,12 +1470,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\arctic.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Arctic Villagers",
     "Rarity": "Rare",
@@ -1532,12 +1495,10 @@
     "Upgrade1": "Pomors",
     "Upgrade2": "Aakuaksrak",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\arctic.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Bow"
+      "Weapon": "Bow"
     }
- },
+  },
   {
     "Title": "Inuit",
     "Rarity": "Normal",
@@ -1559,12 +1520,10 @@
     "Upgrade1": "Loremaster",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\arctic.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Spear"
+      "Weapon": "Spear"
     }
- },
+  },
   {
     "Title": "Pirka Menoko",
     "Rarity": "Legendary",
@@ -1586,12 +1545,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\arctic.png",
-    "CultureImg2": "\\Art\\Cultures\\japanese.png",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Saami",
     "Rarity": "Normal",
@@ -1613,12 +1570,10 @@
     "Upgrade1": "Hakkapeliitta",
     "Upgrade2": "Noaidi",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\arctic.png",
-    "CultureImg2": "\\Art\\Cultures\\scandinavian.png",
     "Equipment": {
-       "Weapon": "Spear"
+      "Weapon": "Spear"
     }
- },
+  },
   {
     "Title": "Noaidi",
     "Rarity": "Rare",
@@ -1640,12 +1595,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\arctic.png",
-    "CultureImg2": "\\Art\\Cultures\\scandinavian.png",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Hajduk",
     "Rarity": "Rare",
@@ -1667,12 +1620,10 @@
     "Upgrade1": "Betyár",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\balkan.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Musket"
+      "Weapon": "Musket"
     }
- },
+  },
   {
     "Title": "Betyár",
     "Rarity": "Legendary",
@@ -1694,12 +1645,10 @@
     "Upgrade1": "Pandur",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\balkan.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Flintlock"
+      "Weapon": "Flintlock"
     }
- },
+  },
   {
     "Title": "Gypsy",
     "Rarity": "Rare",
@@ -1721,12 +1670,10 @@
     "Upgrade1": "Escultora",
     "Upgrade2": "Menestrel",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\balkan.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Greek Refugee",
     "Rarity": "Rare",
@@ -1748,12 +1695,10 @@
     "Upgrade1": "Hierodule",
     "Upgrade2": "Narentine",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\balkan.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Anchorite",
     "Rarity": "Legendary",
@@ -1775,12 +1720,10 @@
     "Upgrade1": "Blind monk",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\balkan.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Vlach",
     "Rarity": "Normal",
@@ -1802,12 +1745,10 @@
     "Upgrade1": "Wallachian Rider",
     "Upgrade2": "Domnitor",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\balkan.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Pandur",
     "Rarity": "Normal",
@@ -1829,12 +1770,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\balkan.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Flintlock"
+      "Weapon": "Flintlock"
     }
- },
+  },
   {
     "Title": "Seressaner",
     "Rarity": "Rare",
@@ -1856,12 +1795,10 @@
     "Upgrade1": "Pandur",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\balkan.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Flintlock"
+      "Weapon": "Flintlock"
     }
- },
+  },
   {
     "Title": "Sarakatsani",
     "Rarity": "Normal",
@@ -1883,12 +1820,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\balkan.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Blunderbuss"
+      "Weapon": "Blunderbuss"
     }
- },
+  },
   {
     "Title": "Stradiot",
     "Rarity": "Normal",
@@ -1910,12 +1845,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\balkan.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Spear"
+      "Weapon": "Spear"
     }
- },
+  },
   {
     "Title": "Narentine",
     "Rarity": "Rare",
@@ -1937,12 +1870,10 @@
     "Upgrade1": "Soldadera",
     "Upgrade2": "Concubine",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\balkan.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Matchlock"
+      "Weapon": "Matchlock"
     }
- },
+  },
   {
     "Title": "Wallachian Rider",
     "Rarity": "Normal",
@@ -1964,12 +1895,10 @@
     "Upgrade1": "Boyar",
     "Upgrade2": "Stradiot",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\balkan.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Recurve bow"
+      "Weapon": "Recurve bow"
     }
- },
+  },
   {
     "Title": "Uskok",
     "Rarity": "Rare",
@@ -1991,12 +1920,10 @@
     "Upgrade1": "Hajduk",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\balkan.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Flintlock"
+      "Weapon": "Flintlock"
     }
- },
+  },
   {
     "Title": "Domnitor",
     "Rarity": "Rare",
@@ -2018,12 +1945,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\balkan.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Dusack"
+      "Weapon": "Dusack"
     }
- },
+  },
   {
     "Title": "Bosniaken",
     "Rarity": "Rare",
@@ -2045,12 +1970,10 @@
     "Upgrade1": "Dragoman",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\balkan.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Spear"
+      "Weapon": "Spear"
     }
- },
+  },
   {
     "Title": "Schiavone",
     "Rarity": "Rare",
@@ -2072,12 +1995,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\balkan.png",
-    "CultureImg2": "\\Art\\Cultures\\italian.png",
     "Equipment": {
-       "Weapon": "Flintlock"
+      "Weapon": "Flintlock"
     }
- },
+  },
   {
     "Title": "Armatole",
     "Rarity": "Rare",
@@ -2099,12 +2020,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\balkan.png",
-    "CultureImg2": "\\Art\\Cultures\\ottoman.png",
     "Equipment": {
-       "Weapon": "Dragoon"
+      "Weapon": "Dragoon"
     }
- },
+  },
   {
     "Title": "Imbangala",
     "Rarity": "Legendary",
@@ -2126,12 +2045,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\bantu.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Ngulu"
+      "Weapon": "Ngulu"
     }
- },
+  },
   {
     "Title": "Nganga",
     "Rarity": "Rare",
@@ -2153,12 +2070,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\bantu.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "African Villagers",
     "Rarity": "Normal",
@@ -2180,12 +2095,10 @@
     "Upgrade1": "Dahomey",
     "Upgrade2": "Ògún Warrior",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\bantu.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Slave Hunter",
     "Rarity": "Normal",
@@ -2207,12 +2120,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\bantu.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Moukahla"
+      "Weapon": "Moukahla"
     }
- },
+  },
   {
     "Title": "Tufuhen",
     "Rarity": "Rare",
@@ -2234,12 +2145,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\bantu.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Shotel"
+      "Weapon": "Shotel"
     }
- },
+  },
   {
     "Title": "Witch Doctor",
     "Rarity": "Rare",
@@ -2261,12 +2170,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\bantu.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Knife"
+      "Weapon": "Knife"
     }
- },
+  },
   {
     "Title": "African Slaves",
     "Rarity": "Normal",
@@ -2288,12 +2195,10 @@
     "Upgrade1": "Cimarron",
     "Upgrade2": "Quilombola",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\bantu.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Cimarron",
     "Rarity": "Rare",
@@ -2315,12 +2220,10 @@
     "Upgrade1": "Highwayman",
     "Upgrade2": "Pirate Lord",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\bantu.png",
-    "CultureImg2": "\\Art\\Cultures\\american.png",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Quilombola",
     "Rarity": "Rare",
@@ -2342,12 +2245,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\bantu.png",
-    "CultureImg2": "\\Art\\Cultures\\latino.png",
     "Equipment": {
-       "Weapon": "Spear"
+      "Weapon": "Spear"
     }
- },
+  },
   {
     "Title": "Adviser",
     "Rarity": "Rare",
@@ -2369,12 +2270,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\chinese.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Cho-ko-nu",
     "Rarity": "Normal",
@@ -2396,12 +2295,10 @@
     "Upgrade1": "Arquebusier",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\chinese.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Crossbow"
+      "Weapon": "Crossbow"
     }
- },
+  },
   {
     "Title": "Xiangu",
     "Rarity": "Rare",
@@ -2423,12 +2320,10 @@
     "Upgrade1": "Congaï",
     "Upgrade2": "Piratebane",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\chinese.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Jiaozhi"
+      "Weapon": "Jiaozhi"
     }
- },
+  },
   {
     "Title": "Arquebusier",
     "Rarity": "Normal",
@@ -2450,12 +2345,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\chinese.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Arquebus"
+      "Weapon": "Arquebus"
     }
- },
+  },
   {
     "Title": "Haidao",
     "Rarity": "Legendary",
@@ -2477,12 +2370,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\chinese.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Pistol"
+      "Weapon": "Pistol"
     }
- },
+  },
   {
     "Title": "Chinese Villagers",
     "Rarity": "Normal",
@@ -2502,14 +2393,12 @@
     "Description": "When you add this adventurer to your group, you can search for any adventurer from your map and add it to your group.",
     "Lore": "« I remember... years ago… he was standing in front of a blue gate. »",
     "Upgrade1": "Cho-ko-nu",
-    "Upgrade2": "Treasurer",
+    "Upgrade2": "Xiangmazei",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\chinese.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Nóngmín",
     "Rarity": "Normal",
@@ -2528,15 +2417,13 @@
     "Signature": "Gather resources",
     "Description": "When you add an Adventurer to your group, heal 1.",
     "Lore": "",
-    "Upgrade1": "",
+    "Upgrade1": "Chinese Villagers",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\chinese.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Spear"
+      "Weapon": "Spear"
     }
- },
+  },
   {
     "Title": "Manchu",
     "Rarity": "Normal",
@@ -2555,15 +2442,13 @@
     "Signature": "Horse culture",
     "Description": "+1 attack to Archery skills. Using an Archery skill allows you to use a Mounted skill for free.",
     "Lore": "« Sabdara tampin emgeri cingkatala,  Sinci usacuka jilgan elben i boo de isinjiha. »",
-    "Upgrade1": "",
+    "Upgrade1": "Xiangmazei",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\chinese.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Recurve bow"
+      "Weapon": "Recurve bow"
     }
- },
+  },
   {
     "Title": "Shaolin Master",
     "Rarity": "Rare",
@@ -2585,12 +2470,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\chinese.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Treasurer",
     "Rarity": "Normal",
@@ -2612,12 +2495,10 @@
     "Upgrade1": "Adviser",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\chinese.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Youxia",
     "Rarity": "Legendary",
@@ -2639,12 +2520,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\chinese.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Liuyedao"
+      "Weapon": "Liuyedao"
     }
- },
+  },
   {
     "Title": "Xiangmazei",
     "Rarity": "Normal",
@@ -2663,15 +2542,13 @@
     "Signature": "Volley",
     "Description": "Applies Fear when attacking.",
     "Lore": "",
-    "Upgrade1": "",
+    "Upgrade1": "Wokou",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\chinese.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Recurve bow"
+      "Weapon": "Recurve bow"
     }
- },
+  },
   {
     "Title": "Philosopher",
     "Rarity": "Rare",
@@ -2693,12 +2570,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\chinese.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Gisaeng",
     "Rarity": "Legendary",
@@ -2720,12 +2595,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\chinese.png",
-    "CultureImg2": "\\Art\\Cultures\\japanese.png",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Blind monk",
     "Rarity": "Legendary",
@@ -2747,39 +2620,35 @@
     "Upgrade1": "Philosopher",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\chinese.png",
-    "CultureImg2": "\\Art\\Cultures\\Nanyang.png",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
- {
-   "Title": "Perkenier",
-   "Rarity": "Rare",
-   "Culture": "Dutch",
-   "N": 579,
-   "Age": "I",
-   "Life": 18,
-   "Speed": 8,
-   "Attack": 8,
-   "RangedResist": 8,
-   "HandResist": 8,
-   "Type": "Commoner, Explorer",
-   "SubCategory": "Settler",
-   "Mounted": "",
-   "Specialty": "Gunpowder",
-   "Signature": "Enslave",
-   "Description": "Nanyang commoners of the group have the additional Slave type.",
-   "Lore": "« The perkeniers were entitled to a specified number of slaves, necessary to work the land, maintain the trees, weed, and to harvest and process the nutmeg and mace. »",
-   "Upgrade1": "Handelaren",
-   "Upgrade2": "",
-   "Upgrade3": "",
-   "CultureImg1": "\\Art\\Cultures\\dutch.png",
-   "CultureImg2": "",
-   "Equipment": {
+  },
+  {
+    "Title": "Perkenier",
+    "Rarity": "Rare",
+    "Culture": "Dutch",
+    "N": 579,
+    "Age": "I",
+    "Life": 18,
+    "Speed": 8,
+    "Attack": 8,
+    "RangedResist": 8,
+    "HandResist": 8,
+    "Type": "Commoner, Explorer",
+    "SubCategory": "Settler",
+    "Mounted": "",
+    "Specialty": "Gunpowder",
+    "Signature": "Enslave",
+    "Description": "Nanyang commoners of the group have the additional Slave type.",
+    "Lore": "« The perkeniers were entitled to a specified number of slaves, necessary to work the land, maintain the trees, weed, and to harvest and process the nutmeg and mace. »",
+    "Upgrade1": "Handelaren",
+    "Upgrade2": "",
+    "Upgrade3": "",
+    "Equipment": {
       "Weapon": "Matchlock"
-   }
-},
+    }
+  },
   {
     "Title": "Stadhouder",
     "Rarity": "Rare",
@@ -2801,12 +2670,10 @@
     "Upgrade1": "Nibelungen",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\dutch.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Matchlock"
+      "Weapon": "Matchlock"
     }
- },
+  },
   {
     "Title": "Envoy",
     "Rarity": "Normal",
@@ -2828,12 +2695,10 @@
     "Upgrade1": "Diplomat",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\dutch.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Arquebus"
+      "Weapon": "Arquebus"
     }
- },
+  },
   {
     "Title": "Handelaren",
     "Rarity": "Rare",
@@ -2855,12 +2720,10 @@
     "Upgrade1": "Envoy",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\dutch.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Vrijbuiter",
     "Rarity": "Normal",
@@ -2882,12 +2745,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\dutch.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Flintlock"
+      "Weapon": "Flintlock"
     }
- },
+  },
   {
     "Title": "Trekboers",
     "Rarity": "Normal",
@@ -2909,12 +2770,10 @@
     "Upgrade1": "Kommando",
     "Upgrade2": "Miner",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\dutch.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Flintlock"
+      "Weapon": "Flintlock"
     }
- },
+  },
   {
     "Title": "Ruyter",
     "Rarity": "Normal",
@@ -2936,12 +2795,10 @@
     "Upgrade1": "Stadhouder",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\dutch.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Reiterpistole"
+      "Weapon": "Reiterpistole"
     }
- },
+  },
   {
     "Title": "Kommando",
     "Rarity": "Rare",
@@ -2963,12 +2820,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\dutch.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Long rifle"
+      "Weapon": "Long rifle"
     }
- },
+  },
   {
     "Title": "Diakentje",
     "Rarity": "Legendary",
@@ -2990,12 +2845,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\dutch.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Musketeer",
     "Rarity": "Normal",
@@ -3017,12 +2870,10 @@
     "Upgrade1": "Captain",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\english.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Matchlock"
+      "Weapon": "Matchlock"
     }
- },
+  },
   {
     "Title": "Piratebane",
     "Rarity": "Legendary",
@@ -3044,12 +2895,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\english.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Bajōzutsu"
+      "Weapon": "Bajōzutsu"
     }
- },
+  },
   {
     "Title": "Redemptioners",
     "Rarity": "Normal",
@@ -3071,12 +2920,10 @@
     "Upgrade1": "Wataugan",
     "Upgrade2": "Fossicker",
     "Upgrade3": "Miner",
-    "CultureImg1": "\\Art\\Cultures\\english.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Spy",
     "Rarity": "Rare",
@@ -3098,12 +2945,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\english.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Stiletto"
+      "Weapon": "Stiletto"
     }
- },
+  },
   {
     "Title": "Flag Bearer",
     "Rarity": "Normal",
@@ -3125,12 +2970,10 @@
     "Upgrade1": "Musketeer",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\english.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Highlander",
     "Rarity": "Normal",
@@ -3152,12 +2995,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\english.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Flintlock"
+      "Weapon": "Flintlock"
     }
- },
+  },
   {
     "Title": "Wanton",
     "Rarity": "Rare",
@@ -3179,12 +3020,10 @@
     "Upgrade1": "Spy",
     "Upgrade2": "Musketeer",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\english.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Fusil de chasse"
+      "Weapon": "Fusil de chasse"
     }
- },
+  },
   {
     "Title": "Doctor",
     "Rarity": "Normal",
@@ -3206,12 +3045,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\english.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Gallóglach",
     "Rarity": "Legendary",
@@ -3233,12 +3070,10 @@
     "Upgrade1": "Doppelsoldner",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\english.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Claymore"
+      "Weapon": "Claymore"
     }
- },
+  },
   {
     "Title": "Reiver",
     "Rarity": "Rare",
@@ -3260,12 +3095,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\english.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Crossbow"
+      "Weapon": "Crossbow"
     }
- },
+  },
   {
     "Title": "Redshank",
     "Rarity": "Rare",
@@ -3287,12 +3120,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\english.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Longbow"
+      "Weapon": "Longbow"
     }
- },
+  },
   {
     "Title": "Miner",
     "Rarity": "Normal",
@@ -3314,12 +3145,10 @@
     "Upgrade1": "Fossicker",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\english.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Pickaxe"
+      "Weapon": "Pickaxe"
     }
- },
+  },
   {
     "Title": "Captain",
     "Rarity": "Normal",
@@ -3341,12 +3170,10 @@
     "Upgrade1": "Admiral",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\english.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Longsword"
+      "Weapon": "Longsword"
     }
- },
+  },
   {
     "Title": "Fossicker",
     "Rarity": "Rare",
@@ -3368,12 +3195,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\english.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Admiral",
     "Rarity": "Normal",
@@ -3395,12 +3220,10 @@
     "Upgrade1": "Captain",
     "Upgrade2": "Corsair",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\english.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Rapier"
+      "Weapon": "Rapier"
     }
- },
+  },
   {
     "Title": "Bregaund",
     "Rarity": "Rare",
@@ -3422,12 +3245,10 @@
     "Upgrade1": "Draftee",
     "Upgrade2": "Highlander",
     "Upgrade3": "Reiver",
-    "CultureImg1": "\\Art\\Cultures\\english.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Longbow"
+      "Weapon": "Longbow"
     }
- },
+  },
   {
     "Title": "Paladin",
     "Rarity": "Legendary",
@@ -3449,12 +3270,10 @@
     "Upgrade1": "Hospitalier",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\french.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Excalibur"
+      "Weapon": "Excalibur"
     }
- },
+  },
   {
     "Title": "Huguenot",
     "Rarity": "Rare",
@@ -3476,12 +3295,10 @@
     "Upgrade1": "Trekboers",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\french.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Matchlock"
+      "Weapon": "Matchlock"
     }
- },
+  },
   {
     "Title": "Hospitalier",
     "Rarity": "Rare",
@@ -3503,12 +3320,10 @@
     "Upgrade1": "Outcast Magister",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\french.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Longsword"
+      "Weapon": "Longsword"
     }
- },
+  },
   {
     "Title": "Interprète",
     "Rarity": "Normal",
@@ -3530,12 +3345,10 @@
     "Upgrade1": "Dragoman",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\french.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Mousquetaire",
     "Rarity": "Normal",
@@ -3557,12 +3370,10 @@
     "Upgrade1": "Voyageur",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\french.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Rapier"
+      "Weapon": "Rapier"
     }
- },
+  },
   {
     "Title": "Sans-Gêne",
     "Rarity": "Legendary",
@@ -3584,12 +3395,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\French.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Fusil de chasse"
+      "Weapon": "Fusil de chasse"
     }
- },
+  },
   {
     "Title": "Echevin",
     "Rarity": "Normal",
@@ -3611,12 +3420,10 @@
     "Upgrade1": "Inventor",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\french.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Camisard",
     "Rarity": "Rare",
@@ -3638,12 +3445,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\french.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Pitchfork"
+      "Weapon": "Pitchfork"
     }
- },
+  },
   {
     "Title": "Savoyen",
     "Rarity": "Rare",
@@ -3665,12 +3470,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\french.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Pistol"
+      "Weapon": "Pistol"
     }
- },
+  },
   {
     "Title": "Fille du Roy",
     "Rarity": "Rare",
@@ -3692,12 +3495,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\french.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Corsair",
     "Rarity": "Normal",
@@ -3719,12 +3520,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\french.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Blunderbuss"
+      "Weapon": "Blunderbuss"
     }
- },
+  },
   {
     "Title": "Flibustier",
     "Rarity": "Normal",
@@ -3746,12 +3545,10 @@
     "Upgrade1": "Corsair",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\french.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Flintlock"
+      "Weapon": "Flintlock"
     }
- },
+  },
   {
     "Title": "Goliard",
     "Rarity": "Legendary",
@@ -3773,12 +3570,10 @@
     "Upgrade1": "Huguenot",
     "Upgrade2": "Papar",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\french.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Courtisane",
     "Rarity": "Rare",
@@ -3800,12 +3595,10 @@
     "Upgrade1": "Escultora",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\french.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Cuirassier",
     "Rarity": "Rare",
@@ -3827,12 +3620,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\french.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Dusack"
+      "Weapon": "Dusack"
     }
- },
+  },
   {
     "Title": "Menestrel",
     "Rarity": "Normal",
@@ -3854,12 +3645,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\french.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Outcast Magister",
     "Rarity": "Legendary",
@@ -3881,12 +3670,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\french.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Longsword"
+      "Weapon": "Longsword"
     }
- },
+  },
   {
     "Title": "Voyageur",
     "Rarity": "Normal",
@@ -3908,12 +3695,10 @@
     "Upgrade1": "Coureur des bois",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\french.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Matchlock"
+      "Weapon": "Matchlock"
     }
- },
+  },
   {
     "Title": "Vivandière",
     "Rarity": "Rare",
@@ -3935,12 +3720,10 @@
     "Upgrade1": "Fille du Roy",
     "Upgrade2": "Sans-Gêne",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\french.png",
-    "CultureImg2": "\\Art\\Cultures\\german.png",
     "Equipment": {
-       "Weapon": "Knife"
+      "Weapon": "Knife"
     }
- },
+  },
   {
     "Title": "Coureur des bois",
     "Rarity": "Normal",
@@ -3962,39 +3745,35 @@
     "Upgrade1": "Flibustier",
     "Upgrade2": "Interprète",
     "Upgrade3": "Frontiersman",
-    "CultureImg1": "\\Art\\Cultures\\french.png",
-    "CultureImg2": "\\Art\\Cultures\\american.png",
     "Equipment": {
-       "Weapon": "Fusil de chasse"
+      "Weapon": "Fusil de chasse"
     }
- },
- {
-   "Title": "Komtur",
-   "Rarity": "Legendary",
-   "Culture": "German",
-   "N": 613,
-   "Age": "I",
-   "Life": 20,
-   "Speed": 6,
-   "Attack": 17,
-   "RangedResist": 7,
-   "HandResist": 15,
-   "Type": "Noble, Religious",
-   "SubCategory": "Regular",
-   "Mounted": "",
-   "Specialty": "Melee",
-   "Signature": "Lead",
-   "Description": "",
-   "Lore": "",
-   "Upgrade1": "Nibelungen",
-   "Upgrade2": "",
-   "Upgrade3": "",
-   "CultureImg1": "\\Art\\Cultures\\german.png",
-   "CultureImg2": "",
-   "Equipment": {
+  },
+  {
+    "Title": "Komtur",
+    "Rarity": "Legendary",
+    "Culture": "German",
+    "N": 613,
+    "Age": "I",
+    "Life": 20,
+    "Speed": 6,
+    "Attack": 17,
+    "RangedResist": 7,
+    "HandResist": 15,
+    "Type": "Noble, Religious",
+    "SubCategory": "Regular",
+    "Mounted": "",
+    "Specialty": "Melee",
+    "Signature": "Lead",
+    "Description": "",
+    "Lore": "",
+    "Upgrade1": "Nibelungen",
+    "Upgrade2": "",
+    "Upgrade3": "",
+    "Equipment": {
       "Weapon": "Koncerz"
-   }
-},
+    }
+  },
   {
     "Title": "Uhlan",
     "Rarity": "Normal",
@@ -4016,12 +3795,10 @@
     "Upgrade1": "Inhaber",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\german.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Szabla"
+      "Weapon": "Szabla"
     }
- },
+  },
   {
     "Title": "Black Rider",
     "Rarity": "Rare",
@@ -4043,12 +3820,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\german.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Reiterpistole"
+      "Weapon": "Reiterpistole"
     }
- },
+  },
   {
     "Title": "Alchemist",
     "Rarity": "Legendary",
@@ -4070,12 +3845,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\german.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Blunderbuss"
+      "Weapon": "Blunderbuss"
     }
- },
+  },
   {
     "Title": "Pioneer",
     "Rarity": "Normal",
@@ -4097,12 +3870,10 @@
     "Upgrade1": "Bürgermeister",
     "Upgrade2": "Trekboers",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\german.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Blunderbuss"
+      "Weapon": "Blunderbuss"
     }
- },
+  },
   {
     "Title": "Apothecary",
     "Rarity": "Rare",
@@ -4124,12 +3895,10 @@
     "Upgrade1": "Alchemist",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\german.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Entdecker",
     "Rarity": "Rare",
@@ -4151,12 +3920,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\german.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Longsword"
+      "Weapon": "Longsword"
     }
- },
+  },
   {
     "Title": "Jaeger",
     "Rarity": "Normal",
@@ -4178,12 +3945,10 @@
     "Upgrade1": "Karelian",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\german.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Jäger rifle"
+      "Weapon": "Jäger rifle"
     }
- },
+  },
   {
     "Title": "Bürgermeister",
     "Rarity": "Normal",
@@ -4205,12 +3970,10 @@
     "Upgrade1": "Stadhouder",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\german.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Flintlock"
+      "Weapon": "Flintlock"
     }
- },
+  },
   {
     "Title": "Landsknecht",
     "Rarity": "Rare",
@@ -4232,12 +3995,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\german.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Katzbalger"
+      "Weapon": "Katzbalger"
     }
- },
+  },
   {
     "Title": "Inhaber",
     "Rarity": "Normal",
@@ -4259,12 +4020,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\german.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Rapier"
+      "Weapon": "Rapier"
     }
- },
+  },
   {
     "Title": "Schiffskinder",
     "Rarity": "Normal",
@@ -4286,12 +4045,10 @@
     "Upgrade1": "Gelehrter",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\german.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Stiletto"
+      "Weapon": "Stiletto"
     }
- },
+  },
   {
     "Title": "Knecht",
     "Rarity": "Normal",
@@ -4313,12 +4070,10 @@
     "Upgrade1": "Uhlan",
     "Upgrade2": "Swiss Pikeman",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\german.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Doppelsoldner",
     "Rarity": "Normal",
@@ -4340,12 +4095,10 @@
     "Upgrade1": "Landsknecht",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\german.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Zweihänder"
+      "Weapon": "Zweihänder"
     }
- },
+  },
   {
     "Title": "Nibelungen",
     "Rarity": "Legendary",
@@ -4367,12 +4120,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\german.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Koncerz"
+      "Weapon": "Koncerz"
     }
- },
+  },
   {
     "Title": "Gelehrter",
     "Rarity": "Normal",
@@ -4394,12 +4145,10 @@
     "Upgrade1": "Apothecary",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\german.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Rodelero",
     "Rarity": "Normal",
@@ -4421,12 +4170,10 @@
     "Upgrade1": "Conquistador",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\iberian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Espada ropera"
+      "Weapon": "Espada ropera"
     }
- },
+  },
   {
     "Title": "Conquistadora",
     "Rarity": "Legendary",
@@ -4448,12 +4195,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\iberian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Espada ropera"
+      "Weapon": "Espada ropera"
     }
- },
+  },
   {
     "Title": "Inquisitor",
     "Rarity": "Rare",
@@ -4475,12 +4220,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\iberian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Stiletto"
+      "Weapon": "Stiletto"
     }
- },
+  },
   {
     "Title": "Conquistador",
     "Rarity": "Normal",
@@ -4502,12 +4245,10 @@
     "Upgrade1": "Missionary",
     "Upgrade2": "Machetero",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\iberian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Espada ropera"
+      "Weapon": "Espada ropera"
     }
- },
+  },
   {
     "Title": "Almogavar",
     "Rarity": "Rare",
@@ -4529,12 +4270,10 @@
     "Upgrade1": "Conquistador",
     "Upgrade2": "Saqueador",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\iberian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Longsword"
+      "Weapon": "Longsword"
     }
- },
+  },
   {
     "Title": "Morisco",
     "Rarity": "Rare",
@@ -4556,12 +4295,10 @@
     "Upgrade1": "Missionary",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\iberian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Bandeirante",
     "Rarity": "Normal",
@@ -4583,12 +4320,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\iberian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Espada ropera"
+      "Weapon": "Espada ropera"
     }
- },
+  },
   {
     "Title": "Buccaneer",
     "Rarity": "Normal",
@@ -4610,12 +4345,10 @@
     "Upgrade1": "Vrijbuiter",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\iberian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Blunderbuss"
+      "Weapon": "Blunderbuss"
     }
- },
+  },
   {
     "Title": "Sometent",
     "Rarity": "Rare",
@@ -4637,12 +4370,10 @@
     "Upgrade1": "Mousquetaire",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\iberian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Espingarda"
+      "Weapon": "Espingarda"
     }
- },
+  },
   {
     "Title": "Cannoneer",
     "Rarity": "Normal",
@@ -4664,12 +4395,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\iberian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Arquebus"
+      "Weapon": "Arquebus"
     }
- },
+  },
   {
     "Title": "Piquero",
     "Rarity": "Rare",
@@ -4691,12 +4420,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\iberian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Pike"
+      "Weapon": "Pike"
     }
- },
+  },
   {
     "Title": "Priest",
     "Rarity": "Normal",
@@ -4718,12 +4445,10 @@
     "Upgrade1": "Huguenot",
     "Upgrade2": "Inquisitor",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\iberian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Missionary",
     "Rarity": "Normal",
@@ -4745,12 +4470,10 @@
     "Upgrade1": "Inquisitor",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\iberian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Señor",
     "Rarity": "Rare",
@@ -4772,12 +4495,10 @@
     "Upgrade1": "Bandeirante",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\iberian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Espada ropera"
+      "Weapon": "Espada ropera"
     }
- },
+  },
   {
     "Title": "Miquelet",
     "Rarity": "Rare",
@@ -4799,12 +4520,10 @@
     "Upgrade1": "Buccaneer",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\iberian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Matchlock"
+      "Weapon": "Matchlock"
     }
- },
+  },
   {
     "Title": "Naturalist",
     "Rarity": "Rare",
@@ -4826,12 +4545,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\iberian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Navigator",
     "Rarity": "Normal",
@@ -4853,12 +4570,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\iberian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Matchlock"
+      "Weapon": "Matchlock"
     }
- },
+  },
   {
     "Title": "Escultora",
     "Rarity": "Rare",
@@ -4880,12 +4595,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\iberian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Prince",
     "Rarity": "Rare",
@@ -4907,12 +4620,10 @@
     "Upgrade1": "Mughal",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\indian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Dagger"
+      "Weapon": "Dagger"
     }
- },
+  },
   {
     "Title": "Devadâsî",
     "Rarity": "Rare",
@@ -4934,12 +4645,10 @@
     "Upgrade1": "Odalisque",
     "Upgrade2": "Hierodule",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\indian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Brahmin",
     "Rarity": "Normal",
@@ -4961,12 +4670,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\indian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Indian Villagers",
     "Rarity": "Normal",
@@ -4987,13 +4694,11 @@
     "Lore": "",
     "Upgrade1": "Smith",
     "Upgrade2": "Bhāt",
-    "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\indian.png",
-    "CultureImg2": "",
+    "Upgrade3": "Marakkar",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Zamburak",
     "Rarity": "Rare",
@@ -5015,12 +4720,10 @@
     "Upgrade1": "Qurchi",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\indian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Jezail"
+      "Weapon": "Jezail"
     }
- },
+  },
   {
     "Title": "Roma Slaves",
     "Rarity": "Rare",
@@ -5042,12 +4745,10 @@
     "Upgrade1": "Gypsy",
     "Upgrade2": "Kobzar",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\indian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Bhāt",
     "Rarity": "Rare",
@@ -5069,12 +4770,10 @@
     "Upgrade1": "Scholar",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\indian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Sherpa",
     "Rarity": "Rare",
@@ -5096,12 +4795,10 @@
     "Upgrade1": "Mongrel",
     "Upgrade2": "Putešéstvennica",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\indian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Mughal",
     "Rarity": "Rare",
@@ -5123,12 +4820,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\indian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Sikh Akaali",
     "Rarity": "Rare",
@@ -5150,12 +4845,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\indian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Scimitar"
+      "Weapon": "Scimitar"
     }
- },
+  },
   {
     "Title": "Dacoit",
     "Rarity": "Normal",
@@ -5177,12 +4870,10 @@
     "Upgrade1": "Pirate Lord",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\indian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Scimitar"
+      "Weapon": "Scimitar"
     }
- },
+  },
   {
     "Title": "Scholar",
     "Rarity": "Rare",
@@ -5204,12 +4895,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\indian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Gosain",
     "Rarity": "Legendary",
@@ -5231,12 +4920,10 @@
     "Upgrade1": "Brahmin",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\indian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Pitchfork"
+      "Weapon": "Pitchfork"
     }
- },
+  },
   {
     "Title": "Karhade Queen",
     "Rarity": "Legendary",
@@ -5258,12 +4945,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\indian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Kilij"
+      "Weapon": "Kilij"
     }
- },
+  },
   {
     "Title": "Pindari",
     "Rarity": "Rare",
@@ -5285,12 +4970,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\indian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Pike"
+      "Weapon": "Pike"
     }
- },
+  },
   {
     "Title": "Thuggee",
     "Rarity": "Normal",
@@ -5312,12 +4995,10 @@
     "Upgrade1": "Pardoned Convict",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\indian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Toradar"
+      "Weapon": "Toradar"
     }
- },
+  },
   {
     "Title": "Astronomer",
     "Rarity": "Rare",
@@ -5336,15 +5017,13 @@
     "Signature": "Star reading",
     "Description": "+X speed at Night, where X is your Knowledge.",
     "Lore": "The sun is always beautiful in the night.",
-    "Upgrade1": "",
+    "Upgrade1": "Scholar",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\indian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Kazara",
     "Rarity": "Rare",
@@ -5366,12 +5045,10 @@
     "Upgrade1": "Philosopher",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\indian.png",
-    "CultureImg2": "\\Art\\Cultures\\chinese.png",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Sarthavaha",
     "Rarity": "Legendary",
@@ -5393,12 +5070,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\indian.png",
-    "CultureImg2": "\\Art\\Cultures\\persian.png",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Architect",
     "Rarity": "Rare",
@@ -5420,12 +5095,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\italian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Avvoltoio",
     "Rarity": "Normal",
@@ -5447,12 +5120,10 @@
     "Upgrade1": "Spy",
     "Upgrade2": "Prowler",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\italian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Pistol"
+      "Weapon": "Pistol"
     }
- },
+  },
   {
     "Title": "Musician",
     "Rarity": "Rare",
@@ -5474,12 +5145,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\italian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Cartographer",
     "Rarity": "Normal",
@@ -5501,12 +5170,10 @@
     "Upgrade1": "Explorator",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\italian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Explorator",
     "Rarity": "Normal",
@@ -5528,12 +5195,10 @@
     "Upgrade1": "Navigator",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\italian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Matchlock"
+      "Weapon": "Matchlock"
     }
- },
+  },
   {
     "Title": "Elmetto",
     "Rarity": "Rare",
@@ -5555,12 +5220,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\italian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Spear"
+      "Weapon": "Spear"
     }
- },
+  },
   {
     "Title": "Diplomat",
     "Rarity": "Legendary",
@@ -5582,12 +5245,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\italian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Sediario",
     "Rarity": "Rare",
@@ -5609,12 +5270,10 @@
     "Upgrade1": "Missionary",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\italian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Swiss Pikeman",
     "Rarity": "Normal",
@@ -5636,12 +5295,10 @@
     "Upgrade1": "Sediario",
     "Upgrade2": "Elmetto",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\italian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Halberd"
+      "Weapon": "Halberd"
     }
- },
+  },
   {
     "Title": "Executioner",
     "Rarity": "Rare",
@@ -5663,12 +5320,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\italian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Bardiche"
+      "Weapon": "Bardiche"
     }
- },
+  },
   {
     "Title": "Sentinel",
     "Rarity": "Normal",
@@ -5690,12 +5345,10 @@
     "Upgrade1": "Swiss Pikeman",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\italian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Flintlock"
+      "Weapon": "Flintlock"
     }
- },
+  },
   {
     "Title": "Plague Doctor",
     "Rarity": "Normal",
@@ -5717,13 +5370,11 @@
     "Upgrade1": "Doctor",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\italian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Stiletto"
+      "Weapon": "Stiletto"
     }
- },
-   {
+  },
+  {
     "Title": "Komusō",
     "Rarity": "Legendary",
     "Culture": "Japanese",
@@ -5744,12 +5395,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\japanese.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Katana"
+      "Weapon": "Katana"
     }
- },
+  },
   {
     "Title": "Tekiya",
     "Rarity": "Rare",
@@ -5771,12 +5420,10 @@
     "Upgrade1": "Wokou",
     "Upgrade2": "Treasurer",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\japanese.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Knife"
+      "Weapon": "Knife"
     }
- },
+  },
   {
     "Title": "Smuggler",
     "Rarity": "Normal",
@@ -5798,12 +5445,10 @@
     "Upgrade1": "Tekiya",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\japanese.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Scimitar"
+      "Weapon": "Scimitar"
     }
- },
+  },
   {
     "Title": "Ninja",
     "Rarity": "Rare",
@@ -5825,12 +5470,10 @@
     "Upgrade1": "Monk",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\japanese.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Katana"
+      "Weapon": "Katana"
     }
- },
+  },
   {
     "Title": "Ronin",
     "Rarity": "Rare",
@@ -5852,12 +5495,10 @@
     "Upgrade1": "Kabukimono",
     "Upgrade2": "Komusō",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\japanese.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Katana"
+      "Weapon": "Katana"
     }
- },
+  },
   {
     "Title": "Eshi",
     "Rarity": "Legendary",
@@ -5879,12 +5520,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\japanese.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Aruki Miko",
     "Rarity": "Normal",
@@ -5906,12 +5545,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\japanese.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Hankyu"
+      "Weapon": "Hankyu"
     }
- },
+  },
   {
     "Title": "Monk",
     "Rarity": "Normal",
@@ -5930,15 +5567,13 @@
     "Signature": "Kensho",
     "Description": "When you don’t attack during your attack action, you can explore 1 and heal 1.",
     "Lore": "« Jihatsu-tekide mujakide asobigokoro no aru »",
-    "Upgrade1": "",
+    "Upgrade1": "Ikkō-to",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\japanese.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Onna-bugeisha",
     "Rarity": "Legendary",
@@ -5960,12 +5595,35 @@
     "Upgrade1": "Ronin",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\japanese.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Naginata"
+      "Weapon": "Naginata"
     }
- },
+  },
+  {
+    "Title": "Shibazhi",
+    "Rarity": "Legendary",
+    "Culture": "Chinese",
+    "N": 685,
+    "Age": "II",
+    "Life": 23,
+    "Speed": 13,
+    "Attack": 10,
+    "RangedResist": 10,
+    "HandResist": 5,
+    "Type": "Outlaw, Explorer",
+    "SubCategory": "Pirate",
+    "Mounted": "",
+    "Specialty": "Gunpowder",
+    "Signature": "Navigation",
+    "Description": "",
+    "Lore": "« When they enter the water they never sink, and when they encounter a reef they never breach. »",
+    "Upgrade1": "",
+    "Upgrade2": "",
+    "Upgrade3": "",
+    "Equipment": {
+      "Weapon": "Bajōzutsu"
+    }
+  },
   {
     "Title": "Wokou",
     "Rarity": "Normal",
@@ -5984,15 +5642,13 @@
     "Signature": "Razzia",
     "Description": "Your Outlaw skills also count as Gold, and can be spent as Gold.",
     "Lore": "« Will fool their eyes, With friendly guise  Hollow their chests, So fear could nest »",
-    "Upgrade1": "Ninja",
+    "Upgrade1": "Shibazhi",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\japanese.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Recurve bow"
+      "Weapon": "Recurve bow"
     }
- },
+  },
   {
     "Title": "Kabukimono",
     "Rarity": "Normal",
@@ -6012,14 +5668,12 @@
     "Description": "",
     "Lore": "« The sounds of bells, on a windless night. »",
     "Upgrade1": "Tekiya",
-    "Upgrade2": "",
+    "Upgrade2": "Shibazhi",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\japanese.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Katana"
+      "Weapon": "Katana"
     }
- },
+  },
   {
     "Title": "Kunoichi",
     "Rarity": "Rare",
@@ -6041,12 +5695,10 @@
     "Upgrade1": "Ninja",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\japanese.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Hankyu"
+      "Weapon": "Hankyu"
     }
- },
+  },
   {
     "Title": "Daimyo",
     "Rarity": "Rare",
@@ -6068,12 +5720,10 @@
     "Upgrade1": "Ronin",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\japanese.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Katana"
+      "Weapon": "Katana"
     }
- },
+  },
   {
     "Title": "Dominican Nun",
     "Rarity": "Rare",
@@ -6095,12 +5745,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\japanese.png",
-    "CultureImg2": "\\Art\\Cultures\\iberian.png",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Gaucho",
     "Rarity": "Rare",
@@ -6122,12 +5770,10 @@
     "Upgrade1": "Cowboy",
     "Upgrade2": "Chinaco",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\latino.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Spear"
+      "Weapon": "Spear"
     }
- },
+  },
   {
     "Title": "Soldadera",
     "Rarity": "Rare",
@@ -6149,12 +5795,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\latino.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Long rifle"
+      "Weapon": "Long rifle"
     }
- },
+  },
   {
     "Title": "Mexican Villagers",
     "Rarity": "Normal",
@@ -6176,12 +5820,10 @@
     "Upgrade1": "Soldadera",
     "Upgrade2": "Cholos",
     "Upgrade3": "Naturalist",
-    "CultureImg1": "\\Art\\Cultures\\latino.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Cholos",
     "Rarity": "Normal",
@@ -6203,12 +5845,10 @@
     "Upgrade1": "Soldadera",
     "Upgrade2": "Machetero",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\latino.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Rotos",
     "Rarity": "Normal",
@@ -6230,12 +5870,10 @@
     "Upgrade1": "Chinaco",
     "Upgrade2": "Morochuco",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\latino.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Pitchfork"
+      "Weapon": "Pitchfork"
     }
- },
+  },
   {
     "Title": "Chinaco",
     "Rarity": "Rare",
@@ -6257,12 +5895,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\latino.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Flintlock"
+      "Weapon": "Flintlock"
     }
- },
+  },
   {
     "Title": "Salteador",
     "Rarity": "Normal",
@@ -6284,12 +5920,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\latino.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Long rifle"
+      "Weapon": "Long rifle"
     }
- },
+  },
   {
     "Title": "Machetero",
     "Rarity": "Normal",
@@ -6311,12 +5945,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\latino.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Machete"
+      "Weapon": "Machete"
     }
- },
+  },
   {
     "Title": "Morochuco",
     "Rarity": "Normal",
@@ -6338,12 +5970,10 @@
     "Upgrade1": "Gaucho",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\latino.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Blunderbuss"
+      "Weapon": "Blunderbuss"
     }
- },
+  },
   {
     "Title": "Marinero",
     "Rarity": "Rare",
@@ -6365,12 +5995,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\latino.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Flintlock"
+      "Weapon": "Flintlock"
     }
- },
+  },
   {
     "Title": "Saqueador",
     "Rarity": "Normal",
@@ -6392,12 +6020,10 @@
     "Upgrade1": "Renegado",
     "Upgrade2": "Marinero",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\latino.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Pistol"
+      "Weapon": "Pistol"
     }
- },
+  },
   {
     "Title": "Trepanger",
     "Rarity": "Rare",
@@ -6416,15 +6042,13 @@
     "Signature": "Bonne entente",
     "Description": "",
     "Lore": "",
-    "Upgrade1": "",
+    "Upgrade1": "Dacoit",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\nanyang.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Laksamana",
     "Rarity": "Rare",
@@ -6446,12 +6070,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\nanyang.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Dagger"
+      "Weapon": "Dagger"
     }
- },
+  },
   {
     "Title": "Headhunter",
     "Rarity": "Rare",
@@ -6473,12 +6095,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\nanyang.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Blowgun"
+      "Weapon": "Blowgun"
     }
- },
+  },
   {
     "Title": "Pardoned Convict",
     "Rarity": "Legendary",
@@ -6498,14 +6118,12 @@
     "Description": "Your other Outlaw adventurers get the additional Unarmed speciality.",
     "Lore": "He fought hundreds of times,  to finally earn his freedom.",
     "Upgrade1": "Wrestler",
-    "Upgrade2": "",
+    "Upgrade2": "Bhikkhu",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\nanyang.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Girl of Joy",
     "Rarity": "Normal",
@@ -6524,15 +6142,13 @@
     "Signature": "Prostitution",
     "Description": "When you attack with Girl of Joy, enemy pays 1 Gold.",
     "Lore": "« Is it tucked? What the fuck is this? »",
-    "Upgrade1": "Courtisane",
-    "Upgrade2": "",
+    "Upgrade1": "Odalisque",
+    "Upgrade2": "Congaï",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\nanyang.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Inong Balee",
     "Rarity": "Rare",
@@ -6554,12 +6170,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\nanyang.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Dagger"
+      "Weapon": "Dagger"
     }
- },
+  },
   {
     "Title": "Smith",
     "Rarity": "Normal",
@@ -6581,12 +6195,10 @@
     "Upgrade1": "Laksamana",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\nanyang.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Spear"
+      "Weapon": "Spear"
     }
- },
+  },
   {
     "Title": "Congaï",
     "Rarity": "Normal",
@@ -6608,12 +6220,10 @@
     "Upgrade1": "Haidao",
     "Upgrade2": "Inong Balee",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\nanyang.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Batak wisata",
     "Rarity": "Normal",
@@ -6635,12 +6245,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\nanyang.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Farrier",
     "Rarity": "Normal",
@@ -6662,12 +6270,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\native.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Marauder",
     "Rarity": "Normal",
@@ -6689,12 +6295,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\native.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Spear"
+      "Weapon": "Spear"
     }
- },
+  },
   {
     "Title": "Wrestler",
     "Rarity": "Rare",
@@ -6716,12 +6320,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\unknown.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Ieiàtase",
     "Rarity": "Rare",
@@ -6743,12 +6345,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\amerindian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Tashunke",
     "Rarity": "Normal",
@@ -6770,12 +6370,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\native.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Cudgel"
+      "Weapon": "Cudgel"
     }
- },
+  },
   {
     "Title": "Bird of Passage",
     "Rarity": "Legendary",
@@ -6797,12 +6395,10 @@
     "Upgrade1": "Wise Woman",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\native.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Bow"
+      "Weapon": "Bow"
     }
- },
+  },
   {
     "Title": "Wanderer",
     "Rarity": "Rare",
@@ -6824,12 +6420,10 @@
     "Upgrade1": "Morochuco",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\native.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Long rifle"
+      "Weapon": "Long rifle"
     }
- },
+  },
   {
     "Title": "Oneida Prowler",
     "Rarity": "Normal",
@@ -6851,12 +6445,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\native.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Bow"
+      "Weapon": "Bow"
     }
- },
+  },
   {
     "Title": "Hunter",
     "Rarity": "Normal",
@@ -6878,12 +6470,10 @@
     "Upgrade1": "Wanderer",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\native.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Bow"
+      "Weapon": "Bow"
     }
- },
+  },
   {
     "Title": "Loremaster",
     "Rarity": "Normal",
@@ -6905,12 +6495,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\native.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Rotiskenrakehte",
     "Rarity": "Rare",
@@ -6932,12 +6520,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\native.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Long rifle"
+      "Weapon": "Long rifle"
     }
- },
+  },
   {
     "Title": "Warchief",
     "Rarity": "Legendary",
@@ -6959,12 +6545,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\native.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Cudgel"
+      "Weapon": "Cudgel"
     }
- },
+  },
   {
     "Title": "Wise Woman",
     "Rarity": "Legendary",
@@ -6986,12 +6570,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\native.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Nootka",
     "Rarity": "Normal",
@@ -7013,12 +6595,10 @@
     "Upgrade1": "Loremaster",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\native.png",
-    "CultureImg2": "\\Art\\Cultures\\arctic.png",
     "Equipment": {
-       "Weapon": "Cudgel"
+      "Weapon": "Cudgel"
     }
- },
+  },
   {
     "Title": "Wangara",
     "Rarity": "Normal",
@@ -7040,12 +6620,10 @@
     "Upgrade1": "Sultan",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\north african.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Emir",
     "Rarity": "Legendary",
@@ -7067,12 +6645,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\north african.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Shifta",
     "Rarity": "Legendary",
@@ -7094,12 +6670,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\north african.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Shotel"
+      "Weapon": "Shotel"
     }
- },
+  },
   {
     "Title": "Eso Ikoyi",
     "Rarity": "Normal",
@@ -7121,12 +6695,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\north african.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Longsword"
+      "Weapon": "Longsword"
     }
- },
+  },
   {
     "Title": "Dahomey",
     "Rarity": "Legendary",
@@ -7148,12 +6720,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\north african.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Shotel"
+      "Weapon": "Shotel"
     }
- },
+  },
   {
     "Title": "Anṣār",
     "Rarity": "Rare",
@@ -7175,12 +6745,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\iberian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Scimitar"
+      "Weapon": "Scimitar"
     }
- },
+  },
   {
     "Title": "Fula Archer",
     "Rarity": "Rare",
@@ -7202,12 +6770,10 @@
     "Upgrade1": "Maigadi",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\north african.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Bow"
+      "Weapon": "Bow"
     }
- },
+  },
   {
     "Title": "Abun",
     "Rarity": "Rare",
@@ -7229,12 +6795,10 @@
     "Upgrade1": "Priest",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\north african.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Caravaner",
     "Rarity": "Normal",
@@ -7256,12 +6820,10 @@
     "Upgrade1": "Slave Hunter",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\north african.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Moukahla"
+      "Weapon": "Moukahla"
     }
- },
+  },
   {
     "Title": "Berber Nomads",
     "Rarity": "Rare",
@@ -7283,12 +6845,10 @@
     "Upgrade1": "Badawi",
     "Upgrade2": "Caravaner",
     "Upgrade3": "Wangara",
-    "CultureImg1": "\\Art\\Cultures\\north african.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Bow"
+      "Weapon": "Bow"
     }
- },
+  },
   {
     "Title": "Ògún Warrior",
     "Rarity": "Rare",
@@ -7310,12 +6870,10 @@
     "Upgrade1": "African Villagers",
     "Upgrade2": "Imbangala",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\north african.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Spear"
+      "Weapon": "Spear"
     }
- },
+  },
   {
     "Title": "Maigadi",
     "Rarity": "Rare",
@@ -7337,12 +6895,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\north african.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Moukahla"
+      "Weapon": "Moukahla"
     }
- },
+  },
   {
     "Title": "Debtera",
     "Rarity": "Normal",
@@ -7364,12 +6920,10 @@
     "Upgrade1": "Abun",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\north african.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Sultan",
     "Rarity": "Rare",
@@ -7391,12 +6945,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\north african.png",
-    "CultureImg2": "\\Art\\Cultures\\arab.png",
     "Equipment": {
-       "Weapon": "Scimitar"
+      "Weapon": "Scimitar"
     }
- },
+  },
   {
     "Title": "Janissary",
     "Rarity": "Normal",
@@ -7418,12 +6970,10 @@
     "Upgrade1": "Basmachi",
     "Upgrade2": "Agha",
     "Upgrade3": "Armatole",
-    "CultureImg1": "\\Art\\Cultures\\ottoman.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Flintlock"
+      "Weapon": "Flintlock"
     }
- },
+  },
   {
     "Title": "Azap",
     "Rarity": "Normal",
@@ -7445,12 +6995,10 @@
     "Upgrade1": "Janissary",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\ottoman.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Recurve bow"
+      "Weapon": "Recurve bow"
     }
- },
+  },
   {
     "Title": "Saboteur",
     "Rarity": "Rare",
@@ -7472,12 +7020,10 @@
     "Upgrade1": "Spy",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\ottoman.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Dagger"
+      "Weapon": "Dagger"
     }
- },
+  },
   {
     "Title": "Yezidi",
     "Rarity": "Legendary",
@@ -7499,12 +7045,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\ottoman.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Jezail"
+      "Weapon": "Jezail"
     }
- },
+  },
   {
     "Title": "Excavator",
     "Rarity": "Normal",
@@ -7526,12 +7070,10 @@
     "Upgrade1": "Engineer",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\ottoman.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Pickaxe"
+      "Weapon": "Pickaxe"
     }
- },
+  },
   {
     "Title": "Pasha",
     "Rarity": "Rare",
@@ -7553,12 +7095,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\ottoman.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Odalisque",
     "Rarity": "Normal",
@@ -7580,12 +7120,10 @@
     "Upgrade1": "Concubine",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\ottoman.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Dragoman",
     "Rarity": "Rare",
@@ -7604,15 +7142,13 @@
     "Signature": "Linguistics",
     "Description": "",
     "Lore": "",
-    "Upgrade1": "",
+    "Upgrade1": "Katib",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\ottoman.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Agha",
     "Rarity": "Rare",
@@ -7634,12 +7170,10 @@
     "Upgrade1": "Pasha",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\ottoman.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Yatagan"
+      "Weapon": "Yatagan"
     }
- },
+  },
   {
     "Title": "Deli",
     "Rarity": "Rare",
@@ -7661,12 +7195,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\ottoman.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Yatagan"
+      "Weapon": "Yatagan"
     }
- },
+  },
   {
     "Title": "Yörüks",
     "Rarity": "Normal",
@@ -7688,12 +7220,10 @@
     "Upgrade1": "Engineer",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\ottoman.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Bashkir",
     "Rarity": "Rare",
@@ -7715,12 +7245,10 @@
     "Upgrade1": "Hussar",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\ottoman.png",
-    "CultureImg2": "\\Art\\Cultures\\altaic.png",
     "Equipment": {
-       "Weapon": "Recurve bow"
+      "Weapon": "Recurve bow"
     }
- },
+  },
   {
     "Title": "Fedayee",
     "Rarity": "Rare",
@@ -7742,13 +7270,11 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\ottoman.png",
-    "CultureImg2": "\\Art\\Cultures\\persian.png",
     "Equipment": {
-       "Weapon": "Dagger"
+      "Weapon": "Dagger"
     }
- },
-   {
+  },
+  {
     "Title": "Ghizai",
     "Rarity": "Rare",
     "Culture": "Persian",
@@ -7769,12 +7295,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\persian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Jezail"
+      "Weapon": "Jezail"
     }
- },
+  },
   {
     "Title": "Persian Villagers",
     "Rarity": "Rare",
@@ -7796,12 +7320,10 @@
     "Upgrade1": "Ayyar",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\persian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Jazayerchi",
     "Rarity": "Rare",
@@ -7823,12 +7345,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\persian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Jezail"
+      "Weapon": "Jezail"
     }
- },
+  },
   {
     "Title": "Engineer",
     "Rarity": "Rare",
@@ -7847,15 +7367,13 @@
     "Signature": "Engineering",
     "Description": "This adventurer gets +X Skill slots where X is your Knowledge.",
     "Lore": "« Dar bahaar, man gaahi oghaat miravam va dar labeye yek zamine goldar mineshinam. »",
-    "Upgrade1": "",
+    "Upgrade1": "Astronomer",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\persian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Qurchi",
     "Rarity": "Normal",
@@ -7877,12 +7395,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\persian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Flintlock"
+      "Weapon": "Flintlock"
     }
- },
+  },
   {
     "Title": "Qalandari",
     "Rarity": "Rare",
@@ -7904,12 +7420,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\persian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Ayyar",
     "Rarity": "Rare",
@@ -7931,12 +7445,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\persian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Scimitar"
+      "Weapon": "Scimitar"
     }
- },
+  },
   {
     "Title": "Ghulam",
     "Rarity": "Normal",
@@ -7958,12 +7470,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\persian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Spear"
+      "Weapon": "Spear"
     }
- },
+  },
   {
     "Title": "Qizilbash",
     "Rarity": "Rare",
@@ -7985,12 +7495,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\persian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Recurve bow"
+      "Weapon": "Recurve bow"
     }
- },
+  },
   {
     "Title": "Basmachi",
     "Rarity": "Normal",
@@ -8012,12 +7520,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\ottoman.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Jezail"
+      "Weapon": "Jezail"
     }
- },
+  },
   {
     "Title": "Conspirator",
     "Rarity": "Rare",
@@ -8039,12 +7545,10 @@
     "Upgrade1": "Oprichnik",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\russian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Axe"
+      "Weapon": "Axe"
     }
- },
+  },
   {
     "Title": "Oprichnik",
     "Rarity": "Rare",
@@ -8066,12 +7570,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\russian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Shashka"
+      "Weapon": "Shashka"
     }
- },
+  },
   {
     "Title": "Putešéstvennica",
     "Rarity": "Rare",
@@ -8093,12 +7595,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\russian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Flintlock"
+      "Weapon": "Flintlock"
     }
- },
+  },
   {
     "Title": "Inventor",
     "Rarity": "Rare",
@@ -8120,12 +7620,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\russian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Pomors",
     "Rarity": "Rare",
@@ -8146,13 +7644,11 @@
     "Lore": "« Mossy rifts in weathered stones  Meekly vernal waters yield »",
     "Upgrade1": "Promyshlennik",
     "Upgrade2": "Aakuaksrak",
-    "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\russian.png",
-    "CultureImg2": "",
+    "Upgrade3": "Dukhobor",
     "Equipment": {
-       "Weapon": "Axe"
+      "Weapon": "Axe"
     }
- },
+  },
   {
     "Title": "Kobzar",
     "Rarity": "Rare",
@@ -8174,12 +7670,10 @@
     "Upgrade1": "Musician",
     "Upgrade2": "Wayfarer",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\russian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Kitezhian",
     "Rarity": "Legendary",
@@ -8198,15 +7692,13 @@
     "Signature": "Heal",
     "Description": "You can have an additional Group Class.",
     "Lore": "The last thing they saw was the shining dome of the cathedral with the cross on top. Then there were only waves.",
-    "Upgrade1": "",
+    "Upgrade1": "Starets",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\russian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Cossack Settlers",
     "Rarity": "Rare",
@@ -8228,12 +7720,10 @@
     "Upgrade1": "Cossack",
     "Upgrade2": "Yamshchik",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\russian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Flintlock"
+      "Weapon": "Flintlock"
     }
- },
+  },
   {
     "Title": "Strelet",
     "Rarity": "Normal",
@@ -8255,12 +7745,10 @@
     "Upgrade1": "Oprichnik",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\russian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Bardiche"
+      "Weapon": "Bardiche"
     }
- },
+  },
   {
     "Title": "Cossack",
     "Rarity": "Normal",
@@ -8282,12 +7770,10 @@
     "Upgrade1": "Wayfarer",
     "Upgrade2": "Ataman Marauder",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\russian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Shashka"
+      "Weapon": "Shashka"
     }
- },
+  },
   {
     "Title": "Concubine",
     "Rarity": "Rare",
@@ -8309,12 +7795,10 @@
     "Upgrade1": "Courtisane",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\russian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Starets",
     "Rarity": "Rare",
@@ -8336,12 +7820,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\russian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Ataman Marauder",
     "Rarity": "Rare",
@@ -8363,12 +7845,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\russian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Cudgel"
+      "Weapon": "Cudgel"
     }
- },
+  },
   {
     "Title": "Wayfarer",
     "Rarity": "Legendary",
@@ -8390,12 +7870,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\russian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Flintlock"
+      "Weapon": "Flintlock"
     }
- },
+  },
   {
     "Title": "Polyanitsa",
     "Rarity": "Legendary",
@@ -8417,12 +7895,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\russian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Longsword"
+      "Weapon": "Longsword"
     }
- },
+  },
   {
     "Title": "Haidamaka",
     "Rarity": "Legendary",
@@ -8444,39 +7920,35 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\russian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Scythe"
+      "Weapon": "Scythe"
     }
- },
- {
-   "Title": "Boyar",
-   "Rarity": "Normal",
-   "Culture": "Russian",
-   "N": 77,
-   "Age": "I",
-   "Life": 29,
-   "Speed": 10,
-   "Attack": 9,
-   "RangedResist": 10,
-   "HandResist": 5,
-   "Type": "Noble",
-   "SubCategory": "Regular",
-   "Mounted": "Mounted",
-   "Specialty": "Melee",
-   "Signature": "Wedding party",
-   "Description": "When you refresh another Noble adventurer, you may search for a Resource card in your map.",
-   "Lore": "« Primeln entblühen dem Rasen im Mai,  Achtlos jaget der Tartar vorbei. »",
-   "Upgrade1": "Szlachcic",
-   "Upgrade2": "",
-   "Upgrade3": "",
-   "CultureImg1": "\\Art\\Cultures\\russian.png",
-   "CultureImg2": "",
-   "Equipment": {
+  },
+  {
+    "Title": "Boyar",
+    "Rarity": "Normal",
+    "Culture": "Russian",
+    "N": 77,
+    "Age": "I",
+    "Life": 29,
+    "Speed": 10,
+    "Attack": 9,
+    "RangedResist": 10,
+    "HandResist": 5,
+    "Type": "Noble",
+    "SubCategory": "Regular",
+    "Mounted": "Mounted",
+    "Specialty": "Melee",
+    "Signature": "Wedding party",
+    "Description": "When you refresh another Noble adventurer, you may search for a Resource card in your map.",
+    "Lore": "« Primeln entblühen dem Rasen im Mai,  Achtlos jaget der Tartar vorbei. »",
+    "Upgrade1": "Szlachcic",
+    "Upgrade2": "",
+    "Upgrade3": "",
+    "Equipment": {
       "Weapon": "Shashka"
-   }
-},
+    }
+  },
   {
     "Title": "Yamshchik",
     "Rarity": "Normal",
@@ -8498,39 +7970,35 @@
     "Upgrade1": "Wayfarer",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\russian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Matchlock"
+      "Weapon": "Matchlock"
     }
- },
- {
-   "Title": "Cicerone",
-   "Rarity": "Normal",
-   "Culture": "Italian, Iberian",
-   "N": 40,
-   "Age": "I",
-   "Life": 29,
-   "Speed": 13,
-   "Attack": 10,
-   "RangedResist": 10,
-   "HandResist": 5,
-   "Type": "Intellectual",
-   "SubCategory": "Wanderer",
-   "Mounted": "",
-   "Specialty": "Unarmed",
-   "Signature": "Archaeology",
-   "Description": "Generates 10% more Knowledge per Noble adventurers in the group.",
-   "Lore": "« Non saprai cosa non sapevano. Devi indovinare. »",
-   "Upgrade1": "Avvoltoio",
-   "Upgrade2": "",
-   "Upgrade3": "",
-   "CultureImg1": "\\Art\\Cultures\\italian.png",
-   "CultureImg2": "\\Art\\Cultures\\iberian.png",
-   "Equipment": {
+  },
+  {
+    "Title": "Cicerone",
+    "Rarity": "Normal",
+    "Culture": "Italian, Iberian",
+    "N": 40,
+    "Age": "I",
+    "Life": 29,
+    "Speed": 13,
+    "Attack": 10,
+    "RangedResist": 10,
+    "HandResist": 5,
+    "Type": "Intellectual",
+    "SubCategory": "Wanderer",
+    "Mounted": "",
+    "Specialty": "Unarmed",
+    "Signature": "Archaeology",
+    "Description": "Generates 10% more Knowledge per Noble adventurers in the group.",
+    "Lore": "« Non saprai cosa non sapevano. Devi indovinare. »",
+    "Upgrade1": "Avvoltoio",
+    "Upgrade2": "",
+    "Upgrade3": "",
+    "Equipment": {
       "Weapon": ""
-   }
-},
+    }
+  },
   {
     "Title": "Vesna",
     "Rarity": "Legendary",
@@ -8552,12 +8020,10 @@
     "Upgrade1": "Polyanitsa",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\russian.png",
-    "CultureImg2": "\\Art\\Cultures\\arctic.png",
     "Equipment": {
-       "Weapon": "Spear"
+      "Weapon": "Spear"
     }
- },
+  },
   {
     "Title": "Promyshlennik",
     "Rarity": "Normal",
@@ -8579,39 +8045,35 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\russian.png",
-    "CultureImg2": "\\Art\\Cultures\\arctic.png",
     "Equipment": {
-       "Weapon": "Matchlock"
+      "Weapon": "Matchlock"
     }
- },
- {
-   "Title": "Snapphane",
-   "Rarity": "Normal",
-   "Culture": "Scandinavian",
-   "N": 241,
-   "Age": "II",
-   "Life": 16,
-   "Speed": 7,
-   "Attack": 6,
-   "RangedResist": 10,
-   "HandResist": 5,
-   "Type": "Outlaw, Commoner",
-   "SubCategory": "Pirate",
-   "Mounted": "",
-   "Specialty": "Gunpowder",
-   "Signature": "Ambuscade",
-   "Description": "Deals double damage against Scandinavians, Nobles, and Soldiers.",
-   "Lore": "",
-   "Upgrade1": "Jaeger",
-   "Upgrade2": "",
-   "Upgrade3": "",
-   "CultureImg1": "\\Art\\Cultures\\scandinavian.png",
-   "CultureImg2": "",
-   "Equipment": {
+  },
+  {
+    "Title": "Snapphane",
+    "Rarity": "Normal",
+    "Culture": "Scandinavian",
+    "N": 241,
+    "Age": "II",
+    "Life": 16,
+    "Speed": 7,
+    "Attack": 6,
+    "RangedResist": 10,
+    "HandResist": 5,
+    "Type": "Outlaw, Commoner",
+    "SubCategory": "Pirate",
+    "Mounted": "",
+    "Specialty": "Gunpowder",
+    "Signature": "Ambuscade",
+    "Description": "Deals double damage against Scandinavians, Nobles, and Soldiers.",
+    "Lore": "",
+    "Upgrade1": "Jaeger",
+    "Upgrade2": "",
+    "Upgrade3": "",
+    "Equipment": {
       "Weapon": "Flintlock"
-   }
-},
+    }
+  },
   {
     "Title": "Fusilier",
     "Rarity": "Normal",
@@ -8633,12 +8095,10 @@
     "Upgrade1": "Karoliner",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\scandinavian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Flintlock"
+      "Weapon": "Flintlock"
     }
- },
+  },
   {
     "Title": "Jordägare",
     "Rarity": "Normal",
@@ -8660,12 +8120,10 @@
     "Upgrade1": "Pioneer",
     "Upgrade2": "Putešéstvennica",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\scandinavian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Long rifle"
+      "Weapon": "Long rifle"
     }
- },
+  },
   {
     "Title": "Karoliner",
     "Rarity": "Normal",
@@ -8687,12 +8145,10 @@
     "Upgrade1": "Pioneer",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\scandinavian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Flintlock"
+      "Weapon": "Flintlock"
     }
- },
+  },
   {
     "Title": "Skogarmaor",
     "Rarity": "Legendary",
@@ -8714,12 +8170,10 @@
     "Upgrade1": "Jordägare",
     "Upgrade2": "Polyanitsa",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\scandinavian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Spear"
+      "Weapon": "Spear"
     }
- },
+  },
   {
     "Title": "Hakkapeliitta",
     "Rarity": "Rare",
@@ -8741,12 +8195,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\scandinavian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Dragoon"
+      "Weapon": "Dragoon"
     }
- },
+  },
   {
     "Title": "Exile",
     "Rarity": "Legendary",
@@ -8768,12 +8220,10 @@
     "Upgrade1": "Gallóglach",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\scandinavian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Axe"
+      "Weapon": "Axe"
     }
- },
+  },
   {
     "Title": "White Slaves",
     "Rarity": "Rare",
@@ -8795,12 +8245,10 @@
     "Upgrade1": "Ghulam",
     "Upgrade2": "Odalisque",
     "Upgrade3": "Mameluke",
-    "CultureImg1": "\\Art\\Cultures\\scandinavian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Karelian",
     "Rarity": "Rare",
@@ -8822,12 +8270,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\scandinavian.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Jäger rifle"
+      "Weapon": "Jäger rifle"
     }
- },
+  },
   {
     "Title": "Spaewife",
     "Rarity": "Rare",
@@ -8849,12 +8295,10 @@
     "Upgrade1": "Skogarmaor",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\Scandinavian.png",
-    "CultureImg2": "\\Art\\Cultures\\English.png",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Hierodule",
     "Rarity": "Legendary",
@@ -8876,12 +8320,10 @@
     "Upgrade1": "Devadâsî",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\unknown.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Cannibal Rider",
     "Rarity": "Normal",
@@ -8903,12 +8345,10 @@
     "Upgrade1": "Nganga",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\unknown.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Ngulu"
+      "Weapon": "Ngulu"
     }
- },
+  },
   {
     "Title": "Papar",
     "Rarity": "Legendary",
@@ -8930,12 +8370,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\unknown.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Antique General",
     "Rarity": "Legendary",
@@ -8957,12 +8395,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\unknown.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Longsword"
+      "Weapon": "Longsword"
     }
- },
+  },
   {
     "Title": "Hwarang",
     "Rarity": "Legendary",
@@ -8984,147 +8420,135 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\unknown.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
- {
-   "Title": "Abrek",
-   "Rarity": "Rare",
-   "Culture": "Caucasian",
-   "N": 590,
-   "Age": "II",
-   "Life": 29,
-   "Speed": 10,
-   "Attack": 0,
-   "RangedResist": 10,
-   "HandResist": 5,
-   "Type": "Soldier, Outlaw",
-   "SubCategory": "Wanderer",
-   "Mounted": "",
-   "Specialty": "Gunpowder",
-   "Signature": "Guerilla",
-   "Description": "",
-   "Lore": "« Only then will he find peace and death for himself when he covers blood with blood. »",
-   "Upgrade1": "",
-   "Upgrade2": "",
-   "Upgrade3": "",
-   "CultureImg1": "",
-   "CultureImg2": "",
-   "Equipment": {
+  },
+  {
+    "Title": "Abrek",
+    "Rarity": "Rare",
+    "Culture": "Caucasian",
+    "N": 590,
+    "Age": "II",
+    "Life": 29,
+    "Speed": 10,
+    "Attack": 0,
+    "RangedResist": 10,
+    "HandResist": 5,
+    "Type": "Soldier, Outlaw",
+    "SubCategory": "Wanderer",
+    "Mounted": "",
+    "Specialty": "Gunpowder",
+    "Signature": "Guerilla",
+    "Description": "",
+    "Lore": "« Only then will he find peace and death for himself when he covers blood with blood. »",
+    "Upgrade1": "",
+    "Upgrade2": "",
+    "Upgrade3": "",
+    "Equipment": {
       "Weapon": "Flintlock"
-   }
-},
-{
-   "Title": "Khevsur",
-   "Rarity": "Rare",
-   "Culture": "Caucasian",
-   "N": 597,
-   "Age": "II",
-   "Life": 12,
-   "Speed": 17,
-   "Attack": 5,
-   "RangedResist": 10,
-   "HandResist": 5,
-   "Type": "Soldier",
-   "SubCategory": "Regular",
-   "Mounted": "",
-   "Specialty": "Gunpowder",
-   "Signature": "Hardiness",
-   "Description": "A Caucasian warrior armed with archaic weapons and armor.",
-   "Lore": "",
-   "Upgrade1": "",
-   "Upgrade2": "",
-   "Upgrade3": "",
-   "CultureImg1": "\\Art\\Cultures\\Persian.png",
-   "CultureImg2": "",
-   "Equipment": {
+    }
+  },
+  {
+    "Title": "Khevsur",
+    "Rarity": "Rare",
+    "Culture": "Caucasian",
+    "N": 597,
+    "Age": "II",
+    "Life": 12,
+    "Speed": 17,
+    "Attack": 5,
+    "RangedResist": 10,
+    "HandResist": 5,
+    "Type": "Soldier",
+    "SubCategory": "Regular",
+    "Mounted": "",
+    "Specialty": "Gunpowder",
+    "Signature": "Hardiness",
+    "Description": "A Caucasian warrior armed with archaic weapons and armor.",
+    "Lore": "",
+    "Upgrade1": "",
+    "Upgrade2": "",
+    "Upgrade3": "",
+    "Equipment": {
       "Weapon": "Flintlock"
-   }
-},
-{
-   "Title": "Maarulal",
-   "Rarity": "Normal",
-   "Culture": "Caucasian",
-   "N": 590,
-   "Age": "I",
-   "Life": 29,
-   "Speed": 10,
-   "Attack": 0,
-   "RangedResist": 10,
-   "HandResist": 5,
-   "Type": "Commoner",
-   "SubCategory": "Settler",
-   "Mounted": "",
-   "Specialty": "Gunpowder",
-   "Signature": "Tradition",
-   "Description": "+1 Gundpowder damage in Mountains.",
-   "Lore": "« ТIарамагъадисеб къвал балеб буго, Къо лъикIилан дица согIаб ракьалда. »",
-   "Upgrade1": "Abrek",
-   "Upgrade2": "",
-   "Upgrade3": "",
-   "CultureImg1": "",
-   "CultureImg2": "",
-   "Equipment": {
+    }
+  },
+  {
+    "Title": "Maarulal",
+    "Rarity": "Normal",
+    "Culture": "Caucasian",
+    "N": 590,
+    "Age": "I",
+    "Life": 29,
+    "Speed": 10,
+    "Attack": 0,
+    "RangedResist": 10,
+    "HandResist": 5,
+    "Type": "Commoner",
+    "SubCategory": "Settler",
+    "Mounted": "",
+    "Specialty": "Gunpowder",
+    "Signature": "Tradition",
+    "Description": "+1 Gundpowder damage in Mountains.",
+    "Lore": "« ТIарамагъадисеб къвал балеб буго, Къо лъикIилан дица согIаб ракьалда. »",
+    "Upgrade1": "Abrek",
+    "Upgrade2": "",
+    "Upgrade3": "",
+    "Equipment": {
       "Weapon": "Flintlock"
-   }
-},
- {
-   "Title": "Kinto",
-   "Rarity": "Legendary",
-   "Culture": "Caucasian",
-   "N": 590,
-   "Age": "III",
-   "Life": 29,
-   "Speed": 10,
-   "Attack": 0,
-   "RangedResist": 10,
-   "HandResist": 5,
-   "Type": "Commoner, Intellectual",
-   "SubCategory": "Wanderer",
-   "Mounted": "",
-   "Specialty": "Non-fighting",
-   "Signature": "Creative ideas",
-   "Description": "Comes with a Musical skill.",
-   "Lore": "« Cütləşərkən biz bir gücük, onsuz isə qəfəsdə quş. »",
-   "Upgrade1": "",
-   "Upgrade2": "",
-   "Upgrade3": "",
-   "CultureImg1": "",
-   "CultureImg2": "",
-   "Equipment": {
+    }
+  },
+  {
+    "Title": "Kinto",
+    "Rarity": "Legendary",
+    "Culture": "Caucasian",
+    "N": 590,
+    "Age": "III",
+    "Life": 29,
+    "Speed": 10,
+    "Attack": 0,
+    "RangedResist": 10,
+    "HandResist": 5,
+    "Type": "Commoner, Intellectual",
+    "SubCategory": "Wanderer",
+    "Mounted": "",
+    "Specialty": "Non-fighting",
+    "Signature": "Creative ideas",
+    "Description": "Comes with a Musical skill.",
+    "Lore": "« Cütləşərkən biz bir gücük, onsuz isə qəfəsdə quş. »",
+    "Upgrade1": "",
+    "Upgrade2": "",
+    "Upgrade3": "",
+    "Equipment": {
       "Weapon": ""
-   }
-},
-{
-   "Title": "Maelkh-Aeznii",
-   "Rarity": "Legendary",
-   "Culture": "Caucasian",
-   "N": 590,
-   "Age": "I",
-   "Life": 29,
-   "Speed": 10,
-   "Attack": 0,
-   "RangedResist": 10,
-   "HandResist": 5,
-   "Type": "Religious",
-   "SubCategory": "Regular",
-   "Mounted": "",
-   "Specialty": "Non-fighting",
-   "Signature": "Auspiciousness",
-   "Description": "",
-   "Lore": "« The sun-maiden in the Vainakh religion. »",
-   "Upgrade1": "",
-   "Upgrade2": "",
-   "Upgrade3": "",
-   "CultureImg1": "\\Art\\Cultures\\caucasian.png",
-   "CultureImg2": "",
-   "Equipment": {
+    }
+  },
+  {
+    "Title": "Maelkh-Aeznii",
+    "Rarity": "Legendary",
+    "Culture": "Caucasian",
+    "N": 590,
+    "Age": "I",
+    "Life": 29,
+    "Speed": 10,
+    "Attack": 0,
+    "RangedResist": 10,
+    "HandResist": 5,
+    "Type": "Religious",
+    "SubCategory": "Regular",
+    "Mounted": "",
+    "Specialty": "Non-fighting",
+    "Signature": "Auspiciousness",
+    "Description": "",
+    "Lore": "« The sun-maiden in the Vainakh religion. »",
+    "Upgrade1": "",
+    "Upgrade2": "",
+    "Upgrade3": "",
+    "Equipment": {
       "Weapon": ""
-   }
-},
+    }
+  },
   {
     "Title": "Thalamako",
     "Rarity": "Legendary",
@@ -9146,39 +8570,35 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\unknown.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Scimitar"
+      "Weapon": "Scimitar"
     }
- },
- {
-   "Title": "Kouloughli",
-   "Rarity": "Rare",
-   "Culture": "North African, Ottoman",
-   "N": 480,
-   "Age": "I",
-   "Life": 30,
-   "Speed": 10,
-   "Attack": 14,
-   "RangedResist": 14,
-   "HandResist": 4,
-   "Type": "Soldier",
-   "SubCategory": "Regular",
-   "Mounted": "",
-   "Specialty": "Gunpowder",
-   "Signature": "Sharpshooter attack",
-   "Description": "Has the additional Arab culture.",
-   "Lore": "« Tuhfat al-a‘dâd li al-dhawî al-rushd wa al-sadâd. »",
-   "Upgrade1": "",
-   "Upgrade2": "",
-   "Upgrade3": "",
-   "CultureImg1": "\\Art\\Cultures\\north african.png",
-   "CultureImg2": "\\Art\\Cultures\\ottoman.png",
-   "Equipment": {
+  },
+  {
+    "Title": "Kouloughli",
+    "Rarity": "Rare",
+    "Culture": "North African, Ottoman",
+    "N": 480,
+    "Age": "I",
+    "Life": 30,
+    "Speed": 10,
+    "Attack": 14,
+    "RangedResist": 14,
+    "HandResist": 4,
+    "Type": "Soldier",
+    "SubCategory": "Regular",
+    "Mounted": "",
+    "Specialty": "Gunpowder",
+    "Signature": "Sharpshooter attack",
+    "Description": "Has the additional Arab culture.",
+    "Lore": "« Tuhfat al-a‘dâd li al-dhawî al-rushd wa al-sadâd. »",
+    "Upgrade1": "",
+    "Upgrade2": "",
+    "Upgrade3": "",
+    "Equipment": {
       "Weapon": "Moukahla"
-   }
-},
+    }
+  },
   {
     "Title": "Pirate Lord",
     "Rarity": "Legendary",
@@ -9190,7 +8610,7 @@
     "Attack": 10,
     "RangedResist": 10,
     "HandResist": 5,
-    "Type": "Outlaw",
+    "Type": "Outlaw, Noble",
     "SubCategory": "Pirate",
     "Mounted": "",
     "Specialty": "Gunpowder",
@@ -9200,39 +8620,35 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\unknown.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Bedil jawa"
+      "Weapon": "Bedil jawa"
     }
- },
- {
-   "Title": "Forajido",
-   "Rarity": "Normal",
-   "Culture": "Iberian",
-   "N": 480,
-   "Age": "I",
-   "Life": 20,
-   "Speed": 5,
-   "Attack": 12,
-   "RangedResist": 5,
-   "HandResist": 10,
-   "Type": "Outlaw",
-   "SubCategory": "Wanderer",
-   "Mounted": "",
-   "Specialty": "Unarmed",
-   "Signature": "Steal resource",
-   "Description": "+1 Outlaw group skill slot per Outlaw adventurer in your group.",
-   "Lore": "« Los densos bosques son cruciales en la recoleccion de madera. » – IvanZvania",
-   "Upgrade1": "Miquelet",
-   "Upgrade2": "",
-   "Upgrade3": "",
-   "CultureImg1": "\\Art\\Cultures\\iberian.png",
-   "CultureImg2": "",
-   "Equipment": {
+  },
+  {
+    "Title": "Forajido",
+    "Rarity": "Normal",
+    "Culture": "Iberian",
+    "N": 480,
+    "Age": "I",
+    "Life": 20,
+    "Speed": 5,
+    "Attack": 12,
+    "RangedResist": 5,
+    "HandResist": 10,
+    "Type": "Outlaw",
+    "SubCategory": "Wanderer",
+    "Mounted": "",
+    "Specialty": "Unarmed",
+    "Signature": "Steal resource",
+    "Description": "+1 Outlaw group skill slot per Outlaw adventurer in your group.",
+    "Lore": "« Los densos bosques son cruciales en la recoleccion de madera. » – IvanZvania",
+    "Upgrade1": "Miquelet",
+    "Upgrade2": "",
+    "Upgrade3": "",
+    "Equipment": {
       "Weapon": "Halberd"
-   }
-},
+    }
+  },
   {
     "Title": "Prowler",
     "Rarity": "Normal",
@@ -9254,12 +8670,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\unknown.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Tocharian",
     "Rarity": "Legendary",
@@ -9279,14 +8693,12 @@
     "Description": "You can’t attack, but when you use an Intellectual or an Explorer skill, your opponent takes X+1 damage, where X is the number of Artifacts attached to Tocharian.",
     "Lore": "A lone wanderer carrying the legacy of a bygone civilization.",
     "Upgrade1": "Kitezhian",
-    "Upgrade2": "Kazara",
+    "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\unknown.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Liuyedao"
+      "Weapon": "Liuyedao"
     }
- },
+  },
   {
     "Title": "Barbary Rover",
     "Rarity": "Normal",
@@ -9308,12 +8720,10 @@
     "Upgrade1": "Pasha",
     "Upgrade2": "Navigator",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\unknown.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Scimitar"
+      "Weapon": "Scimitar"
     }
- },
+  },
   {
     "Title": "Wretch",
     "Rarity": "Legendary",
@@ -9335,12 +8745,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\unknown.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Aboriginal",
     "Rarity": "Rare",
@@ -9362,120 +8770,110 @@
     "Upgrade1": "Trepanger",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\unknown.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Spear"
+      "Weapon": "Spear"
     }
- },
- {
-   "Title": "Kharash",
-   "Rarity": "Legendary",
-   "Culture": "Random",
-   "N": 1,
-   "Age": "I",
-   "Life": 36,
-   "Speed": 10,
-   "Attack": 6,
-   "RangedResist": 10,
-   "HandResist": 5,
-   "Type": "Slave",
-   "SubCategory": "Regular",
-   "Mounted": "",
-   "Specialty": "Unarmed",
-   "Signature": "Suicide attack",
-   "Description": "Has a random Culture.",
-   "Lore": "A man turned meat-shield and brainwashed by merciless Tartars.",
-   "Upgrade1": "",
-   "Upgrade2": "",
-   "Upgrade3": "",
-   "CultureImg1": "",
-   "CultureImg2": "",
-   "Equipment": {
+  },
+  {
+    "Title": "Kharash",
+    "Rarity": "Legendary",
+    "Culture": "Random",
+    "N": 1,
+    "Age": "I",
+    "Life": 36,
+    "Speed": 10,
+    "Attack": 6,
+    "RangedResist": 10,
+    "HandResist": 5,
+    "Type": "Slave",
+    "SubCategory": "Regular",
+    "Mounted": "",
+    "Specialty": "Unarmed",
+    "Signature": "Suicide attack",
+    "Description": "Has a random Culture.",
+    "Lore": "A man turned meat-shield and brainwashed by merciless Tartars.",
+    "Upgrade1": "",
+    "Upgrade2": "",
+    "Upgrade3": "",
+    "Equipment": {
       "Weapon": ""
-   }
-},
- {
-   "Title": "Bartskjær",
-   "Rarity": "Rare",
-   "Culture": "Scandinavian",
-   "N": 1,
-   "Age": "I",
-   "Life": 36,
-   "Speed": 10,
-   "Attack": 6,
-   "RangedResist": 10,
-   "HandResist": 5,
-   "Type": "Commoner, Intellectual",
-   "SubCategory": "Regular",
-   "Mounted": "",
-   "Specialty": "Melee",
-   "Signature": "Heal",
-   "Description": "Regenerates life after combat.",
-   "Lore": "« Hver þögn fær óm; hvert orð ber epli í sér. »",
-   "Upgrade1": "Doctor",
-   "Upgrade2": "",
-   "Upgrade3": "",
-   "CultureImg1": "\\Art\\Cultures\\scandinavian.png",
-   "CultureImg2": "",
-   "Equipment": {
+    }
+  },
+  {
+    "Title": "Bartskjær",
+    "Rarity": "Rare",
+    "Culture": "Scandinavian",
+    "N": 1,
+    "Age": "I",
+    "Life": 36,
+    "Speed": 10,
+    "Attack": 6,
+    "RangedResist": 10,
+    "HandResist": 5,
+    "Type": "Commoner, Intellectual",
+    "SubCategory": "Regular",
+    "Mounted": "",
+    "Specialty": "Melee",
+    "Signature": "Heal",
+    "Description": "Regenerates life after combat.",
+    "Lore": "« Hver þögn fær óm; hvert orð ber epli í sér. »",
+    "Upgrade1": "Doctor",
+    "Upgrade2": "",
+    "Upgrade3": "",
+    "Equipment": {
       "Weapon": "Knife"
-   }
-},
-{
-   "Title": "Dalgininkas",
-   "Rarity": "Rare",
-   "Culture": "West Slavic",
-   "N": 659,
-   "Age": "I",
-   "Life": 29,
-   "Speed": 8,
-   "Attack": 9,
-   "RangedResist": 10,
-   "HandResist": 10,
-   "Type": "Commoner",
-   "SubCategory": "Regular",
-   "Mounted": "",
-   "Specialty": "Melee",
-   "Signature": "Polearm mastery",
-   "Description": "",
-   "Lore": "A serf armed with huge scythe.",
-   "Upgrade1": "",
-   "Upgrade2": "",
-   "Upgrade3": "",
-   "CultureImg1": "",
-   "CultureImg2": "",
-   "Equipment": {
+    }
+  },
+  {
+    "Title": "Dalgininkas",
+    "Rarity": "Rare",
+    "Culture": "West Slavic",
+    "N": 659,
+    "Age": "I",
+    "Life": 29,
+    "Speed": 8,
+    "Attack": 9,
+    "RangedResist": 10,
+    "HandResist": 10,
+    "Type": "Commoner",
+    "SubCategory": "Regular",
+    "Mounted": "",
+    "Specialty": "Melee",
+    "Signature": "Polearm mastery",
+    "Description": "",
+    "Lore": "A serf armed with huge scythe.",
+    "Upgrade1": "",
+    "Upgrade2": "",
+    "Upgrade3": "",
+    "Equipment": {
       "Weapon": "Scythe"
-   }
-},
-{
-   "Title": "Lisowczyk",
-   "Rarity": "Rare",
-   "Culture": "West Slavic",
-   "N": 659,
-   "Age": "I",
-   "Life": 29,
-   "Speed": 8,
-   "Attack": 9,
-   "RangedResist": 10,
-   "HandResist": 10,
-   "Type": "Soldier, Outlaw",
-   "SubCategory": "Mercenary",
-   "Mounted": "",
-   "Specialty": "Archery",
-   "Signature": "Caracole",
-   "Description": "",
-   "Lore": "Rider of the Apocalypse.",
-   "Upgrade1": "Owlhoot",
-   "Upgrade2": "",
-   "Upgrade3": "",
-   "CultureImg1": "\\Art\\Cultures\\unknown.png",
-   "CultureImg2": "",
-   "Equipment": {
+    }
+  },
+  {
+    "Title": "Lisowczyk",
+    "Rarity": "Rare",
+    "Culture": "West Slavic",
+    "N": 659,
+    "Age": "I",
+    "Life": 29,
+    "Speed": 8,
+    "Attack": 9,
+    "RangedResist": 10,
+    "HandResist": 10,
+    "Type": "Soldier, Outlaw",
+    "SubCategory": "Mercenary",
+    "Mounted": "",
+    "Specialty": "Archery",
+    "Signature": "Caracole",
+    "Description": "",
+    "Lore": "Rider of the Apocalypse.",
+    "Upgrade1": "Owlhoot",
+    "Upgrade2": "",
+    "Upgrade3": "",
+    "Equipment": {
       "Weapon": "Recurve bow"
-   }
-},
+    }
+  },
   {
     "Title": "Voïgna",
     "Rarity": "Legendary",
@@ -9497,12 +8895,10 @@
     "Upgrade1": "Owlhoot",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\unknown.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Long rifle"
+      "Weapon": "Long rifle"
     }
- },
+  },
   {
     "Title": "Preceptor",
     "Rarity": "Normal",
@@ -9524,12 +8920,10 @@
     "Upgrade1": "Chronicler",
     "Upgrade2": "Priest",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\west slavic.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Pole Knight",
     "Rarity": "Legendary",
@@ -9551,12 +8945,10 @@
     "Upgrade1": "Paladin",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\west slavic.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Longsword"
+      "Weapon": "Longsword"
     }
- },
+  },
   {
     "Title": "Winged Hussar",
     "Rarity": "Rare",
@@ -9578,12 +8970,10 @@
     "Upgrade1": "Pole Knight",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\west slavic.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Koncerz"
+      "Weapon": "Koncerz"
     }
- },
+  },
   {
     "Title": "Chronicler",
     "Rarity": "Rare",
@@ -9605,12 +8995,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\west slavic.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Wędrowiec",
     "Rarity": "Legendary",
@@ -9632,12 +9020,10 @@
     "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\west slavic.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- },
+  },
   {
     "Title": "Hussar",
     "Rarity": "Normal",
@@ -9659,12 +9045,10 @@
     "Upgrade1": "Cuirassier",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\west slavic.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Koncerz"
+      "Weapon": "Koncerz"
     }
- },
+  },
   {
     "Title": "Szlachcic",
     "Rarity": "Rare",
@@ -9683,15 +9067,13 @@
     "Signature": "",
     "Description": "Settlers have -1 Life but Region has +1 Food for for each Settler on it.",
     "Lore": "",
-    "Upgrade1": "Kitezhian",
+    "Upgrade1": "",
     "Upgrade2": "",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\west slavic.png",
-    "CultureImg2": "",
     "Equipment": {
-       "Weapon": "Szabla"
+      "Weapon": "Szabla"
     }
- },
+  },
   {
     "Title": "Serfs",
     "Rarity": "Normal",
@@ -9713,10 +9095,8 @@
     "Upgrade1": "Cossack Settlers",
     "Upgrade2": "Dalgininkas",
     "Upgrade3": "",
-    "CultureImg1": "\\Art\\Cultures\\west slavic.png",
-    "CultureImg2": "\\Art\\Cultures\\russian.png",
     "Equipment": {
-       "Weapon": ""
+      "Weapon": ""
     }
- }
- ]
+  }
+]

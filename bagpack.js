@@ -349,13 +349,23 @@ class Inventory {
     initDragAndDropAdvOption(element) {
             const advOption = document.getElementById('adventurer-option-container');
             if (advOption) {
+                if (advOption.classList.contains('drag-drop-initialized')) {
+                    console.log("Adventurer drag and drop already initialized.");
+                    return;
+                }
                 advOption.addEventListener('dragover', this.allowDrop);
                 advOption.addEventListener('drop', (event) => this.dropItem(event, 'adventurer'));
+                advOption.classList.add('drag-drop-initialized');
             }
 
             if (element) {
+                if (element.classList.contains('drag-drop-initialized')) {
+                    console.log("Adventurer drag and drop already initialized.");
+                    return;
+                }
                 element.addEventListener('dragover', this.allowDrop);
                 element.addEventListener('drop', (event) => this.dropItem(event, 'adventurer'));
+                element.classList.add('drag-drop-initialized');
             }
     }
   
@@ -364,13 +374,20 @@ class Inventory {
         playCheckSound();
         removeItemTooltip();
         console.log("Item dragged:", event.target.getAttribute('item-id'));
+        const parentWithUid = event.target.closest('[uid]');
+        console.log('Nearest parent with uid:', parentWithUid);
+        if (parentWithUid) {
+            const uid = parseInt(parentWithUid.getAttribute('uid'));
+            const advFromDragged = groupAdventurers.get(uid);
+            console.log('Adv from dragged:', advFromDragged);
+        }
     }
   
     allowDrop(event) {
         event.preventDefault();
     }
   
-    dropItem(event, dropTarget) {
+    dropItem(event, dropTarget, advFromDragged) {
         event.preventDefault();
         const itemID = event.dataTransfer.getData('text/plain');
         const draggedItemEl = document.querySelector(`.inventory-item[item-id='${itemID}']`);
@@ -442,6 +459,14 @@ class Inventory {
   
         playGridSound();
         this.swapItems(draggedItemEl, targetSlot);
+
+        document.querySelectorAll('[uid]').forEach(el => {
+                const uid = parseInt(el.getAttribute('uid'));
+                const adventurer = groupAdventurers.get(uid);
+                    adventurer.Attack = calculateAdventurerAttackPoints(adventurer);
+                    updateAdventurerOptionStatus(adventurer);
+                    updateActiveWeaponryBox(adventurer);
+            });
     }
   
     swapItems(draggedItemEl, targetSlot) {

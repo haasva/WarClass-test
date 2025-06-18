@@ -86,7 +86,7 @@
 
   {
     "Name": "Factotum",
-    "Type": "Any",
+    "Type": "Commoner, Religious, Soldier",
     "Stat": "Slot",
     "SlotType": "Slave",
     "Description": " Slave ",

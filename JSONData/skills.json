@@ -1,5 +1,19 @@
 [
   {
+    "Name": "Advanced literacy",
+    "PosX": 14,
+    "PosY": 6,
+    "Connections": 2,
+    "Rarity": "Rare",
+    "Type": "Intellectual",
+    "Art": "\\Art\\Skills\\advanced literacy.png",
+    "Type1": "\\Art\\Categories\\Types\\Intellectual.png",
+    "Type2": "",
+    "Category": "Passive",
+    "Specialty": "",
+    "Description": "Better writing and literature skill."
+  },
+  {
     "Name": "Mercantilism",
     "PosX": 26,
     "PosY": 1,
@@ -3949,8 +3963,8 @@
   },
   {
     "Name": "Foraging",
-    "PosX": 1,
-    "PosY": 1,
+    "PosX": 14,
+    "PosY": 21,
     "Connections": 2,
     "Rarity": "Rare",
     "Type": "Commoner",
@@ -4311,19 +4325,5 @@
     "Category": "Active",
     "Specialty": "Chinese",
     "Description": "Bond two female adventurers so they share all their attributes, talents, items, types, etc. When one of them dies, both dies."
-  },
-  {
-    "Name": "Khalsa",
-    "PosX": 14,
-    "PosY": 31,
-    "Connections": 2,
-    "Rarity": "Legendary",
-    "Type": "Religious",
-    "Art": "\\Art\\Skills\\Khalsa.png",
-    "Type1": "\\Art\\Categories\\Types\\Religious.png",
-    "Type2": "",
-    "Category": "Passive",
-    "Specialty": "Indian",
-    "Description": ""
   }
  ]
