@@ -1,0 +1,17 @@
+{
+  "name": "WarClass",
+  "version": "1.0.0",
+  "main": "index.html",
+  "window": {
+    "title": "WarClass",
+    "width": 1920,
+    "height": 1080,
+    "fullscreen": true
+  },
+  "scripts": {
+    "build": "nwbuild --outDir . --mode build 'win'"
+  },
+  "devDependencies": {
+    "nw-builder": "^4.13.14"
+  }
+}

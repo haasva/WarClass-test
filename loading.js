@@ -20,14 +20,12 @@ function requestFullScreen() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  
     loadGameData();
     updateFatigueDisplay();
-    
-  }, { once: true });
+}, { once: true });
 
 
-  function loadGameData() {
+function loadGameData() {
     
     loadLoadingScreenTemplate('/Templates/loading_screen.html').then(() => {
       document.body.style.opacity = '1';
@@ -38,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         wrapFunctionWithPromise(loadSettlementsJSON, 'loadSettlementsJSON', 'settlements'),
         wrapFunctionWithPromise(fetchWeaponData, 'fetchWeaponData', 'weapons'),
         wrapFunctionWithPromise(loadAdventurersJSON, 'loadAdventurersJSON', 'adventurers'), //
-        wrapFunctionWithPromise(fetchAnimalsData, 'fetchAnimalsData', 'animals '), //
+        wrapFunctionWithPromise(fetchAnimalsData, 'fetchAnimalsData', 'animals'), //
         wrapFunctionWithPromise(loadLandmassData, 'loadLandmassData', 'overworld data'), //
         wrapFunctionWithPromise(loadGroupClassesJSON, 'loadGroupClassesJSON', 'group classes'), //
         wrapFunctionWithPromise(fetchVegetationData, 'fetchVegetationData', 'vegetation data'), //
@@ -68,17 +66,17 @@ document.addEventListener('DOMContentLoaded', () => {
         // Handle loading error (e.g., show an error message)
       });
     });
-  }
+}
 
-  function updateProgressBar(value, max) {
+function updateProgressBar(value, max) {
     const progressBar = document.getElementById('progress-bar');
     if (progressBar) {
       progressBar.max = max;
       progressBar.value = value;
     }
-  }
+}
 
-  async function loadLoadingScreenTemplate(url) {
+async function loadLoadingScreenTemplate(url) {
     try {
           const response = await fetch(url);
           const html = await response.text();
@@ -88,17 +86,17 @@ document.addEventListener('DOMContentLoaded', () => {
       } catch (error) {
           console.error('Error loading the loading screen template:', error);
       }
-  }
+}
   
-  function removeLoadingScreen() {
+function removeLoadingScreen() {
     //playTitleMusic();
     const loadingScreen = document.getElementById('loading-screen');
     loadingScreen.remove();
     welcomeToWarClass();
     // teleportPlayer(122, 317);
-  }
+}
 
-  function wrapFunctionWithPromise(func, funcName, text) {
+function wrapFunctionWithPromise(func, funcName, text) {
     return function() {
       console.log(`Loading ${text}...`);
       let loadingText = document.getElementById('loading-text');
@@ -108,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(`${funcName} completed`);
       });
     }
-  }
+}
 
 
 

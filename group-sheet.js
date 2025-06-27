@@ -149,7 +149,7 @@ function calculateStealth(attributes) {
   const qual = attributes.quality;                     // Higher quality = lower stealth
   const size = attributes.size;                        // Larger size = lower stealth
 
-  let stl = 60 + dex * 2 - (str * 0.5) - (qual * 1) - (size * 8);
+  let stl = 60 + dex * 2 - (str * 0.75) - (qual * 0.75) - (size * 8);
   return Math.max(0, Math.min(100, Math.round(stl)));
 }
 
