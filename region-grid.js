@@ -1355,7 +1355,7 @@ if (startingCell) {
   }
 
   observeVisibleObjectsFOV();
-  CURRENT_GROUP_CELL.appendChild(createOtherGroupBox());
+  createNewOwnGroupDisplay();
 
    // Add event listeners only if they haven't been added already
   if (listenersRegionGridAdded === false) {
@@ -1469,7 +1469,7 @@ if (startingCell) {
     document.addEventListener('keydown', function(event) {
       if (event.code === 'KeyE') {
         event.preventDefault();
-        closeFirstInfoBoxWindow();
+        //closeFirstInfoBoxWindow();
       }
     });
 
@@ -1527,13 +1527,13 @@ if (startingCell) {
 
   }
 
-  SETTINGS.firstPerson = false;
-  toggleFirstPerson();
   applyNeoTransforms();
   createDirectionLine();
   createEntityOvertip();
-  createOtherGroupBox();
+
   createSkybox(inner);
+
+
   entityObserver.setObservedCells(observedCells); // Provide the observed cells initially
 
 
@@ -1549,7 +1549,7 @@ if (startingCell) {
 
   inner.appendChild(playerCamera);
 
-
+  toggleFirstPerson();
 
 }
 
@@ -1656,6 +1656,10 @@ function onKeyUp(event) {
 function toggleFirstPerson(event) {
 
   const group = CURRENT_GROUP_CELL.querySelector('.our-group');
+  const inner = document.querySelector("#inner-neo");
+  const crosshair = document.getElementById('crosshair');
+  const weapon = document.getElementById('weapon');
+  const skybox = inner.querySelector('#skybox');
 
   SETTINGS.firstPerson = !SETTINGS.firstPerson;
 
@@ -1667,9 +1671,31 @@ function toggleFirstPerson(event) {
     SETTINGS.zoomFactor = 35;
     SETTINGS.translateZ = 8;
 
+    // if (skybox) skybox.style.display = 'block';
+    if (weapon) weapon.style.display = 'block';
+    if (crosshair) crosshair.style.display = 'block';
+
+      inner.style.top = "0px";
+
+      // inner.style.setProperty(
+      //   "--mask-size",
+      //   `150%`
+      // );
+
   } else {
-    SETTINGS.angle = 35;
-    SETTINGS.perspectiveGrid = 220;
+
+    //   inner.style.setProperty(
+    //     "--mask-size",
+    //     `80%`
+    //   );
+
+    // if (skybox) skybox.style.display = 'none';
+    if (weapon) weapon.style.display = 'none';
+    if (crosshair) crosshair.style.display = 'none';
+
+    inner.style.top = "-50px";
+    SETTINGS.angle = 45;
+    SETTINGS.perspectiveGrid = 433;
     SETTINGS.zoomFactor = 3;
     group.style.opacity = 1;
     SETTINGS.translateX = 0;
@@ -1681,8 +1707,30 @@ function toggleFirstPerson(event) {
 }
 
 
+function changeDirectionMapping() {
 
+  if (SETTINGS.firstPerson === true) {
 
+    directionMapping = {
+      0: { row: -1, col: 0 },   // North
+      90: { row: 0, col: 1 },   // East
+      180: { row: 1, col: 0 },  // South
+      270: { row: 0, col: -1 }  // West
+    };
+
+  } else {
+
+    directionMapping = {
+      0: { row: -1, col: +1 },   // North
+      90: { row: +1, col: 1 },   // East
+      180: { row: 1, col: -1 },  // South
+      270: { row: -1, col: -1 }  // West
+    }
+
+    facingDirection = 0;
+
+  } 
+}
 
 
 
@@ -1999,9 +2047,12 @@ function updateCompass() {
 
 function updateCameraRotation(event) {
 
+
+
     if (!document.pointerLockElement || PLAYER_STATE.isInMenu === true) {
       return;
     }
+    
     
     const inner = document.getElementById('inner-neo');
     const movementX = event.movementX || event.mozMovementX || event.webkitMovementX || 0;
@@ -2014,7 +2065,11 @@ function updateCameraRotation(event) {
     calculateCameraElevation();
 
     SETTINGS.zRotation = accumulatedRotateZ;
-    SETTINGS.angle = accumulatedRotate3d;
+
+
+        SETTINGS.angle = accumulatedRotate3d;
+    
+   
 
     if (accumulatedRotateZ > 360) {
       accumulatedRotateZ = 0;
@@ -2050,23 +2105,25 @@ function updateCameraRotation(event) {
       "--rotationZ",
       `${-SETTINGS.zRotation}deg`
     );
-observeVisibleObjectsFOV();
+//observeVisibleObjectsFOV();
     updateCompass();
-    updateTargetedDirectionCell();
+    //updateTargetedDirectionCell();
     applyNeoTransforms();
 
-      const line = inner.querySelector('#player-direction-line');
-      if (line) {
-        line.style.setProperty(
-          "--rotationZ",
-          `${-SETTINGS.zRotation}deg`
-        );
+      // const line = inner.querySelector('#player-direction-line');
+      // if (line) {
+      //   line.style.setProperty(
+      //     "--rotationZ",
+      //     `${-SETTINGS.zRotation}deg`
+      //   );
 
+      // }
+
+      if (SETTINGS.firstPerson === true) {
+        crosshairInteractor.updateInteraction();
+        updateTargetElementAndEntity();
       }
 
-      crosshairInteractor.updateInteraction();
-
-      updateTargetElementAndEntity();
 
       //createObjectTooltip();
 
@@ -2271,7 +2328,7 @@ const crosshairInteractor = new CrosshairInteractor();
 
 
 function updateTargetedDirectionCell() {
-
+  if (SETTINGS.firstPerson != true) return;
   if (CURRENT_GROUP_CELL) {
     let currentCell = CURRENT_GROUP_CELL;
 
@@ -2439,7 +2496,8 @@ function deLightEntitySprites() {
 
 function highlightTargetEntitySprite(element, entity) {
 
-  element.classList.add('active');
+  if (element) element.classList.add('active');
+  
 
   for (const animal of CURRENT_PLAYER_REGION_DATA.animals) {
     animal.active = false;
@@ -2485,7 +2543,17 @@ function cycleTargetEntitySprite(direction) {
 }
 
 
+function selectSelectedEntity(entity, ele) {
+      console.log(entity);
+      const entitiesList = document.querySelector('#entities-list');
+      const listItems = Array.from(entitiesList.querySelectorAll('.entity-element'));
+      const selectedElement = listItems.find(el => parseInt(el.getAttribute('aid')) === entity.id);
+    deLightEntitySprites();
+    highlightTargetEntitySprite(selectedElement, entity);
 
+      CURRENT_TARGET_ENTITY = entity;
+      CURRENT_TARGET_ELEMENT = ele;
+}
 
 
 
@@ -2713,6 +2781,8 @@ function observeVisibleCells() {
 let observedObjects = [];
 
 function observeVisibleObjectsFOV() {
+
+  return;
    
   const groupPositionCell = CURRENT_GROUP_CELL;
 
@@ -3126,7 +3196,7 @@ function createOtherGroupBox(group) {
     box.style.gridTemplateRows = `repeat(${1}, 5px)`;
   } else if (advNum === 3) {
     box.style.gridTemplateColumns = `repeat(${2}, 5px)`;
-    box.style.gridTemplateRows = `repeat(${1}, 5px)`;
+    box.style.gridTemplateRows = `repeat(${2}, 5px)`;
   } else if (advNum === 4) {
     box.style.gridTemplateColumns = `repeat(${2}, 5px)`;
     box.style.gridTemplateRows = `repeat(${2}, 5px)`;
@@ -3634,7 +3704,7 @@ function isAdjacent(cell1, cell2) {
 const pressedKeys = new Set();
 let facingDirection = 0; // 0: North, 90: East, 180: South, 270: West
 
-const directionMapping = {
+let directionMapping = {
   0: { row: -1, col: 0 },   // North
   90: { row: 0, col: 1 },   // East
   180: { row: 1, col: 0 },  // South
@@ -3693,7 +3763,7 @@ async function movePlayerCameraByKey(event) {
   }
 
   accumulatedRotateZ = SETTINGS.zRotation;
-  updateTargetedDirectionCell();
+  //updateTargetedDirectionCell();
 
 
 
@@ -3783,7 +3853,7 @@ async function animateToCell(inner, newGroupCell, offset, key) {
 async function finalizeLocationNewcell(newGroupCell) {
 
   const groupStore = document.querySelector('.our-group');
-  groupStore.style.transform = `translate(0px, 0px) translateZ(3px)`;
+
   newGroupCell.appendChild(groupStore);
 
   await updateCurrentGroupPosition(newGroupCell);
@@ -3796,7 +3866,7 @@ async function finalizeLocationNewcell(newGroupCell) {
   SETTINGS.translateY = 0;
 
   entityObserver.updateVisibleEntities();
-  updateTargetedDirectionCell();
+  //updateTargetedDirectionCell();
   // createDirectionLine();
 }
 

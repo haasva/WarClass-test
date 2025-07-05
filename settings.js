@@ -18,12 +18,12 @@ const DEFAULT_SETTINGS = {
     throttleSpeed: 15,
     visibilityRadius: "5.2",
     baseVisibilityRadius: 5.2,
-    posterization: true,
+    posterization: false,
     timePerCell: 1,
     zoomFactor: 2.5,
     gridMovement: true,
     fov : 1.4,
-    animations: true,
+    animations: false,
     animationTime: 80,
     translateY: 0,
     translateX: 0,
@@ -242,13 +242,13 @@ function toggleRetroFilters() {
 
     if (!SETTINGS.posterization) {
 
-        engine.style.filter = 'saturate(1.3) brightness(1.15)';
-        mega.classList.add('non-filter');
+        engine.style.filter = 'saturate(1.3) brightness(1.28)';
+        //mega.classList.add('non-filter');
 
     } else {
 
         engine.style.filter = 'saturate(1.3) brightness(1.28) url(#pixelate)';
-        mega.classList.remove('non-filter');
+        //mega.classList.remove('non-filter');
     }
 
 }

@@ -123,7 +123,6 @@ async function generatePreContentForRegion(region, x, y) {
             await generateOtherGroups(region);
             console.log('await generateOtherGroups(region);');
         }
-        
     }
 
     let settlementChance = 20;
@@ -261,8 +260,8 @@ async function generateContentForRegion(region, x, y) {
     
     //generateStructures(regionContent, region);
     //generateStructures(regionContent, region);
-    //generateStructures(regionContent, region);
-    //generatePest(regionContent, seed);
+    generateStructures(regionContent, region);
+    generatePest(regionContent, seed);
 
     generateImpassables(regionContent, region, seed);
     generateImpassables2(regionContent, region, seed);
@@ -311,7 +310,7 @@ async function generateContentForRegion(region, x, y) {
     for (let row = 0; row < 75; row++) {
         for (let col = 0; col < 75; col++) {
 
-          const randomChance = Math.floor(Math.random() * 100) + 1;
+          const randomChance = Math.floor(Math.random() * 300) + 1;
           if (randomChance === 25) {
           generateAnimals(region, regionContent[row][col], col, row);
           
@@ -1234,8 +1233,8 @@ function generateBuildings(region, regionContent) {
       return true;
     });
 
-    const x = Math.floor(Math.random() * 73) + 1;
-    const y = Math.floor(Math.random() * 73) + 1;
+    const x = Math.floor(Math.random() * 50) + 1;
+    const y = Math.floor(Math.random() * 50) + 1;
   
     if (matchingBuildings.length > 0 && !regionContent[x][y].occupied) {
 
@@ -1939,7 +1938,7 @@ function populateContentCell(cell, data, veg, i, j) {
       store.setAttribute('aID', data.animal.id);
       store.setAttribute('name', data.animal.name);
       store.style.backgroundImage = `url('/Art/Animals/${data.animal.name}.png')`;
-      // addOvertip(data.animal, data.animal.id, store);
+      addOvertip(data.animal, data.animal.id, store);
     }
 
     if (info === 'bird') {
@@ -2104,14 +2103,15 @@ function populateContentCell(cell, data, veg, i, j) {
   }
 
   cell.addEventListener('mouseover', function(event) {
-      updateCellDataInfo(cell, data);
+      updateCellDataInfo(cell, data, i, j);
   });
   
 }
 
 
 
-function updateCellDataInfo(cell, data) {
+function updateCellDataInfo(cell, data, y, x) {
+  
   const box = document.getElementById('cellData');
   box.innerHTML = ''; // Clear previous content
 
@@ -2132,6 +2132,7 @@ function updateCellDataInfo(cell, data) {
 
     box.appendChild(line);
   }
+
 }
 
 

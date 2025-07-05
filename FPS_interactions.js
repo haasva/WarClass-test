@@ -281,13 +281,14 @@ window.addEventListener("click", async (event) => {
 
   if (event.button !== 0) return;
 
-  crosshairInteractor.updateInteraction();
+  if (SETTINGS.firstPerson === true) {
+    crosshairInteractor.updateInteraction();
 
-  updateTargetElementAndEntity();
-  
-  if (PLAYER_STATE.canAttack != true) {
-    return;
+    updateTargetElementAndEntity();
   }
+
+  
+
   if (CURRENT_TARGET_ENTITY === null || !CURRENT_TARGET_ENTITY) {
     return;
   }
@@ -299,7 +300,7 @@ window.addEventListener("click", async (event) => {
   let attacker = group.find(adventurer => adventurer.equipped === true);
   let defender;
 
-  let attackerElement = document.getElementById('weapon');
+  let attackerElement = document.querySelector('.our-group');
   let defenderElement = event.target;
 
   if (PLAYER_STATE.currentAttackType === 'Unarmed') {
@@ -319,6 +320,8 @@ window.addEventListener("click", async (event) => {
     
   } else if (CURRENT_TARGET_ENTITY != null) {
 
+    console.log('we can attackk!');
+
     if (attacker.currentLife >= 0) {
       displayMessage('This adventurer can not attack', 'white');
     }
@@ -335,7 +338,7 @@ window.addEventListener("click", async (event) => {
     const animal = CURRENT_PLAYER_REGION_DATA.animals.find(map => map.id === aid);
     if (animal && animal.currentLife >= 0) {
       await gunpowder();
-      await attackAnimal(attackerElement, defenderElement, attacker, animal);
+      await attackAnimal(attackerElement, CURRENT_TARGET_ELEMENT, attacker, animal);
       PLAYER_STATE.canAttack = true;
     }
 
@@ -517,13 +520,13 @@ async function attackAnimal(attackerElement, defenderElement, attacker, defender
   const missed = checkMissChance(attacker, defender);
   if (missed) {
     displayMessage('Missed!', '#974daf');
-    displayDamageText('Miss');
+    displayDamageText('Miss', defenderElement);
     await new Promise(resolve => setTimeout(resolve, 100));
   } else {
     screenshakeEffect('Hit');
 
     defender.currentLife -= attacker.Attack;
-    displayDamageText(attacker.Attack);
+    displayDamageText(attacker.Attack, defenderElement);
     updateOvertip(defender, defender.id);
     if (defender.currentLife <= 0) {
   
@@ -586,20 +589,34 @@ updateExpBar();
 }
 
 
-function displayDamageText(n) {
-  const exDmg = document.getElementById('damage-text');
-  if (exDmg) exDmg.remove();
+function displayDamageText(n, element) {
+  document.getElementById('damage-text')?.remove();
+  
   const dmg = document.createElement('div');
   dmg.id = 'damage-text';
   dmg.textContent = `${n}`;
   const ran = Math.floor(Math.random() * 8) + 1;
   dmg.style.scale = `${1 + (ran / 10)}`;
+  dmg.style.position = 'fixed'; // Required for positioning
+  
   document.body.appendChild(dmg);
-  setTimeout(() => {
-    dmg.remove();
-  }, 500);
-
-
+  
+  // Get element position and apply tooltip positioning logic
+  const rect = element.getBoundingClientRect();
+  const x = rect.left + 30;
+  const y = rect.top + 10;
+  const w = dmg.clientWidth, h = dmg.clientHeight;
+  
+  let posX = x, posY = y;
+  if (posX + w > window.innerWidth) posX = rect.left - w;
+  if (posY + h > window.innerHeight) posY = rect.top - h;
+  if (posX < 0) posX = 0;
+  if (posY < 0) posY = 0;
+  
+  dmg.style.left = `${posX}px`;
+  dmg.style.top = `${posY}px`;
+  
+  setTimeout(() => dmg.remove(), 500);
 }
 
 
@@ -655,11 +672,24 @@ async function attackEnemyGroup(group, gid, attacker, defender, attackerElement,
 
 
 
-function updateOvertip(entity) {
+function updateOvertip(entity, mouse, event) {
 
   const tip = document.getElementById('overtip-container');
   if (!tip) { return; }
   if (PLAYER_STATE.overtip === 'on') {
+
+    if (mouse === true) {
+      updateTooltipPosition(event, tip);
+      event.target.addEventListener('mousemove', (event) => updateTooltipPosition(event, tip, 10));
+      tip.style.translate = '10px 10px';
+
+    } else {
+      tip.style.top = '30%';
+      tip.style.left = '50%';
+      tip.style.translate = '-50% -50%';
+    }
+    
+
     tip.style.opacity = 1;
     if (entity.currentLife <= 0) {
       tip.style.opacity = 0;

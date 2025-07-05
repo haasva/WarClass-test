@@ -529,7 +529,7 @@ for (let y = newRow; y < newRow + visibleRows; y++) {
 }
 
 // Apply borders and update cell count after creating and appending cells
-//detectAndApplyBorderOverworld();
+// detectAndApplyBorderOverworld();
 
 
 }

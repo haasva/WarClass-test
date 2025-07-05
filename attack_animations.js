@@ -48,6 +48,8 @@ async function preAttackAnimation(attacker, defender, attackerElement, defenderE
         const attackerRect = attackerElement.getBoundingClientRect();
         const startX = attackerRect.left;
         const startY = attackerRect.top;
+
+        const inner = document.querySelector('#inner-neo');
   
         let enemyRect = defenderElement.getBoundingClientRect();
         let endX = enemyRect.left + enemyRect.width / 2;
@@ -65,19 +67,19 @@ async function preAttackAnimation(attacker, defender, attackerElement, defenderE
 
         switch (specialty) {
             case "Gunpowder":
-            await attackAnimationGunpowder(startX, startY, endX, endY, defenderElement, damage);
+            await attackAnimationGunpowder(startX, startY, endX, endY, defenderElement, damage, inner);
             break;
 
             case "Archery":
-              await attackAnimationArchery(startX, startY, endX, endY, defenderElement, damage);
+              await attackAnimationArchery(startX, startY, endX, endY, defenderElement, damage, inner);
             break;
 
             case "Melee":
-              await attackAnimationMelee(startX, startY, endX, endY, defenderElement, damage);
+              await attackAnimationMelee(startX, startY, endX, endY, defenderElement, damage, inner);
             break;
 
             case "Unarmed":
-              await attackAnimationUnarmed(startX, startY, endX, endY, defenderElement, damage);
+              await attackAnimationUnarmed(startX, startY, endX, endY, defenderElement, damage, inner);
             break;
 
             case "Polyfighter":
@@ -115,7 +117,7 @@ async function preAttackAnimation(attacker, defender, attackerElement, defenderE
 
 
 
-async function attackAnimationGunpowder(startX, startY, endX, endY, targetElement, damage) {
+async function attackAnimationGunpowder(startX, startY, endX, endY, targetElement, damage, inner) {
     
     
     const line = document.createElement('div');
@@ -142,11 +144,11 @@ async function attackAnimationGunpowder(startX, startY, endX, endY, targetElemen
     smokeEffect.style.left = `${startX - 50}px`;
     smokeEffect.style.top = `${startY - 50}px`;
     smokeEffect.setAttribute('id', 'smoke-effect');
-    document.body.appendChild(smokeEffect);
+    inner.appendChild(smokeEffect);
     smokeEffect.style.animation = "smokeout 1s ease-out";
     
     
-    document.body.appendChild(line);
+    inner.appendChild(line);
   
     bloodSplat(endX, endY);
   
@@ -161,8 +163,8 @@ async function attackAnimationGunpowder(startX, startY, endX, endY, targetElemen
     
     setTimeout( async () => {
         targetElement.classList.toggle("target-impact");
-      document.body.removeChild(line);
-      document.body.removeChild(smokeEffect);
+      inner.removeChild(line);
+      inner.removeChild(smokeEffect);
     }, 500);
   }
 

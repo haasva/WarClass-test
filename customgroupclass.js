@@ -2,6 +2,7 @@ fetchAndParseJSONCombination();
 let customAdventurersSelected = new Map();
 let selectedAdventurersCount = 0;
 
+
 function playerGroupClassChoice() {
   rerollAllAdventurers();
   selectedAdventurersCount = 0;
@@ -86,7 +87,7 @@ function displayStartingAdventurers2(groupClassInfos, innerBox) {
   groupClassInfos.appendChild(adventurersSelection);
   adventurersSelectedArea.appendChild(title2);
   groupClassInfos.appendChild(adventurersSelectedArea);
-  groupClassInfos.appendChild(expand);
+  //groupClassInfos.appendChild(expand);
 
   expand.addEventListener('click', function(event) {
       adventurersSelection.classList.toggle('wide');

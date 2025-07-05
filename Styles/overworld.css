@@ -95,6 +95,7 @@ box-shadow: 0 0px 30px rgba(255, 255, 255, 0.5) inset;
     background-color: rgb(21, 77, 109);
     grid-template-columns: repeat(533, 1fr);
     grid-template-rows: repeat(266, 1fr);
+    background-image: url('/Art/water.jpg');
   
 }
 

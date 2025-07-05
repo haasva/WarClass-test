@@ -113,11 +113,10 @@
   z-index: 0;
   pointer-events: none;
   transition: perspective 0.1s;
-  transform-style: flat;
   transform-style: preserve-3d;
   scale: 1;
   perspective: 720px;
-  background-color: #324f69;
+  background-color: rgb(36, 36, 36);
   filter: brightness(0.9) contrast(1.1) url(#posterize);
 }
 
@@ -199,7 +198,7 @@
   image-rendering: pixelated;
   background-color: transparent;
   scale : 1;
-  filter: saturate(1.3) brightness(1.28) url(#pixelate);
+  filter: saturate(1.3) brightness(1.28);
 }
 
 #region-grid-filter {
@@ -635,13 +634,14 @@ contain-intrinsic-size: 1px 5000px;
     top: 0;
     left: 0;
     opacity: 0.3;
+    scale: 0.5;
     background-repeat: no-repeat;
     background-position: center;
     background-image: url('../Art/Textures/small_shadow.png');
   }
    .basic-store.bird {
-    width: 30px;
-    height: 30px;
+    width: 10px;
+    height: 10px;
     transform: translateZ(40px) translateY(-25px) rotateY(180deg);
     pointer-events: all;
     transform-origin: center;
@@ -1152,7 +1152,8 @@ contain-intrinsic-size: 1px 5000px;
 
 
 .game-cell:hover {
-  outline-offset: -0.5px;
+  outline-offset: -1px; 
+  outline: 0.2px dotted #ffffffb6;
 }
 
 
@@ -1199,7 +1200,7 @@ outline-offset: 2px;
   width: 100%;
   height: 100%;
   background-size: cover;
-  transform: translateZ(4.1px) scale(0.8);
+  transform: translateZ(4.1px) scale(1);
   transition: all 0.2s;
   pointer-events: none;
 }
@@ -2289,6 +2290,9 @@ border-radius: 50%;
 .basic-store.group{
   pointer-events: all;
 }
+#overtip-container.mouse {
+
+}
 
 #overtip-container {
   position: absolute;
@@ -2522,7 +2526,7 @@ background: linear-gradient(180deg, rgb(146, 12, 12) 0%, rgb(131, 7, 7) 100%);
       grid-template-rows: repeat(2, 20px);
       transform-origin: center;
       border-radius: 50%;
-      position: relative;
+      position: absolute;
       transform-style: preserve-3d;
       transform: translate(0px, 0px) translateZ(0.2px);
       pointer-events: all;
@@ -2530,12 +2534,15 @@ background: linear-gradient(180deg, rgb(146, 12, 12) 0%, rgb(131, 7, 7) 100%);
       transition: none;
       outline: 1px solid red;
 }
+.our-group > * {
+  pointer-events: none;
+}
 .sprites-container:not(.our-group) {
 
 }
 .our-group {
   outline: 1px solid rgba(228, 178, 16, 0.884);
-  display: none;
+  pointer-events: none;
 }
 
 .game-cell.under-camera {
@@ -2604,24 +2611,13 @@ background: linear-gradient(180deg, rgb(146, 12, 12) 0%, rgb(131, 7, 7) 100%);
   background-repeat: repeat;
   image-rendering: pixelated;
   width: 150%;
-  height: 150%;
+  aspect-ratio: 1/1;
   position: absolute;
   content: '';
   transform: translateZ(-5px) scale(1) ;
   -webkit-mask-box-image: url(../Art/Textures/our-group-light.png) stretch ;
 }
-#inner-neo::before {
-  image-rendering: pixelated;
-  width: 50%;
-  height: 50%;
-  left: 50%;
-  top: 50%;
-  translate: -50% -50%;
-  position: absolute;
-  content: '';
-  transform: translateZ(-4.5px) scale(1) ;
-  -webkit-mask-box-image: url(../Art/Textures/our-group-light.png) stretch;
-}
+
 
 html-gl { display: inline-block; transform: translateZ(0);}
 canvas {
@@ -2693,9 +2689,7 @@ canvas {
 #damage-text {
   font-size: 25px;
   scale: 1.5;
-  top: 40%;
-  left: 50%;
-  translate: -50% -50%;
+
   position: absolute;
   z-index: 9;
   animation: damageText 0.5s 1;
@@ -2793,3 +2787,15 @@ canvas {
   display: none;
 }
 
+
+
+
+  #player-projectile-musket {
+    position: absolute;
+    width: 1px;
+    height: 500px;
+    background-color: white;
+    transform-origin: top;
+    z-index: 999999;
+    transition: none;
+  } 

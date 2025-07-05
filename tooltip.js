@@ -31,15 +31,20 @@ function addGenericTooltip(element, infos) {
 
 
 function addOvertip(data, id, element) {
-  element.addEventListener('mouseover', function (event) {
-    createOtherGroupOvertip(data, id, element);
+  element.addEventListener('mouseenter', function (event) {
+    PLAYER_STATE.overtip = 'on';
+    updateOvertip(data, mouse = true, event); 
   });
   element.addEventListener('mouseleave', function (event) {
-    const overtip = document.querySelector(`#overtip-container`);
-    if (overtip) {
-      overtip.remove();
-    }
+    PLAYER_STATE.overtip = 'off';
+    updateOvertip(data); 
   });
+
+  element.addEventListener('click', function (event) {
+      const ele = event.target;
+      selectSelectedEntity(data, ele);
+  });
+
 }
 
 function addItemTooltip(element, infos) {
@@ -400,49 +405,17 @@ function displayGenericTooltip(event, infos) {
   }
 
 
-  function updateTooltipPosition(event, tooltip, bufferValue) {
-    const tooltipWidth = tooltip.clientWidth;
-    const tooltipHeight = tooltip.clientHeight;
-    const eventElement = event.target;
-    const eventRect = eventElement.getBoundingClientRect();
-    let buffer = 0; // Space between tooltip and event element
-    if ( bufferValue ) { buffer = bufferValue };
-
-    let tooltipX; // Default position to the right of the event element
-    let tooltipY; // Default position below the event element
-
-    if (tooltip.id === "rightclick-menu") {
-      tooltipX = event.clientX; // Default position to the right of the event element
-      tooltipY = event.clientY; // Default position below the event element
-    } else {
-      tooltipX = event.clientX + 30; // Default position to the right of the event element
-      tooltipY = event.clientY + 10; // Default position below the event element
-    }
-
-
-    // Adjust position if the tooltip goes beyond the right edge of the window
-    if (tooltipX + tooltipWidth > window.innerWidth) {
-        tooltipX = eventRect.left - tooltipWidth - buffer; // Move to the left of the event element
-    }
-
-    // Adjust position if the tooltip goes beyond the bottom edge of the window
-    if (tooltipY + tooltipHeight > window.innerHeight) {
-        tooltipY = eventRect.top - tooltipHeight - buffer; // Move above the event element
-    }
-
-    // Ensure tooltip does not go beyond the top of the screen
-    if (tooltipY < 0) {
-        tooltipY = 0; // Align to the top of the screen
-    }
-
-    // Ensure tooltip does not go beyond the left edge of the screen
-    if (tooltipX < 0) {
-        tooltipX = 0; // Align to the left of the screen
-    }
-
-    tooltip.style.left = `${tooltipX}px`;
-    tooltip.style.top = `${tooltipY}px`;
-    tooltip.style.transformOrigin = 'top right';
+function updateTooltipPosition(e,t,b=0){
+  const w=t.clientWidth,h=t.clientHeight,r=e.target.getBoundingClientRect();
+  let x=e.clientX+(t.id==="rightclick-menu"?0:30),
+      y=e.clientY+(t.id==="rightclick-menu"?0:10);
+  x+w>window.innerWidth&&(x=r.left-w-b);
+  y+h>window.innerHeight&&(y=r.top-h-b);
+  x<0&&(x=0);
+  y<0&&(y=0);
+  t.style.left=x+"px";
+  t.style.top=y+"px";
+  t.style.transformOrigin="top right";
 }
 
 
