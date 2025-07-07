@@ -3254,24 +3254,73 @@ scale: 1.7;
 
 
 
-#merchant-window .infobox-content{
+
+
+#npc-window {
+  left: 25%;
+  top: 35%;
+}
+
+
+#npc-window .infobox-content{
+  margin-top: -4px;
   width: 300px;
-  height: 600px;
-  background-image: url('../Art/People/lady1.png');
+  min-height: 150px;
+  padding: 5px;
   image-rendering: pixelated;
+
+}
+
+#npc-window .content{
+display: flex;
+flex-direction: column;
+}
+
+#npc-window .infos {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+#npc-window .infos div {
+    padding: 4px;
+    display: flex;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(90deg, gray 0%, rgba(0,0,0,0) 100%);
+    border-bottom: 1px solid;
+    gap: 10px;
+}
+#npc-window .infos div span:first-child {
+  width: 25%;
+}
+#npc-window .infos div span:not(div span:first-child) {
+    color:rgb(255, 235, 168);
+    text-transform: capitalize;
+    display: inline-block;
+    text-align: end;
+}
+
+#npc-window .text {
+font-family: Georgia, 'Times New Roman', Times, serif;
+font-size: 20px;
+font-style: italic;
+text-indent: 20px;
+color: orange;
+padding: 10px;
+line-height: 24px;
+}
+#npc-window .text::before {
+content: "« ";
+font-size: 25px;
+line-height: 20px;
+white-space: pre;
+}
+#npc-window .text::after {
+content: " »";
+font-size: 25px;
+line-height: 20px;
+white-space: pre;
 }
 
 
 
 
-
-
-#svg-viewer {
-  display: none;
-  width: 500px;
-  height: 500px;
-  position: absolute;
-  top: 0%;
-  left: 0%;
-  z-index: 99;
-}

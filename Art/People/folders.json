@@ -1,0 +1,53 @@
+[
+  {
+    "class": "aristocrat"
+  },
+  {
+    "class": "beggar"
+  },
+  {
+    "class": "burgher"
+  },
+  {
+    "class": "child"
+  },
+  {
+    "class": "courtesan"
+  },
+  {
+    "class": "ecclesiastic"
+  },
+  {
+    "class": "entertainer"
+  },
+  {
+    "class": "housewife"
+  },
+  {
+    "class": "innkeeper"
+  },
+  {
+    "class": "laborer"
+  },
+  {
+    "class": "lady"
+  },
+  {
+    "class": "merchant"
+  },
+  {
+    "class": "odalisque"
+  },
+  {
+    "class": "outlaw"
+  },
+  {
+    "class": "slave"
+  },
+  {
+    "class": "unknown"
+  },
+  {
+    "class": "wretch"
+  }
+]

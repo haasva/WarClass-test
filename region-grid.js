@@ -1377,7 +1377,8 @@ if (startingCell) {
         if (SETTINGS.gridMovement) await throttledMovementByCell(event);
       }
     });
-      document.addEventListener('keyup', onKeyUp);
+
+    document.addEventListener('keyup', onKeyUp);
 
       document.addEventListener('keydown', (event) => {
         if (event.code === 'KeyZ' && !zKeyPressed) {
@@ -1660,6 +1661,7 @@ function toggleFirstPerson(event) {
   const crosshair = document.getElementById('crosshair');
   const weapon = document.getElementById('weapon');
   const skybox = inner.querySelector('#skybox');
+  const camera = inner.querySelector('#player-camera');
 
   SETTINGS.firstPerson = !SETTINGS.firstPerson;
 
@@ -1671,27 +1673,29 @@ function toggleFirstPerson(event) {
     SETTINGS.zoomFactor = 35;
     SETTINGS.translateZ = 8;
 
-    // if (skybox) skybox.style.display = 'block';
+    if (skybox) skybox.style.display = 'block';
     if (weapon) weapon.style.display = 'block';
     if (crosshair) crosshair.style.display = 'block';
+    if (camera) camera.style.display = 'block';
 
       inner.style.top = "0px";
 
-      // inner.style.setProperty(
-      //   "--mask-size",
-      //   `150%`
-      // );
+      inner.style.setProperty(
+        "--mask-size",
+        `150%`
+      );
 
   } else {
 
-    //   inner.style.setProperty(
-    //     "--mask-size",
-    //     `80%`
-    //   );
+      inner.style.setProperty(
+        "--mask-size",
+        `80%`
+      );
 
-    // if (skybox) skybox.style.display = 'none';
+    if (skybox) skybox.style.display = 'none';
     if (weapon) weapon.style.display = 'none';
     if (crosshair) crosshair.style.display = 'none';
+    if (camera) camera.style.display = 'none';
 
     inner.style.top = "-50px";
     SETTINGS.angle = 45;
@@ -1800,7 +1804,10 @@ async function castShadows() {
         if (targetRow === playerRow && targetCol === playerCol) return;
 
         if (isBlocked(targetRow, targetCol)) {
-            targetCell.classList.add('fogged');
+            if (!targetCell.classList.contains("building")) {
+              targetCell.classList.add('fogged');
+            }
+            
         }
     });
 
@@ -2087,6 +2094,8 @@ function updateCameraRotation(event) {
     } else if (accumulatedRotateZ > 225 && accumulatedRotateZ <= 315) {
       facingDirection = 90; // Right
     }
+
+    CURRENT_GROUP_CELL.setAttribute('fd', facingDirection);
 
     if (inner) {
       inner.style.setProperty(
@@ -3180,6 +3189,7 @@ function createOtherGroupBox(group) {
 
   } else { // if this is our group
     box.classList.add('our-group');
+    box.id = 'player-group';
     thisGroupAdventurers = Array.from(groupAdventurers.values());
   }
 

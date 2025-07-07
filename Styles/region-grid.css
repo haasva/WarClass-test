@@ -117,7 +117,7 @@
   scale: 1;
   perspective: 720px;
   background-color: rgb(36, 36, 36);
-  filter: brightness(0.9) contrast(1.1) url(#posterize);
+  filter: brightness(0.8) contrast(1.1) url(#posterize);
 }
 
 #mega-wrapper:before {
@@ -199,6 +199,19 @@
   background-color: transparent;
   scale : 1;
   filter: saturate(1.3) brightness(1.28);
+}
+
+#engine-wrapper::after {
+  content: '';
+  -webkit-mask-box-image: url(../Art/Textures/overlay3.png) stretch ;
+  backdrop-filter: blur(8px);
+  position: absolute;
+  opacity: 0.7;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
 }
 
 #region-grid-filter {
@@ -770,13 +783,20 @@ contain-intrinsic-size: 1px 5000px;
     transform: rotateX(-90deg) scale3d(0.6, 0.6, 0.6) rotateY(90deg) translateX(100%);
     background-size: contain;
   } 
+
+  .current-group-position .doodad-store.Big {
+    visibility: hidden;
+  }
+ .current-group-position .basic-store.npc {
+    transform: rotateX(-90deg) scale3d(0.47, 0.47, 0.47) rotateY(var(--rotationZ)) translate3d(0px, 0px, -10px);
+  }
   .basic-store.npc {
     transform: rotateX(-90deg) scale3d(0.47, 0.47, 0.47) rotateY(var(--rotationZ));
     top: -50%;
     background-size: contain;
     pointer-events: all;
-    background-image: url('../Art/People/lady1.png');
-
+    background-position-y: bottom;
+    background-position-x: center;
   }
   .basic-store.pest {
     transform: translateZ(2px) translateY(1px);
@@ -922,7 +942,7 @@ contain-intrinsic-size: 1px 5000px;
   }
 }
 
-   .game-cell.impassable {
+   .game-cell.impassable:not(.inviwall) {
     visibility: visible;
     opacity: 1;
     position: sticky; /* Ensure the cell has a non-static position */
@@ -938,6 +958,10 @@ contain-intrinsic-size: 1px 5000px;
     align-items: center;
     outline: 2px solid #1111119f;
   }
+  .impassable.fogged {
+        outline: none;
+        z-index: 0;
+  }
   .impassable * {
     transform-style: preserve-3d;
     image-rendering: pixelated;
@@ -946,26 +970,60 @@ contain-intrinsic-size: 1px 5000px;
     outline: 0.5px solid white;
     outline-offset: -1px;
   }
-   .impa-store {
-    background-size: contain;
+.impa-store {
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  pointer-events:all;
+  position: absolute;
+  background-repeat: no-repeat;
+  rotate: 0deg;
+  transform-origin: bottom;
+  z-index: 1;
+  font-size: 0px;
+  transform-style: preserve-3d;
+  background-position: bottom ;
+  image-rendering: pixelated;
+  transform: scale3d(1, 1, 1);
+  background-color: black;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.building-store {
+    pointer-events: none;
     width: 20px;
     height: 20px;
-    pointer-events:all;
-    position: absolute;
-    background-repeat: no-repeat;
-    rotate: 0deg;
-    transform-origin: bottom;
-    z-index: 1;
-    font-size: 0px;
     transform-style: preserve-3d;
-    background-position: bottom ;
-    image-rendering: pixelated;
-    transform: scale3d(1, 1, 1);
-    background-color: black;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-  }
-
+    z-index: 1;
+    transform: translateZ(0px);
+    transform-origin: bottom right;
+}
+.building-store > * {
+  background-size: cover;
+  image-rendering: pixelated;
+  height: 22px;
+}
+.building-store #front {
+    transform: rotateX(-90deg) rotateY(90deg) translateX(7px) translateZ(1px);
+    transform-origin: bottom left;
+    width: 60px;
+}
+.building-store #back {
+    transform: rotateX(-90deg) rotateY(90deg) translateX(89px) translateZ(-20px);
+    transform-origin: bottom right;
+    width: 60px;
+}
+.building-store #right {
+    transform: rotateX(-90deg) translateX(0px) translateZ(15px);
+    transform-origin: bottom;
+    width: 40px;
+}
+.building-store #left {
+    transform: rotateX(-90deg) translateZ(-22px) translateX(0px);
+    transform-origin: bottom;
+    width: 40px;
+}
 
   .ruin-store {
     pointer-events: none;
@@ -975,8 +1033,6 @@ contain-intrinsic-size: 1px 5000px;
     transform: scale3d(0.88, 0.88, 0.88);
     background-image: url('../Art/Textures/structure/ruins/floor.png');
   }
-
-
 
   .impa-wall, .structure-wall, .wall {
     width: 100%;
@@ -1812,28 +1868,24 @@ pointer-events: none;
 
 
 #player-camera {
+  width: 50px;
+  aspect-ratio: 1/1;
+  content: '';
   position: absolute;
-  width: 10px;
-  height: 10px;
-  top: 245px;
-  left: 245px;
-  border-radius: 50%;
-  outline: 2px solid black;
-  transform-style: preserve-3d;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  align-items: center;
-  background-position: bottom;
-  font-size: 0;
-  overflow: visible;
-  z-index: 1;
-  justify-content: center;
-  transform-origin: center; 
-  background-color: red;
-  transform: translateZ(0.1px) translateY(0px);
-  visibility: hidden;
-
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  pointer-events: none;
+background: #00000000;
+border-radius: 50%;
+transform: translateZ(80px);
+image-rendering: pixelated;
+opacity: 0.7;
+scale: 15;
+    background-image: url('../Art/Textures/nlstar.png');
+    animation: water 90s linear infinite;
+    background-size: 50% 50%;
+      -webkit-mask-box-image: url(../Art/Textures/our-group-light.png) stretch ;
 }
 
 
@@ -2192,6 +2244,7 @@ padding: 0.15px;
   border-radius: 50%;
   transform: rotateZ(var(--rotationZ));
   transform-origin: center;
+  pointer-events: none;
 }
 #mini-table .minitable-cell.current-position-mini::after {
   content: '^';
@@ -2507,6 +2560,7 @@ background: linear-gradient(180deg, rgb(146, 12, 12) 0%, rgb(131, 7, 7) 100%);
   transform: rotateX(-90deg) rotateY(var(--rotationZ)) scale3d(1, 1, 1);
   transform-origin: bottom;
   animation: group-stand 10s infinite;
+  transition: all 1s linear;
 }
 
 .sprites-container {
@@ -2532,18 +2586,20 @@ background: linear-gradient(180deg, rgb(146, 12, 12) 0%, rgb(131, 7, 7) 100%);
       pointer-events: all;
       scale: 1;
       transition: none;
-      outline: 1px solid red;
+          background: rgb(77,66,46);
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.7) 0%, rgba(255, 255, 255, 0) 60%);
+
+}
+.our-group {
+  
 }
 .our-group > * {
   pointer-events: none;
 }
-.sprites-container:not(.our-group) {
+.sprites-container:not(.our-group):hover {
+  outline: 1px solid red;
+}
 
-}
-.our-group {
-  outline: 1px solid rgba(228, 178, 16, 0.884);
-  pointer-events: none;
-}
 
 .game-cell.under-camera {
   outline: 1px solid rgba(221, 16, 228, 0.884);
@@ -2553,7 +2609,7 @@ background: linear-gradient(180deg, rgb(146, 12, 12) 0%, rgb(131, 7, 7) 100%);
 
 
 .game-cell.river-cell .sprites-container:hover {
-  transform: rotateX(-10deg) translateZ(5px);
+
 }
 
 #neo-region * {
@@ -2610,7 +2666,7 @@ background: linear-gradient(180deg, rgb(146, 12, 12) 0%, rgb(131, 7, 7) 100%);
   background-size: 20px 20px;
   background-repeat: repeat;
   image-rendering: pixelated;
-  width: 150%;
+  width: var(--mask-size);
   aspect-ratio: 1/1;
   position: absolute;
   content: '';

@@ -260,11 +260,27 @@ async function generateContentForRegion(region, x, y) {
     
     //generateStructures(regionContent, region);
     //generateStructures(regionContent, region);
-    generateStructures(regionContent, region);
-    generatePest(regionContent, seed);
+    // generateStructures(regionContent, region);
+    // generatePest(regionContent, seed);
 
+    const ranLootContainer = Math.floor(Math.random() * 30) + 10;
+    for (let i = 0 ; i < ranLootContainer ; i++) {
+          generateLootContainers(region, regionContent);
+          generateBuildings(region, regionContent);
+    }
+
+    if (region.index === 70156) {
+            const ranLootContainer = Math.floor(Math.random() * 500) + 10;
+              for (let i = 0 ; i < ranLootContainer ; i++) {
+                    generateLootContainers(region, regionContent);
+                    generateBuildings(region, regionContent);
+              }
+
+    }
+    if (region.index != 70156) {
     generateImpassables(regionContent, region, seed);
     generateImpassables2(regionContent, region, seed);
+    }
     
     const randomChance = Math.floor(Math.random() * 3) + 1;
     let river;
@@ -298,11 +314,6 @@ async function generateContentForRegion(region, x, y) {
     region.ruinsNumber = 0;
     generateRuins(regionContent, region, seed);
 
-    const ranLootContainer = Math.floor(Math.random() * 30) + 10;
-    for (let i = 0 ; i < ranLootContainer ; i++) {
-      generateLootContainers(region, regionContent);
-    }
-
     placeOtherGroup(region, regionContent);
     generateFarms(regionContent);
     generateSkeletons(regionContent, seed);
@@ -310,10 +321,12 @@ async function generateContentForRegion(region, x, y) {
     for (let row = 0; row < 75; row++) {
         for (let col = 0; col < 75; col++) {
 
-          const randomChance = Math.floor(Math.random() * 300) + 1;
+          const randomChance = Math.floor(Math.random() * 200) + 1;
           if (randomChance === 25) {
           generateAnimals(region, regionContent[row][col], col, row);
           
+          } else if (randomChance < 20) {
+            regionContent[row][col].npc = generateNpc(region);
           }
             //generateAnimals(region, regionContent[row][col], row, col);
             generateBirds(region, regionContent[row][col], row, col);
@@ -421,13 +434,58 @@ function generateStructures(regionContent, region) {
 }
 
 
+function nameRandom() {
+  let randomName = '';
+  const consCap = [ 'B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Z']
+  const consLow = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'z']
+  const vowelsCap = ['A', 'E', 'I', 'O', 'U', 'Y'];
+  const vowelsLow = ['a', 'e', 'i', 'o', 'u', 'y'];
+  const nameLength = Math.floor(Math.random()*7) + 3;
+  function consCapGen() {
+     return consCap[Math.floor(Math.random()*20)]
+  }
+  function consLowGen() {
+    return consLow[Math.floor(Math.random()*20)]
+  }
+  function vowelCapGen() {
+    return vowelsCap[Math.floor(Math.random()*6)]
+  }
+  function vowelLowGen() {
+    return vowelsLow[Math.floor(Math.random()*6)]
+  }
+  if (nameLength === 3) {
+    randomName = `${vowelCapGen()}${consLowGen()}${vowelLowGen()}`;
+  } else if (nameLength === 4) {
+    randomName =`${consCapGen()}${vowelLowGen()}${consLowGen()}${vowelLowGen()}`;
+  } else if (nameLength === 5) {
+    randomName = `${vowelCapGen()}${consLowGen()}${vowelLowGen()}${consLowGen()}${vowelLowGen()}`;
+  } else if (nameLength === 6) {
+    randomName = `${consCapGen()}${vowelLowGen()}${consLowGen()}${vowelLowGen()}${vowelLowGen()}${consLowGen()}`;
+  } else if (nameLength === 7) {
+    randomName = `${vowelCapGen()}${vowelLowGen()}${consLowGen()}${vowelLowGen()}${consLowGen()}${vowelLowGen()}${consLowGen()}`;
+  } else if (nameLength === 8) {
+    randomName = `${consCapGen()}${vowelLowGen()}${consLowGen()}${vowelLowGen()}${consLowGen()}${vowelLowGen()}${consLowGen()}${vowelLowGen()}`;
+  } else if (nameLength === 9) {
+    randomName = `${vowelCapGen()}${consLowGen()}${vowelLowGen()}${consLowGen()}${vowelLowGen()}${vowelLowGen()}${consLowGen()}${vowelLowGen()}${vowelLowGen()}`;
+  };
+  return randomName;
+};
+
+function generateNpc(region) {
 
 
-function generateNpc(y, x, region) {
   let npc = {};
 
-  npc.name = "Sarah";
-  npc.life = 150;
+  npc.name = nameRandom();
+  npc.life = Math.floor(Math.random() * 130) + 25;
+
+  const ranType = Math.floor(Math.random() * npcObject.length);
+  npc.class = npcObject[ranType].class;
+
+  const imgNb = Math.floor(Math.random() * 4) + 1;
+  npc.img = `url('/Art/People/${npcObject[ranType].class}/${imgNb}.png')`;
+
+  npc.text = npcObject[ranType].text || "Greatings!";
 
   const cultureWords = region.cultures ? region.cultures.split(',').map(word => word.trim()) : [];
   const ranCulture = Math.floor(Math.random() * cultureWords.length);
@@ -1233,19 +1291,35 @@ function generateBuildings(region, regionContent) {
       return true;
     });
 
-    const x = Math.floor(Math.random() * 50) + 1;
-    const y = Math.floor(Math.random() * 50) + 1;
+    const x = Math.floor(Math.random() * 60) + 10;
+    const y = Math.floor(Math.random() * 60) + 10;
+
+
   
-    if (matchingBuildings.length > 0 && !regionContent[x][y].occupied) {
+    // if (matchingBuildings.length > 0 && !regionContent[x][y].occupied) {
 
-      const randomIndex = Math.floor(Math.random() * matchingBuildings.length);
-      let currentBuilding = matchingBuildings[randomIndex];
-      currentBuilding.interior = [ ... generateBuildingInterior(16) ];
+      // const randomIndex = Math.floor(Math.random() * matchingBuildings.length);
+      // let currentBuilding = matchingBuildings[randomIndex];
+      //currentBuilding.interior = [ ... generateBuildingInterior(16) ];
 
-      regionContent[x][y].building = { ... currentBuilding };
-      regionContent[x][y].impassable = false;
+      // regionContent[x][y].building = { ... currentBuilding };
+      regionContent[x][y].building = true;
       regionContent[x][y].occupied = true;
-    }
+
+      regionContent[x][y].inviwall = true;
+      regionContent[x][y+1].inviwall = true;
+      regionContent[x+1][y+1].inviwall = true;
+      regionContent[x+1][y].inviwall = true;
+      regionContent[x+2][y+1].inviwall = true;
+      regionContent[x+2][y].inviwall = true;
+
+      regionContent[x][y].occupied = true;
+      regionContent[x][y+1].occupied = true;
+      regionContent[x+1][y+1].occupied = true;
+      regionContent[x+1][y].occupied = true;
+      regionContent[x+2][y+1].occupied = true;
+      regionContent[x+2][y].occupied = true;
+    // }
 }
 
 
@@ -1568,6 +1642,9 @@ if (data.removed === true) {
   cell.classList.add('removed');
   cell.style.backgroundColor = '#521f09';
 }
+if (data.inviwall === true) {
+    cell.style.backgroundColor = '#e1e139';
+}
 
 }
 
@@ -1642,6 +1719,18 @@ function populateContentCell(cell, data, veg, i, j) {
     if (data.removed === true) {
       cell.classList.add('removed');
       cell.classList.add('impassable');
+    }
+
+    if (data.inviwall === true) {
+      cell.classList.add('inviwall');
+      cell.classList.add('impassable');
+    }
+
+    if (data.building) {
+        cell.classList.add('building');
+        cell.classList.add('inviwall');
+        cell.classList.add('impassable');
+        cell.appendChild(createBuildingCube('building'));
     }
 
     if (data.impassable === true || data.removed === true) {
@@ -1755,7 +1844,7 @@ function populateContentCell(cell, data, veg, i, j) {
     if (data.crossroad) {
       cell.classList.add('road-cell');
       cell.classList.add('occupied');
-      cell.style.backgroundImage = `url('/Art/Textures/crossroad.jpg')`;
+      cell.style.backgroundImage = `url('/Art/Textures/road.jpg')`;
       cell.setAttribute('road-number', data.roadID);
       cell.appendChild(addStore('crossroad'));
       cell.classList.add('crossroad');
@@ -1915,6 +2004,7 @@ function populateContentCell(cell, data, veg, i, j) {
   }
 
   if (data.npc) {
+    cell.classList.add('npc');
     cell.appendChild(addStore('npc'));
   }
 
@@ -1928,8 +2018,9 @@ function populateContentCell(cell, data, veg, i, j) {
       store.classList.add('cardboard');
       store.setAttribute('name', data.npc.name);
       store.addEventListener('click', function(event) {
-        createWindow(data.npc);
+        createNpcWindow(data.npc);
       });
+      store.style.backgroundImage = data.npc.img;
     }
     
     if (info === 'animal') {
@@ -2266,6 +2357,7 @@ if (className === 'impa-wall') {
 
 
 
+
 return impa;
 }
 
@@ -2305,6 +2397,50 @@ function createRuinCube(className) {
   
   const randomAngle = [0, 90, 180, 270][Math.floor(Math.random() * 4)];
   impa.style.rotate = `${randomAngle}deg`;
+  
+  return impa;
+}
+
+
+
+
+function createBuildingCube(className) {
+
+  const impa = document.createElement('div');
+  impa.classList.add('building-store');
+  
+  const left = document.createElement('div');
+  left.classList.add(`${className}`);
+  left.id = 'left';
+  
+  const right = document.createElement('div');
+  right.classList.add(`${className}`);
+  right.id = 'right';
+  
+  const front = document.createElement('div');
+  front.classList.add(`${className}`);
+  front.id = 'front';
+  
+  const back = document.createElement('div');
+  back.classList.add(`${className}`);
+  back.id = 'back';
+  
+  impa.appendChild(left);
+  impa.appendChild(right);
+  impa.appendChild(front);
+  impa.appendChild(back);
+
+  const walls = [front, back, left, right];
+
+  for (i = 0 ; i < walls.length ; i++) {
+    walls[i].style.backgroundImage = `url('/Art/Textures/structure/building/${i + 1}.png')`;
+  }
+  
+  const randomAngle = [0, 180][Math.floor(Math.random() * 2)];
+  if (randomAngle === 180) {
+    impa.style.transform = `rotateZ(${randomAngle}deg) translateY(-20px)`;
+  }
+  
   
   return impa;
 }

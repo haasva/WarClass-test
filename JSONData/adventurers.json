@@ -22,7 +22,8 @@
     "Upgrade3": "",
     "Equipment": {
       "Weapon": ""
-    }
+    },
+    "country": "iceland"
   },
    {
     "Title": "Dukhobor",
@@ -47,7 +48,8 @@
     "Upgrade3": "",
     "Equipment": {
       "Weapon": ""
-    }
+    },
+    "country": "russia"
   },
    {
     "Title": "Bhikkhu",
@@ -72,7 +74,8 @@
     "Upgrade3": "",
     "Equipment": {
       "Weapon": ""
-    }
+    },
+    "country": "thailand"
   },
   {
     "Title": "Katib",
@@ -97,7 +100,8 @@
     "Upgrade3": "",
     "Equipment": {
       "Weapon": ""
-    }
+    },
+    "country": "azerbaijan"
   },
   {
     "Title": "Ikkō-to",
@@ -122,7 +126,8 @@
     "Upgrade3": "",
     "Equipment": {
       "Weapon": "Naginata"
-    }
+    },
+    "country": "japan"
   },
   {
     "Title": "Yanakuna",
@@ -147,7 +152,8 @@
     "Upgrade3": "",
     "Equipment": {
       "Weapon": ""
-    }
+    },
+    "country": "japan"
   },
   {
     "Title": "Guanning",

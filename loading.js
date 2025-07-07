@@ -43,7 +43,8 @@ function loadGameData() {
         wrapFunctionWithPromise(fetchBuildingsData, 'fetchBuildingsData', 'buildings data'), //
         wrapFunctionWithPromise(preGenerateWorldData, 'preGenerateWorldData', 'world data'), //
         wrapFunctionWithPromise(parseCulturalData, 'parseCulturalData', 'cultural data'), //
-        wrapFunctionWithPromise(fetchItemsData, 'fetchItemsData', 'items') //
+        wrapFunctionWithPromise(fetchItemsData, 'fetchItemsData', 'items'),
+        wrapFunctionWithPromise(fetchNpcData, 'fetchNpcData', 'people') // //
       ];
   
       const totalTasks = tasks.length;

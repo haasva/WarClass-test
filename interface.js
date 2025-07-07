@@ -758,6 +758,7 @@ function toggleScreenshotDisplay() {
 
 async function interactWithObject() {
 
+
   if (CURRENT_GROUP_CELL.classList.contains('gatherable')) {
     if (CURRENT_GROUP_CELL.classList.contains('berries')) {
       await createGatherWindow('berries');
@@ -782,11 +783,14 @@ async function interactWithObject() {
     }
   }
 
+  if (CURRENT_GROUP_CELL.classList.contains('npc')) {
+    const npc = CURRENT_PLAYER_REGION_DATA.content[PLAYER_STATE.y][PLAYER_STATE.x].npc;
+    createNpcWindow(npc);
+  }
+
 
   if (CURRENT_GROUP_CELL.classList.contains('loot-container')) {
-    const col = CURRENT_GROUP_CELL.getAttribute('col');
-    const row = CURRENT_GROUP_CELL.getAttribute('row');
-    const data = CURRENT_PLAYER_REGION_DATA.content[row][col];
+    const data = CURRENT_PLAYER_REGION_DATA.content[PLAYER_STATE.y][PLAYER_STATE.x];
     console.log('data:', data);
     togglePointerLock();
     createLootContent(data);
@@ -913,34 +917,3 @@ function updateRegionContentObject(gathered, index) {
   }
 }
 
-
-
-
-function createWindow(npc) {
-  let existingPopup = document.getElementById(`merchant-window`);
-  if (existingPopup) {
-      existingPopup.remove();
-  }
-
-  const window = document.createElement('div');
-  window.setAttribute('id', `merchant-window`);
-  window.classList.add(`infobox`);
-
-  const header = document.createElement('div');
-  header.innerHTML = `${npc.name}`;
-  header.classList.add('infobox-header');
-  window.appendChild(header);
-  enableDragAndDropWindow(header);
-  addCloseButton(header);
-
-  const content = document.createElement('div');
-  content.classList.add('infobox-content');
-
-  content.innerHTML = `
-  <div>Culture: <span class='culture'>${npc.culture}</span></div>
-  <div>Life: <span class='life'>${npc.life}</span></div>
-  `
-  window.appendChild(content);
-
-  document.body.appendChild(window);
-}
