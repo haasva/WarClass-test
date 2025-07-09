@@ -39,6 +39,13 @@ return new Promise(resolve => {
                     worldData[row][col].explorationProgress = 0;
                     worldData[row][col].level = worldLevels[row][col];
                     worldData[row][col].animals = [];
+                    const SpeLocation = locationsData.find(map => map.index === index);
+                    if (SpeLocation) {
+                      worldData[row][col].locationWorld = SpeLocation;
+                    } else {
+                      worldData[row][col].locationWorld = 'none';
+                    }
+                    worldData[row][col].buildingNumber = 0;
                 }
             } else {
                 worldData[row][col] = {
@@ -266,20 +273,23 @@ async function generateContentForRegion(region, x, y) {
     const ranLootContainer = Math.floor(Math.random() * 30) + 10;
     for (let i = 0 ; i < ranLootContainer ; i++) {
           generateLootContainers(region, regionContent);
+    }
+
+    const ranBuilding = Math.floor(Math.random() * 8);
+    for (let i = 0 ; i < ranBuilding ; i++) {
           generateBuildings(region, regionContent);
     }
 
-    if (region.index === 70156) {
-            const ranLootContainer = Math.floor(Math.random() * 500) + 10;
+    if (region.locationWorld != "none") {
+            const ranLootContainer = Math.floor(Math.random() * 25) + 20;
               for (let i = 0 ; i < ranLootContainer ; i++) {
-                    generateLootContainers(region, regionContent);
                     generateBuildings(region, regionContent);
               }
-
     }
-    if (region.index != 70156) {
-    generateImpassables(regionContent, region, seed);
-    generateImpassables2(regionContent, region, seed);
+
+    if (region.locationWorld === "none") {
+      generateImpassables(regionContent, region, seed);
+      generateImpassables2(regionContent, region, seed);
     }
     
     const randomChance = Math.floor(Math.random() * 3) + 1;
@@ -326,7 +336,10 @@ async function generateContentForRegion(region, x, y) {
           generateAnimals(region, regionContent[row][col], col, row);
           
           } else if (randomChance < 20) {
-            regionContent[row][col].npc = generateNpc(region);
+            if (regionContent[row][col].occupied != true) {
+              regionContent[row][col].npc = generateNpc(region, col, row);
+              regionContent[row][col].occupied = true;
+            }
           }
             //generateAnimals(region, regionContent[row][col], row, col);
             generateBirds(region, regionContent[row][col], row, col);
@@ -434,67 +447,9 @@ function generateStructures(regionContent, region) {
 }
 
 
-function nameRandom() {
-  let randomName = '';
-  const consCap = [ 'B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Z']
-  const consLow = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'z']
-  const vowelsCap = ['A', 'E', 'I', 'O', 'U', 'Y'];
-  const vowelsLow = ['a', 'e', 'i', 'o', 'u', 'y'];
-  const nameLength = Math.floor(Math.random()*7) + 3;
-  function consCapGen() {
-     return consCap[Math.floor(Math.random()*20)]
-  }
-  function consLowGen() {
-    return consLow[Math.floor(Math.random()*20)]
-  }
-  function vowelCapGen() {
-    return vowelsCap[Math.floor(Math.random()*6)]
-  }
-  function vowelLowGen() {
-    return vowelsLow[Math.floor(Math.random()*6)]
-  }
-  if (nameLength === 3) {
-    randomName = `${vowelCapGen()}${consLowGen()}${vowelLowGen()}`;
-  } else if (nameLength === 4) {
-    randomName =`${consCapGen()}${vowelLowGen()}${consLowGen()}${vowelLowGen()}`;
-  } else if (nameLength === 5) {
-    randomName = `${vowelCapGen()}${consLowGen()}${vowelLowGen()}${consLowGen()}${vowelLowGen()}`;
-  } else if (nameLength === 6) {
-    randomName = `${consCapGen()}${vowelLowGen()}${consLowGen()}${vowelLowGen()}${vowelLowGen()}${consLowGen()}`;
-  } else if (nameLength === 7) {
-    randomName = `${vowelCapGen()}${vowelLowGen()}${consLowGen()}${vowelLowGen()}${consLowGen()}${vowelLowGen()}${consLowGen()}`;
-  } else if (nameLength === 8) {
-    randomName = `${consCapGen()}${vowelLowGen()}${consLowGen()}${vowelLowGen()}${consLowGen()}${vowelLowGen()}${consLowGen()}${vowelLowGen()}`;
-  } else if (nameLength === 9) {
-    randomName = `${vowelCapGen()}${consLowGen()}${vowelLowGen()}${consLowGen()}${vowelLowGen()}${vowelLowGen()}${consLowGen()}${vowelLowGen()}${vowelLowGen()}`;
-  };
-  return randomName;
-};
-
-function generateNpc(region) {
 
 
-  let npc = {};
 
-  npc.name = nameRandom();
-  npc.life = Math.floor(Math.random() * 130) + 25;
-
-  const ranType = Math.floor(Math.random() * npcObject.length);
-  npc.class = npcObject[ranType].class;
-
-  const imgNb = Math.floor(Math.random() * 4) + 1;
-  npc.img = `url('/Art/People/${npcObject[ranType].class}/${imgNb}.png')`;
-
-  npc.text = npcObject[ranType].text || "Greatings!";
-
-  const cultureWords = region.cultures ? region.cultures.split(',').map(word => word.trim()) : [];
-  const ranCulture = Math.floor(Math.random() * cultureWords.length);
-
-
-  npc.culture = `${cultureWords[ranCulture]}`;
-
-  return npc;
-}
 
 
 function generateSkeletons(regionContent, seed) {
@@ -965,18 +920,23 @@ function generateRiverOrRoads(regionContent, river, roadIDCounter, roadIDsArray)
               if (chanceMoreWater > 9 && row > 2 && row < 48 && col > 2 && col < 48) {
                 const rowPlus = Math.floor(Math.random() * 3) - 1;
                 const colPlus = Math.floor(Math.random() * 3) - 1;
-                regionContent[row + rowPlus][col + colPlus].river = true;
-                regionContent[row + rowPlus][col + colPlus].occupied = true;
-                regionContent[row + rowPlus][col + colPlus].impassable = false;
+                  if (regionContent[row + rowPlus][col + colPlus].inviwall != true) {
+                    regionContent[row + rowPlus][col + colPlus].river = true;
+                    regionContent[row + rowPlus][col + colPlus].occupied = true;
+                    regionContent[row + rowPlus][col + colPlus].impassable = false;
+                  }
+
 
                 const evenMoreChance = Math.floor(Math.random() * 2) + 1;
 
                 for (let i = 0 ; i < evenMoreChance ; i++) {
                   const rowPlus2 = Math.floor(Math.random() * 3) - 1;
                   const colPlus2 = Math.floor(Math.random() * 3) - 1;
-                  regionContent[row + rowPlus2][col + colPlus2].river = true;
-                  regionContent[row + rowPlus2][col + colPlus2].occupied = true;
-                  regionContent[row + rowPlus2][col + colPlus2].impassable = false;
+                    if (regionContent[row + rowPlus][col + colPlus].inviwall != true) {
+                      regionContent[row + rowPlus2][col + colPlus2].river = true;
+                      regionContent[row + rowPlus2][col + colPlus2].occupied = true;
+                      regionContent[row + rowPlus2][col + colPlus2].impassable = false;
+                    }
                 }
               }
 
@@ -1106,7 +1066,7 @@ function generateRiverOrRoads(regionContent, river, roadIDCounter, roadIDsArray)
     let currentRow = startRow;
     let currentCol = startCol;
 
-    if (!regionContent[currentRow][currentCol].crossroad || regionContent[currentRow][currentCol].regionWall != true) {
+    if (!regionContent[currentRow][currentCol].crossroad || regionContent[currentRow][currentCol].regionWall != true || regionContent[currentRow][currentCol].inviwall != true) {
       markRiver(currentRow, currentCol, roadIDCounter);
     }
 
@@ -1160,7 +1120,7 @@ function generateBirds(region, regionContent, row, col) {
           const life = Math.floor(Math.random() * 10) + 10;
           const aID = row + 75 * col;
 
-              const randomBird = Math.floor(Math.random() * 6) + 1;
+              const randomBird = Math.floor(Math.random() * 8) + 1;
               const bird = {
                 type: "bird",
                 birdType: randomBird,
@@ -1236,8 +1196,11 @@ function generateAnimals(region, regionContent, x, y) {
     for (let i = 0 ; i < (region.level - 1) + ranLevelEffector ; i++) {
       levelUpAnimal(newAnimal);
     }
-    newAnimal.currentLife = newAnimal.life;
-    newAnimal.totalLife = newAnimal.life;
+    // newAnimal.currentLife = newAnimal.life;
+    // change life to 1 for testing
+    //newAnimal.totalLife = newAnimal.life;
+    newAnimal.currentLife = 3;
+    newAnimal.totalLife = 3;
 
     regionContent.animal = { ... newAnimal };
     regionContent.occupied = true;
@@ -1281,46 +1244,71 @@ function generateLootContainers(region, regionContent) {
 
 
 function generateBuildings(region, regionContent) {
-    const matchingBuildings = buildingsObject.filter((building) => {
+  const matchingBuildings = buildingsObject.filter((building) => {
+    const areaWords = building.regions ? building.regions.split(',').map(word => word.trim()) : [];
+    return areaWords.length === 0 || areaWords.includes(region.superRegion);
+  });
 
-      const areaWords = building.regions ? building.regions.split(',').map(word => word.trim()) : [];
-      if (areaWords.length > 0 && !areaWords.includes(region.superRegion)) {
-        return false;
+  // Random starting position
+  let x = Math.floor(Math.random() * 34) + 20;
+  let y = Math.floor(Math.random() * 34) + 20;
+
+  let offsets;
+
+  if (Math.random() < 1 / 6) {
+     regionContent[x][y].mosque = true;
+    // Use 3x3 building, origin at second cell of first row
+    // Shift origin to top-left corner of the 3x3 block
+    x -= 1; y -= 1;
+    offsets = [
+      [0, 0], [0, 1], [0, 2],
+      [1, 0], [1, 1], [1, 2],
+      [2, 0], [2, 1], [2, 2],
+    ];
+  } else {
+    // Use default 2x3 building
+    regionContent[x][y].building = true;
+    offsets = [
+      [0, 0], [0, 1],
+      [1, 0], [1, 1],
+      [2, 0], [2, 1]
+    ];
+  }
+
+  const originCell = regionContent[x]?.[y];
+  if (originCell) region.buildingNumber++;
+
+  for (const [dx, dy] of offsets) {
+    const cell = regionContent[x + dx]?.[y + dy];
+    if (cell) {
+      cell.inviwall = true;
+      cell.occupied = true;
+    }
+  }
+
+  // Scan for "sandwiched" cells
+  for (let i = 1; i < regionContent.length - 1; i++) {
+    for (let j = 1; j < regionContent[i].length - 1; j++) {
+      const cell = regionContent[i][j];
+      if (cell.inviwall) continue;
+
+      const above = regionContent[i - 1][j];
+      const below = regionContent[i + 1][j];
+      if (above?.inviwall && below?.inviwall) {
+        cell.bando = "vertical";
+        continue;
       }
-  
-      return true;
-    });
 
-    const x = Math.floor(Math.random() * 60) + 10;
-    const y = Math.floor(Math.random() * 60) + 10;
-
-
-  
-    // if (matchingBuildings.length > 0 && !regionContent[x][y].occupied) {
-
-      // const randomIndex = Math.floor(Math.random() * matchingBuildings.length);
-      // let currentBuilding = matchingBuildings[randomIndex];
-      //currentBuilding.interior = [ ... generateBuildingInterior(16) ];
-
-      // regionContent[x][y].building = { ... currentBuilding };
-      regionContent[x][y].building = true;
-      regionContent[x][y].occupied = true;
-
-      regionContent[x][y].inviwall = true;
-      regionContent[x][y+1].inviwall = true;
-      regionContent[x+1][y+1].inviwall = true;
-      regionContent[x+1][y].inviwall = true;
-      regionContent[x+2][y+1].inviwall = true;
-      regionContent[x+2][y].inviwall = true;
-
-      regionContent[x][y].occupied = true;
-      regionContent[x][y+1].occupied = true;
-      regionContent[x+1][y+1].occupied = true;
-      regionContent[x+1][y].occupied = true;
-      regionContent[x+2][y+1].occupied = true;
-      regionContent[x+2][y].occupied = true;
-    // }
+      const left = regionContent[i][j - 1];
+      const right = regionContent[i][j + 1];
+      if (left?.inviwall && right?.inviwall) {
+        cell.bando = "horizontal";
+      }
+    }
+  }
 }
+
+
 
 
 function generateWorldSettlements(region, x, y) {
@@ -1428,6 +1416,7 @@ function createSemTab(Prow, Pcol, data) {
             
 
             populateContentCell(cell, data, veg, i, j);
+
 
 
 
@@ -1656,8 +1645,6 @@ function populateContentCell(cell, data, veg, i, j) {
 
 
 
-
-
     cell.classList.add('unexplored');
 
     if ( Object.keys(data).length == 2 && data.impassable == false) {
@@ -1732,6 +1719,12 @@ function populateContentCell(cell, data, veg, i, j) {
         cell.classList.add('impassable');
         cell.appendChild(createBuildingCube('building'));
     }
+    if (data.mosque) {
+        cell.classList.add('building-mosque');
+        cell.classList.add('inviwall');
+        cell.classList.add('impassable');
+        cell.appendChild(createBuildingCube('mosque'));
+    } 
 
     if (data.impassable === true || data.removed === true) {
         cell.classList.add('impassable');
@@ -1796,6 +1789,10 @@ function populateContentCell(cell, data, veg, i, j) {
           cell.style.backgroundImage = `url('/Art/Textures/riverbed.jpg')`;
         }
       }
+    }
+
+    if (data.bando) {
+      cell.appendChild(addStore('bando', data.bando));
     }
 
     if (data.palsa) {
@@ -1887,13 +1884,15 @@ function populateContentCell(cell, data, veg, i, j) {
           let randomness = Math.floor(Math.random() * treeNumbers) + 1;
 
           if (veg === 'Savanna') {
-            randomness = Math.floor(Math.random() * 14) + 1;
+            randomness = Math.floor(Math.random() * 5) + 1;
           }
 
           image = `url('/Art/Vegetation/Sprites/${veg}/Big/${randomness}.png')`;
           doodadStore.style.backgroundImage = `url('/Art/Vegetation/Sprites/${veg}/Big/${randomness}.png')`;
 
           cell.appendChild(appendShadow(image));
+
+
         } else if (data.tree === 'Small'  ) {
 
           let randomness = Math.floor(Math.random() * treeNumbers) + 1;
@@ -1909,6 +1908,12 @@ function populateContentCell(cell, data, veg, i, j) {
           }
           if (veg === 'Savanna') {
             randomness = Math.floor(Math.random() * 17) + 1;
+          }
+          if (veg === 'Steppe') {
+            randomness = Math.floor(Math.random() * 13) + 1;
+          }
+          if (veg === 'Tugay') {
+            randomness = Math.floor(Math.random() * 14) + 1;
           }
 
           image = `url('/Art/Vegetation/Sprites/${veg}/Small/${randomness}.png')`;
@@ -2021,6 +2026,21 @@ function populateContentCell(cell, data, veg, i, j) {
         createNpcWindow(data.npc);
       });
       store.style.backgroundImage = data.npc.img;
+    }
+
+    if (info === 'bando') {
+      store.classList.add('bando');
+      if (data.bando === 'vertical') store.classList.add('vertical');
+      if (data.bando === 'horizontal') store.classList.add('horizontal');
+
+      const ranBando = Math.floor(Math.random() * 4) + 1;
+      store.style.backgroundImage = `url('/Art/bando${ranBando}.png')`;
+        
+      const randAnTime = Math.floor(Math.random() * 5) + 2;
+        store.style.setProperty(
+          "--animTime",
+          `${randAnTime}s`
+        );
     }
     
     if (info === 'animal') {
@@ -2407,7 +2427,7 @@ function createRuinCube(className) {
 function createBuildingCube(className) {
 
   const impa = document.createElement('div');
-  impa.classList.add('building-store');
+  impa.classList.add(`${className}-store`);
   
   const left = document.createElement('div');
   left.classList.add(`${className}`);
@@ -2424,21 +2444,32 @@ function createBuildingCube(className) {
   const back = document.createElement('div');
   back.classList.add(`${className}`);
   back.id = 'back';
+
+  const roof = document.createElement('div');
+  roof.classList.add(`${className}`);
+  roof.id = 'roof';
   
   impa.appendChild(left);
   impa.appendChild(right);
   impa.appendChild(front);
   impa.appendChild(back);
+  impa.appendChild(roof);
 
   const walls = [front, back, left, right];
 
-  for (i = 0 ; i < walls.length ; i++) {
-    walls[i].style.backgroundImage = `url('/Art/Textures/structure/building/${i + 1}.png')`;
-  }
-  
-  const randomAngle = [0, 180][Math.floor(Math.random() * 2)];
-  if (randomAngle === 180) {
-    impa.style.transform = `rotateZ(${randomAngle}deg) translateY(-20px)`;
+  if (className != 'mosque') {
+    for (i = 0 ; i < walls.length ; i++) {
+      walls[i].style.backgroundImage = `url('/Art/Textures/structure/building/${i + 1}.png')`;
+    }
+    
+    const randomAngle = [0, 180][Math.floor(Math.random() * 2)];
+    if (randomAngle === 180) {
+      impa.style.transform = `rotateZ(${randomAngle}deg) translateY(-20px)`;
+    }
+  } else {
+    for (i = 0 ; i < walls.length ; i++) {
+      walls[i].style.backgroundImage = `url('/Art/mosque.png')`;
+    }
   }
   
   

@@ -1,53 +1,70 @@
 [
   {
-    "class": "aristocrat"
+    "class": "aristocrat",
+    "var": 8
   },
   {
-    "class": "beggar"
+    "class": "beggar",
+    "var": 3
   },
   {
-    "class": "burgher"
+    "class": "burgher",
+    "var": 5
   },
   {
-    "class": "child"
+    "class": "child",
+    "var": 4
   },
   {
-    "class": "courtesan"
+    "class": "courtesan",
+    "var": 5
   },
   {
-    "class": "ecclesiastic"
+    "class": "ecclesiastic",
+    "var": 4
   },
   {
-    "class": "entertainer"
+    "class": "entertainer",
+    "var": 8
   },
   {
-    "class": "housewife"
+    "class": "housewife",
+    "var": 4
   },
   {
-    "class": "innkeeper"
+    "class": "innkeeper",
+    "var": 5
   },
   {
-    "class": "laborer"
+    "class": "laborer",
+    "var": 6
   },
   {
-    "class": "lady"
+    "class": "lady",
+    "var": 3
   },
   {
-    "class": "merchant"
+    "class": "merchant",
+    "var": 6
   },
   {
-    "class": "odalisque"
+    "class": "odalisque",
+    "var": 6
   },
   {
-    "class": "outlaw"
+    "class": "outlaw",
+    "var": 7
   },
   {
-    "class": "slave"
+    "class": "slave",
+    "var": 2
   },
   {
-    "class": "unknown"
+    "class": "unknown",
+    "var": 4
   },
   {
-    "class": "wretch"
+    "class": "wretch",
+    "var": 4
   }
 ]

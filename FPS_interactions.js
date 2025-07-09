@@ -440,8 +440,8 @@ function showSreenBlood() {
 
 async function animateAnimalAttack(element) {
   let startTime = null;
-  const duration = 100; // 100ms for attack movement
-  const returnDuration = 100; // 100ms for return movement
+  const duration = 40; // 100ms for attack movement
+  const returnDuration = 30; // 100ms for return movement
   const initialOrigin = { x: 0, y: -50 }; // Default position
   const offset = 75; // Movement distance
 
@@ -568,7 +568,7 @@ function checkMissChance(attacker, defender) {
 function resultEntityKilled(entity, cell) {
   displayMessage(`${entity.name} is DEAD!`, 'red');
   
-  const expGain = 4 * (entity.level) + entity.attack + entity.life;
+  const expGain = 1 * (entity.level) + entity.attack + entity.life;
   gainExperience(expGain);
 
   createLoot(entity, cell);

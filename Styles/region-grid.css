@@ -116,7 +116,7 @@
   transform-style: preserve-3d;
   scale: 1;
   perspective: 720px;
-  background-color: rgb(36, 36, 36);
+  background-color: rgb(78, 93, 116);
   filter: brightness(0.8) contrast(1.1) url(#posterize);
 }
 
@@ -199,14 +199,16 @@
   background-color: transparent;
   scale : 1;
   filter: saturate(1.3) brightness(1.28);
+
 }
 
 #engine-wrapper::after {
   content: '';
   -webkit-mask-box-image: url(../Art/Textures/overlay3.png) stretch ;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(2px);
+  filter: blur(3px);
   position: absolute;
-  opacity: 0.7;
+  opacity: 1;
   top: 0;
   left: 0;
   width: 100%;
@@ -655,12 +657,16 @@ contain-intrinsic-size: 1px 5000px;
    .basic-store.bird {
     width: 10px;
     height: 10px;
-    transform: translateZ(40px) translateY(-25px) rotateY(180deg);
     pointer-events: all;
     transform-origin: center;
-    animation: bird 4s infinite ease-in-out;
     background-size: contain;
     scale: 0.8;
+  }
+  .basic-store.bird.west {
+    animation: bird 4s infinite ease-in-out;
+  }
+  .basic-store.bird.east {
+    animation: birdEast 4s infinite ease-in-out;
   }
   @keyframes bird {
     0% {
@@ -673,7 +679,17 @@ contain-intrinsic-size: 1px 5000px;
       transform: rotateX(-90deg) translateY(-35px) rotateY(var(--rotationZ));
     }
   }
-
+  @keyframes birdEast {
+    0% {
+      transform: rotateX(-90deg) translateY(-35px) rotateY(var(--rotationZ)) rotate3d(0, 1, 0, 180deg);
+    }
+    50% {
+      transform: rotateX(-90deg) translateY(-45px) rotateY(var(--rotationZ)) rotate3d(0, 1, 0, 180deg);
+    }
+    100% {
+      transform: rotateX(-90deg) translateY(-35px) rotateY(var(--rotationZ))  rotate3d(0, 1, 0, 180deg);
+    }
+  }
   
    .basic-store {
     pointer-events: none;
@@ -790,13 +806,19 @@ contain-intrinsic-size: 1px 5000px;
  .current-group-position .basic-store.npc {
     transform: rotateX(-90deg) scale3d(0.47, 0.47, 0.47) rotateY(var(--rotationZ)) translate3d(0px, 0px, -10px);
   }
+
+  .game-cell.loot-container:has(.npc) .loot-container {
+    transform: rotateX(-90deg) scale3d(0.6, 0.6, 0.6) rotateY(var(--rotationZ)) rotateX(var(--rotationX)) translate3d(3px, 0px, -2px); 
+    top: -33%
+  }
+
   .basic-store.npc {
     transform: rotateX(-90deg) scale3d(0.47, 0.47, 0.47) rotateY(var(--rotationZ));
     top: -50%;
-    background-size: contain;
-    pointer-events: all;
+    background-size: contain; 
     background-position-y: bottom;
     background-position-x: center;
+    pointer-events: none;
   }
   .basic-store.pest {
     transform: translateZ(2px) translateY(1px);
@@ -860,7 +882,7 @@ contain-intrinsic-size: 1px 5000px;
   }
 
    .doodads .doodad-store.Small {
-    transform: rotateX(-90deg) scale3d(0.3, 0.3, 0.3) rotateY(var(--rotationZ)) rotateX(var(--rotationX));
+    transform: rotateX(-90deg) scale3d(0.5, 0.5, 0.5) rotateY(var(--rotationZ)) rotateX(var(--rotationX));
   }
 
   @keyframes treeMove {
@@ -990,6 +1012,44 @@ contain-intrinsic-size: 1px 5000px;
   -webkit-backface-visibility: hidden;
 }
 
+.inviwall {
+
+}
+
+.mosque-store {
+    pointer-events: none;
+    width: 20px;
+    height: 20px;
+    transform-style: preserve-3d;
+    z-index: 1;
+    transform: translateZ(0px);
+    transform-origin: bottom right;
+    outline-offset: -2px;
+
+}
+.mosque-store > * {
+  background-size: contain;
+  image-rendering: pixelated;
+  height: 100px;
+  width: 60px;
+  transform-origin: bottom;
+  background-position-y: bottom;
+}
+
+.mosque-store #front {
+    transform: rotateX(-90deg) rotateY(90deg) translate3d(290px, 0px, 10px) scale(1.1);
+}
+.mosque-store #back {
+    transform: rotateX(-90deg) rotateY(90deg) translate3d(390px, 0px, -50px) scale(1.1);
+}
+.mosque-store #right {
+    transform: rotateX(-90deg) translate3d(-20px, 0px, -160px) scale(1.1)
+}
+.mosque-store #left {
+    transform: rotateX(-90deg) translate3d(-20px, 0px, -120px) scale(1.1)
+}
+
+
 .building-store {
     pointer-events: none;
     width: 20px;
@@ -1019,11 +1079,59 @@ contain-intrinsic-size: 1px 5000px;
     transform-origin: bottom;
     width: 40px;
 }
+.building-store #front:before {
+  transform: translate(0px, 0px) rotateX(-55deg);
+}
+.building-store #back:before {
+    transform: translate(0px, 0px) rotateX(55deg);
+}
+.building-store #back:before, .building-store #front:before {
+  content: '';
+    transform-origin: bottom;
+     width: 100%;
+     height: 24px;
+     place-content: center; 
+     top: -23px;
+     left: 0;
+  overflow: hidden;
+  position: absolute;
+  background-image: url('/Art/Textures/structure/building/roof.png');
+  background-size: 10px 10px;
+  background-repeat: repeat;
+}
+.building-store #right:before, .building-store #left:before {
+  content: '';
+    transform-origin: bottom;
+     width: 100%;
+     height: 20px;
+     place-content: center; 
+     top: -20px;
+     left: 0;
+  overflow: hidden;
+  position: absolute;
+  background-image: url('/Art/Textures/structure/building/roof.png');
+  background-size: 10px 10px;
+  background-repeat: repeat;
+  clip-path: polygon(50% 35%, 0% 100%, 100% 100%);
+}
+
 .building-store #left {
     transform: rotateX(-90deg) translateZ(-22px) translateX(0px);
     transform-origin: bottom;
     width: 40px;
 }
+.building-store #roof {
+    transform: translateZ(21px) translateY(-90px) scale3d(1.02, 1.02, 1.02);
+    transform-origin: center;
+    background-size: 20px 20px;
+    width: 40px;
+    height: 60px;
+    background-image: url('/Art/Textures/roof.jpg');
+    background-repeat: repeat;
+    display: none;
+}
+
+
 
   .ruin-store {
     pointer-events: none;
@@ -1146,9 +1254,44 @@ contain-intrinsic-size: 1px 5000px;
     rotate: -90deg;
   }
 
+  .game-cell .bando {
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-position-y: top;
+    transform-origin: top;
 
-
-
+  }
+  @keyframes bandoSwing {
+    0% {
+      transform: translate3d(0px, 0px, 20px) rotateX(-88deg);
+    }
+    50% {
+      transform: translate3d(0px, 0px, 20px) rotateX(-95deg);
+    }
+    100% {
+      transform: translate3d(0px, 0px, 20px) rotateX(-88deg);
+    }
+  }
+  @keyframes bandoSwingVert {
+    0% {
+      transform: translate3d(10px, 0px, 20px) rotateX(-88deg);
+    }
+    50% {
+      transform: translate3d(10px, 0px, 20px) rotateX(-94deg);
+    }
+    100% {
+      transform: translate3d(10px, 0px, 20px) rotateX(-88deg);
+    }
+  }
+  .game-cell .bando.horizontal {
+    top: 50%;
+    animation: bandoSwing var(--animTime) infinite ease-in-out;
+  }
+  .game-cell .bando.vertical {
+    rotate: 90deg;
+    animation: bandoSwingVert var(--animTime) infinite ease-in-out;
+  }
 
   .game-cell.targeted-cell::after {
     content: '';
@@ -1257,6 +1400,7 @@ outline-offset: 2px;
   height: 100%;
   background-size: cover;
   transform: translateZ(4.1px) scale(1);
+  image-rendering: pixelated;
   transition: all 0.2s;
   pointer-events: none;
 }
@@ -1269,17 +1413,14 @@ outline-offset: 2px;
   }
   .game-cell.river-cell:before {
     content: '';
-    background-image: url('../Art/Sprites/river.gif');
+    background-image: url('../Art/Sprites/river.png');
     animation: water 10s linear infinite;
     background-size: 50% 50%;
     width: 100%;
     height: 100%;
     z-index: 1;
-    opacity: 0.5;
     position: absolute;
-    filter: hue-rotate(-30deg);
     transform: translateZ(4px);
-    transform-style: flat;
     top: 0;
     left: 0;
     pointer-events: none;
@@ -1288,9 +1429,11 @@ outline-offset: 2px;
 @keyframes water {
     0% {
       background-position: top;
+      background-size: 50% 50%;
     }
     100% {
-      background-position:bottom;
+      background-position: bottom;
+      background-size: 50% 50%;
     }
 }
 
@@ -1876,16 +2019,17 @@ pointer-events: none;
   left: 50%;
   translate: -50% -50%;
   pointer-events: none;
-background: #00000000;
-border-radius: 50%;
-transform: translateZ(80px);
-image-rendering: pixelated;
-opacity: 0.7;
-scale: 15;
-    background-image: url('../Art/Textures/nlstar.png');
-    animation: water 90s linear infinite;
-    background-size: 50% 50%;
-      -webkit-mask-box-image: url(../Art/Textures/our-group-light.png) stretch ;
+  background: #00000000;
+  border-radius: 50%;
+  transform: translateZ(80px);
+  filter: sepia(0.5);
+  image-rendering: pixelated;
+  opacity: 0.8;
+  scale: 15;
+  background-image: url('../Art/Textures/nlstar.png');
+  animation: water 90s linear infinite;
+  background-size: 50% 50%;
+  -webkit-mask-box-image: url(../Art/Textures/our-group-light.png) stretch ;
 }
 
 
@@ -2560,39 +2704,35 @@ background: linear-gradient(180deg, rgb(146, 12, 12) 0%, rgb(131, 7, 7) 100%);
   transform: rotateX(-90deg) rotateY(var(--rotationZ)) scale3d(1, 1, 1);
   transform-origin: bottom;
   animation: group-stand 10s infinite;
-  transition: all 1s linear;
 }
 
 .sprites-container {
   display: grid;
-      width: 100%;
-      height: 100%;
-      flex-direction: column;
-      pointer-events: all;
-      align-content: center;
-      align-items: center;
-      justify-content: center;
-      justify-items: center;
-      overflow: visible;
-      gap: 2px;
-      image-rendering: pixelated;
-      grid-template-columns: repeat(3, 20px);
-      grid-template-rows: repeat(2, 20px);
-      transform-origin: center;
-      border-radius: 50%;
-      position: absolute;
-      transform-style: preserve-3d;
-      transform: translate(0px, 0px) translateZ(0.2px);
-      pointer-events: all;
-      scale: 1;
-      transition: none;
-          background: rgb(77,66,46);
-    background: radial-gradient(circle, rgba(0, 0, 0, 0.7) 0%, rgba(255, 255, 255, 0) 60%);
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  pointer-events: all;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  overflow: visible;
+  gap: 2px;
+  image-rendering: pixelated;
+  grid-template-columns: repeat(3, 20px);
+  grid-template-rows: repeat(2, 20px);
+  transform-origin: center;
+  border-radius: 50%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transform: translate(0px, 0px) translateZ(0.2px);
+  pointer-events: all;
+  scale: 1;
+  transition: none;
+  background: rgb(77,66,46);
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.7) 0%, rgba(255, 255, 255, 0) 60%);
+}
 
-}
-.our-group {
-  
-}
 .our-group > * {
   pointer-events: none;
 }
@@ -2657,7 +2797,6 @@ background: linear-gradient(180deg, rgb(146, 12, 12) 0%, rgb(131, 7, 7) 100%);
   transform-origin: 250px 250px;
   will-change: transform, translate;
   backface-visibility: hidden;
-
 }
 
 

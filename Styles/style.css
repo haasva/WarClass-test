@@ -832,10 +832,7 @@ margin-bottom: 0px;
   color: #AAA;
 }
 
-#region-infos #level {
-  width: fit-content;
-  margin-left: 5px;
-  font-size: 18px;
+#region-infos #region-level {
   color: rgb(131, 255, 59);
 }
 
@@ -1639,7 +1636,7 @@ z-index: 99;
     gap: 2px;
     border: 1px outset #b36828;
     box-shadow: black 0px 0px 10px;
-    background-color: #111;
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 5px;
     padding-bottom: 6px;
     padding-left: 7px;

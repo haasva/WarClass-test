@@ -87,9 +87,15 @@ function updateRegionInformations() {
   }
 
   const coordinates = infos.querySelector('#coordinates');
-  coordinates.textContent = `[${playerOverworldCol}:${playerOverworldRow}]`;
+  if (CURRENT_PLAYER_REGION_DATA.locationWorld != 'none') {
+    coordinates.textContent = `[${CURRENT_PLAYER_REGION_DATA.locationWorld.name}]`;
+  } else {
+    coordinates.textContent = `[${playerOverworldCol}:${playerOverworldRow}]`;
+  }
+  
+  
 
-  const level = infos.querySelector('#level');
+  const level = infos.querySelector('#region-level');
   level.textContent = `${CURRENT_PLAYER_REGION_DATA.level}`;
 
   const groups = infos.querySelector('#groups');
@@ -98,6 +104,8 @@ function updateRegionInformations() {
   } else {
     groups.textContent = `0`;
   }
+
+  infos.querySelector('#buildings').textContent = `${CURRENT_PLAYER_REGION_DATA.buildingNumber}`;
 
   const roads = infos.querySelector('#roads');
   roads.textContent = `${CURRENT_PLAYER_REGION_DATA.roadIDCounter}`;

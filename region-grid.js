@@ -1407,6 +1407,7 @@ if (startingCell) {
     document.addEventListener('keydown', function(event) {
       if (event.code === 'KeyG') {
         event.preventDefault();
+        SETTINGS.firstPerson = !SETTINGS.firstPerson;
         toggleFirstPerson();
       }
     });
@@ -1550,7 +1551,10 @@ if (startingCell) {
 
   inner.appendChild(playerCamera);
 
-  toggleFirstPerson();
+ 
+    toggleFirstPerson();
+  
+  
 
 }
 
@@ -1663,7 +1667,7 @@ function toggleFirstPerson(event) {
   const skybox = inner.querySelector('#skybox');
   const camera = inner.querySelector('#player-camera');
 
-  SETTINGS.firstPerson = !SETTINGS.firstPerson;
+
 
   if (SETTINGS.firstPerson === true) {
     SETTINGS.angle = 90;
@@ -2109,7 +2113,7 @@ function updateCameraRotation(event) {
       `${-SETTINGS.zRotation}deg`
     );
 
-    const camera = inner.querySelector('#player-camera');
+    const camera = inner.querySelector('#player-group');
     camera.style.setProperty(
       "--rotationZ",
       `${-SETTINGS.zRotation}deg`
