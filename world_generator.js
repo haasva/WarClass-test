@@ -62,7 +62,7 @@ return new Promise(resolve => {
 function generateWorldLevels() {
   const rows = 266;
   const cols = 533;
-  const levels = 50;
+  const levels = 10;
   const noise = new SimplexNoise(); // Initialize the noise generator
 
   const levelThresholds = Array.from({ length: levels }, (_, i) =>

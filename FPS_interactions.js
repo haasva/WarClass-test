@@ -12,6 +12,7 @@ let PLAYER_STATE = {
 
 
 window.addEventListener("click", async (event) => {
+  if (CURRENT_TARGET_CELL.classList.contains('building')) return;
   if (!document.pointerLockElement) return;
   if (event.button !== 2) return;
   
@@ -279,7 +280,7 @@ async function weaponImageAnimation(specialty) {
 
 window.addEventListener("click", async (event) => {
 
-  if (event.button === 0 && CURRENT_TARGET_CELL.classList.contains('building')) {
+  if (event.button === 2 && CURRENT_TARGET_CELL.classList.contains('building')) {
     event.preventDefault();
     enterBuilding();
     return;

@@ -72,7 +72,7 @@ function generateNpc(region, x, y) {
   const imgNb = Math.floor(Math.random() * imgRange) + 1;
   npc.img = `url('/Art/People/${npcObject[ranType].class}/${imgNb}.png')`;
 
-  npc.text = npcObject[ranType].text || "Greatings!";
+  npc.text = npcObject[ranType].text || "Greetings!";
 
   const cultureWords = region.cultures ? region.cultures.split(',').map(word => word.trim()) : [];
   const ranCulture = Math.floor(Math.random() * cultureWords.length);

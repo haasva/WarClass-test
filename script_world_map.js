@@ -562,7 +562,7 @@ function addSuperRegionOverlay(cell, superregion) {
 function addLevelOverlay(cell, level) {
   const colorIndicator = document.createElement('div');
   colorIndicator.classList.add('level-overlay');
-  const maxLevel = 50;
+  const maxLevel = 10;
   const grayValue = Math.floor((1 - (level - 1) / (maxLevel - 1)) * 255);
   colorIndicator.style.backgroundColor = `rgb(${grayValue}, ${grayValue}, ${grayValue})`;
 

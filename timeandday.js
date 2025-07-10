@@ -145,34 +145,12 @@ function updateTimeOfDay() {
     
   		  currentHour = (currentHour) % DAY_DURATION;
 	  	
-
+  const filter = document.getElementById('region-grid-filter');
+  
   if (isNightTime) {
-   
-    const game = document.getElementById('table-container');
-    const nightFilter = document.getElementById('region-grid-filter');
-    
-    if (game) {
-      if (!game.classList.contains('nighttime')) { 
-        game.classList.add('nighttime'); 
-        nightFilter.style.opacity = '1';
-      }
-    }
-
-
-
-  } else{
-    const game = document.getElementById('table-container');
-    if (game) {
-   
-      if (game.classList.contains('nighttime') && game) { 
-        game.classList.remove('nighttime'); 
-        game.classList.add('daytime'); 
-        const nightFilter = document.getElementById('region-grid-filter');
-        nightFilter.style.opacity = '0';
-      }
-    }
-
-
+    filter.classList.add('night');
+  } else {
+    filter.classList.remove('night');
   }
 }
 

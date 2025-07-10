@@ -232,9 +232,7 @@ async function  checkGridCellInteraction() {
     //checkTreeBefore(cell);
   }
 
-  if (cell.classList.contains('door')) {
-    toggleInStructureMode();
-  }
+
 
   if (cell.classList.contains('current-group-position') && cell.classList.contains('crossroad') && !cell.classList.contains('seen-crossroad')) {
     const x = parseInt(cell.getAttribute('col'));
@@ -2397,27 +2395,34 @@ function createEnterBuildingPrompt() {
 }
 
 async function enterBuilding() {
-
   if (document.querySelector('#building-inside')) return;
+
   document.exitPointerLock();
   document.querySelector('#building-prompt')?.remove();
-
   document.querySelector('#neo-region').style.display = 'none';
 
-  const window = document.createElement('div');
-  window.id = 'building-inside';
+  const response = await fetch('/Templates/building-inside.html');
+  const html = await response.text();
 
-  document.querySelector('#region-grid-container').appendChild(window);
+  const tempDiv = document.createElement('div');
+  tempDiv.innerHTML = html;
+
+  const buildingInside = tempDiv.querySelector('#building-inside');
+  if (buildingInside) {
+    document.querySelector('#engine-wrapper').appendChild(buildingInside);
+
+    const exitButton = buildingInside.querySelector('#exit-button');
+    if (exitButton) {
+      exitButton.addEventListener('click', function () {
+        buildingInside.remove();
+        exitBuilding(buildingInside); // or pass null if needed
+      });
+    }
+  }
 
   actionGridDisabled = true;
-
-    document.addEventListener('keydown', function(event) {
-      if (event.code === 'KeyH') {
-          window.remove();
-          exitBuilding(window);
-      }
-    });
 }
+
 
 function exitBuilding() {
   togglePointerLock();
@@ -3778,6 +3783,8 @@ async function movePlayerCameraByKey(event) {
   if (![87, 65, 68, 83].includes(key) ) return;
 
   document.getElementById('interior_building')?.remove();
+  document.getElementById('npc-window')?.remove();
+
 
 
   removeAllKindsOfTooltips();

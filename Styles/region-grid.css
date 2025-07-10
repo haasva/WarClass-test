@@ -216,25 +216,6 @@
   z-index: 2;
 }
 
-#region-grid-filter {
-  transition: all 0.5s;
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgb(40 17 95 / 60%);
-  opacity: 0;
-  pointer-events: none;
-  z-index: 2;
-  backdrop-filter: sepia(0.2) brightness(0.8) contrast(1) saturate(0.8) hue-rotate(10deg);
-  display: block;
-  filter: hue-rotate(-20deg) url(#posterize) opacity(0.6) ;
-  mix-blend-mode: color;
-  animation: nightSky 3s ease infinite;
-}
-
 
 #table-wrapper {
   transform-origin: 1704.31px 851.046px;
@@ -329,15 +310,7 @@
       visibility: hidden;
 }     
 
-    
-    @keyframes tableAppear {
-      0% {
-        filter: blur(10px);
-      }
-      100% {
-        filter: none;
-      }
-    }
+
 
     #table-container.toggle3d {
       position: absolute;
@@ -371,11 +344,6 @@
         transform: rotateX(93deg) matrix(1, 0, 0, 1, -17, 496) translateZ(193px) translateY(0px) rotateZ(90deg)  translateX(0px);
       }
     }
-
-  #region-grid-container #table-container.nighttime {
-    /* filter: grayscale(0.3) hue-rotate(16deg) sepia(0.2) brightness(0.9); */
-    transition: filter 2s;
-  }
 
 
   
@@ -449,50 +417,63 @@ contain-intrinsic-size: 1px 5000px;
     transition: background-image 0.5s, background-color 0.5s;
   }
 
-  #region-grid-container.rain .mega-wrapper::before {
+#region-grid-container.rain .mega-wrapper::before {
 
 }
 
+#region-grid-filter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1; 
+  pointer-events: none;
+  z-index: 2;
+  display: block;
+  transition: all 0.1s;
+}
+#region-grid-filter.night {
+  background-color: rgba(7, 3, 51, 0.363);
+  mix-blend-mode: darken;
+  backdrop-filter: sepia(0.4) hue-rotate(7deg) brightness(0.8) saturate(0.8);
+  opacity: 0.8;
+}
 
+#region-grid-container.rain #region-grid-filter::after {
 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  content: '';
+  z-index: 1;
+  background-image: url(../Art/Sprites/rain.gif);
+  background-size: cover;
+  opacity: 0.2;
+  filter: saturate(0) brightness(1.5) contrast(1.7);
+  background-color: rgba(19, 4, 75, 0.85);
+}
 
-  #region-grid-container.rain #engine-wrapper::after {
-    transition: all 1s;
-    position: absolute;
-    top: 0;
-    left: 0%;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    content: '';
-    z-index: 1;
-    background-image: url(../Art/Sprites/rain.gif);
-    background-size: cover;
-    opacity: 0.18;
-    filter: saturate(0) brightness(2) contrast(1.7);
-    image-rendering: pixelated;
-    animation: rainAppear 2s ease-in 1;
-    background-color: rgba(19, 4, 75, 0.85);
-  }
+#region-grid-container.snow #region-grid-filter::after {
+  position: absolute;
+  top: 0;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  content: '';
+  z-index: 1;
+  background-image: url(../Art/Textures/snow.gif);
+  background-size: cover;
+  opacity: 0.18;
+  filter: saturate(0) brightness(2) contrast(1.7);
+  image-rendering: pixelated;
 
-  #region-grid-container.snow #engine-wrapper::after {
-    transition: all 1s;
-    position: absolute;
-    top: 0;
-    left: 0%;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    content: '';
-    z-index: 1;
-    background-image: url(../Art/Textures/snow.gif);
-    background-size: cover;
-    opacity: 0.18;
-    filter: saturate(0) brightness(2) contrast(1.7);
-    image-rendering: pixelated;
-    animation: rainAppear 2s ease-in 1;
-    background-color: rgba(19, 4, 75, 0.85);
-  }
+  background-color: rgba(19, 4, 75, 0.85);
+}
 
   @keyframes snowFall {
     100% {
@@ -757,9 +738,24 @@ contain-intrinsic-size: 1px 5000px;
     z-index: 2;
     top: -50%;
   }
-   .basic-store.campfire {
+  .basic-store.campfire {
     transform: rotateX(-90deg) scale3d(0.5, 0.5, 0.5) rotateY(var(--rotationZ));
     top: -50%;
+  }
+  .basic-store.campfire::before {
+    transform-style: preserve-3d;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    filter: sepia(1) saturate(2);
+    opacity: 0.7;
+    translate: 0px 0px;
+    transform: scale(1.6);
+    background: radial-gradient(circle, rgb(255, 157, 92) 0%, transparent 50%);
+    z-index: 2;
+    content: '';
   }
    .basic-store.corpse {
     transform: rotateX(-90deg) rotateY(var(--rotationZ)) rotateX(var(--rotationX));
@@ -1339,31 +1335,28 @@ contain-intrinsic-size: 1px 5000px;
   }
 
  .game-cell {
-
+  pointer-events: none;
   font-size: 10px;
   image-rendering: pixelated;
   background-size: cover;
-  pointer-events: all;
+ 
   overflow: visible;
   transform-style: preserve-3d;
   width: 20px;
   height: 20px;
   outline-offset: -0.5px;
   display: flex;
-
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    transform: translateZ(0px);
-
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  transform: translateZ(0px);
 }
 
 
 
 .game-cell:hover {
-  outline-offset: -1px; 
-  outline: 0.2px dotted #ffffffb6;
+
 }
 
 
@@ -2042,8 +2035,28 @@ pointer-events: none;
   background-size: 50% 50%;
   -webkit-mask-box-image: url(../Art/Textures/our-group-light.png) stretch ;
 }
+ 
+#region-grid-container.rain #player-camera {
+  opacity: 1;
+  filter: sepia(0.5) brightness(0);
+  background-color: #32313641;
+}
 
 
+#region-grid-container.rain #inner-neo:before {
+  content: '';
+  background-image: url('/Art/Textures/ripples_white.gif');
+  transform: translateZ(0.1px) scale3d(0.5, 0.5, 0.5);
+  width: 100%;
+  background-size: 40px 40px;
+  transform-origin: center;
+  image-rendering: pixelated;
+  opacity: 0.3;
+  aspect-ratio: 1/1;
+  top: 0;
+  left: 0;
+  position: absolute;
+}
 
 
 
@@ -2948,14 +2961,13 @@ canvas {
 
 #skybox #top {
   transform: translateZ(500px);
-  background-color: #1391ff;
+
   background-image: url('../Art/Skyboxes/Jungle/up.jpg');
   rotate: 90deg;
 }
 
 #skybox #bottom {
   transform: translateZ(-20px);
-  background-color: #5a330e;
 }
 
 #skybox #left {
@@ -3027,11 +3039,72 @@ canvas {
 
 
 #building-inside {
-  image-rendering: pixelated;
   width: 100dvw;
   height: 100dvh;
-  background-color: #0000009d;
   position: absolute;
-  background-image: url('/Art/inside_building.jpg');
+  background-image: url('/Art/inside_building1.png');
   background-size: cover;
+  interpolate-size: allow-keywords;
+  transition: display 2s, content-visibility 0.1s;
+  transition-behavior: allow-discrete;
+  animation: appearBuilding 0.5s ease-in;
+  pointer-events: none;
+}
+    
+@keyframes appearBuilding {
+  0% {
+    filter: brightness(0.5) contrast(2);
+    opacity: 0.5;
+  }
+  50% {
+    filter:  brightness(0.75) contrast(1.5);
+    opacity: 0.8;
+  }
+  100% {
+    filter: saturate(0.9) brightness(0.8) contrast(1);
+  }
+}
+
+#building-inside #owner {
+  width: 25dvw;
+  height: 60dvh;
+  position: absolute;
+  bottom: 0;
+  right: 30dvw;
+  background-image: url('/Art/People/merchant/3.png');
+  background-position-y: top;
+  background-position-x: center;
+  background-size: cover;
+  filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.6));
+  pointer-events: all;
+  cursor: help;
+}
+
+#building-inside .building-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 300px;
+  background-color: #111; 
+  position: absolute;
+  top: 20%;
+  left: 30dvw;
+  z-index: 2;
+  pointer-events: all;
+  padding: 10px;
+}
+#building-inside .building-menu button {
+  font-size: 20px;
+  border: none;
+  background: #7c7c7c;
+}
+
+body:has(#building-inside) #crosshair {
+  visibility: hidden;
+}
+body:has(#building-inside) #weapon {
+  visibility: hidden;
+}
+body:has(#building-inside) #region-grid-filter {
+  visibility: hidden;
 }
