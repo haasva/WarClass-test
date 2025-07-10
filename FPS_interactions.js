@@ -279,6 +279,12 @@ async function weaponImageAnimation(specialty) {
 
 window.addEventListener("click", async (event) => {
 
+  if (event.button === 0 && CURRENT_TARGET_CELL.classList.contains('building')) {
+    event.preventDefault();
+    enterBuilding();
+    return;
+  }
+
   if (event.button !== 0) return;
 
   if (SETTINGS.firstPerson === true) {

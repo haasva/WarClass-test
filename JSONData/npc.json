@@ -1,70 +1,87 @@
 [
   {
     "class": "aristocrat",
-    "var": 8
+    "var": 8,
+    "types": "Noble"
   },
   {
     "class": "beggar",
-    "var": 3
+    "var": 3,
+    "types": ""
   },
   {
     "class": "burgher",
-    "var": 5
+    "var": 5,
+    "types": "Intellectual, Noble"
   },
   {
     "class": "child",
-    "var": 4
+    "var": 4,
+    "types": ""
   },
   {
     "class": "courtesan",
-    "var": 5
+    "var": 5,
+    "types": ""
   },
   {
     "class": "ecclesiastic",
-    "var": 4
+    "var": 4,
+    "types": "Religious"
   },
   {
     "class": "entertainer",
-    "var": 8
+    "var": 8,
+    "types": "Commoner, Outlaw"
   },
   {
     "class": "housewife",
-    "var": 4
+    "var": 4,
+    "types": "Commoner"
   },
   {
     "class": "innkeeper",
-    "var": 5
+    "var": 5,
+    "types": "Commoner"
   },
   {
     "class": "laborer",
-    "var": 6
+    "var": 6,
+    "types": "Commoner"
   },
   {
     "class": "lady",
-    "var": 3
+    "var": 3,
+    "types": "Commoner"
   },
   {
     "class": "merchant",
-    "var": 6
+    "var": 6,
+    "types": "Intellectual, Explorer"
   },
   {
     "class": "odalisque",
-    "var": 6
+    "var": 6,
+    "types": "Slave, Religious"
   },
   {
     "class": "outlaw",
-    "var": 7
+    "var": 7,
+    "types": "Outlaw, Explorer, Soldier"
   },
   {
     "class": "slave",
-    "var": 2
+    "var": 2,
+    "types": "Slave"
   },
   {
     "class": "unknown",
-    "var": 4
+    "var": 4,
+    "types": ""
   },
   {
     "class": "wretch",
-    "var": 4
+    "var": 4,
+    "types": ""
   }
 ]

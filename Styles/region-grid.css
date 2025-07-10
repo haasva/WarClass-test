@@ -800,12 +800,14 @@ contain-intrinsic-size: 1px 5000px;
     background-size: contain;
   } 
 
-  .current-group-position .doodad-store.Big {
+  .current-group-position:has(.our-group.FPS) .doodad-store.Big {
     visibility: hidden;
   }
- .current-group-position .basic-store.npc {
+
+
+.current-group-position .basic-store.npc {
     transform: rotateX(-90deg) scale3d(0.47, 0.47, 0.47) rotateY(var(--rotationZ)) translate3d(0px, 0px, -10px);
-  }
+}
 
   .game-cell.loot-container:has(.npc) .loot-container {
     transform: rotateX(-90deg) scale3d(0.6, 0.6, 0.6) rotateY(var(--rotationZ)) rotateX(var(--rotationX)) translate3d(3px, 0px, -2px); 
@@ -1013,7 +1015,7 @@ contain-intrinsic-size: 1px 5000px;
 }
 
 .inviwall {
-
+  
 }
 
 .mosque-store {
@@ -1050,6 +1052,15 @@ contain-intrinsic-size: 1px 5000px;
 }
 
 
+.building-store.rotation3 {
+  transform: rotateZ(270deg) translateX(20px);
+}
+.building-store.rotation2 {
+  transform: rotateZ(180deg) translateY(20px) translateX(20px);
+}
+.building-store.rotation1 {
+  transform: rotateZ(90deg) translateY(20px);
+}
 .building-store {
     pointer-events: none;
     width: 20px;
@@ -1294,7 +1305,7 @@ contain-intrinsic-size: 1px 5000px;
   }
 
   .game-cell.targeted-cell::after {
-    content: '';
+
     animation: grid-appear 0.2s 1, selectionBox 0.75s infinite ;
     background: rgb(77,66,46);
     background: radial-gradient(circle, rgba(77,66,46,0) 50%, rgba(211,255,0,1) 100%);
@@ -2795,7 +2806,7 @@ background: linear-gradient(180deg, rgb(146, 12, 12) 0%, rgb(131, 7, 7) 100%);
   align-items: center;
   margin: 0 auto;
   transform-origin: 250px 250px;
-  will-change: transform, translate;
+  will-change: transform;
   backface-visibility: hidden;
 }
 
@@ -2994,3 +3005,33 @@ canvas {
     z-index: 999999;
     transition: none;
   } 
+
+
+
+
+
+#building-prompt {
+  position: absolute;
+  bottom: 40%;
+  border: 1px outset orange;
+  box-shadow: black 0px 0px 10px;
+  border-radius: 4px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9;
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 10px;
+  font-size: larger;
+}
+
+
+
+#building-inside {
+  image-rendering: pixelated;
+  width: 100dvw;
+  height: 100dvh;
+  background-color: #0000009d;
+  position: absolute;
+  background-image: url('/Art/inside_building.jpg');
+  background-size: cover;
+}

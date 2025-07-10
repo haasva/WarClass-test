@@ -270,21 +270,20 @@ async function generateContentForRegion(region, x, y) {
     // generateStructures(regionContent, region);
     // generatePest(regionContent, seed);
 
-    const ranLootContainer = Math.floor(Math.random() * 30) + 10;
-    for (let i = 0 ; i < ranLootContainer ; i++) {
-          generateLootContainers(region, regionContent);
-    }
+    let ranLootContainer = Math.floor(Math.random() * 30) + 10;
 
-    const ranBuilding = Math.floor(Math.random() * 8);
-    for (let i = 0 ; i < ranBuilding ; i++) {
-          generateBuildings(region, regionContent);
-    }
+    let ranBuilding = Math.floor(Math.random() * 8);
+    generateBuildings(region, regionContent, ranBuilding);
+    
 
     if (region.locationWorld != "none") {
-            const ranLootContainer = Math.floor(Math.random() * 25) + 20;
-              for (let i = 0 ; i < ranLootContainer ; i++) {
-                    generateBuildings(region, regionContent);
-              }
+      ranBuilding = Math.floor(Math.random() * 60) + 30;
+      ranLootContainer = Math.floor(Math.random() * 25) + 5;
+      generateBuildings(region, regionContent, ranBuilding);
+    }
+
+    for (let i = 0 ; i < ranLootContainer ; i++) {
+      generateLootContainers(region, regionContent);
     }
 
     if (region.locationWorld === "none") {
@@ -1243,69 +1242,158 @@ function generateLootContainers(region, regionContent) {
 }
 
 
-function generateBuildings(region, regionContent) {
-  const matchingBuildings = buildingsObject.filter((building) => {
-    const areaWords = building.regions ? building.regions.split(',').map(word => word.trim()) : [];
-    return areaWords.length === 0 || areaWords.includes(region.superRegion);
-  });
+function generateBuildings(region, regionContent, ranBuilding) {
+    
+    
+    // Pre-calculate all occupied positions once at the start
+    const occupiedPositions = new Set();
+    
+    for (let i = 0; i < ranBuilding; i++) {
+        const matchingBuildings = buildingsObject.filter((building) => {
+            const areaWords = building.regions ? building.regions.split(',').map(word => word.trim()) : [];
+            return areaWords.length === 0 || areaWords.includes(region.superRegion);
+        });
 
-  // Random starting position
-  let x = Math.floor(Math.random() * 34) + 20;
-  let y = Math.floor(Math.random() * 34) + 20;
-
-  let offsets;
-
-  if (Math.random() < 1 / 6) {
-     regionContent[x][y].mosque = true;
-    // Use 3x3 building, origin at second cell of first row
-    // Shift origin to top-left corner of the 3x3 block
-    x -= 1; y -= 1;
-    offsets = [
-      [0, 0], [0, 1], [0, 2],
-      [1, 0], [1, 1], [1, 2],
-      [2, 0], [2, 1], [2, 2],
-    ];
-  } else {
-    // Use default 2x3 building
-    regionContent[x][y].building = true;
-    offsets = [
-      [0, 0], [0, 1],
-      [1, 0], [1, 1],
-      [2, 0], [2, 1]
-    ];
-  }
-
-  const originCell = regionContent[x]?.[y];
-  if (originCell) region.buildingNumber++;
-
-  for (const [dx, dy] of offsets) {
-    const cell = regionContent[x + dx]?.[y + dy];
-    if (cell) {
-      cell.inviwall = true;
-      cell.occupied = true;
+        // Try to place building (up to 50 attempts to avoid infinite loops)
+        let buildingPlaced = false;
+        for (let attempt = 0; attempt < 50 && !buildingPlaced; attempt++) {
+            // Random starting position with buffer space
+            let x = Math.floor(Math.random() * (regionContent.length - 40)) + 20;
+            let y = Math.floor(Math.random() * (regionContent[0].length - 40)) + 20;
+            
+            // Determine building type and rotation
+            const isMosque = Math.random() < 1 / 20;
+            const rotation = isMosque ? 0 : Math.floor(Math.random() * 4); // 0-3 for common buildings
+            
+            let buildingWidth, buildingHeight, offsets;
+            
+            if (isMosque) {
+                // Mosque is always 3x3
+                buildingWidth = 3;
+                buildingHeight = 3;
+                // Use 3x3 building, origin at center
+                offsets = [
+                    [-1, -1], [-1, 0], [-1, 1],
+                    [0, -1], [0, 0], [0, 1],
+                    [1, -1], [1, 0], [1, 1]
+                ];
+            } else {
+                // Common building can be 2x3 or 3x2 depending on rotation
+                if (rotation % 2 === 0) {
+                    // Original or 180° rotation - 2x3
+                    buildingWidth = 2;
+                    buildingHeight = 3;
+                } else {
+                    // 90° or 270° rotation - 3x2
+                    buildingWidth = 3;
+                    buildingHeight = 2;
+                }
+                
+                // Generate offsets based on rotation
+                offsets = generateOffsetsForRotation(rotation);
+            }
+            
+            // Check if the area is clear
+            const canPlaceBuilding = checkAreaClear(x, y, buildingWidth, buildingHeight, rotation, occupiedPositions, regionContent);
+            
+            if (canPlaceBuilding) {
+                // Mark positions as occupied
+                for (const [dx, dy] of offsets) {
+                    const posX = x + dx;
+                    const posY = y + dy;
+                    const cell = regionContent[posX]?.[posY];
+                    if (cell) {
+                        cell.inviwall = true;
+                        cell.occupied = true;
+                        occupiedPositions.add(`${posX},${posY}`);
+                    }
+                }
+                
+                // Mark the building type
+                const originCell = regionContent[x]?.[y];
+                if (originCell) {
+                    if (isMosque) {
+                        originCell.mosque = true;
+                    } else {
+                        originCell.building = true;
+                        originCell.buildingRotation = rotation; // Store rotation for reference
+                    }
+                    region.buildingNumber++;
+                }
+                
+                buildingPlaced = true;
+            }
+        }
     }
-  }
+    
+    // Scan for "sandwiched" cells after all buildings are placed
+    detectSandwichedCells(regionContent);
+}
 
-  // Scan for "sandwiched" cells
-  for (let i = 1; i < regionContent.length - 1; i++) {
-    for (let j = 1; j < regionContent[i].length - 1; j++) {
-      const cell = regionContent[i][j];
-      if (cell.inviwall) continue;
-
-      const above = regionContent[i - 1][j];
-      const below = regionContent[i + 1][j];
-      if (above?.inviwall && below?.inviwall) {
-        cell.bando = "vertical";
-        continue;
-      }
-
-      const left = regionContent[i][j - 1];
-      const right = regionContent[i][j + 1];
-      if (left?.inviwall && right?.inviwall) {
-        cell.bando = "horizontal";
-      }
+function generateOffsetsForRotation(rotation) {
+    // Common building is 2x3 in original orientation
+    const originalOffsets = [
+        [0, 0], [0, 1],
+        [1, 0], [1, 1],
+        [2, 0], [2, 1]
+    ];
+    
+    switch (rotation) {
+        case 0: // Original
+            return originalOffsets;
+        case 1: // 90° clockwise
+            return originalOffsets.map(([x, y]) => [y, -x]);
+        case 2: // 180°
+            return originalOffsets.map(([x, y]) => [-x, -y]);
+        case 3: // 270° clockwise
+            return originalOffsets.map(([x, y]) => [-y, x]);
+        default:
+            return originalOffsets;
     }
-  }
+}
+
+function checkAreaClear(x, y, width, height, rotation, occupiedPositions, regionContent) {
+    // Get all positions the building would occupy
+    const offsets = generateOffsetsForRotation(rotation);
+    
+    for (const [dx, dy] of offsets) {
+        const posX = x + dx;
+        const posY = y + dy;
+        
+        // Check if out of bounds
+        if (!regionContent[posX]?.[posY]) {
+            return false;
+        }
+        
+        // Check if position is already occupied
+        if (occupiedPositions.has(`${posX},${posY}`)) {
+            return false;
+        }
+    }
+    
+    return true;
+}
+
+function detectSandwichedCells(regionContent) {
+    for (let i = 1; i < regionContent.length - 1; i++) {
+        for (let j = 1; j < regionContent[i].length - 1; j++) {
+            const cell = regionContent[i][j];
+            if (cell.inviwall) continue;
+
+            const above = regionContent[i - 1][j];
+            const below = regionContent[i + 1][j];
+            if (above?.inviwall && below?.inviwall) {
+                cell.bando = "vertical";
+                continue;
+            }
+
+            const left = regionContent[i][j - 1];
+            const right = regionContent[i][j + 1];
+            if (left?.inviwall && right?.inviwall) {
+                cell.bando = "horizontal";
+            }
+        }
+    }
 }
 
 
@@ -1717,7 +1805,7 @@ function populateContentCell(cell, data, veg, i, j) {
         cell.classList.add('building');
         cell.classList.add('inviwall');
         cell.classList.add('impassable');
-        cell.appendChild(createBuildingCube('building'));
+        cell.appendChild(createBuildingCube('building', data));
     }
     if (data.mosque) {
         cell.classList.add('building-mosque');
@@ -2424,7 +2512,7 @@ function createRuinCube(className) {
 
 
 
-function createBuildingCube(className) {
+function createBuildingCube(className, data) {
 
   const impa = document.createElement('div');
   impa.classList.add(`${className}-store`);
@@ -2462,10 +2550,8 @@ function createBuildingCube(className) {
       walls[i].style.backgroundImage = `url('/Art/Textures/structure/building/${i + 1}.png')`;
     }
     
-    const randomAngle = [0, 180][Math.floor(Math.random() * 2)];
-    if (randomAngle === 180) {
-      impa.style.transform = `rotateZ(${randomAngle}deg) translateY(-20px)`;
-    }
+    impa.classList.add(`rotation${data.buildingRotation}`);
+
   } else {
     for (i = 0 ; i < walls.length ; i++) {
       walls[i].style.backgroundImage = `url('/Art/mosque.png')`;

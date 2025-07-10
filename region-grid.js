@@ -1673,6 +1673,7 @@ function toggleFirstPerson(event) {
     SETTINGS.angle = 90;
     SETTINGS.perspectiveGrid = 20;
     group.style.opacity = 0;
+    group.classList.add('FPS');
 
     SETTINGS.zoomFactor = 35;
     SETTINGS.translateZ = 8;
@@ -1706,6 +1707,7 @@ function toggleFirstPerson(event) {
     SETTINGS.perspectiveGrid = 433;
     SETTINGS.zoomFactor = 3;
     group.style.opacity = 1;
+    group.classList.remove('FPS');
     SETTINGS.translateX = 0;
     SETTINGS.translateY = 0;
     SETTINGS.translateZ = 0;
@@ -2058,7 +2060,7 @@ function updateCompass() {
 
 function updateCameraRotation(event) {
 
-
+if (actionGridDisabled === true) { return; }
 
     if (!document.pointerLockElement || PLAYER_STATE.isInMenu === true) {
       return;
@@ -2120,7 +2122,7 @@ function updateCameraRotation(event) {
     );
 //observeVisibleObjectsFOV();
     updateCompass();
-    //updateTargetedDirectionCell();
+    updateTargetedDirectionCell();
     applyNeoTransforms();
 
       // const line = inner.querySelector('#player-direction-line');
@@ -2341,7 +2343,7 @@ const crosshairInteractor = new CrosshairInteractor();
 
 
 function updateTargetedDirectionCell() {
-  if (SETTINGS.firstPerson != true) return;
+
   if (CURRENT_GROUP_CELL) {
     let currentCell = CURRENT_GROUP_CELL;
 
@@ -2375,8 +2377,53 @@ function updateTargetedDirectionCell() {
     CURRENT_TARGET_CELL = targetCell;
   }
 
+
+  if (CURRENT_TARGET_CELL.classList.contains('building') && !document.querySelector('#building-prompt')) {
+    createEnterBuildingPrompt();
+  } else if (!CURRENT_TARGET_CELL.classList.contains('building')) {
+    document.querySelector('#building-prompt')?.remove();
+  }
+
 }
 
+
+function createEnterBuildingPrompt() {
+  const prompt = document.createElement('div');
+  prompt.id = 'building-prompt';
+
+  prompt.textContent = 'This is a building';
+
+  document.body.appendChild(prompt);
+}
+
+async function enterBuilding() {
+
+  if (document.querySelector('#building-inside')) return;
+  document.exitPointerLock();
+  document.querySelector('#building-prompt')?.remove();
+
+  document.querySelector('#neo-region').style.display = 'none';
+
+  const window = document.createElement('div');
+  window.id = 'building-inside';
+
+  document.querySelector('#region-grid-container').appendChild(window);
+
+  actionGridDisabled = true;
+
+    document.addEventListener('keydown', function(event) {
+      if (event.code === 'KeyH') {
+          window.remove();
+          exitBuilding(window);
+      }
+    });
+}
+
+function exitBuilding() {
+  togglePointerLock();
+  document.querySelector('#neo-region').style.display = 'block';
+  actionGridDisabled = false;
+}
 
 class EntityObserver {
   constructor() {
@@ -3777,7 +3824,7 @@ async function movePlayerCameraByKey(event) {
   }
 
   accumulatedRotateZ = SETTINGS.zRotation;
-  //updateTargetedDirectionCell();
+  updateTargetedDirectionCell();
 
 
 
@@ -3880,7 +3927,7 @@ async function finalizeLocationNewcell(newGroupCell) {
   SETTINGS.translateY = 0;
 
   entityObserver.updateVisibleEntities();
-  //updateTargetedDirectionCell();
+  updateTargetedDirectionCell();
   // createDirectionLine();
 }
 
