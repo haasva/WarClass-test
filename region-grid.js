@@ -200,7 +200,7 @@ function checkTreeBefore(cell) {
   }
 }
 
-let castShadowYes = true;
+let castShadowYes = false;
 
 async function  checkGridCellInteraction() {
   onPlayerMove();
@@ -388,29 +388,29 @@ currentGroupDirection = dirN;
 STARTING_ROW = oriRow;
 STARTING_COL = oriCol;
 
-if (oriRow === 69) {
+if (oriRow === 44) {
     STARTING_ROW = 7;
 } else if (oriRow === 6) {
-    STARTING_ROW = 68;
+    STARTING_ROW = 43;
 }
 
-if (oriCol === 69) {
+if (oriCol === 44) {
     STARTING_COL = 7;
 } else if (oriCol === 6) {
-    STARTING_COL = 68;
+    STARTING_COL = 43;
 }
 
-  if (oriRow === 69) {
+  if (oriRow === 44) {
     STARTING_ROW = 7;
   }
   if (oriRow === 6) {
-    STARTING_ROW = 68;
+    STARTING_ROW = 43;
   }
-  if (oriCol === 69) {
+  if (oriCol === 44) {
     STARTING_COL = 7;
   }
   if (oriCol === 6) {
-    STARTING_COL = 68;
+    STARTING_COL = 43;
   }
   
 
@@ -675,70 +675,6 @@ function otherGroupMovements() {
   addOtherGroupTooltipAgain();
 }
 
-
-
-async function curveTableRows() {
-  return new Promise(resolve => {
-    const playerRow = document.querySelector('.current-group-position').parentNode; // Find the row containing the player
-    const table = document.getElementById('region-grid-table');
-    const playerRowIndex = parseInt(CURRENT_GROUP_CELL.getAttribute('row'));
-    // Get all rows of the table
-    let rows = [];
-    const rowsElement = table.querySelectorAll('.game-cell');
-
-    rowsElement.forEach(row => {
-      row.style.transform = 'none';
-      const number = parseInt(row.getAttribute('game-row'));
-      if (number === playerRowIndex) {
-        rows.push(row);
-      }
-    });
-    // Find the index of the player row
-    
-
-// Define the initial rotation value
-let rotationIncrement = 3;
-
-// Loop through each row above the player row
-for (let i = playerRowIndex - 2; i >= 0; i--) {
-    // Calculate the transformation values for this row
-    const rotation = rotationIncrement;
-
-    // Apply the transformation to the row
-    if (i === playerRowIndex - 2) {
-        rows[i].style.transform = `rotateX(${rotation}deg) translateZ(-3px)`;
-    } else if (i === playerRowIndex - 3) {
-        rows[i].style.transform = `rotateX(${rotation}deg) translateZ(-11px)`;
-    } else if (i === playerRowIndex - 4) {
-        rows[i].style.transform = `rotateX(${rotation}deg) translateZ(-24px)`;
-    } else if (i === playerRowIndex - 5) {
-        rows[i].style.transform = `rotateX(${rotation}deg) translateZ(-43px)`;
-    } else if (i === playerRowIndex - 6) {
-        rows[i].style.transform = `rotateX(${rotation}deg) translateZ(-67px)`;
-    } else if (i === playerRowIndex - 7) {
-        rows[i].style.transform = `rotateX(${rotation}deg) translateZ(-96px)`;
-    } else if (i === playerRowIndex - 8) {
-        rows[i].style.transform = `rotateX(${rotation}deg) translateZ(-130px)`;
-    } else if (i === playerRowIndex - 9) {
-        rows[i].style.transform = `rotateX(${rotation}deg) translateZ(-169px)`;
-    } else if (i === playerRowIndex - 10) {
-        rows[i].style.transform = `rotateX(${rotation}deg) translateZ(-213px)`;
-    } else if (i === playerRowIndex - 11) {
-        rows[i].style.transform = `rotateX(${rotation}deg) translateZ(-262px)`;
-    } else if (i === playerRowIndex - 12) {
-        rows[i].style.transform = `rotateX(${rotation}deg) translateZ(-316px)`;
-    } else {
-        rows[i].style.transform = `rotateX(${rotation}deg)`;
-    }
-
-    // Increment the rotation value for the next row
-    rotationIncrement += 3;
-
-}
-
-    resolve(); // Resolve the promise once transformations are applied
-  });
-}
 
 
 
@@ -1300,7 +1236,48 @@ function createNewOwnGroupDisplay() {
 let zKeyPressed = false;
 let animationFrameId = null;
 
+
+
+function createYulaZone() {
+  const yula = document.createElement('div');
+  yula.id = 'yula';
+
+  const yulaCont = document.createElement('div');
+  yulaCont.id = 'yula-container';
+
+  for (let i = 0; i < 50; i++) {
+    for (let j = 0; j < 50; j++) {
+      const cell = cachedGridCells[i][j];
+      yula.appendChild(cell);
+    }
+  }
+  yulaCont.appendChild(yula);
+  document.body.appendChild(yulaCont);
+
+}
+
+
+
+
+
+
+
+
+
+const keysPressed = {
+  KeyW: false,
+  KeyA: false,
+  KeyS: false,
+  KeyD: false,
+};
+
+
+
 async function initiatePlayerCamera(cell) {
+
+  //createYulaZone();
+
+
  
   createNeoRegionZone();
   let megaWrapper = document.getElementById('mega-wrapper');
@@ -1311,10 +1288,10 @@ async function initiatePlayerCamera(cell) {
   let playerCameraLeft;
   let playerCameraTop;
 
-  let startingCell = cachedGridCells.find(start =>
-    parseInt(start.getAttribute('row')) === STARTING_ROW &&
-    parseInt(start.getAttribute('col')) === STARTING_COL
-  );
+
+
+  CURRENT_GROUP_CELL = cachedGridCells[STARTING_COL][STARTING_ROW];
+
 
   PLAYER_STATE.x = STARTING_COL;
   PLAYER_STATE.y = STARTING_ROW;
@@ -1322,37 +1299,32 @@ async function initiatePlayerCamera(cell) {
   const fenetre = document.getElementById('neo-region');
   const inner = fenetre.querySelector('#inner-neo');
 
+            for (let i = 6; i < gridSize - 5; i++) {
+              for (let j = 6; j < gridSize - 5; j++) {
+                inner.appendChild(cachedGridCells[i][j]);
+              }
+            }
+
   
-  if (startingCell.classList.contains('impassable')) {
-    startingCell.classList.remove('impassable');
-    startingCell.querySelector('.impa-store')?.remove();
+  if (CURRENT_GROUP_CELL.classList.contains('impassable')) {
+    CURRENT_GROUP_CELL.classList.remove('impassable');
+    CURRENT_GROUP_CELL.querySelector('.impa-store')?.remove();
   }
 
-if (startingCell) {
-  CURRENT_GROUP_CELL = startingCell;
+if (CURRENT_GROUP_CELL) {
   CURRENT_GROUP_CELL.classList.add('current-group-position');
-    const targetX = startingCell.offsetLeft + startingCell.offsetWidth / 2; // Center x-coordinate
-    const targetY = startingCell.offsetTop + startingCell.offsetHeight / 2; // Center y-coordinate
+  inner.appendChild(CURRENT_GROUP_CELL);
+  observeVisibleCells();
+    const targetX = CURRENT_GROUP_CELL.offsetLeft + CURRENT_GROUP_CELL.offsetWidth / 2; // Center x-coordinate
+    const targetY = CURRENT_GROUP_CELL.offsetTop + CURRENT_GROUP_CELL.offsetHeight / 2; // Center y-coordinate
     playerCameraLeft = targetX;
     playerCameraTop = targetY;
-    inner.appendChild(CURRENT_GROUP_CELL);
-    throttledObserveVisibleCells();
-    updateCurrentGroupPosition(CURRENT_GROUP_CELL);
-} else {
-  startingCell = cell;
-  CURRENT_GROUP_CELL = startingCell;
-  CURRENT_GROUP_CELL.classList.add('current-group-position');
-  const targetX = startingCell.offsetLeft + startingCell.offsetWidth / 2; // Center x-coordinate
-  const targetY = startingCell.offsetTop + startingCell.offsetHeight / 2; // Center y-coordinate
-  playerCameraLeft = targetX;
-  playerCameraTop = targetY;
-  inner.appendChild(CURRENT_GROUP_CELL);
-  throttledObserveVisibleCells();
-  
-  updateCurrentGroupPosition(CURRENT_GROUP_CELL);
-  }
 
-  observeVisibleObjectsFOV();
+
+    updateCurrentGroupPosition(CURRENT_GROUP_CELL);
+}
+
+  // observeVisibleObjectsFOV();
   createNewOwnGroupDisplay();
 
    // Add event listeners only if they haven't been added already
@@ -1369,33 +1341,38 @@ if (startingCell) {
       applyNeoTransforms();
     });
 
-    document.addEventListener('keydown', async (event) => {
-      if (!actionGridDisabled) {
-        document.getElementById('gather-window')?.remove();
-        if (SETTINGS.gridMovement) await throttledMovementByCell(event);
+
+
+    //document.addEventListener('keyup', onKeyUp);
+
+// Update key event listeners
+document.addEventListener('keydown', (event) => {
+  if (['KeyW', 'KeyA', 'KeyS', 'KeyD'].includes(event.code)) {
+    event.preventDefault();
+    keysPressed[event.code] = true;
+    
+    // Start animation if any movement key is pressed
+    if (!animationFrameId && (keysPressed.KeyW || keysPressed.KeyA || 
+                             keysPressed.KeyS || keysPressed.KeyD)) {
+      startCameraAnimation();
+    }
+  }
+});
+
+document.addEventListener('keyup', (event) => {
+  if (['KeyW', 'KeyA', 'KeyS', 'KeyD'].includes(event.code)) {
+    keysPressed[event.code] = false;
+    
+    // Stop animation if no movement keys are pressed
+    if (!keysPressed.KeyW && !keysPressed.KeyA && 
+        !keysPressed.KeyS && !keysPressed.KeyD) {
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+        animationFrameId = null;
       }
-    });
-
-    document.addEventListener('keyup', onKeyUp);
-
-      document.addEventListener('keydown', (event) => {
-        if (event.code === 'KeyZ' && !zKeyPressed) {
-          event.preventDefault();
-          zKeyPressed = true;
-          startCameraAnimation();
-        }
-      });
-      
-      // Stop the animation when Z is released
-      document.addEventListener('keyup', (event) => {
-        if (event.code === 'KeyZ') {
-          zKeyPressed = false;
-          if (animationFrameId) {
-            cancelAnimationFrame(animationFrameId);
-            animationFrameId = null;
-          }
-        }
-      });
+    }
+  }
+});
 
 
     const tableContainer = document.getElementById('table-container');
@@ -1435,6 +1412,13 @@ if (startingCell) {
       if (event.code === 'KeyP') {
         event.preventDefault();
         toggleRetroFilters();
+      }
+    });
+
+    document.addEventListener('keydown', function(event) {
+      if (event.code === 'KeyZ') {
+        event.preventDefault();
+        activateHorse();
       }
     });
 
@@ -1487,6 +1471,13 @@ if (startingCell) {
       }
     });
 
+    document.addEventListener('keydown', async function(event) {
+      if (event.code === 'KeyJ') {
+        const filter = document.querySelector('#ultra-filter')
+        filter.style.opacity = filter.style.opacity === '0' ? '1' : '0';
+      }
+    });
+
     let tableGrid = document.getElementById('region-grid-container');
     tableGrid.addEventListener('contextmenu', function(event) {
       //event.preventDefault();
@@ -1531,36 +1522,92 @@ if (startingCell) {
   createDirectionLine();
   createEntityOvertip();
 
-  createSkybox(inner);
 
 
   entityObserver.setObservedCells(observedCells); // Provide the observed cells initially
 
 
 
-  const exCam = document.getElementById('player-camera');
-  if (exCam) exCam.remove();
+  document.getElementById('player-camera-effect')?.remove();
+  const playerCameraEffect = document.createElement('div');
+  playerCameraEffect.id = 'player-camera-effect';
 
+  const veg = CURRENT_PLAYER_REGION_DATA.vegetation;
+
+  playerCameraEffect.style.setProperty(
+    "--after-bg",
+    `url('../Art/Vegetation/Textures/${veg}.jpg')`
+  );
+
+  document.getElementById('player-camera')?.remove();
   const playerCamera = document.createElement('div');
   playerCamera.id = 'player-camera';
 
+  playerCameraEffect.dataset.translateX = 245;
+  playerCameraEffect.dataset.translateY = 245;
+
   playerCamera.dataset.translateX = 245;
   playerCamera.dataset.translateY = 245;
+  
 
   inner.appendChild(playerCamera);
+  inner.appendChild(playerCameraEffect);
 
- 
+  
+  const skybox = createSkybox();
+  inner.appendChild(skybox);
+
+  const cellRect = CURRENT_GROUP_CELL.getBoundingClientRect();
+  const innerRect = inner.getBoundingClientRect();
+  const cameraWidth = playerCamera.offsetWidth;
+  const cameraHeight = playerCamera.offsetHeight;
+
+  // Calculate the center position of CURRENT_GROUP_CELL relative to inner
+  const centerLeft = cellRect.left - innerRect.left + (cellRect.width / 2) - (cameraWidth / 2);
+  const centerTop = cellRect.top - innerRect.top + (cellRect.height / 2) - (cameraHeight / 2);
+
+  playerCamera.style.left = `${centerLeft}px`;
+  playerCamera.style.top = `${centerTop}px`;
+  playerCameraEffect.style.left = `${centerLeft}px`;
+  playerCameraEffect.style.top = `${centerTop}px`;
+  skybox.style.left = `${centerLeft}px`;
+  skybox.style.top = `${centerTop}px`;
+
+
+
+
+    
     toggleFirstPerson();
   
   
+    SETTINGS.translateX = 0;
+    SETTINGS.translateY = 0;
 
 }
 
 
 
 
+function activateHorse() {
+  PLAYER_STATE.horse = PLAYER_STATE.horse ? false : true;
+  const horse = document.getElementById('horse');
+  if (PLAYER_STATE.horse === true) {
+    SETTINGS.sneakZ = -5;
+    SETTINGS.movespeed = 90;
+    horse.style.visibility = 'visible';
+  } else {
+    SETTINGS.sneakZ = 0;
+    SETTINGS.movespeed = 45;
+    horse.style.visibility = 'hidden';
+  }
+  applyNeoTransforms();
+}
 
-function createSkybox(inner) {
+
+
+
+
+function createSkybox() {
 
   const exSkyBox = document.getElementById('skybox');
   if (exSkyBox) exSkyBox.remove();
@@ -1569,7 +1616,7 @@ const impa = document.createElement('div');
 impa.id = 'skybox';
 
 const top = document.createElement('div');
-top.id = 'top';
+top.id = 'up';
 top.style.backgroundImage = `url('/Art/Skyboxes/${CURRENT_PLAYER_REGION_DATA.vegetation}/up.jpg')`;
 
 const left = document.createElement('div');
@@ -1598,7 +1645,7 @@ impa.appendChild(front);
 impa.appendChild(back);
 impa.appendChild(bottom);
 
-inner.appendChild(impa);
+return impa;
 
 }
 
@@ -1663,7 +1710,7 @@ function toggleFirstPerson(event) {
   const crosshair = document.getElementById('crosshair');
   const weapon = document.getElementById('weapon');
   const skybox = inner.querySelector('#skybox');
-  const camera = inner.querySelector('#player-camera');
+  //const cameraEffect = inner.querySelector('#player-camera-effect');
 
 
 
@@ -1676,39 +1723,37 @@ function toggleFirstPerson(event) {
     SETTINGS.zoomFactor = 35;
     SETTINGS.translateZ = 8;
 
-    if (skybox) skybox.style.display = 'block';
+    //if (skybox) skybox.style.display = 'block';
     if (weapon) weapon.style.display = 'block';
     if (crosshair) crosshair.style.display = 'block';
-    if (camera) camera.style.display = 'block';
 
-      inner.style.top = "0px";
 
-      inner.style.setProperty(
-        "--mask-size",
-        `150%`
-      );
+      //inner.style.top = "0px";
+
+      // cameraEffect.style.setProperty(
+      //   "--mask-size",
+      //   `150%`
+      // );
 
   } else {
 
-      inner.style.setProperty(
-        "--mask-size",
-        `80%`
-      );
+      // cameraEffect.style.setProperty(
+      //   "--mask-size",
+      //   `80%`
+      // );
 
-    if (skybox) skybox.style.display = 'none';
+    //if (skybox) skybox.style.display = 'none';
     if (weapon) weapon.style.display = 'none';
     if (crosshair) crosshair.style.display = 'none';
-    if (camera) camera.style.display = 'none';
 
-    inner.style.top = "-50px";
+
+    //inner.style.top = "-50px";
     SETTINGS.angle = 45;
     SETTINGS.perspectiveGrid = 433;
     SETTINGS.zoomFactor = 3;
     group.style.opacity = 1;
     group.classList.remove('FPS');
-    SETTINGS.translateX = 0;
-    SETTINGS.translateY = 0;
-    SETTINGS.translateZ = 0;
+
   }
 
   applyNeoTransforms();
@@ -2050,10 +2095,24 @@ function calculateCameraElevation(translateZ) {
 
 function updateCompass() {
   const compass = document.getElementById("compass-container");
-  const angle = SETTINGS.zRotation; // Player's view direction in degrees
-  const normalizedAngle = ((angle % 360) + 360) % 360;
-  const backgroundX = -(normalizedAngle * (800 / 360));
+  const horizon = document.getElementById("horizon");
+  const angleZ = SETTINGS.zRotation; // Player's view direction in degrees
+  const angleX = SETTINGS.angle; // Player's view direction in degrees
+
+  const normalizedAngleZ = ((angleZ % 360) + 360) % 360;
+  const normalizedAngleX = ((angleX)) % 360;
+
+  const backgroundX = -(normalizedAngleZ * (800 / 360));
+
+  const backgroundY = (normalizedAngleX * (5000 / 360));
+
+  const backgroundXHorizon = (normalizedAngleZ * (2048 / 180));
+
+
   compass.style.backgroundPosition = `${backgroundX}px 0`;
+
+  horizon.style.backgroundPositionX = `${backgroundXHorizon}px`;
+  horizon.style.backgroundPositionY = `${backgroundY - 450}px`;
 }
 
 function updateCameraRotation(event) {
@@ -2108,17 +2167,20 @@ if (actionGridDisabled === true) { return; }
       );
      }
 
-    CURRENT_MINI_CELL.style.setProperty(
-      "--rotationZ",
-      `${-SETTINGS.zRotation}deg`
-    );
+     if (CURRENT_MINI_CELL) {
+          CURRENT_MINI_CELL.style.setProperty(
+           "--rotationZ",
+           `${-SETTINGS.zRotation}deg`
+        );
+     }
+
 
     const camera = inner.querySelector('#player-group');
     camera.style.setProperty(
       "--rotationZ",
       `${-SETTINGS.zRotation}deg`
     );
-//observeVisibleObjectsFOV();
+    //observeVisibleObjectsFOV();
     updateCompass();
     updateTargetedDirectionCell();
     applyNeoTransforms();
@@ -2342,14 +2404,19 @@ const crosshairInteractor = new CrosshairInteractor();
 
 function updateTargetedDirectionCell() {
 
+
+
+    let targetRow;
+    let targetCol;
+
   if (CURRENT_GROUP_CELL) {
     let currentCell = CURRENT_GROUP_CELL;
 
     const currentRow = parseInt(currentCell.getAttribute('row'));
     const currentCol = parseInt(currentCell.getAttribute('col'));
 
-    let targetRow = currentRow;
-    let targetCol = currentCol;
+    targetRow = currentRow;
+    targetCol = currentCol;
 
     if (facingDirection === 0) {
       targetRow -= 1;
@@ -2373,62 +2440,228 @@ function updateTargetedDirectionCell() {
     targetCell.classList.add('targeted-cell');
 
     CURRENT_TARGET_CELL = targetCell;
-  }
+  
 
 
   if (CURRENT_TARGET_CELL.classList.contains('building') && !document.querySelector('#building-prompt')) {
-    createEnterBuildingPrompt();
+    const cellData = getCurrentTargetedCellData().data;
+    createEnterBuildingPrompt(cellData.building);
   } else if (!CURRENT_TARGET_CELL.classList.contains('building')) {
     document.querySelector('#building-prompt')?.remove();
   }
 
+  }
+
+}
+
+function getCurrentTargetedCellData() {
+  const y = parseInt(CURRENT_TARGET_CELL.getAttribute('row'));
+  const x = parseInt(CURRENT_TARGET_CELL.getAttribute('col'));
+  
+  const data = CURRENT_PLAYER_REGION_DATA.content[y][x];
+  return { data };
 }
 
 
-function createEnterBuildingPrompt() {
+function createEnterBuildingPrompt(building) {
   const prompt = document.createElement('div');
   prompt.id = 'building-prompt';
-
-  prompt.textContent = 'This is a building';
-
+  if (building.locked === true) {
+    prompt.innerHTML = `${building.occupants[0].name}'s ${building.infos.name} (locked)`;
+  } else {
+    prompt.innerHTML = `${building.occupants[0].name}'s ${building.infos.name}`;
+  }
   document.body.appendChild(prompt);
 }
 
-async function enterBuilding() {
-  if (document.querySelector('#building-inside')) return;
+// async function enterBuilding(building) {
+//   if (document.querySelector('#building-inside')) return;
 
-  document.exitPointerLock();
-  document.querySelector('#building-prompt')?.remove();
-  document.querySelector('#neo-region').style.display = 'none';
+//   playDoorSound('open');
 
-  const response = await fetch('/Templates/building-inside.html');
-  const html = await response.text();
+//   document.exitPointerLock();
+//   document.querySelector('#building-prompt')?.remove();
+//   document.querySelector('#neo-region').style.display = 'none';
 
-  const tempDiv = document.createElement('div');
-  tempDiv.innerHTML = html;
+//   const response1 = await fetch('/Templates/building-inside.html');
+//   const html1 = await response1.text();
 
-  const buildingInside = tempDiv.querySelector('#building-inside');
-  if (buildingInside) {
-    document.querySelector('#engine-wrapper').appendChild(buildingInside);
+//   const response2 = await fetch('/Templates/building-inside-menu.html');
+//   const html2 = await response2.text();
 
-    const exitButton = buildingInside.querySelector('#exit-button');
-    if (exitButton) {
-      exitButton.addEventListener('click', function () {
-        buildingInside.remove();
-        exitBuilding(buildingInside); // or pass null if needed
-      });
-    }
-  }
+//   const tempDiv1 = document.createElement('div');
+//   tempDiv1.innerHTML = html1;
 
-  actionGridDisabled = true;
-}
+//   const tempDiv2 = document.createElement('div');
+//   tempDiv2.innerHTML = html2;
+//   const buildingMenu = tempDiv2.querySelector('.building-menu');
+//   document.body.appendChild(buildingMenu);
+
+//   const buildingInside = tempDiv1.querySelector('#building-inside');
+//   if (buildingInside) {
+
+//     document.querySelector('#engine-wrapper').appendChild(buildingInside);
+
+//     buildingInside.style.backgroundImage = `url('/Art/Textures/structure/interiors/${building.interior}.png')`;
+//     buildingInside.querySelector('#owner').style.backgroundImage = building.owner.img;
+//     buildingMenu.querySelector('.header #owner-title').textContent = `${building.owner.name}, ${building.owner.class}`;
+//     buildingMenu.querySelector('.header #owner-gold').textContent = `${building.owner.gold}`;
+
+//     typeText(buildingMenu.querySelector('.talk'), `Welcome to my home!`);
+
+//     const exitButton = buildingMenu.querySelector('#exit-button');
+//     if (exitButton) {
+//       exitButton.addEventListener('click', function () {
+//         buildingInside.remove();
+//         buildingMenu.remove();
+//         playDoorSound('close');
+//         exitBuilding(buildingInside); // or pass null if needed
+//       });
+//     }
+
+//     const tradeButton = buildingMenu.querySelector('#trade-button');
+//     if (tradeButton) {
+//       tradeButton.addEventListener('click', function () {
+//         tradeButton.disabled = true;
+//         tradeWithNpc(building.owner, buildingMenu);
+//       });
+//     }
+
+//     const talkButton = buildingMenu.querySelector('#talk-button');
+//       talkButton.addEventListener('click', function () {
+        
+//       });
+
+//   }
+//   actionGridDisabled = true;
+// }
+
+// function tradeWithNpc(npc, buildingMenu) {
+//   const npcInventory = buildingMenu.querySelector('.inventories .npc');
+//   const playerInventory = buildingMenu.querySelector('.inventories .player');
+//   const talkElement = buildingMenu.querySelector('.talk');
+
+//   // Clear previous content
+//   npcInventory.innerHTML = '';
+//   playerInventory.innerHTML = '';
+
+//   console.log(npc);
+
+//   let tradeString;
+//   buildingMenu.querySelector('.trade').style.visibility = 'visible';
+
+//   if (npc.inventory.length !== 0) {
+//     const s = npc.inventory.length === 1 ? '' : 's';
+//     tradeString = `I have ${npc.gold} gold and ${npc.inventory.length} item${s} to sell.`;
+//     npcDialogueOutput(talkElement, tradeString);
+
+//     for (let r = 0; r < npc.inventory.length; r++) {
+//       createElementItem(npc.inventory[r]);
+//     }
+//   } else {
+//     npcInventory.style.display = 'none';
+//     tradeString = `I have nothing to trade...`;
+//     npcDialogueOutput(talkElement, tradeString);
+//   }
+
+//   for (let r = 0; r < PLAYER_ITEMS.length; r++) {
+//     const slot = document.createElement('div');
+//     slot.className = 'slot';
+
+//     const currentItem = PLAYER_ITEMS[r];
+//     const itemEl = createItemElement(currentItem);
+
+//     slot.appendChild(itemEl);
+//     addItemTooltip(itemEl, currentItem);
+//     playerInventory.appendChild(slot);
+//     itemEl.setAttribute('draggable', false);
+
+//       slot.addEventListener('click', function () {
+//         const realItemIndex = PLAYER_ITEMS.findIndex(i => i.iID === currentItem.iID);
+//         const realItem = PLAYER_ITEMS[realItemIndex];
+
+//         if (!realItem) return;
+
+//         if (npc.gold < 1 || npc.gold - realItem.price < 1) {
+//           tradeString = `I don't have enough to buy your ${realItem.name}.`;
+//           npcDialogueOutput(talkElement, tradeString);
+//           return;
+//         }
+
+//         npc.gold = npc.gold - realItem.price;
+//         buildingMenu.querySelector('#owner-gold').textContent = `${npc.gold}`;
+//         itemUpdateEffect(buildingMenu.querySelector('#owner-gold'));
+        
+//         tradeString = `You sold me your ${realItem.name} for ${realItem.price} gold.`;
+//         npcDialogueOutput(talkElement, tradeString);
+//         groupCoins += realItem.price;
+//         updateCoinsDisplay();
+
+//         // Check if NPC already has a matching item
+//         const existingNpcItem = npc.inventory.find(i =>
+//           i.name === realItem.name && i.stackable === 'yes'
+//         );
+
+//         if (existingNpcItem) {
+//           // Find the existing item element in NPC's inventory
+//           const itemElToUpdate = npcInventory.querySelector(`.inventory-item[name="${existingNpcItem.name}"]`);
+          
+//           if (itemElToUpdate) {
+//             existingNpcItem.quantity += 1;  // Increment the quantity
+//             updateQuantityThere(itemElToUpdate, existingNpcItem);
+//           }
+//         } else {
+//           // Create a new item in NPC's inventory
+//           npcInventory.style.display = 'flex';
+//           const itemCopy = structuredClone(realItem);
+//           itemCopy.quantity = 1;
+//           npc.inventory.push(itemCopy);
+//           createElementItem(itemCopy);  // Create element for the new item
+//         }
+
+//         // Remove from player's inventory
+//         if (realItem.quantity > 1) {
+//           realItem.quantity--;
+//           slot.querySelector('.inventory-item .item-quantity').textContent = realItem.quantity;
+//           const backpack = document.querySelector('#backpack');
+//           const backpackItemElement = backpack.querySelector(`.inventory-item[name="${realItem.name}"]`);
+//           updateQuantityThere(backpackItemElement, realItem);
+//         } else {
+//           PLAYER_ITEMS.splice(realItemIndex, 1);
+//           removeItem(realItem);
+//           slot.remove();
+//         }
+//       });
+//   }
+//     function createElementItem(item) {
+//       const slot = document.createElement('div');
+//       slot.className = 'slot';
+//       const itemEl = createItemElement(item);
+//       slot.appendChild(itemEl);
+//       addItemTooltip(itemEl, item);
+//       npcInventory.appendChild(slot);
+//       //updateQuantityThere(slot, itemEl, item);
+//     }
+
+// }
 
 
-function exitBuilding() {
-  togglePointerLock();
-  document.querySelector('#neo-region').style.display = 'block';
-  actionGridDisabled = false;
-}
+// function npcDialogueOutput(element, text) {
+//   element.textContent = text;
+//   playAnimation(element, 'flash-console 0.2s 1');
+// }
+
+
+
+
+
+
+// function exitBuilding() {
+//   togglePointerLock();
+//   document.querySelector('#neo-region').style.display = 'block';
+//   actionGridDisabled = false;
+// }
+
 
 class EntityObserver {
   constructor() {
@@ -2655,10 +2888,10 @@ async function updateCurrentGroupPosition(newGroupCell) {
 
   console.log(CURRENT_GROUP_CELL);
 
-  throttledObserveVisibleCells();
+  await observeVisibleCells();
   
 
-  await updateNeoRegion(CURRENT_GROUP_CELL);
+  //await updateNeoRegion(CURRENT_GROUP_CELL);
 
 
 
@@ -2712,7 +2945,7 @@ async function updateCurrentGroupPosition(newGroupCell) {
 
 
   if (!isDraggingMini) {
-    await realTime();
+    //realTime();
     PLAYER_STATE.canMove = true;
   }
 }
@@ -2792,62 +3025,13 @@ function updateMinimapExplorationProgress() {
 
 
 
-let observedCells = [];
 
-function observeVisibleCells() {
-  observedObjects = [];
-  observeVisibleObjectsFOV();
 
-  const visibilityRadius = SETTINGS.visibilityRadius;
-    let groupPositionCell = CURRENT_GROUP_CELL;
-  
-  const currentRow = parseInt(groupPositionCell.getAttribute('row'), 10);
-  const currentCol = parseInt(groupPositionCell.getAttribute('col'), 10);
 
-  cachedGridCells.forEach(cell => {
-    const cellRow = parseInt(cell.getAttribute('row'), 10);
-    const cellCol = parseInt(cell.getAttribute('col'), 10);
-
-    const distance = Math.sqrt(
-      Math.pow(cellRow - currentRow, 2) + Math.pow(cellCol - currentCol, 2)
-    );
-
-    const isVisible = distance <= visibilityRadius;
-
-    cell.style.display = isVisible ? 'visible' : 'hidden';
-
-    if (isVisible) {
-                if (cell.firstChild != null) {
-            observedObjects.push(cell.firstChild);
-          }
-      cell.classList.remove('unexplored');
-      cell.classList.add('explored', 'highlighted');
-
-      if (!observedCells.includes(cell)) {
-          observedCells.push(cell);
-
-          if (PLAYER_STATE.isInStructure === true) {
-            if (!cell.classList.contains('structure')) {
-              cell.classList.add('fogged');
-            }
-          }
-      }
-    } else {
-      cell.classList.remove('highlighted');
-
-      const index = observedCells.indexOf(cell);
-      if (index !== -1) {
-        observedCells.splice(index, 1);
-      }
-    }
-  });
-}
-
-let observedObjects = [];
 
 function observeVisibleObjectsFOV() {
 
-  return;
+return;
    
   const groupPositionCell = CURRENT_GROUP_CELL;
 
@@ -2897,10 +3081,10 @@ function observeVisibleObjectsFOV() {
         obj.parentElement.style.opacity = 1;
       }
     } else {
-      if (SETTINGS.firstPerson === true) {
+
       obj.style.visibility = 'hidden';
       obj.parentElement.style.opacity = 0;
-      }
+      
     }
   });
 }
@@ -3492,6 +3676,10 @@ async function moveOtherGroupInObservedCells() {
   if (!CURRENT_PLAYER_REGION_DATA.groups) {
     return;
   }
+
+  const hasOtherGroup = observedCells.some(cell => cell.classList.contains('other-group'));
+  if (!hasOtherGroup) return;
+
  
   const directions = {
     North: { row: -1, col: 0 },
@@ -3514,7 +3702,7 @@ async function moveOtherGroupInObservedCells() {
     const groupName = group.keys().next().value;
     // Find the current cell of the group
     let currentCell = null;
-    for (const cell of cachedGridCells) {
+    for (const cell of observedCells) {
       const cellRow = parseInt(cell.getAttribute("row"), 10);
       const cellCol = parseInt(cell.getAttribute("col"), 10);
       const cellGID = parseInt(cell.getAttribute("gid"), 10);
@@ -3546,7 +3734,7 @@ async function moveOtherGroupInObservedCells() {
     const targetCol = targetX + direction.col;
 
     let targetCell = null;
-    for (const cell of cachedGridCells) {
+    for (const cell of observedCells) {
       const cellRow = parseInt(cell.getAttribute("row"));
       const cellCol = parseInt(cell.getAttribute("col"));
         if (cellCol === targetCol && cellRow === targetRow && !cell.classList.contains('other-group') && !cell.classList.contains('current-group-position') && !cell.classList.contains('entity')) {
@@ -3684,12 +3872,14 @@ function revealAllMap() {
 
 
 function startCameraAnimation() {
-  const cam = document.getElementById('player-camera');
   const inner = document.querySelector('#inner-neo');
-  animateCamera(inner, cam);
+  const cam = document.getElementById('player-camera');
+  const camEffect = document.getElementById('player-camera-effect');
+  const skybox = document.getElementById('skybox');
+  animateCamera(inner, cam, camEffect, skybox);
 }
-let lastHoveredCell = null; // Track last hovered cell
-function animateCamera(inner, cam) {
+let lastHoveredCell = null;
+function animateCamera(inner, cam, camEffect, skybox) {
   let lastTimestamp = null;
 
   async function update(timestamp) {
@@ -3702,50 +3892,123 @@ function animateCamera(inner, cam) {
     const centerX = (camRect.left + camRect.width / 2) - innerRect.left;
     const centerY = (camRect.top + camRect.height / 2) - innerRect.top;
 
-    // Movement calculation
     const angleRad = (SETTINGS.zRotation - 180) * (Math.PI / 180);
-    const speed = 40;
-    const offsetX = speed * Math.sin(angleRad) * (delta / 1000);
-    const offsetY = speed * Math.cos(angleRad) * (delta / 1000);
+    const speed = SETTINGS.movespeed;
+    
+    const forward = (keysPressed.KeyW ? 1 : 0) + (keysPressed.KeyS ? -1 : 0);
+    const strafe = (keysPressed.KeyA ? 1 : 0) + (keysPressed.KeyD ? -1 : 0);
 
-    let currentX = parseFloat(cam.dataset.translateX) || 250; // Start centered
+    const moveMagnitude = Math.sqrt(forward * forward + strafe * strafe);
+    const normalizedForward = moveMagnitude > 0 ? forward / moveMagnitude : 0;
+    const normalizedStrafe = moveMagnitude > 0 ? strafe / moveMagnitude : 0;
+
+    const forwardX = speed * Math.sin(angleRad) * normalizedForward * (delta / 1000);
+    const forwardY = speed * Math.cos(angleRad) * normalizedForward * (delta / 1000);
+    const strafeX = speed * Math.cos(angleRad) * normalizedStrafe * (delta / 1000);
+    const strafeY = -speed * Math.sin(angleRad) * normalizedStrafe * (delta / 1000);
+    
+
+    const offsetX = forwardX + strafeX;
+    const offsetY = forwardY + strafeY;
+
+    let currentX = parseFloat(cam.dataset.translateX) || 250;
     let currentY = parseFloat(cam.dataset.translateY) || 250;
 
-    // Apply movement
+
     currentX += offsetY;
     currentY += offsetX;
     cam.dataset.translateX = currentX;
     cam.dataset.translateY = currentY;
-    cam.style.top = `${currentX - 1}px`;
-    cam.style.left = `${currentY - 1}px`;
+    cam.style.top = `${currentX + 4}px`;
+    cam.style.left = `${currentY + 4}px`;
+
+    camEffect.dataset.translateX = currentX;
+    camEffect.dataset.translateY = currentY;
+    camEffect.style.top = `${currentX - 5}px`;
+    camEffect.style.left = `${currentY - 5}px`;
+
+    skybox.style.top = `${currentX - 125}px`;
+    skybox.style.left = `${currentY - 125}px`;
+
     SETTINGS.translateX -= offsetX;
     SETTINGS.translateY -= offsetY;
-
+    headBobbing(inner);
     applyNeoTransforms();
 
     
-    // const currentHoveredCell = crosshairInteractor.updateInteractionCamera();
+    const currentHoveredCell = getHoveredCellByCamera(cam, inner);
+    
+    if (currentHoveredCell && currentHoveredCell !== lastHoveredCell) {
+      lastHoveredCell = currentHoveredCell;
+      console.log(currentHoveredCell);
+      
+      if (currentHoveredCell.classList.contains('game-cell') && 
+          !currentHoveredCell.classList.contains('impassable')) {
+        finalizeLocationNewcell(currentHoveredCell);
+      }
+    }
 
 
-
-
-    // if (currentHoveredCell && currentHoveredCell !== lastHoveredCell) {
-    //   lastHoveredCell = currentHoveredCell;
-
-    //   console.log(currentHoveredCell);
-    //   currentHoveredCell.classList.add('under-camera');
-
-    //   if (currentHoveredCell.classList.contains('game-cell') && !currentHoveredCell.classList.contains('impassable')) {
-    //     finalizeLocationNewcell(currentHoveredCell);
-    //   }
-    // }
-
-    if (zKeyPressed) {
+    if (keysPressed.KeyW || keysPressed.KeyA || 
+        keysPressed.KeyS || keysPressed.KeyD) {
       animationFrameId = requestAnimationFrame(update);
     }
   }
 
   animationFrameId = requestAnimationFrame(update);
+}
+
+
+function headBobbing(inner) {
+  const bobbingSpeed = 0.4;
+  const angleAmount = 0.1;
+
+  const time = performance.now() * bobbingSpeed * 0.01;
+
+  const ran = Math.floor(Math.random() * 2) + 0;
+  if (ran === 0) {
+    SETTINGS.zRotation = SETTINGS.zRotation + Math.sin(time * 2) * angleAmount;
+  } else {
+    SETTINGS.zRotation = SETTINGS.zRotation - Math.sin(time * 2) * angleAmount;
+  }
+  
+  SETTINGS.angle = SETTINGS.angle + Math.sin(time * 2) * angleAmount;
+
+  updateCompass();
+}
+
+
+
+function getHoveredCellByCamera(camera, innerNeo) {
+  // Get the computed style values (already affected by transforms)
+  const camLeft = parseFloat(camera.style.left) || 0;
+  const camTop = parseFloat(camera.style.top) || 0;
+  const camWidth = parseFloat(camera.style.width) || camera.offsetWidth;
+  const camHeight = parseFloat(camera.style.height) || camera.offsetHeight;
+
+  // Calculate camera center within container
+  const cameraCenterX = camLeft + camWidth/2;
+  const cameraCenterY = camTop + camHeight/2;
+
+  // Get all grid cells
+  const cells = observedCells; // Adjust selector as needed
+
+  // Find the cell that contains the camera center
+  for (const cell of cells) {
+    const cellLeft = parseFloat(cell.style.left) || cell.offsetLeft;
+    const cellTop = parseFloat(cell.style.top) || cell.offsetTop;
+    const cellWidth = parseFloat(cell.style.width) || cell.offsetWidth;
+    const cellHeight = parseFloat(cell.style.height) || cell.offsetHeight;
+
+    if (cameraCenterX >= cellLeft && 
+        cameraCenterX <= cellLeft + cellWidth &&
+        cameraCenterY >= cellTop && 
+        cameraCenterY <= cellTop + cellHeight) {
+      return cell;
+    }
+  }
+
+  return null;
 }
 
 
@@ -3784,8 +4047,6 @@ async function movePlayerCameraByKey(event) {
 
   document.getElementById('interior_building')?.remove();
   document.getElementById('npc-window')?.remove();
-
-
 
   removeAllKindsOfTooltips();
   pressedKeys.add(key);
@@ -3833,9 +4094,6 @@ async function movePlayerCameraByKey(event) {
   accumulatedRotateZ = SETTINGS.zRotation;
   updateTargetedDirectionCell();
 
-
-
-
   // Validate movement
   const targetCell = observedCells.find(cell =>
     parseInt(cell.getAttribute('row')) === targetRow &&
@@ -3851,10 +4109,22 @@ async function movePlayerCameraByKey(event) {
   CURRENT_PLAYER_REGION_DATA.content[currentRow][currentCol].isPlayer = false;
   CURRENT_PLAYER_REGION_DATA.content[targetRow][targetCol].isPlayer = true;
 
-
     removeDirectionLine();
     playStepSound();
-    await animateToCell(document.querySelector('#inner-neo'), targetCell, offset, key);
+    await finalizeLocationNewcell(targetCell);
+}
+
+async function finalizeLocationNewcell(newGroupCell) {
+
+  const groupStore = document.querySelector('.our-group');
+  newGroupCell.appendChild(groupStore);
+  await updateCurrentGroupPosition(newGroupCell);
+  PLAYER_STATE.x = newGroupCell.getAttribute('col');
+  PLAYER_STATE.y = newGroupCell.getAttribute('row'); 
+  const cam = document.querySelector('#player-camera');
+
+  entityObserver.updateVisibleEntities();
+  updateTargetedDirectionCell();
 
 }
 
@@ -3903,12 +4173,12 @@ async function animateToCell(inner, newGroupCell, offset, key) {
     `;
 
     if (progress < 1) {
-      requestAnimationFrame((t) => animateFrame(t, startTime));
+
     } else {
-        SETTINGS.translateX = 0;
-        SETTINGS.translateY = 0;
+        // SETTINGS.translateX = 0;
+        // SETTINGS.translateY = 0;
       applyNeoTransforms();
-      observeVisibleObjectsFOV();
+      //observeVisibleObjectsFOV();
       await finalizeLocationNewcell(newGroupCell);
     }
   }
@@ -3918,25 +4188,7 @@ async function animateToCell(inner, newGroupCell, offset, key) {
 
 
 
-async function finalizeLocationNewcell(newGroupCell) {
 
-  const groupStore = document.querySelector('.our-group');
-
-  newGroupCell.appendChild(groupStore);
-
-  await updateCurrentGroupPosition(newGroupCell);
-  PLAYER_STATE.x = newGroupCell.getAttribute('col');
-  PLAYER_STATE.y = newGroupCell.getAttribute('row'); 
-  const cam = document.querySelector('#player-camera');
-  cam.style.left = '245px';
-  cam.style.top = '245px';
-  SETTINGS.translateX = 0;
-  SETTINGS.translateY = 0;
-
-  entityObserver.updateVisibleEntities();
-  updateTargetedDirectionCell();
-  // createDirectionLine();
-}
 
 
 function applyNeoTransforms() {
@@ -3958,6 +4210,7 @@ function applyNeoTransforms() {
     rotateZ(${SETTINGS.zRotation}deg) /* Yaw - applied second */
     translate3d(${SETTINGS.translateX}px, ${SETTINGS.translateY}px, ${0 + SETTINGS.addedTranslateZ + SETTINGS.sneakZ}px)
     `;
+  inner.style.rotate = `${SETTINGS.classicRotate}deg`;
 
   updateCardboardRotation();
 }
@@ -3970,11 +4223,12 @@ function applyNeoTransforms() {
 
 
 
-
+let observedCells = [];
+let observedObjects = [];
 
 function createNeoRegionZone() {
 
-  const veg = CURRENT_PLAYER_REGION_DATA.vegetation;
+  
 
   const engine = document.getElementById('engine-wrapper');
 
@@ -3987,10 +4241,7 @@ function createNeoRegionZone() {
   const inner = document.createElement('div');
   inner.setAttribute('id', 'inner-neo');
 
-  inner.style.setProperty(
-    "--after-bg",
-    `url('../Art/Vegetation/Textures/${veg}.jpg')`
-  );
+
 
   fenetre.appendChild(inner);
   engine.appendChild(fenetre);
@@ -4033,22 +4284,63 @@ async function updateNeoRegion(newGroupCell) {
 
 
 
-function applyNeoTransforms2() {
-  const inner = document.getElementById('inner-neo');
 
-  inner.parentElement.style.perspective = `${SETTINGS.perspectiveGrid}px`;
-  inner.style.scale = `${SETTINGS.zoomFactor}`;
+async function observeVisibleCells() {
+  const visibilityRadius = SETTINGS.visibilityRadius;
+  const groupCell = CURRENT_GROUP_CELL;
 
-  inner.style.transformOrigin = `${SETTINGS.transformOriginX}px ${SETTINGS.transformOriginY}px`;
+  const max = gridSize - 1;
+  
+  const currentRow = Math.floor(parseInt(groupCell.getAttribute('row'), 10));
+  const currentCol = Math.floor(parseInt(groupCell.getAttribute('col'), 10));
 
-  inner.style.transform = ` 
-    translate3d(${SETTINGS.t3dx}px, ${SETTINGS.t3dy}px, 9px) 
-    translateZ(${SETTINGS.translateZ}px) 
-    rotateX(${SETTINGS.angle}deg)
-    rotateZ(${SETTINGS.zRotation}deg);
-`;
+  // Calculate visibility bounds
+  const minRow = parseInt(Math.max(0, currentRow - visibilityRadius));
+  const maxRow = parseInt(Math.min(max, currentRow + visibilityRadius)); // 75-1=74
+  const minCol = parseInt(Math.max(0, currentCol - visibilityRadius));
+  const maxCol = parseInt(Math.min(max, currentCol + visibilityRadius));
+
+  const cellsToShow = new Set();
+
+  // Phase 1: Identify visibility changes (NO DOM OPERATIONS)
+  for (let i = minRow; i <= maxRow; i++) {
+    for (let j = minCol; j <= maxCol; j++) {
+      const cell = cachedGridCells[i][j];
+      const distanceSquared = (i - currentRow) ** 2 + (j - currentCol) ** 2;
+
+      if (distanceSquared <= visibilityRadius ** 2) {
+        cellsToShow.add(cell);
+        cell.classList.remove('fogged');
+      } else {
+        cellsToShow.delete(cell);
+        cell.classList.add('fogged');
+      }
+    }
+  }
+
+  // Phase 2: Batch DOM updates (MUCH FASTER)
+  
+  // // Show visible cells
+  // cellsToShow.forEach(cell => {
+  //   if (cell.style.display !== 'visible') {
+  //     cell.style.display = 'visible';
+  //     cell.classList.remove('unexplored');
+  //     cell.classList.add('explored', 'highlighted');
+  //     if (PLAYER_STATE.isInStructure && !cell.classList.contains('structure')) {
+  //       cell.classList.add('fogged');
+  //     }
+  //   }
+  // });
+
+  // // Hide non-visible cells
+  // cellsToHide.forEach(cell => {
+  //   if (cell.style.display !== 'hidden') {
+  //     cell.style.display = 'hidden';
+  //     cell.classList.remove('highlighted');
+  //   }
+  // });
+
+  observedCells = Array.from(cellsToShow);
 
 
-
-  updateCardboardRotation();
 }

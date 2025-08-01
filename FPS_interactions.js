@@ -6,13 +6,14 @@ let PLAYER_STATE = {
   overtip: 'off',
   sneak: false,
   isZoomed: false,
+  horse: false
 }
 
 
 
 
 window.addEventListener("click", async (event) => {
-  if (CURRENT_TARGET_CELL.classList.contains('building')) return;
+  if (CURRENT_TARGET_CELL && CURRENT_TARGET_CELL.classList.contains('building')) return;
   if (!document.pointerLockElement) return;
   if (event.button !== 2) return;
   
@@ -46,6 +47,7 @@ function toggleZoom() {
 
 
 function toggleSneakMode() {
+  if (PLAYER_STATE.horse === true) return;
   PLAYER_STATE.sneak = !PLAYER_STATE.sneak;
   if (PLAYER_STATE.sneak === true) {
     displayMessage('Sneak mode activated.');
@@ -280,9 +282,14 @@ async function weaponImageAnimation(specialty) {
 
 window.addEventListener("click", async (event) => {
 
-  if (event.button === 2 && CURRENT_TARGET_CELL.classList.contains('building')) {
+  if (event.button === 2 && CURRENT_TARGET_CELL && CURRENT_TARGET_CELL.classList.contains('building')) {
     event.preventDefault();
-    enterBuilding();
+    const building = getCurrentTargetedCellData().data.building;
+    if (building.locked === true) {
+      displayMessage('This building is locked.');
+      return;
+    }
+    buildingManager.enterBuilding(building);
     return;
   }
 
@@ -869,7 +876,11 @@ async function gunpowder() {
   if (PLAYER_STATE.currentAttackType === 'Gunpowder') {
     const smokeEffect = document.createElement('div');
     smokeEffect.setAttribute('id', 'smoke-effect');
-    document.body.appendChild(smokeEffect);
+    smokeEffect.style.setProperty(
+      "--rotationZ",
+      `${SETTINGS.zRotation}deg`
+    );
+    CURRENT_GROUP_CELL.appendChild(smokeEffect);
   
 
   

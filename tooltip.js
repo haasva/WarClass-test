@@ -1,5 +1,7 @@
 
 function removeAllKindsOfTooltips() {
+  
+  document.querySelector('#building-prompt')?.remove();
 
   let tooltips1 = document.querySelectorAll('#adventurer-info-container');
     
@@ -222,8 +224,8 @@ function displayItemTooltip(event, item) {
       <div class="description">${item.description}</div>
       <div class="durability">Durability: <span>${item.durability}</span><span>/100</span></div>
       <div class="stackable">Stackable</div>  
-      <div class="ability">
-      </div>
+      <div class="ability"></div>
+      <div class="price">Sell Price: <span>${item.price}</span><span></div>
     `;
 
     if (item.healAmount) {

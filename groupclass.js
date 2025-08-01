@@ -425,9 +425,11 @@ for (const adv of groupAdventurers.values()) {
 }
 
 addInventorySlot(10);
-grantGivenItem('carrot');
-grantGivenItem('carrot');
-grantGivenItem('carrot');
+
+for (i = 0 ; i < 50 ; i++) {
+  grantGivenItem('carrot');
+  grantGivenItem('scraps');
+}
 grantGivenItem('raw meat');
 
 selectAdventurer(0, [...groupAdventurers.keys()]);

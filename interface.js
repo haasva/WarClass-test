@@ -837,14 +837,8 @@ async function createGatherWindow(gathered) {
 
   playGatherHerbSound();
 // Start the progression
-const progressInterval = setInterval(async () => {
-  actionGridDisabled = true;
-  if (progression < maxProgress) {
-    progression++;
-    bar.value = progression;
-    bar.textContent = `${progression}%`;
-  } else {
-    clearInterval(progressInterval); // Stop when it reaches 100%
+
+
     result.textContent = 'Gathered!';
     bar.remove();
 
@@ -865,7 +859,6 @@ const progressInterval = setInterval(async () => {
       basicStore.style.animation = "none";
       basicStore.remove();
       await new Promise(resolve => setTimeout(resolve, 100));
-      await realTime(1);
     }
     
     CURRENT_GROUP_CELL.classList.remove('gatherable');
@@ -876,9 +869,7 @@ const progressInterval = setInterval(async () => {
     setTimeout(() => {
       window.remove();
     }, 600);
-  }
-
-}, updateInterval);
+  
 }
 
 function grantGatheredLoot(gathered) {

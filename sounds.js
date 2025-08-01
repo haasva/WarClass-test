@@ -260,8 +260,17 @@ function playBite() {
 }
 
 
+function playDoorSound(action) {
+    const audio = new Audio(`/Sounds/door_${action}.mp3`);
+    audio.volume = 1;
+    audio.play();
+}
 
-
+function playMessageSound() {
+    const audio = new Audio(`/Sounds/message.wav`);
+    audio.volume = 1;
+    audio.play();
+}
 
 
 

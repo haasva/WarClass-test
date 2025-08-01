@@ -11,11 +11,11 @@ const DEFAULT_SETTINGS = {
     perspective: true,
     perspectiveTableCont: "630",
     perspectiveGrid: 276,
-    movespeed: 50,
+    movespeed: 45,
     movespeedBonus: 1,
     angle: "87",
     zRotation: 0,
-    throttleSpeed: 15,
+    throttleSpeed: 10,
     visibilityRadius: "5.2",
     baseVisibilityRadius: 5.2,
     posterization: false,
@@ -24,7 +24,7 @@ const DEFAULT_SETTINGS = {
     gridMovement: true,
     fov : 1.4,
     animations: false,
-    animationTime: 80,
+    animationTime: 10,
     translateY: 0,
     translateX: 0,
     translateZ: 0,
@@ -34,8 +34,9 @@ const DEFAULT_SETTINGS = {
     transformOriginY: 250,
     t3dx: 0,
     t3dy: 0,
-    firstPerson: false,
-    interface: true
+    firstPerson: true,
+    interface: true,
+    classicRotate: 0
   };
   
   // Create a copy for current settings
@@ -244,10 +245,11 @@ function toggleRetroFilters() {
 
         engine.style.filter = 'saturate(1.3) brightness(1.28)';
         //mega.classList.add('non-filter');
-
+        engine.querySelector('#neo-region').style.filter = "brightness(0.9) contrast(1)"
     } else {
 
-        engine.style.filter = 'saturate(1.3) brightness(1.28) url(#pixelate)';
+        engine.style.filter = 'saturate(1.3) brightness(1.28)';
+        engine.querySelector('#neo-region').style.filter = "brightness(0.9) contrast(1) url(#pixelate)"
         //mega.classList.remove('non-filter');
     }
 

@@ -59,6 +59,7 @@ realTime(value);
 
 
 async function realTime(time) {
+  
     // Increment currentMinute based on input or default
     if (time) {
         currentMinute += time;
@@ -69,9 +70,9 @@ async function realTime(time) {
     updateAudio();
 
         // Call the functions
-        await moveOtherGroupInObservedCells();
-        await updateGroupDirection();
-        await moveAnimalsInMap();
+        moveOtherGroupInObservedCells();
+        updateGroupDirection();
+        moveAnimalsInMap();
 
 
 
@@ -81,7 +82,7 @@ async function realTime(time) {
         currentHour += 1;
         
         updateWeather();
-        // otherGroupMovements();
+        otherGroupMovements();
     }
 
     // Handle day rollover

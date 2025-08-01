@@ -156,8 +156,12 @@ right: 27px;
 
 
 
-
-
+body:has(#mega-wrapper.invisible) #entities-container {
+  display: none;
+}
+body:has(.building-menu) #entities-container {
+  display: none;
+}
 
 #entities-container {
   display: flex;
@@ -169,7 +173,7 @@ right: 27px;
     box-shadow: black 0px 0px 10px;
     border: 1px solid #b36828;
     border-radius: 5px;
-  top: 10%;
+  top: 7.5%;
   left: 17%;
   color: white;
   padding: 10px;
@@ -222,7 +226,6 @@ filter: brightness(1.5) drop-shadow(0 0 2px black);
 
 
 #left-side {
-  transition: left 0.2s;
   display: flex;
   gap: 10px;
   position: absolute;
@@ -230,31 +233,46 @@ filter: brightness(1.5) drop-shadow(0 0 2px black);
   left: 10px;
   width: 305px;
   padding: 10px;
-
   border-radius: 5px;
   box-shadow: black 0px 0px 10px;
   border: 1px solid #b36828;
   box-sizing: border-box;
   z-index: 2;
-
-
   overflow: hidden;
   flex-direction: column;
   justify-content: flex-start;
-  transition: left 0.3s;
+  transition: all 0.2s;
   /* background-image: url('../Art/Interface/bggen.png');
   background-size: cover  ; */
   background-color: rgba(0, 0, 0, 0.7);
+}
+
+#region-grid-container:has(#middle.invisible) #left-side #group-class-inventory {
+  display: none;
+}
+#region-grid-container:has(#middle.invisible) #left-side {
+  height: 140px;
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+  padding: 0px;
+}
+#region-grid-container:has(#middle.invisible) #left-side progress {
+box-shadow: black 0px 0px 5px;
+}
+#region-grid-container:has(#middle.invisible) #right-side .contract-box {
+  display: none;
 }
 
 #active-weaponry {
   gap: 5px;
   margin-top: 20px;
   display: flex;
-  border: 1px solid orange;
+  border: 1px outset burlywood;
   box-shadow: inset 0 0 6px black;
   padding: 5px;
   background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 3px;
 }
 #active-weaponry .img {
 width: 50px;
@@ -702,38 +720,9 @@ background-image: url("../Art/Interface/ammos.png");
 
 
 
-aside {
-  display: flex;
-  position: absolute;
-  padding: 0px;
-  margin: 0;
-  top: 0%;
-  left: 50%;
-  transform: translate(-50%, 10px);
-  z-index: 2;
-  height: fit-content;
-  width: 66%;
-  box-sizing: border-box;
-  overflow: hidden;
-  flex-direction: column;
-  align-content: center;
-  justify-content: flex-start;
-  align-items: center;
 
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px black;
-  background-color: #233844ab;
-  backdrop-filter: blur(5px);
-  border: 1px solid #9e5b1c;
-}
 
-aside h1 {
-line-height: normal;
-font-size: 20px;
-padding:0px;
-margin:0px;
-margin-bottom: 0px;
-}
+
 
 
 
@@ -829,7 +818,7 @@ margin-bottom: 0px;
   text-align: end;
   margin-left: 5px;
   font-size: 18px;
-  color: #AAA;
+  color: #00ccff;
 }
 
 #region-infos #region-level {
@@ -939,11 +928,28 @@ align-items: stretch;
 
 
 
+aside {
+  display: flex;
+  position: absolute;
+  padding: 0px;
+  margin: 0;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, 10px);
+  z-index: 2;
+  height: fit-content;
+  width: 66%;
+  box-sizing: border-box;
+  overflow: hidden;
+  flex-direction: column;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
 
+}
 
 #day-box {
   display: flex;
-  padding: 10px;
   flex-flow: wrap;
   align-items: center;
   place-content: center;
@@ -951,7 +957,7 @@ align-items: stretch;
   width: 100%;
   gap: 5px;
   flex-direction: row;
-  align-content: center;
+  align-content: start;
   justify-content: space-between;
   box-sizing: border-box;
   flex-wrap: nowrap;
@@ -961,28 +967,27 @@ align-items: stretch;
 
 #clock {
   width: 300px;
-  height: 67px;
+  height: 70px;
   left: 134px;
-    position: relative;
+  position: relative;
   margin-bottom: -7px;
-  overflow: hidden;
+  overflow: visible;
   display: flex;
   flex-direction: row;
   align-content: center;
   justify-content: center;
-  transition: all 0.25s;
+  transform: rotateX(-180deg);
 }
 
 #clock::before {
   content: "";
   width: 300px;
-  height: 67px;
+  height: 100%;
   background-image: url(../Art/clock_overlay.png);
   background-size: 100%;
   background-repeat: no-repeat;
-  background-position: -2px -3px;
   position: absolute;
-  background-position-y: -3px;
+  background-position-y: 5px;
   background-position-x: 3px;
   z-index: 2;
 }
@@ -1001,6 +1006,7 @@ align-items: stretch;
   transform: translate(0%, 50%);
   top: 40px;
   backdrop-filter: blur(4px);
+  transform: rotateX(-180deg);
   text-shadow: 0 0 2px black, 0 0 3px black, 0 0 3px black, 0 0 2px black, 0 1px 3px black, 0 1px 3px black;
 }
 
@@ -1123,14 +1129,12 @@ align-items: stretch;
 
 @keyframes flash-console {
   0% {
-	opacity: 0;
-    color: transparent;
-	filter: blur(2px);
+	opacity: 0.2;
+	filter: blur(3px);
 	transform: scale(1.2);
   }
   100% {
-	  opacity: 1;
-    color: normal;
+	opacity: 1;
 	text-shadow : none;
 	filter: blur(0px);
 	transform: scale(1);
@@ -1238,9 +1242,9 @@ align-items: stretch;
   background-size: 800px 34px;
   background-repeat: repeat;
   left: 50%;
-  top: 11%;
+  top: 8%;
   translate: -50% -50%;
-  z-index: 1;
+  z-index: 2;
   scale: 1;
   border: 1px solid #b36828;
   box-shadow: black 0px 0px 10px, inset 0 0 15px rgba(68, 37, 11, 0.726);
@@ -1251,11 +1255,11 @@ align-items: stretch;
 #bottom {
   display: flex;
   z-index: 4;
-  width: 40dvw;
+  width: 30dvw;
   position: absolute;
   bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
+  right: 10px;
+
   padding: 10px;
   justify-content: center;
   align-items:center;

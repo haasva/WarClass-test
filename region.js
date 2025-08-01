@@ -98,6 +98,9 @@ function updateRegionInformations() {
   const level = infos.querySelector('#region-level');
   level.textContent = `${CURRENT_PLAYER_REGION_DATA.level}`;
 
+  const pop = infos.querySelector('#region-population');
+  pop.textContent = `${CURRENT_PLAYER_REGION_DATA.population}`;
+
   const groups = infos.querySelector('#groups');
   if (CURRENT_PLAYER_REGION_DATA.groups) {
     groups.textContent = `${CURRENT_PLAYER_REGION_DATA.groups.length}`;
@@ -113,8 +116,6 @@ function updateRegionInformations() {
   const ruins = infos.querySelector('#ruins');
   ruins.textContent = `${CURRENT_PLAYER_REGION_DATA.ruinsNumber}`;
 
-  const rivers = infos.querySelector('#rivers');
-  rivers.textContent = `${CURRENT_PLAYER_REGION_DATA.riversNumber}`;
 }
 
 

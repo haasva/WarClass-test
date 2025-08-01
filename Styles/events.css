@@ -350,29 +350,30 @@ border-bottom: 0px;
 }
 
 #smoke-effect {
-    width : 10dvw;
-    height: 10dvw;
+    width : 20px;
+    height: 20px;
     background-size: cover;
     background-image: url("../Art/Interface/smoke.png");
     display: block;
     position: absolute;
+    translate: -50% -50%;
+    top: 50%;
+    left: 50%;
     filter: blur(2px);
     z-index: 99;
     pointer-events: none;
     transform-origin: center center;
-    bottom: 20%;
-    right: 20%;
     scale: 2;
     animation: smokeout 2s linear;
 }
 @keyframes smokeout {
     0% {
-    transform: scale(1);
+    transform: scale(1) translateZ(10px)  rotateY(var(--rotationZ));
       opacity: 0.5;
       rotate: -0deg;
     }
     100% {
-    transform: scale(3);
+    transform: scale(3) translateZ(10px) rotateY(var(--rotationZ));
     opacity: 0;
     rotate: -15deg;
     filter: blur(7px);

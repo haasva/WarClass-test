@@ -1,5 +1,9 @@
 svg[height='0'][aria-hidden='true'] { position: fixed }
 
+*::after, *::before {
+  white-space: pre;
+}
+
 #loading-screen {
   position: fixed;
   width: 100%;
@@ -181,7 +185,6 @@ body {
   background-size:cover;
   background-position: top center;
   cursor: url('/Art/cursor.cur'), auto;
-
   opacity: 0;
   filter: none;
   transform: none;
@@ -221,7 +224,6 @@ p {
 div {
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: top center;
 }
 tbody {
   border-spacing: 0;

@@ -468,9 +468,9 @@ for (let y = newRow; y < newRow + visibleRows; y++) {
           cellSpan.classList.add('settlement');
           cell.appendChild(cellSpan);
           cellSpan.innerHTML = `${worldDataEntry.settlement.Name}`;
-          cell.addEventListener('mouseover', function(event) {
-            displayOverworldSettlementTooltip(event, cell, worldDataEntry);
-           });
+          // cell.addEventListener('mouseover', function(event) {
+          //   displayOverworldSettlementTooltip(event, cell, worldDataEntry);
+          //  });
         } else {
 
         }
@@ -485,6 +485,7 @@ for (let y = newRow; y < newRow + visibleRows; y++) {
     cell.classList.add(`${location.type}`);
     const cellSpan = document.createElement('span');
     cellSpan.setAttribute('id', `${location.name}`);
+    cellSpan.classList.add('special-region');
     cell.appendChild(cellSpan);
     cellSpan.innerHTML = `${location.name}`;
   }
@@ -579,6 +580,17 @@ function addLevelOverlay(cell, level) {
 let playerCurrentRegionRow = 50;
 let playerCurrentRegionCol = 50;
 
+  async function getSpecialRegionJSON() {
+    try {
+      const response = await fetch('/JSONData/maps/region.json');
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error('Error fetching cultural knowledge data:', error);
+      return null;
+    }
+  }
+
 async function teleportPlayer(row, col) {
   playNextRegionSound();
   console.log('teleport 1');
@@ -603,6 +615,12 @@ async function teleportPlayer(row, col) {
 
 
   const newRegionIndex = playerOverworldRow * 533 + playerOverworldCol;
+
+
+
+
+
+
 await loadRegionState(newRegionIndex, worldData[playerOverworldRow][playerOverworldCol], playerOverworldRow, playerOverworldCol);
 
 
@@ -616,7 +634,7 @@ await loadRegionState(newRegionIndex, worldData[playerOverworldRow][playerOverwo
     CURRENT_PLAYER_REGION_DATA = worldData[row][col];
   }
 
-  
+
   togglePartyContainerDisplay('off');
 
   window.CURRENT_PLAYER_REGION_DATA = CURRENT_PLAYER_REGION_DATA;
@@ -1466,3 +1484,6 @@ function toggleOverlayOverworldlevels(classname) {
     }
   }
 }
+
+
+

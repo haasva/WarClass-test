@@ -96,7 +96,6 @@ box-shadow: 0 0px 30px rgba(255, 255, 255, 0.5) inset;
     grid-template-columns: repeat(533, 1fr);
     grid-template-rows: repeat(266, 1fr);
     background-image: url('/Art/water.jpg');
-  
 }
 
 
@@ -328,12 +327,17 @@ background-image: url('../Art/Textures/mountain-arctic.gif');
     image-rendering: auto;
 }
 #overworld .location-overworld:hover .settlement {
-
+    color: white;
+    text-shadow: 0 0 2px black, 0 0 5px black, 0 0 2px black, 0 0 2px black;
 }
 
-
+#overworld .location-overworld .special-region {
+    color: white;
+    text-shadow: 0 0 2px black, 0 0 5px black, 0 0 2px black, 0 0 2px black;
+}
 
 #overworld .location-overworld span {
+    text-shadow: none;
     background-size: 100% 100%;
     position:fixed;
     z-index: 5;
@@ -343,8 +347,7 @@ background-image: url('../Art/Textures/mountain-arctic.gif');
     display: flex;
     place-content: center;
     text-align: center;
-    color: white;
-    text-shadow: 0 0 2px black, 0 0 5px black, 0 0 2px black, 0 0 2px black;
+    color: transparent;
     font-size: 11px;
     position: relative;
     font-family: Georgia, "Times New Roman", Times, serif;

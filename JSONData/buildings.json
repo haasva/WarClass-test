@@ -1,10 +1,5 @@
 [
     {
-      "Name": "Reducción",
-      "Type": "Dwelling",
-      "Regions": "Yucatan, Sonora, Amazonia, Pernambuco, Andes, Pampas"
-    },
-    {
       "Name": "Khaimah",
       "Type": "Dwelling",
       "Regions": "Murrakush, Sahara, Egypt, Arabia, Mesopotamia, Persia, Sindh"
@@ -22,7 +17,12 @@
     {
       "Name": "Manor",
       "Type": "Dwelling",
-      "Regions": "British-Isles, Frisia, Austria, Carpathia, Orléanais"
+      "Regions": "British-Isles, Frisia, Austria, Carpathia, Orléanais, Canada, Carolina, Louisiana, Scandinavia, Pomerania, Carpathia"
+    },
+    {
+      "Name": "House",
+      "Type": "Dwelling",
+      "Regions": "Any"
     },
     {
       "Name": "Hut",
@@ -50,14 +50,19 @@
       "Regions": "Tyumen, Siberia, Turkestan, Altishahr, Buryatia, Machuria"
     },
     {
-      "Name": "Rendezvous",
+      "Name": "Teahouse",
       "Type": "Market",
-      "Regions": "Canada, Louisiana, Great-Plains, Yukon, Rockies"
+      "Regions": "Siam, Nusantura, Huguang, Altishahr, Turkestan, Taihang, Japan"
     },
     {
-      "Name": "Caravanserai",
+      "Name": "Store",
       "Type": "Market",
-      "Regions": "Murrakush, Sahara, Egypt, Arabia, Mesopotamia, Persia, Sindh, Barbary-Coast, India, Turkestan, Anatolia, Altishahr"
+      "Regions": "Any"
+    },
+    {
+      "Name": "Coffeehouse",
+      "Type": "Market",
+      "Regions": "Murrakush, Sahara, Egypt, Arabia, Mesopotamia, Persia, Sindh, Barbary-Coast, Anatolia"
     },
     {
       "Name": "Tavern",
@@ -105,7 +110,7 @@
       "Regions": "Iberia, Orléanais, British-Isles, Frisia, Austria, Italy, Pomerania, Polesia"
     },
     {
-      "Name": "Mosque",
+      "Name": "Madrasa",
       "Type": "Religious",
       "Regions": "Murrakush, Sahara, Egypt, Arabia, Mesopotamia, Persia, Sindh, Barbary-Coast, India, Turkestan, Anatolia, Altishahr, Rumelia, Caucasus, Bengal, Sahel, Nusantura"
     },
@@ -115,7 +120,7 @@
       "Regions": "Japan, Himalaya, Taihang, Huguang, Tibet"
     },
     {
-      "Name": "Cabane a sucre",
+      "Name": "Cabane à sucre",
       "Type": "Workshop",
       "Regions": "Canada"
     },
@@ -150,13 +155,13 @@
       "Regions": "Any"
     },
     {
-      "Name": "Plantation",
+      "Name": "Foundry",
       "Type": "Workshop",
       "Regions": "Any"
     },
     {
-      "Name": "Foundry",
+      "Name": "Capitelle",
       "Type": "Workshop",
-      "Regions": "Any"
+      "Regions": "Orléanais"
     }
    ]

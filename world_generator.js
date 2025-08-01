@@ -3,7 +3,7 @@ let worldSettlements = new Map();
 let worldLevels = [];
 
 let SEED = '5952';
-
+const gridSize = 50;
 
 function preGenerateWorldData() {
   generateWorldLevels();
@@ -39,6 +39,7 @@ return new Promise(resolve => {
                     worldData[row][col].explorationProgress = 0;
                     worldData[row][col].level = worldLevels[row][col];
                     worldData[row][col].animals = [];
+                    worldData[row][col].npcs = [];
                     const SpeLocation = locationsData.find(map => map.index === index);
                     if (SpeLocation) {
                       worldData[row][col].locationWorld = SpeLocation;
@@ -46,6 +47,25 @@ return new Promise(resolve => {
                       worldData[row][col].locationWorld = 'none';
                     }
                     worldData[row][col].buildingNumber = 0;
+                    worldData[row][col].buildings = [];
+                    worldData[row][col].population = 0;
+
+  if (worldData[row][col].locationWorld === 'none') {
+    const percentage = Math.floor(Math.random() * 100) + 1;
+    let settlementChance = 4;
+    if (worldData[row][col].climate === 'arctic') {
+        settlementChance = 1;
+    } else if (worldData[row][col].climate === 'arid') {
+        settlementChance = 2;
+    }
+    if (percentage <= settlementChance) {
+        generateWorldSettlements(worldData[row][col], row, col);
+    }
+  }
+
+
+
+
                 }
             } else {
                 worldData[row][col] = {
@@ -132,15 +152,7 @@ async function generatePreContentForRegion(region, x, y) {
         }
     }
 
-    let settlementChance = 20;
-    if (region.climate === 'arctic') {
-        settlementChance = 20;
-    } else if (region.climate === 'arid') {
-        settlementChance = 20;
-    }
-    if (percentage <= settlementChance) {
-        generateWorldSettlements(region, x, y);
-    }
+
 }
 
 
@@ -261,9 +273,9 @@ async function generateContentForRegion(region, x, y) {
  const seed = region.seed;
   await generatePreContentForRegion(region, x, y);
   
-    let regionContent = Array(75).fill().map(() => Array(75).fill().map(() => ({})));
+    let regionContent = Array(gridSize).fill().map(() => Array(gridSize).fill().map(() => ({})));
 
-
+  let populationThreshold;
     
     //generateStructures(regionContent, region);
     //generateStructures(regionContent, region);
@@ -277,9 +289,10 @@ async function generateContentForRegion(region, x, y) {
     
 
     if (region.locationWorld != "none") {
-      ranBuilding = Math.floor(Math.random() * 60) + 30;
+      ranBuilding = Math.floor(Math.random() * 30) + 15;
       ranLootContainer = Math.floor(Math.random() * 25) + 5;
       generateBuildings(region, regionContent, ranBuilding);
+      populationThreshold = 20;
     }
 
     for (let i = 0 ; i < ranLootContainer ; i++) {
@@ -287,8 +300,9 @@ async function generateContentForRegion(region, x, y) {
     }
 
     if (region.locationWorld === "none") {
-      generateImpassables(regionContent, region, seed);
+      //generateImpassables(regionContent, region, seed);
       generateImpassables2(regionContent, region, seed);
+      populationThreshold = 2;
     }
     
     const randomChance = Math.floor(Math.random() * 3) + 1;
@@ -327,16 +341,18 @@ async function generateContentForRegion(region, x, y) {
     generateFarms(regionContent);
     generateSkeletons(regionContent, seed);
 
-    for (let row = 0; row < 75; row++) {
-        for (let col = 0; col < 75; col++) {
+    for (let row = 0; row < gridSize; row++) {
+        for (let col = 0; col < gridSize; col++) {
 
           const randomChance = Math.floor(Math.random() * 200) + 1;
           if (randomChance === 25) {
           generateAnimals(region, regionContent[row][col], col, row);
           
-          } else if (randomChance < 20) {
+          } else if (randomChance < populationThreshold) {
             if (regionContent[row][col].occupied != true) {
               regionContent[row][col].npc = generateNpc(region, col, row);
+              regionContent[row][col].impassable = false;
+              region.population++;
               regionContent[row][col].occupied = true;
             }
           }
@@ -344,7 +360,7 @@ async function generateContentForRegion(region, x, y) {
             generateBirds(region, regionContent[row][col], row, col);
             generateObjects(region, regionContent[row][col]);
             
-            regionContent[row][col].index = row * 75 + col;
+            regionContent[row][col].index = row * gridSize + col;
 
             if (region.vegetation === 'Tundra') {
               generatePalsa(region, regionContent[row][col]);
@@ -573,8 +589,8 @@ async function generateOtherGroups(region) {
       currentOtherGroups = otherGroups;
 
         for (let i = 0; i < otherGroups.length; i++) {
-            const x = Math.floor(Math.random() * 73) + 1;
-            const y = Math.floor(Math.random() * 73) + 1;
+            const x = Math.floor(Math.random() * 20) + 1;
+            const y = Math.floor(Math.random() * 20) + 1;
             otherGroups[i].X = x;
             otherGroups[i].Y = y;
         }
@@ -589,8 +605,8 @@ function placeOtherGroup(region, regionContent) {
   function findUnoccupiedPosition() {
     let attempts = 0;
     while (attempts < 500) { // Limit attempts to avoid infinite loops
-      let randY = Math.floor(Math.random() * 73);
-      let randX = Math.floor(Math.random() * 73);
+      let randY = Math.floor(Math.random() * 20);
+      let randX = Math.floor(Math.random() * 20);
       if (!regionContent[randY][randX].occupied) {
         return { x: randX, y: randY };
       }
@@ -1117,7 +1133,7 @@ function generateBirds(region, regionContent, row, col) {
           let dir = '';
           if (randomDir === 1) { dir = 'east' } else if (randomDir === 2) { dir = 'west' }
           const life = Math.floor(Math.random() * 10) + 10;
-          const aID = row + 75 * col;
+          const aID = row + gridSize * col;
 
               const randomBird = Math.floor(Math.random() * 8) + 1;
               const bird = {
@@ -1182,7 +1198,7 @@ function generateAnimals(region, regionContent, x, y) {
     const randomDir = Math.floor(Math.random() * 2) + 1;
     let dir = '';
     if (randomDir === 1) { dir = 'east' } else if (randomDir === 2) { dir = 'west' }
-    const uniqueIndex = x * 75 + y;
+    const uniqueIndex = x * gridSize + y;
 
     let newAnimal = { ... currentAnimal };
 
@@ -1211,8 +1227,8 @@ function generateAnimals(region, regionContent, x, y) {
 
 function generateLootContainers(region, regionContent) {
 
-  const x = Math.floor(Math.random() * 73) + 1;
-  const y = Math.floor(Math.random() * 73) + 1;
+  const x = Math.floor(Math.random() * 20) + 1;
+  const y = Math.floor(Math.random() * 20) + 1;
 
   if (!regionContent[x][y].occupied) {
 
@@ -1251,15 +1267,15 @@ function generateBuildings(region, regionContent, ranBuilding) {
     for (let i = 0; i < ranBuilding; i++) {
         const matchingBuildings = buildingsObject.filter((building) => {
             const areaWords = building.regions ? building.regions.split(',').map(word => word.trim()) : [];
-            return areaWords.length === 0 || areaWords.includes(region.superRegion);
+            return areaWords.length === 0 || areaWords.includes(region.superRegion) || areaWords.includes('Any');
         });
 
         // Try to place building (up to 50 attempts to avoid infinite loops)
         let buildingPlaced = false;
         for (let attempt = 0; attempt < 50 && !buildingPlaced; attempt++) {
             // Random starting position with buffer space
-            let x = Math.floor(Math.random() * (regionContent.length - 40)) + 20;
-            let y = Math.floor(Math.random() * (regionContent[0].length - 40)) + 20;
+            let x = Math.floor(Math.random() * (regionContent.length - 20)) + 10;
+            let y = Math.floor(Math.random() * (regionContent[0].length - 20)) + 10;
             
             // Determine building type and rotation
             const isMosque = Math.random() < 1 / 20;
@@ -1308,6 +1324,15 @@ function generateBuildings(region, regionContent, ranBuilding) {
                         occupiedPositions.add(`${posX},${posY}`);
                     }
                 }
+
+                function assignOccupants(num) {
+                  let occupants = [];
+                  for (let o = 0; o < num; o++) {
+                    occupants.push(generateNpc(region, x, y));
+                  }
+                  occupants.sort((a, b) => (b.gold || 0) - (a.gold || 0));
+                  return occupants;
+                }
                 
                 // Mark the building type
                 const originCell = regionContent[x]?.[y];
@@ -1315,10 +1340,19 @@ function generateBuildings(region, regionContent, ranBuilding) {
                     if (isMosque) {
                         originCell.mosque = true;
                     } else {
-                        originCell.building = true;
+                        originCell.building = {
+                          occupants: assignOccupants(Math.floor(Math.random() * 4) + 1),
+                          interior: Math.floor(Math.random() * 8) + 1,
+                          locked: Math.random() < 1 / 5,
+                          lockDifficulty: 100 - Math.floor(Math.random() * 60) + 1,
+                          infos: matchingBuildings[Math.floor(Math.random() * matchingBuildings.length)]
+                        };
                         originCell.buildingRotation = rotation; // Store rotation for reference
+                        originCell.river = false;
                     }
                     region.buildingNumber++;
+                    region.population++;
+                    region.buildings.push(originCell.building);
                 }
                 
                 buildingPlaced = true;
@@ -1430,14 +1464,15 @@ function generateWorldSettlements(region, x, y) {
 
 
 
-let cachedGridCells = [];
+
+let cachedGridCells = Array.from({ length: gridSize }, () => new Array(gridSize));
 let miniCells = [];
 
 
 
 function createSemTab(Prow, Pcol, data) {
 
-  cachedGridCells = [];
+  cachedGridCells = Array.from({ length: gridSize }, () => new Array(gridSize));
 
   console.log("region creation for:", data);
 
@@ -1485,35 +1520,27 @@ function createSemTab(Prow, Pcol, data) {
 
 
     
-    // Create grid cells and populate them
-    for (let i = 0; i < 75; i++) {
-        for (let j = 0; j < 75; j++) {
-            // Create a div for each grid cell
-            const cell = document.createElement('div');
-            const uniqueIndex = i * 75 + j;
-            cell.setAttribute('index', `${uniqueIndex}`);
-            cell.style.gridRow = `${i + 1}`; // Adjust to start at 1
-            cell.style.gridColumn = `${j + 1}`; // Adjust to start at 1
 
-            cell.classList.add('game-cell');
+cachedGridCells = Array.from({ length: gridSize }, () => new Array(gridSize));
 
-            
-            // You can style the cell further here
-            let data = CURRENT_PLAYER_REGION_DATA.content[i][j];
-            let veg = CURRENT_PLAYER_REGION_DATA.vegetation;
-            
+for (let i = 0; i < gridSize; i++) {
+  for (let j = 0; j < gridSize; j++) {
+    const cell = document.createElement('div');
+    cell.setAttribute('row', i);  // Explicitly store row/col
+    cell.setAttribute('col', j);
+    cell.setAttribute('index', i * gridSize + j); // Unique index for each cell
+    cell.style.gridRow = `${i + 1}`;
+    cell.style.gridColumn = `${j + 1}`;
+    cell.classList.add('game-cell');
+    cell.classList.add('fogged');
+    let data = CURRENT_PLAYER_REGION_DATA.content[i][j];
+    let veg = CURRENT_PLAYER_REGION_DATA.vegetation;
+    populateContentCell(cell, data, veg, i, j);
 
-            populateContentCell(cell, data, veg, i, j);
+    cachedGridCells[i][j] = cell;  // Store in 2D array
+  }
+}
 
-
-
-
-            cachedGridCells.push(cell);
-
-            // Append the cell to the grid container
-            //gridContainer.appendChild(cell);
-        }
-    }
     
     // Append the grid container to the wrapper
     let wrapper = document.getElementById('engine-wrapper');
@@ -1552,10 +1579,10 @@ function createSemTab(Prow, Pcol, data) {
   
           screenshot.innerHTML = '';
   
-          for (let i = 6; i < 70; i++) {
-              for (let j = 6; j < 70; j++) {
+          for (let i = 6; i < gridSize - 5; i++) {
+              for (let j = 6; j < gridSize - 5; j++) {
                 const cell = document.createElement('div');
-                const uniqueIndex = i * 75 + j;
+                const uniqueIndex = i * gridSize + j;
                 cell.setAttribute('index', `${uniqueIndex}`);
                 cell.textContent = '';
                 cell.setAttribute('row', i);
@@ -1598,7 +1625,7 @@ function markGateways() {
     }));
 
     // Iterate only over border rows and columns
-    for (let i = 0; i < 75; i++) {
+    for (let i = 0; i < gridSize; i++) {
         // Skip corners
         if (i !== 0 && i !== 74) {
             markCell(i, 0, 'West');
@@ -1627,8 +1654,8 @@ function markGateways() {
 
 function populateContentCellMiniTable(cell, data) {
 
-    cell.style.width = '1.75px';
-    cell.style.height = '1.75px';
+    cell.style.width = '1.gridSizepx';
+    cell.style.height = '1.gridSizepx';
 
 let currentRow = Math.floor(playerOverworldRow);
 let currentCol = Math.floor(playerOverworldCol);
@@ -1647,7 +1674,7 @@ if (data.impassable === true) {
 }
 
 if (data.passageWay) {
-    cell.style.backgroundColor = '#fb5073';
+    cell.style.backgroundColor = '#fb5020';
     cell.style.visibility = 'visible';
 }
 

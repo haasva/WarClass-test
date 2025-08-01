@@ -157,7 +157,15 @@ function addInventorySlot(number) {
 }
 
 
+function updateQuantityThere(itemEl, item) {
+  itemEl.querySelector('.item-quantity')?.remove();
+  let number = itemEl.querySelector('.item-quantity');
 
+        number = document.createElement('span');
+        number.className = 'item-quantity';
+        itemEl.appendChild(number);
+        number.textContent = item.quantity;
+}
 
 async function fetchItemsData() {
   try {
@@ -174,7 +182,8 @@ async function fetchItemsData() {
                 stackable: item.stackable,
                 description: item.description,
                 ability: item.ability,
-                healAmount: item.healAmount
+                healAmount: item.healAmount,
+                price: Math.floor(Math.random() * 10) + 1
             };
           });
 
@@ -205,6 +214,33 @@ function grantGivenItem(itemName) {
         item = { ...itemsObject[itemName], iID: Math.floor(Math.random() * 9999) + 1, quantity: 1 };
     }
 
+    let existingItem = PLAYER_ITEMS.find(invItem => invItem.name === item.name);
+
+    if (existingItem && existingItem.stackable === 'yes') {
+        existingItem.quantity += 1;
+        updateItemQuantity(existingItem);
+        return true; // Successfully added a new item
+    } else {
+        const emptySlot = PLAYER_ITEMS_SLOTS.find(sl => sl.classList.contains('empty-slot'));
+        if (!emptySlot) {
+            console.log("No empty slots available!");
+            return;
+        }
+        if (item.category === 'Equipment') {
+            item.durability = 100 - Math.floor(Math.random() * 60) + 1;
+        }
+        PLAYER_ITEMS.push(item);
+        addItemToEmptySlot(item);
+        return true; // Successfully added a new item
+    }
+}
+
+
+
+function grantThatItem(item) {
+
+    playCheckSound();
+    
     let existingItem = PLAYER_ITEMS.find(invItem => invItem.name === item.name);
 
     if (existingItem && existingItem.stackable === 'yes') {
@@ -294,6 +330,7 @@ function createItemElement(item) {
     itemEl.className = `inventory-item ${item.rarity}`;
     itemEl.style.outlineColor = `var(--${item.rarity.toLowerCase()}-color)`;
     itemEl.setAttribute('item-id', item.iID);
+    itemEl.setAttribute('name', item.name);
     itemEl.style.backgroundImage = `url('/Art/Items/${item.name}.png')`;
     itemEl.setAttribute('draggable', true);
     itemEl.addEventListener('dragstart', Inventory.prototype.dragItem); // ← bound method

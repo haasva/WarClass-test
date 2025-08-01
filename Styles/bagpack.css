@@ -136,7 +136,7 @@
       max-height: 400px;
 }
 
-#backpack .inventory-bag .slot, #adventurer-option-container .slot, .adv-box .slot {
+#backpack .inventory-bag .slot, #adventurer-option-container .slot, .adv-box .slot, .building-menu .slot {
   width: 54px;
   aspect-ratio: 1/1;
   background-color: #1d1d1d;
@@ -186,7 +186,7 @@
 }
 
 
-#backpack .inventory-bag .inventory-item:hover, #group-class-inventory .slot .inventory-item:hover, .inventory-item:hover, .adv-weapon-slot:hover {
+.inventory-item:hover,  .adv-weapon-slot:hover {
   box-shadow: inset 0 0 10px orange, inset 0 0 10px orange, inset 0 0 2px black, inset 0 0 2px black;
 }
 
@@ -194,6 +194,8 @@
   box-shadow: inset 0 0 5px black;
   scale: 0.95;
 }
+
+.npc-inventory
 
 
 
@@ -208,7 +210,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: -37px;
 }
 
 #group-class-inventory #content {
@@ -219,8 +220,8 @@
   justify-content: center;
   background-image: url(../Art/Interface/gibg.png);
   align-content: center;
-  background-size: 105% 104%;
-  background-position: 43% 39%;
+  background-size: 100% 100%;
+  margin-top: -25px;
 }
 
 #group-class-inventory .top, #group-class-inventory .center, #group-class-inventory .bottom {
@@ -359,6 +360,24 @@ border-radius: 3px;
 }
 .equipment-tooltip .durability {
   color: rgb(58, 255, 196);
+}
+.equipment-tooltip .price {
+}
+.equipment-tooltip .price span:first-child {
+  color: gold;
+  display: inline-flex;
+  align-items: center;
+  align-content: center;
+}
+.equipment-tooltip .price span:first-child::before {
+    content: '';
+    width: 14px;
+    aspect-ratio: 1 / 1;
+    background-image: url('../Art/Interface/coin_small.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-flex;
+    margin-right: 2px;
 }
 .equipment-tooltip .durability span:first-child {
   color: rgb(206, 255, 225);

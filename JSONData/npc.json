@@ -2,86 +2,103 @@
   {
     "class": "aristocrat",
     "var": 8,
-    "types": "Noble"
+    "types": "Noble",
+    "gold": 200
   },
   {
     "class": "beggar",
     "var": 3,
-    "types": ""
+    "types": "Outlaw, Commoner",
+    "gold": 5
   },
   {
     "class": "burgher",
     "var": 5,
-    "types": "Intellectual, Noble"
+    "types": "Intellectual, Noble",
+    "gold": 120
   },
   {
     "class": "child",
     "var": 4,
-    "types": ""
+    "types": "",
+    "gold": 2
   },
   {
     "class": "courtesan",
-    "var": 5,
-    "types": ""
+    "var": 7,
+    "types": "",
+    "gold": 70
   },
   {
     "class": "ecclesiastic",
     "var": 4,
-    "types": "Religious"
+    "types": "Religious",
+    "gold": 60
   },
   {
     "class": "entertainer",
     "var": 8,
-    "types": "Commoner, Outlaw"
+    "types": "Commoner, Outlaw",
+    "gold": 30
   },
   {
     "class": "housewife",
     "var": 4,
-    "types": "Commoner"
+    "types": "Commoner",
+    "gold": 15
   },
   {
     "class": "innkeeper",
     "var": 5,
-    "types": "Commoner"
+    "types": "Commoner",
+    "gold": 100
   },
   {
     "class": "laborer",
     "var": 6,
-    "types": "Commoner"
+    "types": "Commoner",
+    "gold": 40
   },
   {
     "class": "lady",
     "var": 3,
-    "types": "Commoner"
+    "types": "Commoner",
+    "gold": 45
   },
   {
-    "class": "merchant",
+    "class": "trader",
     "var": 6,
-    "types": "Intellectual, Explorer"
+    "types": "Intellectual, Explorer",
+    "gold": 180
   },
   {
     "class": "odalisque",
     "var": 6,
-    "types": "Slave, Religious"
+    "types": "Slave, Religious",
+    "gold": 15
   },
   {
     "class": "outlaw",
     "var": 7,
-    "types": "Outlaw, Explorer, Soldier"
+    "types": "Outlaw, Explorer, Soldier",
+    "gold": 300
   },
   {
     "class": "slave",
     "var": 2,
-    "types": "Slave"
+    "types": "Slave",
+    "gold": 1
   },
   {
     "class": "unknown",
     "var": 4,
-    "types": ""
+    "types": "",
+    "gold": 10
   },
   {
     "class": "wretch",
     "var": 4,
-    "types": ""
+    "types": "",
+    "gold": 6
   }
 ]

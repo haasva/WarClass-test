@@ -14,6 +14,7 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="Styles/style_general.css">
     <link rel="stylesheet" type="text/css" href="Styles/style_group_class_selection.css">
+    <link rel="stylesheet" type="text/css" href="Styles/bagpack.css">
     <link rel="stylesheet" type="text/css" href="Styles/style.css">
     <link rel="stylesheet" type="text/css" href="Styles/adventurer-info-style.css">
     <link rel="stylesheet" type="text/css" href="Styles/events.css">
@@ -23,7 +24,6 @@
     <link rel="stylesheet" type="text/css" href="Styles/combat.css">
     <link rel="stylesheet" type="text/css" href="Styles/vegetation.css">
     <link rel="stylesheet" type="text/css" href="Styles/group-sheet.css">
-    <link rel="stylesheet" type="text/css" href="Styles/bagpack.css">
     <link rel="stylesheet" type="text/css" href="Styles/middle.css">
   
     <!-- Preconnect & Fonts -->
@@ -50,9 +50,12 @@
 
   
 
-<div id="region-grid-container">
+<div id="region-grid-container" class="">
 
   <div id="painted"></div>
+
+
+
 
 
 <div id="cellData">
@@ -244,7 +247,7 @@ Free slots: <span id="empty-slots-count"></span>
       <div class="info"><div class="text">Level: </div><div class="value" id="region-level">X</div></div>
       <div class="info"><div class="text">Groups: </div><div class="value" id="groups">X</div></div>
       <div class="info"><div class="text">Buildings: </div><div class="value" id="buildings">X</div></div>
-      <div class="info"><div class="text">Rivers: </div><div class="value" id="rivers">X</div></div>
+      <div class="info"><div class="text">Population: </div><div class="value" id="region-population">X</div></div>
       <div class="info"><div class="text">Roads: </div><div class="value" id="roads">X</div></div>
       <div class="info"><div class="text">Ruins: </div><div class="value" id="ruins">X</div></div>
     </div>
@@ -391,10 +394,15 @@ Free slots: <span id="empty-slots-count"></span>
 <div id="mega-wrapper">
 
 <div id="crosshair"></div>
+  <video  id="ultra-filter" autoplay loop width="100dvw" height="100dvh">
+    <source src="/Art/rain-overlay.mp4" type="video/mp4">
+  </video >
   <div id="bloodscreen"></div>
 
-  <div id="engine-wrapper"></div>
-
+  <div id="engine-wrapper">
+    <div id="horizon"></div>
+  </div>
+  <div id="horse"></div>
   <div id="weapon"></div>
 
 </div>
@@ -450,12 +458,12 @@ Free slots: <span id="empty-slots-count"></span>
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <filter id="ps1-wobble">
     <!-- Animate a turbulence pattern for displacement -->
-    <feTurbulence type="turbulence" baseFrequency="0.03" numOctaves="1" result="warp" seed="2">
-      <animate attributeName="seed" values="1;5;9;3;7" dur="0.5s" repeatCount="indefinite"/>
+    <feTurbulence type="turbulence" baseFrequency="0.9" numOctaves="1" result="warp" seed="2">
+      <animate attributeName="seed" values="1;5;9;3;7" dur="1s" repeatCount="indefinite"/>
     </feTurbulence>
 
     <!-- Displace pixels based on the turbulence -->
-    <feDisplacementMap in="SourceGraphic" in2="warp" scale="3" xChannelSelector="R" yChannelSelector="G"/>
+    <feDisplacementMap in="SourceGraphic" in2="warp" scale="5" xChannelSelector="R" yChannelSelector="G"/>
   </filter>
 </svg>
 

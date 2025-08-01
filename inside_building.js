@@ -146,9 +146,15 @@ function generateLootInterior(size) {
 }
 
 
-function addItemToArea(area) {
+function addItemToArea() {
     const itemKeys = Object.keys(itemsObject);
-    const randomItem = itemsObject[itemKeys[Math.floor(Math.random() * itemKeys.length)]];
+    let randomItem = itemsObject[itemKeys[Math.floor(Math.random() * itemKeys.length)]];
+
+    randomItem = { ...randomItem, iID: Math.floor(Math.random() * 9999) + 1, quantity: 1 };
+
+    if (randomItem.category === 'Equipment') {
+            randomItem.durability = 100 - Math.floor(Math.random() * 60) + 1;
+    }
 
     return randomItem;
 }
