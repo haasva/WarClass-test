@@ -1,8 +1,3 @@
-# Looking for mate / project partner
-I would really like to partner with someone who might be interested in any way in this project. Either on the programming side, historical side, gamedesign, whatever.
-Hit me up on 
-
-
 # WarClass
 
 99% of this game's assets are taken from other games/internet/mods used as placeholders.
@@ -53,3 +48,4 @@ Find a way to abandon cell-based movement (Daggerfall-like movement instead).
 
 ![App Screenshot](https://github.com/haasva/WarClass-test/blob/8d67f1b862f476202a4d5f94b318dabb2fb5c9cf/100cssscreenshot.jpg)
 ![App Screenshot](https://github.com/haasva/WarClass-test/blob/415ad7703ab711c1ba52e8c5131a6dbd6478a8c1/Screenshots/meadow.png)
+
