@@ -722,8 +722,8 @@ function toggleScreenshotDisplay() {
     screenshotElement.style.zIndex = '1';
     screenshotElement.style.transform = 'none';
     document.querySelectorAll('#mini-table div').forEach(cell => {
-      cell.style.width = '1.75px';
-      cell.style.height = '1.75px';
+      cell.style.width = '2.25px';
+      cell.style.height = '2.25px';
     });
   } else {
     // Save original parent reference if not already saved
